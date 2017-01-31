@@ -28,5 +28,4 @@ libraryDependencies ++= Seq(
 logBuffered in Test := false
 
 // Disable parallel execution when running test
-// Running tests in parallel on Jenkins currently fails.
 parallelExecution in Test := false
