@@ -47,7 +47,7 @@ To compile scala files with sbt, go to the home directory in the terminal and ty
 
 	sbt run-main <SCALA_FILE>
 
-To run chisel tests with sbt, typ:
+To run chisel tests with sbt, type:
 
 	sbt test:run-main <SCALA_FILE>
 
