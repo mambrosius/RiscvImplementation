@@ -2,7 +2,11 @@ name := "risc-v implementation"
 
 version := "0.1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.7" 
+
+/*
+// current version 2.11.7
+scalaVersion := Option(System.getProperty("scala.version")).getOrElse("2.11.4") 
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked", "-language:reflectiveCalls")
 
@@ -29,3 +33,4 @@ logBuffered in Test := false
 
 // Disable parallel execution when running test
 parallelExecution in Test := false
+*/
