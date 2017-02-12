@@ -15,12 +15,12 @@ class ProgramCounterTest(c: ProgramCounter) extends PeekPokeTester(c) {
 
 	for (i <- 1 until 10) {
 
-		step(1)
-		expect(c.io.instAddr, i * 4)	
+		step(1)	
+		expect(c.io.instAddr, i * 4)		
 	}
 }
 
-object ProgramCounter extends App {
+object ProgramCounterTest extends App {
 
 	iotesters.Driver.execute(args, () => new ProgramCounter) {
 

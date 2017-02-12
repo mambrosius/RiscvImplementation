@@ -9,7 +9,7 @@ package modules
 
 import chisel3._
 
-class ProgramCounter() extends Module {
+class ProgramCounter extends Module {
 	
 	val io = IO(new Bundle {
 
@@ -19,6 +19,11 @@ class ProgramCounter() extends Module {
 
 	val pc = Reg(init = 0.asUInt(io.instAddr.getWidth.W))  
 	
-	pc := Mux(io.res, 0.U, pc + 4.U) 
+	pc := Mux(io.res, 0.U, pc + 1.U) 
 	io.instAddr := pc
- }
+}
+
+object ProgramCounter extends App {
+	
+	chisel3.Driver.execute(args, () => new ProgramCounter)
+}
