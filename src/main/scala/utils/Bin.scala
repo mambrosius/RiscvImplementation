@@ -28,7 +28,7 @@ object Bin {
     	val instructionMem 	= Mem(programLines.length, UInt(32.W)) 	// instruction memory as UInt
 
     	// converts the instruction elements into UInt
-		for (i <- 0 to programLines.length - 1) {
+		for (i <- 0 to programLines.length - 1) {	// until or to ??
 
     		instructionMem(i) := {"h" + programLines(i)}.asUInt(32.W)
     	} 

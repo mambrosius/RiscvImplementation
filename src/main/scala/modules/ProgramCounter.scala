@@ -12,18 +12,21 @@ import chisel3._
 class ProgramCounter extends Module {
 	
 	val io = IO(new Bundle {
-
-		val res 		= Input(Bool())
-		val instAddr 	= Output(UInt(32.W))
+		val reset = Input(Bool())
+		val count = Output(UInt(32.W))
 	}) 
 
-	val pc = Reg(init = 0.asUInt(io.instAddr.getWidth.W))  
+	val countReg = Reg(init = 0.asUInt(io.count.getWidth.W))
 	
-	pc := Mux(io.res, 0.U, pc + 1.U) 
-	io.instAddr := pc
+	// reg
+	countReg := Mux(io.reset, 0.U, countReg + 1.U)
+	
+	// out
+	io.count := countReg
 }
 
 object ProgramCounter extends App {
 	
 	chisel3.Driver.execute(args, () => new ProgramCounter)
 }
+

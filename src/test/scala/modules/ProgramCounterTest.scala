@@ -11,12 +11,18 @@ import chisel3.iotesters.PeekPokeTester
 
 class ProgramCounterTest(c: ProgramCounter) extends PeekPokeTester(c) {
 
-	poke(c.io.res, false)
+	poke(c.io.reset, false.B)
 
-	for (i <- 1 until 10) {
+	for (i <- 0 until 10) {
+		expect(c.io.count, i)
+		step(1)			
+	}
 
+	poke(c.io.reset, true.B)
+
+	for (i <- 0 until 10) {
 		step(1)	
-		expect(c.io.instAddr, i * 4)		
+		expect(c.io.count, 0)
 	}
 }
 
