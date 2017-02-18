@@ -30,7 +30,7 @@ object Bin {
     	// converts the instruction elements into UInt
 		for (i <- 0 to programLines.length - 1) {	// until or to ??
 
-    		instructionMem(i) := {"h" + programLines(i)}.asUInt(32.W)
+    		instructionMem(i) := {"b" + programLines(i)}.asUInt(32.W)
     	} 
 
     	source.close
