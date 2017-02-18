@@ -5,9 +5,9 @@
 //
 // Version:	0.1 (January 2017)
 
-import modules._
 import chisel3._
 import chisel3.iotesters.PeekPokeTester
+import modules.ProgramCounter
 
 class ProgramCounterTest(c: ProgramCounter) extends PeekPokeTester(c) {
 
