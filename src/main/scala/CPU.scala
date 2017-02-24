@@ -13,10 +13,10 @@ class CPU extends Module {
     
     val io = IO(new Bundle {
     	val reset       = Input(Bool())
-        val instAddr    = Output(UInt(Constant.WORD_SIZE.W))
-        val RD 	        = Output(UInt(Constant.WORD_SIZE.W))
-        val RS1         = Output(UInt(Constant.WORD_SIZE.W))
-        val RS2         = Output(UInt(Constant.WORD_SIZE.W))
+        val instAddr    = Output(UInt(Constant.WORD_SIZE))
+        val RD 	        = Output(UInt(Constant.WORD_SIZE))
+        val RS1         = Output(UInt(Constant.WORD_SIZE))
+        val RS2         = Output(UInt(Constant.WORD_SIZE))
     }) 
 
     // modules

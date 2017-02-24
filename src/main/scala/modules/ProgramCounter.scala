@@ -14,13 +14,13 @@ class ProgramCounter extends Module {
 	
 	val io = IO(new Bundle {
 		val reset = Input(Bool())
-		val count = Output(UInt(Constant.WORD_SIZE.W))
+		val count = Output(UInt(Constant.WORD_SIZE))
 	}) 
 
-	val countReg = Reg(init = 0.asUInt(Constant.WORD_SIZE.W))
+	val countReg = Reg(init = 0.asUInt(Constant.WORD_SIZE))
 	
 	// reg
-	countReg := Mux(io.reset, 0.U, countReg + 1.U)
+	countReg := Mux(io.reset, Constant.ZERO, countReg + 1.U)
 	
 	// out
 	io.count := countReg

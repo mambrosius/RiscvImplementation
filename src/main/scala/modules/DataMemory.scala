@@ -17,12 +17,12 @@ class DataMemory extends Module {
 	val io = IO(new Bundle {
 		val load	= Input(Bool())
 		val store 	= Input(Bool())
-		val R1		= Input(UInt(Constant.WORD_SIZE.W))
-		val R2		= Input(UInt(Constant.WORD_SIZE.W))
-		val RD		= Output(UInt(Constant.WORD_SIZE.W))
+		val R1		= Input(UInt(Constant.WORD_SIZE))
+		val R2		= Input(UInt(Constant.WORD_SIZE))
+		val RD		= Output(UInt(Constant.WORD_SIZE))
 	})
 
-	val dataMem = Mem(Constant.MEM_SIZE, UInt(Constant.WORD_SIZE.W))
+	val dataMem = Mem(Constant.MEM_SIZE, UInt(Constant.WORD_SIZE))
 
 	when (io.load) {
 
@@ -30,7 +30,7 @@ class DataMemory extends Module {
 
 	} .otherwise {
 
-		io.RD := 0.U
+		io.RD := Constant.ZERO
 	}
 
 	when (io.store) {

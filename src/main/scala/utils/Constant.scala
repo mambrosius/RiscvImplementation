@@ -11,7 +11,8 @@ import chisel3._
 
 object Constant {
 	
-	val WORD_SIZE 	=   32
+	val ZERO		=	 0.U
+	val WORD_SIZE 	=   32.W
 	val MEM_SIZE 	= 1024
 
 	// opcodes (RV32I)

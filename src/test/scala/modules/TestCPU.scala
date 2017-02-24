@@ -15,11 +15,9 @@ class TestCPU(c: CPU) extends PeekPokeTester(c) {
 	
 	expect(c.io.RD, 18.U)
 	step(1)
-	expect(c.io.RD, 20.U)
+	expect(c.io.RD, 2.U)
 	step(1)
-	expect(c.io.RD, 60.U)
-	step(1)
-	expect(c.io.RD, 86.U)
+	expect(c.io.RD, 1.U)
 	
 	// Note : Why cant i add two UInts as updatable index..
 	/*

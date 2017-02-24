@@ -18,47 +18,41 @@ class ALU extends Module {
         val opcode = Input(UInt(7.W))
         val funct7 = Input(UInt(7.W))
         val imm12  = Input(UInt(12.W))
-    	val RS1    = Input(UInt(Constant.WORD_SIZE.W))
-    	val RS2    = Input(UInt(Constant.WORD_SIZE.W))
-    	val RD     = Output(UInt(Constant.WORD_SIZE.W))
+    	val RS1    = Input(UInt(Constant.WORD_SIZE))
+    	val RS2    = Input(UInt(Constant.WORD_SIZE))
+    	val RD     = Output(UInt(Constant.WORD_SIZE))
     }) 
 
+    val shamt = io.imm12(4, 0) // used for logical shift operations 
+
+    // note: maybe use case or switch instead of when
     when (io.opcode === Constant.R_FORMAT) {
 
         when (io.funct3 === Constant.ADD) {
-            when (io.funct7 === 0.U) { io.RD := io.RS1 + io.RS2 } 
+            when (io.funct7 === Constant.ZERO) { io.RD := io.RS1 + io.RS2 } 
             .otherwise { io.RD := io.RS1 - io.RS2 }} 
-        /* 
-        .elsewhen (io.funct3 === Constant.SLL)  { io.RD := (io.RS1 << io.RS2) }
-        .elsewhen (io.funct3 === Constant.SLT)  { io.RD := null } 
-        .elsewhen (io.funct3 === Constant.SLTU) { io.RD := null } 
-        */
+        .elsewhen (io.funct3 === Constant.SLL)  { io.RD := io.RS1 << io.RS2(4,0) } 
+        //.elsewhen (io.funct3 === Constant.SLT)  { io.RD := null } 
+        .elsewhen (io.funct3 === Constant.SLTU) { io.RD := io.RS1 < io.RS2 } 
         .elsewhen (io.funct3 === Constant.XOR) { io.RD := io.RS1 ^ io.RS2 }
-        /*
         .elsewhen (io.funct3 === Constant.SRL) {
-            when (io.funct7 === 0.U) { io.RD := null } 
-            .otherwise { io.RD := null }} 
-        */
+            when (io.funct7 === Constant.ZERO) { io.RD := io.RS1 >> io.RS2(4,0) } 
+            .otherwise { io.RD := Constant.ZERO }} 
         .elsewhen (io.funct3 === Constant.OR)  { io.RD := io.RS1 | io.RS2 }
-        .otherwise { io.RD := 0.U }
-        
+        .otherwise { io.RD := Constant.ZERO }
 
     } .elsewhen (io.opcode === Constant.I_FORMAT) {
 
         when (io.funct3 === Constant.ADDI) { io.RD := io.RS1 + io.imm12 }
-        /*
-        .elsewhen (io.funct3 === Constant.SLLI)  { io.RD := null } 
-        .elsewhen (io.funct3 === Constant.SLTI)  { io.RD := null } 
-        .elsewhen (io.funct3 === Constant.SLTIU) { io.RD := null } 
-        */
+        .elsewhen (io.funct3 === Constant.SLLI)  { io.RD := io.RS1 << shamt }
+        //.elsewhen (io.funct3 === Constant.SLTI)  { io.RD := null } 
+        .elsewhen (io.funct3 === Constant.SLTIU) { io.RD := io.RS1 < io.imm12 } 
         .elsewhen (io.funct3 === Constant.XORI) { io.RD := io.RS1 ^ io.imm12 }
-        /*
-        .elsewhen (io.funct3 === Constant.SRLI)  {
-            when (io.funct7 === 0.U) { io.RD := null } 
-            .otherwise { io.RD := null }}
-        */     
+        .elsewhen (io.funct3 === Constant.SRLI) {
+            when (io.funct7 === Constant.ZERO) { io.RD := io.RS1 >> shamt } 
+            .otherwise { io.RD := Constant.ZERO }}
         .elsewhen (io.funct3 === Constant.ORI)  { io.RD := io.RS1 | io.imm12 } 
-        .otherwise { io.RD := 0.U }
+        .otherwise { io.RD := Constant.ZERO }
         
     } /* .elsewhen (io.opcode === Constant.BRANCH) {
 

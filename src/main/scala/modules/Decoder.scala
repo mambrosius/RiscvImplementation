@@ -13,7 +13,7 @@ import utils.Constant
 class Decoder() extends Module {
 
 	val io = IO(new Bundle {
-		val inst 	= Input(UInt(Constant.WORD_SIZE.W))
+		val inst 	= Input(UInt(Constant.WORD_SIZE))
 		val opcode 	= Output(UInt(7.W))
 		val RDsel	= Output(UInt(5.W))
 		val RS1sel	= Output(UInt(5.W))
