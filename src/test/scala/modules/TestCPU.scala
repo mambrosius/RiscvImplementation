@@ -12,10 +12,14 @@ import modules._
 class TestCPU(c: CPU) extends PeekPokeTester(c) {
 
 	poke(c.io.reset, false.B)
+	
+	expect(c.io.RD, 18.U)
 	step(1)
-	expect(c.io.regVal, 18.U)
+	expect(c.io.RD, 20.U)
 	step(1)
-	expect(c.io.regVal, 35.U)
+	expect(c.io.RD, 60.U)
+	step(1)
+	expect(c.io.RD, 86.U)
 	
 	// Note : Why cant i add two UInts as updatable index..
 	/*

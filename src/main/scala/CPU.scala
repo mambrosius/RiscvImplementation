@@ -12,40 +12,47 @@ import utils._
 class CPU extends Module {
     
     val io = IO(new Bundle {
-    	val reset    = Input(Bool())
-        val instAddr = Output(UInt(Constant.WORD_SIZE.W))
-        val regVal 	 = Output(UInt(Constant.WORD_SIZE.W))
+    	val reset       = Input(Bool())
+        val instAddr    = Output(UInt(Constant.WORD_SIZE.W))
+        val RD 	        = Output(UInt(Constant.WORD_SIZE.W))
+        val RS1         = Output(UInt(Constant.WORD_SIZE.W))
+        val RS2         = Output(UInt(Constant.WORD_SIZE.W))
     }) 
 
     // modules
-    val programCounter  = Module(new ProgramCounter())
+    val pc              = Module(new ProgramCounter())
     val decoder         = Module(new Decoder())
     val registers       = Module(new Registers())
     val alu             = Module(new ALU())
     val dataMem         = Module(new DataMemory())
 
-    val instMem = utils.Bin.read
+    // program
+    val instMem         = utils.Bin.read
 
     // in
-    io.instAddr := programCounter.io.count
+    io.instAddr         := pc.io.count
     
     // wiring
-    programCounter.io.reset := io.reset 
+    pc.io.reset         := io.reset 
     
     decoder.io.inst     := instMem.read(io.instAddr)
 
     registers.io.RDsel  := decoder.io.RDsel
     registers.io.RS1sel := decoder.io.RS1sel
     registers.io.RS2sel := decoder.io.RS2sel
-    registers.io.dataIn := alu.io.result
+    registers.io.dataIn := alu.io.RD
 
     alu.io.opcode       := decoder.io.opcode
-    alu.io.imm          := decoder.io.imm
+    alu.io.funct3       := decoder.io.funct3
+    alu.io.funct7       := decoder.io.funct7
+    alu.io.imm12        := decoder.io.imm12
     alu.io.RS1          := registers.io.RS1
     alu.io.RS2          := registers.io.RS2
 
     // out
-    io.regVal := registers.io.RS1
+    io.RD  := registers.io.dataIn
+    io.RS1 := registers.io.RS1
+    io.RS2 := registers.io.RS2
 }
 
 object CPU extends App { 

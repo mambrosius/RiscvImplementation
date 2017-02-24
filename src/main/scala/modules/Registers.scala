@@ -22,11 +22,11 @@ class Registers extends Module {
     }) 
 
     // generates a vector of 32 bit UInt registers initialized to zero
-    val regVec =  Reg(init = Vec(Seq.fill(32)(0.asUInt(Constant.WORD_SIZE.W))))
+    val x =  Reg(init = Vec(Seq.fill(32)(0.asUInt(Constant.WORD_SIZE.W))))
 
-    regVec(io.RDsel) := io.dataIn
+    x(io.RDsel) := io.dataIn
 
     // out
-	io.RS1 := regVec(io.RS1sel)
-	io.RS2 := regVec(io.RS2sel)	
+	io.RS1 := x(io.RS1sel)
+	io.RS2 := x(io.RS2sel)	
 }

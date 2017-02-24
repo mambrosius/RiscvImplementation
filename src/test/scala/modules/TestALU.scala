@@ -11,11 +11,11 @@ import modules.ALU
 
 class TestALU(c: ALU) extends PeekPokeTester(c) {
 
-	poke(c.io.opcode, 7.U)
+	poke(c.io.opcode, 99.U)
 	poke(c.io.RS1, 32.U)
 	poke(c.io.RS2, 2.U)
 
-	expect(c.io.result, 32.U)
+	expect(c.io.RD, 33.U)
 }
 
 object TestALU extends App {

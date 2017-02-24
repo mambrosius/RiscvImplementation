@@ -5,6 +5,8 @@
 //
 // Version: 0.1 (February 2017)
 
+// have to be synchroeous
+
 package modules
 
 import chisel3._
