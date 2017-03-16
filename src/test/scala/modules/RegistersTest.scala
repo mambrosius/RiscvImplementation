@@ -15,7 +15,7 @@ class RegistersTest(c: Registers) extends PeekPokeTester(c) {
 	poke(c.io.RS2sel, 1.U)
 	
 	poke(c.io.RDsel, 2.U)
-	poke(c.io.dataIn, 43.U)
+	poke(c.io.RD, 43.U)
 
 	expect(c.io.RS1, 0.U)
 	expect(c.io.RS2, 0.U)
@@ -26,7 +26,7 @@ class RegistersTest(c: Registers) extends PeekPokeTester(c) {
 	poke(c.io.RS2sel, 5.U)
 	
 	poke(c.io.RDsel, 8.U)
-	poke(c.io.dataIn, 15.U)
+	poke(c.io.RD, 15.U)
 
 	expect(c.io.RS1, 43.U)
 	expect(c.io.RS2, 0.U)
@@ -37,7 +37,7 @@ class RegistersTest(c: Registers) extends PeekPokeTester(c) {
 	poke(c.io.RS2sel, 2.U)
 	
 	poke(c.io.RDsel, 4.U)
-	poke(c.io.dataIn, 30.U)
+	poke(c.io.RD, 30.U)
 
 	expect(c.io.RS1, 14.U)
 	expect(c.io.RS2, 42.U)

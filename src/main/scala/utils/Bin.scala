@@ -19,18 +19,18 @@ object Bin {
 
 		val source = try {
 
-			fromFile("bin/program.bin") // program source
+			fromFile("bin/program.bin")
 
 		} catch {
-
-			case e: FileNotFoundException => throw new Exception("No such file..")
+			case e: FileNotFoundException => 
+			throw new Exception("No such file..")
 		} 
 
-		val programLines 	= source.getLines.toArray 				// array of instruction stings
-    	val instructionMem 	= Mem(programLines.length, UInt(32.W)) 	// instruction memory as UInt
+		val programLines 	= source.getLines.toArray 				
+    	val instructionMem 	= Mem(programLines.length, UInt(32.W)) 	
 
     	// converts the instruction elements into UInt
-		for (i <- 0 to programLines.length - 1) {	// until or to ??
+		for (i <- 0 to programLines.length - 1) {
 
     		instructionMem(i) := {"b" + programLines(i)}.asUInt(32.W)
     	} 
