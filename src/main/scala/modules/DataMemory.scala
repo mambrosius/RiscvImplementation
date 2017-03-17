@@ -10,31 +10,19 @@
 package modules
 
 import chisel3._
-import utils.Constant
+import utils._
 
 class DataMemory extends Module {
  
 	val io = IO(new Bundle {
 		val load	= Input(Bool())
 		val store 	= Input(Bool())
-		val R1		= Input(UInt(Constant.WORD_SIZE))
-		val R2		= Input(UInt(Constant.WORD_SIZE))
 		val RD		= Output(UInt(Constant.WORD_SIZE))
+		val value	= new Collection.value_io
 	})
 
 	val dataMem = Mem(Constant.MEM_SIZE, UInt(Constant.WORD_SIZE))
 
-	when (io.load) {
-
-		io.RD := dataMem(io.R1)
-
-	} .otherwise {
-
-		io.RD := Constant.ZERO
-	}
-
-	when (io.store) {
-
-		dataMem(io.R2) := io.R1
-	}
+	io.RD 					:= MuxCase(Constant.ZERO, io.load  -> dataMem(io.value.RS1))
+	dataMem(io.value.RS2) 	:= MuxCase(Constant.ZERO, io.store -> io.value.RS1)
 }

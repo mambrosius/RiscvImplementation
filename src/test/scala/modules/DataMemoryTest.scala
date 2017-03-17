@@ -13,15 +13,15 @@ class DataMemoryTest(c: DataMemory) extends PeekPokeTester(c) {
 
 	poke(c.io.store, true.B)
 	poke(c.io.load, false.B)
-	poke(c.io.R1, 23.U)
-	poke(c.io.R2, 3.U)
+	poke(c.io.value.RS1, 23.U)
+	poke(c.io.value.RS2, 3.U)
 
 	step(1)
 
 	poke(c.io.store, false.B)
 	poke(c.io.load, true.B)
-	poke(c.io.R1, 2.U)
-	poke(c.io.R2, 0.U)
+	poke(c.io.value.RS1, 2.U)
+	poke(c.io.value.RS2, 0.U)
 
 	expect(c.io.RD, 0.U)
 }

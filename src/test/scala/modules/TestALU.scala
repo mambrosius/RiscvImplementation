@@ -11,9 +11,9 @@ import modules.ALU
 
 class TestALU(c: ALU) extends PeekPokeTester(c) {
 
-	poke(c.io.opcode, 99.U)
-	poke(c.io.RS1, 32.U)
-	poke(c.io.RS2, 2.U)
+	poke(c.io.ctrl.opcode, 99.U)
+	poke(c.io.value.RS1, 32.U)
+	poke(c.io.value.RS2, 2.U)
 
 	expect(c.io.RD, 33.U)
 }
