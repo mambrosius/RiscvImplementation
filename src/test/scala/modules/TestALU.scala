@@ -12,16 +12,14 @@ import modules.ALU
 class TestALU(c: ALU) extends PeekPokeTester(c) {
 
 	poke(c.io.ctrl.opcode, 99.U)
-	poke(c.io.value.RS1, 32.U)
-	poke(c.io.value.RS2, 2.U)
+	poke(c.io.regVal.rs.RS1, 32.U)
+	poke(c.io.regVal.rs.RS2, 2.U)
 
-	expect(c.io.RD, 33.U)
+	expect(c.io.regVal.RD, 33.U)
 }
 
 object TestALU extends App {
- 	
  	iotesters.Driver.execute(args, () => new ALU) {
-
 		c => new TestALU(c)
 	}	
 }

@@ -13,23 +13,21 @@ class DataMemoryTest(c: DataMemory) extends PeekPokeTester(c) {
 
 	poke(c.io.store, true.B)
 	poke(c.io.load, false.B)
-	poke(c.io.value.RS1, 23.U)
-	poke(c.io.value.RS2, 3.U)
+	poke(c.io.regVal.rs.RS1, 23.U)
+	poke(c.io.regVal.rs.RS2, 3.U)
 
 	step(1)
 
 	poke(c.io.store, false.B)
 	poke(c.io.load, true.B)
-	poke(c.io.value.RS1, 2.U)
-	poke(c.io.value.RS2, 0.U)
+	poke(c.io.regVal.rs.RS1, 2.U)
+	poke(c.io.regVal.rs.RS2, 0.U)
 
-	expect(c.io.RD, 0.U)
+	expect(c.io.regVal.RD, 0.U)
 }
 
 object DataMemoryTest extends App {
-
 	iotesters.Driver.execute(args, () => new DataMemory) {
-
 		c => new DataMemoryTest(c)
 	}	
 }

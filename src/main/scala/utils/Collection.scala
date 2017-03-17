@@ -1,4 +1,4 @@
-//  Collection -- 
+//  Collection -- contains signal bundles
 //
 // Author:  Morten Ambrosius Andreasen (s141227@student.dtu.dk)
 //          Technical University of Denmark, DTU Compute
@@ -18,14 +18,18 @@ object Collection {
     	val imm12  = Input(UInt(12.W))
 	} 
 
-	class value_io extends Bundle {
-		val RS1    = Input(UInt(Constant.WORD_SIZE))
-    	val RS2    = Input(UInt(Constant.WORD_SIZE))
+	class regVal_io extends Bundle {
+		val rs 	= new Bundle {
+			val RS1 = Input(UInt(Constant.WORD_SIZE))
+    		val RS2 = Input(UInt(Constant.WORD_SIZE))}
+		val RD	= Output(UInt(Constant.WORD_SIZE))
 	}
 
-	class select_io extends Bundle {
-		val RS1 = Input(UInt(5.W))
-    	val RS2 = Input(UInt(5.W))
+	class regSel_io extends Bundle {
+    	val rs 	= new Bundle {
+    		val RS1	= Input(UInt(5.W))
+    		val RS2	= Input(UInt(5.W))} 
+    	val RD 	= Input(UInt(5.W))
 	}
 }
 

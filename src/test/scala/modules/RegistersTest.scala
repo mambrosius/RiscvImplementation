@@ -11,36 +11,36 @@ import modules.Registers
 
 class RegistersTest(c: Registers) extends PeekPokeTester(c) {
 
-	poke(c.io.select.RS1, 0.U)	
-	poke(c.io.select.RS2, 1.U)
+	poke(c.io.regSel.rs.RS1, 0.U)	
+	poke(c.io.regSel.rs.RS2, 1.U)
 	
-	poke(c.io.RDsel, 2.U)
-	poke(c.io.RD, 43.U)
+	poke(c.io.regSel.RD, 2.U)
+	poke(c.io.regVal.RD, 43.U)
 
-	expect(c.io.value.RS1, 0.U)
-	expect(c.io.value.RS2, 0.U)
+	expect(c.io.regVal.rs.RS1, 0.U)
+	expect(c.io.regVal.rs.RS2, 0.U)
 
 	step(1)
 
-	poke(c.io.select.RS1, 2.U)	
-	poke(c.io.select.RS2, 5.U)
+	poke(c.io.regSel.rs.RS1, 2.U)	
+	poke(c.io.regSel.rs.RS2, 5.U)
 	
-	poke(c.io.RDsel, 8.U)
-	poke(c.io.RD, 15.U)
+	poke(c.io.regSel.RD, 8.U)
+	poke(c.io.regVal.RD, 15.U)
 
-	expect(c.io.value.RS1, 43.U)
-	expect(c.io.value.RS2, 0.U)
+	expect(c.io.regVal.rs.RS1, 43.U)
+	expect(c.io.regVal.rs.RS2, 0.U)
 
 	step(1)
 
-	poke(c.io.select.RS1, 8.U)	
-	poke(c.io.select.RS2, 2.U)
+	poke(c.io.regSel.rs.RS1, 8.U)	
+	poke(c.io.regSel.rs.RS2, 2.U)
 	
-	poke(c.io.RDsel, 4.U)
-	poke(c.io.RD, 30.U)
+	poke(c.io.regSel.RD, 4.U)
+	poke(c.io.regVal.RD, 30.U)
 
-	expect(c.io.value.RS1, 14.U)
-	expect(c.io.value.RS2, 42.U)
+	expect(c.io.regVal.rs.RS1, 14.U)
+	expect(c.io.regVal.rs.RS2, 42.U)
 	
 }
 

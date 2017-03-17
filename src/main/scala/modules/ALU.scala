@@ -16,37 +16,36 @@ class ALU extends Module {
     val io = IO(
         new Bundle {
         val ctrl   = new Collection.ctrl_io
-        val value  = new Collection.value_io
-    	val RD     = Output(UInt(Constant.WORD_SIZE))
+        val regVal = new Collection.regVal_io
     }) 
 
     val shamt = io.ctrl.imm12(4, 0) // used for logical shift operations 
 
-    io.RD := MuxLookup(io.ctrl.opcode, Constant.ZERO, Array(
+    io.regVal.RD := MuxLookup(io.ctrl.opcode, Constant.ZERO, Array(
 
         Constant.R_FORMAT   -> MuxLookup(io.ctrl.funct3, Constant.ZERO, Array(
             Constant.ADD    -> MuxLookup(io.ctrl.funct7, Constant.ZERO, Array(
-                Constant.ZERO   -> (io.value.RS1 + io.value.RS2),
-                32.U            -> (io.value.RS1 - io.value.RS2))),
-            Constant.SLL    -> (io.value.RS1 << io.value.RS2(4, 0)),
+                Constant.ZERO   -> (io.regVal.rs.RS1 + io.regVal.rs.RS2),
+                32.U            -> (io.regVal.rs.RS1 - io.regVal.rs.RS2))),
+            Constant.SLL    -> (io.regVal.rs.RS1 << io.regVal.rs.RS2(4, 0)),
             //Constant.SLT    -> Constant.ZERO,
-            Constant.SLTU   -> (io.value.RS1 < io.value.RS2),
-            Constant.XOR    -> (io.value.RS1 ^ io.value.RS2),
+            Constant.SLTU   -> (io.regVal.rs.RS1 < io.regVal.rs.RS2),
+            Constant.XOR    -> (io.regVal.rs.RS1 ^ io.regVal.rs.RS2),
             Constant.SRL    -> MuxLookup(io.ctrl.funct7, Constant.ZERO, Array(
-                Constant.ZERO   -> (io.value.RS1 >> io.value.RS2(4, 0)),
+                Constant.ZERO   -> (io.regVal.rs.RS1 >> io.regVal.rs.RS2(4, 0)),
                 32.U            -> (Constant.ZERO))),
-            Constant.OR     -> (io.value.RS1 | io.value.RS2))),
+            Constant.OR     -> (io.regVal.rs.RS1 | io.regVal.rs.RS2))),
 
         Constant.I_FORMAT   -> MuxLookup(io.ctrl.funct3, Constant.ZERO, Array( 
-            Constant.ADDI   -> (io.value.RS1 + io.ctrl.imm12), 
-            Constant.SLLI   -> (io.value.RS1 << shamt),
+            Constant.ADDI   -> (io.regVal.rs.RS1 + io.ctrl.imm12), 
+            Constant.SLLI   -> (io.regVal.rs.RS1 << shamt),
             //Constant.SLTI -> Constant.ZERO,
-            Constant.SLTIU  -> (io.value.RS1 < io.ctrl.imm12),
-            Constant.XORI   -> (io.value.RS1 ^ io.ctrl.imm12),
+            Constant.SLTIU  -> (io.regVal.rs.RS1 < io.ctrl.imm12),
+            Constant.XORI   -> (io.regVal.rs.RS1 ^ io.ctrl.imm12),
             Constant.SRLI   -> MuxLookup(io.ctrl.funct7, Constant.ZERO, Array( 
-                Constant.ZERO   -> (io.value.RS1 >> io.value.RS2(4, 0)),
+                Constant.ZERO   -> (io.regVal.rs.RS1 >> io.regVal.rs.RS2(4, 0)),
                 32.U            -> (Constant.ZERO))),
-            Constant.ORI    -> (io.value.RS1 | io.ctrl.imm12)))
+            Constant.ORI    -> (io.regVal.rs.RS1 | io.ctrl.imm12)))
         /*
         ,Constant.BRANCH    -> MuxLookup(io.ctrl.funct3, Constant.ZERO, Array(
             Constant.BNE    -> Constant.ZERO,

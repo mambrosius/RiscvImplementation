@@ -14,13 +14,11 @@ class DecoderTest(c: Decoder) extends PeekPokeTester(c) {
 	poke(c.io.inst, "b_0000000_00000_00011_000_10001_0011001".asUInt(32.W))
 
 	expect(c.io.ctrl.opcode, 25.U)
-	expect(c.io.select.RS1, 3.U)
+	expect(c.io.regSel.rs.RS1, 3.U)
 }
 
 object DecoderTest extends App {
-
 	iotesters.Driver.execute(args, () => new Decoder) {
-
 		c => new DecoderTest(c)
 	}
 }

@@ -12,8 +12,7 @@ import modules._
 class TestCPU(c: CPU) extends PeekPokeTester(c) {
 
 	for (i <- 0 until 20) {
-		
-		expect(c.io.RD, 1.U)
+		expect(c.io.regVal.RD, 1.U)
 		step(1)
 	}
 
@@ -30,9 +29,7 @@ class TestCPU(c: CPU) extends PeekPokeTester(c) {
 }
 
 object TestCPU extends App {
-
 	iotesters.Driver.execute(args, () => new CPU) {
-
 		c => new TestCPU(c)		
 	}
 }
