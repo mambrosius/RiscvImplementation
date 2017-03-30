@@ -1,0 +1,94 @@
+// InstructionTemplet -- templet for instructions 
+//
+// Author:  Morten Ambrosius Andreasen (s141227@student.dtu.dk)
+//          Technical University of Denmark, DTU Compute
+//
+// Version: 0.1 (March 2017)
+
+/* Discription:
+
+Each char in the instruction templates below, should be replaced 
+by either a one or a zero. Already defined ones and zeros 
+should not be changed. The underscore just aid in reading  
+each instruction field, and is ignored by Chisel. 
+
+x -> undefined
+d -> dest
+s -> src
+i -> imm
+o -> offset
+b -> base
+S -> succesor
+P -> predecessor 
+*/
+
+NOP 		-	  0000000_00000_00000_000_00000_0000000 	
+
+// Loads 
+LB    		-	   oooooooooooo_bbbbb_000_ddddd_0000011
+LH    		-	   oooooooooooo_bbbbb_001_ddddd_0000011 
+LW    		-	   oooooooooooo_bbbbb_010_ddddd_0000011 
+LBU   		-	   oooooooooooo_bbbbb_100_ddddd_0000011 
+LHU   		-	   oooooooooooo_bbbbb_101_ddddd_0000011 
+	
+// Stores 
+SB 			-	  ooooooo_sssss_bbbbb_000_ooooo_0100011 
+SH 			-	  ooooooo_sssss_bbbbb_001_ooooo_0100011  
+SW 			-	  ooooooo_sssss_bbbbb_010_ooooo_0100011 
+	
+// Shifts		 
+SLL   		- 	  0000000_sssss_sssss_001_ddddd_0110011 
+SLLI  		- 	  0000000_iiiii_sssss_001_ddddd_0010011
+SRL   		- 	  0000000_sssss_sssss_101_ddddd_0110011 
+SRLI  		- 	  0000000_iiiii_sssss_101_ddddd_0010011 
+SRA   		- 	  0100000_sssss_sssss_101_ddddd_0110011
+SRAI  		- 	  0100000_iiiii_sssss_101_ddddd_0010011 
+  
+// Arithmetic  
+ADD 		- 	  0000000_sssss_sssss_000_ddddd_0110011
+ADDI 		- 	   iiiiiiiiiiii_sssss_000_ddddd_0010011 
+SUB 		- 	  0100000_sssss_sssss_000_ddddd_0110011
+LUI 		-        iiiiiiiiiiiiiiiiiiii_ddddd_0110111
+AUIPC		- 	     iiiiiiiiiiiiiiiiiiii_ddddd_0010111
+  
+// Logical   
+XOR   		- 	  0000000_sssss_sssss_100_ddddd_0110011 
+XORI  		- 	   iiiiiiiiiiii_sssss_100_ddddd_0010011  
+OR    		- 	  0000000_sssss_sssss_110_ddddd_0110011 
+ORI   		- 	   iiiiiiiiiiii_sssss_110_ddddd_0010011  
+AND   		- 	  0000000_sssss_sssss_111_ddddd_0110011
+ANDI  		- 	   iiiiiiiiiiii_sssss_111_ddddd_0010011
+
+// Compare 
+SLT   		- 	  0000000_sssss_sssss_010_ddddd_0110011 
+SLTI  		- 	  iiiiiii_iiiii_sssss_010_ddddd_0010011
+SLTU  		- 	  0000000_sssss_sssss_011_ddddd_0110011
+SLTIU 		- 	  iiiiiii_iiiii_sssss_011_ddddd_0010011
+
+// Branches 
+BEQ   		- 	o_oooooo_sssss_sssss_000_oooo_o_1100011 
+BNE   		- 	o_oooooo_sssss_sssss_001_oooo_o_1100011 
+BLT   		- 	o_oooooo_sssss_sssss_100_oooo_o_1100011 
+BGE   		- 	o_oooooo_sssss_sssss_101_oooo_o_1100011 
+BLTU  		- 	o_oooooo_sssss_sssss_110_oooo_o_1100011 
+BGEU  		- 	o_oooooo_sssss_sssss_111_oooo_o_1100011 
+
+// Jump and link
+JAL   		- 	  o_oooooooooo_o_oooooooo_ddddd_1101111
+JALR  		- 	   oooooooooooo_bbbbb_000_ddddd_1100111
+
+// Synch
+FENCE 		- 0_P_P_P_P_S_S_S_S_sssss_xxx_ddddd_0001111
+FENCE_I 	- 	   000000000000_00000_xxx_00000_0001111
+
+// System
+SCALL       -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
+SBREAK      - 	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
+
+// Counters 
+RDCYCLE     - 	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
+RDCYCLEH    -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
+RDTIME      -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
+RDTIMEH     -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
+RDINSTRET   -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
+RDINSTRETH  -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx

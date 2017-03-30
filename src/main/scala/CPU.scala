@@ -13,50 +13,85 @@ import utils._
 class CPU extends Module {
     
     val io = IO(new Bundle {
-        val instAddr        = Output(UInt(Constant.WORD_SIZE))
-        val regVal          = new Collection.regVal_io
+        val instAddr    = Output(UInt(Constant.WORD_SIZE))
+        val rd          = Output(UInt(Constant.WORD_SIZE))
+        val rs          = Flipped(new Collection.rs)
     }) 
 
-    // modules
-    val pc                  = Module(new ProgramCounter)
-    val decoder             = Module(new Decoder)
-    val registers           = Module(new Registers)
-    val alu                 = Module(new ALU)
-    val dataMem             = Module(new DataMemory)
-
     // program
-    val instMem             = utils.Bin.read
+    val instMem         = utils.Bin.read    
 
-    // in
-    pc.io.reset             := false.B
-    io.instAddr             := pc.io.count
+    // modules
+    val pc              = Module(new ProgramCounter)
+    val decoder         = Module(new Decoder)
+    val control         = Module(new Control)
+    val regs            = Module(new Registers)
+    val alu             = Module(new ALU)
+    val dataMem         = Module(new DataMemory)
+
+    // pipes
+    val IF_ID           = Module(new Pipeline.IF_ID)
+    val ID_EX           = Module(new Pipeline.ID_EX)
+    val EX_MEM          = Module(new Pipeline.EX_MEM)
+    val MEM_WB          = Module(new Pipeline.MEM_WB)
+
+    // in--------------------------------------------
+
+    pc.io.reset         := false.B
+    io.instAddr         := pc.io.count
+
+    // IF/ID-----------------------------------------
     
-    // IF/ID---------------------------------------------------------------
+    IF_ID.io.in.inst    := instMem.read(io.instAddr)
     
-    decoder.io.inst         := Reg(next = instMem.read(io.instAddr))
-    registers.io.regSel.RD  := Reg(next = Reg(next = decoder.io.regSel.RD))
-    registers.io.regSel.rs  := decoder.io.regSel.rs
+    regs.io.sel.rs      := decoder.io.F.sel.rs
+    control.io.ctrl     := decoder.io.F.ctrl
 
-    // ID/EX---------------------------------------------------------------
+    decoder.io.inst     := IF_ID.io.out.inst
+   
+    // ID/EX-----------------------------------------
 
-    alu.io.ctrl             := Reg(next = decoder.io.ctrl)
-    alu.io.regVal.rs        := Reg(next = registers.io.regVal.rs)
+    ID_EX.io.in.EX      := control.io.EX
+    ID_EX.io.in.M       := control.io.M
+    ID_EX.io.in.WB      := control.io.WB
+    ID_EX.io.in.rd_sel  := decoder.io.F.sel.rd
+    ID_EX.io.in.imm12   := decoder.io.F.imm12
+    ID_EX.io.in.rs      := regs.io.reg.rs
 
-    // EX/MEM--------------------------------------------------------------
+    alu.io.ctrl         := ID_EX.io.out.EX.ctrl
+    alu.io.imm12        := ID_EX.io.out.imm12
+    alu.io.reg.rs       := ID_EX.io.out.rs
 
-    // MEM/WB--------------------------------------------------------------
+    // EX/MEM----------------------------------------
 
-    registers.io.regVal.RD  := Reg(next = alu.io.regVal.RD)
+    EX_MEM.io.in.rd     := alu.io.reg.rd
+    EX_MEM.io.in.M      := ID_EX.io.out.M
+    EX_MEM.io.in.WB     := ID_EX.io.out.WB
+    EX_MEM.io.in.rd_sel := ID_EX.io.out.rd_sel
 
-    // out
-    io.regVal.RD            := registers.io.regVal.RD
+    dataMem.io.M        := EX_MEM.io.out.M
+    dataMem.io.rs.rs1   := EX_MEM.io.out.rd 
+    dataMem.io.rs.rs2   := ID_EX.io.out.rs.rs2
+
+    // MEM/WB----------------------------------------
+
+    MEM_WB.io.in.WB     := EX_MEM.io.out.WB
+    MEM_WB.io.in.rd_sel := EX_MEM.io.out.rd_sel
+    MEM_WB.io.in.rd_alu := EX_MEM.io.out.rd
+    MEM_WB.io.in.rd_mem := dataMem.io.rd
+
+    regs.io.sel.rd      := MEM_WB.io.out.rd_sel
+    val memToReg         = MEM_WB.io.out.WB.memToReg
+    val rd_alu           = MEM_WB.io.out.rd_alu
+    val rd_mem           = MEM_WB.io.out.rd_mem
     
-    /* note----------------------------------------------------------------
-    find way to use Pipe() interface, instead of Reg(next = x)  
-    val ifid                = Module(new Pipe(UInt(Constant.WORD_SIZE)))
-    ifid.io.enq.bits        := pc.io.count
-    io.instAddr             := ifid.io.deq.bits
-    ----------------------------------------------------------------------*/
+    regs.io.reg.rd      := Mux(memToReg, rd_mem, rd_alu)
+
+    // out-------------------------------------------
+    
+    io.rd       := regs.io.reg.rd
+    io.rs.rs1   := ID_EX.io.in.rs.rs1 // regs.io.reg.rs.rs1
+    io.rs.rs2   := ID_EX.io.in.rs.rs2             
 }
 
 object CPU extends App { 

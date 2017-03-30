@@ -16,13 +16,12 @@ import utils._
 class DataMemory extends Module {
  
 	val io = IO(new Bundle {
-		val load	= Input(Bool())
-		val store 	= Input(Bool())
-		val regVal	= new Collection.regVal_io
+		val M 	= new Collection.M
+		val rs 	= new Collection.rs
+		val rd 	= Output(UInt(Constant.WORD_SIZE))
 	})
 
 	val dataMem = Mem(Constant.MEM_SIZE, UInt(Constant.WORD_SIZE))
-
-	//io.RD 					:= MuxCase(Constant.ZERO, io.load  -> (dataMem(io.regVal.RS1)))
-	//dataMem(io.regVal.RS2) 	:= MuxCase(Constant.ZERO, io.store -> io.regVal.RS1)
+	io.rd := Mux(io.M.memRead, dataMem(io.rs.rs1), Constant.ZERO)
+	when (io.M.memWrite) { dataMem(io.rs.rs1) := io.rs.rs2 }
 }
