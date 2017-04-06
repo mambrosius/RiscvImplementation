@@ -16,10 +16,8 @@ object Pipeline {
 	class IF_ID extends Module {
 
 		val io = IO(new Bundle {
-			val in 	= new Bundle {
-				val inst = Input(UInt(Constant.WORD_SIZE))
-				val pc 	 = Input(UInt(Constant.WORD_SIZE))}
-			val out = Flipped(in)
+			val in 	= new Collection.IF_ID_io
+			val out = Flipped(new Collection.IF_ID_io)
 		})
 		
 		io.out := Reg(next = io.in)

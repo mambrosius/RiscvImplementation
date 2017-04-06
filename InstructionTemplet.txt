@@ -61,9 +61,9 @@ ANDI  		- 	   iiiiiiiiiiii_sssss_111_ddddd_0010011
 
 // Compare 
 SLT   		- 	  0000000_sssss_sssss_010_ddddd_0110011 
-SLTI  		- 	  iiiiiii_iiiii_sssss_010_ddddd_0010011
+SLTI  		- 	   iiiiiiiiiiii_sssss_010_ddddd_0010011
 SLTU  		- 	  0000000_sssss_sssss_011_ddddd_0110011
-SLTIU 		- 	  iiiiiii_iiiii_sssss_011_ddddd_0010011
+SLTIU 		- 	   iiiiiiiiiiii_sssss_011_ddddd_0010011
 
 // Branches 
 BEQ   		- 	o_oooooo_sssss_sssss_000_oooo_o_1100011 

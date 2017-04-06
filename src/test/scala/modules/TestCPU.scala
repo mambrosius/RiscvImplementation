@@ -10,21 +10,24 @@ import chisel3.iotesters.PeekPokeTester
 import modules._
 
 class TestCPU(c: CPU) extends PeekPokeTester(c) {
-
+	
 	step(5)
-	expect(c.io.rd, 11.U)
+	expect(c.io.rd, 32.U)
 	step(1)
-	expect(c.io.rd, 18.U)
-	expect(c.io.rs.rs1, 11.U)
-	expect(c.io.rs.rs2, 11.U)
+	expect(c.io.rd, 512.U)
+	//step(1)
+	//expect(c.io.rs.rs1, 513.U)
+	//expect(c.io.rs.rs2, 33.U)
+	step(4)
+	expect(c.io.rd, 256.U)
 	step(1)
-	expect(c.io.rs.rs1, 18.U)
-	expect(c.io.rs.rs2, 11.U)
-	step(2)
-	expect(c.io.rd, 22.U)
-	step(1)
-	expect(c.io.rd, 29.U)
+	expect(c.io.rd, 132.U)
 
+	for (i <- 0 until 10) {
+		step(1)	
+		expect(c.io.rd, 2.U)
+	}
+	
 	// Note : Why cant i add two UInts as updatable index..
 	/*
 	poke(c.io.reset, false.B)

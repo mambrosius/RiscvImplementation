@@ -10,18 +10,19 @@ package utils
 import chisel3._
 
 object Constant {
-	
+
 	val ZERO		=	 0.U
 	val WORD_SIZE 	=   32.W
 	val MEM_SIZE 	= 1024
+	val BYTE		= UInt(8.W)
 
 	// opcodes (RV32I)
 	//---------------------
 	val LOAD	 	=   3.U
 	val SYNCH	 	=  15.U
-	val I_FORMAT 	=  19.U
+	val I  			=  19.U
 	val STORE 	 	=  35.U
-	val R_FORMAT 	=  51.U
+	val R 			=  51.U
 	val BRANCH 	 	=  99.U
 	// Loads 
 	val LB    		=   0.U

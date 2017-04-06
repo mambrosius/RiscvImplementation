@@ -35,62 +35,61 @@ class CPU extends Module {
     val EX_MEM          = Module(new Pipeline.EX_MEM)
     val MEM_WB          = Module(new Pipeline.MEM_WB)
 
-    // in--------------------------------------------
+    io.instAddr         := pc.io.pc
 
-    pc.io.reset         := false.B
-    io.instAddr         := pc.io.count
-
-    // IF/ID-----------------------------------------
+    // IF/ID-----------------------------------------------------------------------------------------
     
+    IF_ID.io.in.pc_next := pc.io.pc_next
     IF_ID.io.in.inst    := instMem.read(io.instAddr)
-    
+
+    decoder.io.inst     := IF_ID.io.out.inst
+
     regs.io.sel.rs      := decoder.io.F.sel.rs
     control.io.ctrl     := decoder.io.F.ctrl
 
-    decoder.io.inst     := IF_ID.io.out.inst
-   
-    // ID/EX-----------------------------------------
+    // ID/EX-----------------------------------------------------------------------------------------
 
-    ID_EX.io.in.EX      := control.io.EX
-    ID_EX.io.in.M       := control.io.M
     ID_EX.io.in.WB      := control.io.WB
-    ID_EX.io.in.rd_sel  := decoder.io.F.sel.rd
-    ID_EX.io.in.imm12   := decoder.io.F.imm12
+    ID_EX.io.in.MEM     := control.io.MEM
+    ID_EX.io.in.EX      := control.io.EX
+    ID_EX.io.in.pc_next := IF_ID.io.out.pc_next
     ID_EX.io.in.rs      := regs.io.reg.rs
+    ID_EX.io.in.imm12   := decoder.io.F.imm12
+    ID_EX.io.in.rd_sel  := decoder.io.F.sel.rd
+    
+    alu.io.aluOp        := ID_EX.io.out.EX.aluOp
+    alu.io.reg.rs.rs1   := ID_EX.io.out.rs.rs1
+    alu.io.reg.rs.rs2   := Mux(ID_EX.io.out.EX.alu_src, ID_EX.io.out.imm12, ID_EX.io.out.rs.rs2)
+    
+    // EX/MEM----------------------------------------------------------------------------------------
 
-    alu.io.ctrl         := ID_EX.io.out.EX.ctrl
-    alu.io.imm12        := ID_EX.io.out.imm12
-    alu.io.reg.rs       := ID_EX.io.out.rs
-
-    // EX/MEM----------------------------------------
-
-    EX_MEM.io.in.rd     := alu.io.reg.rd
-    EX_MEM.io.in.M      := ID_EX.io.out.M
     EX_MEM.io.in.WB     := ID_EX.io.out.WB
+    EX_MEM.io.in.MEM    := ID_EX.io.out.MEM
+    EX_MEM.io.in.pc_next:= ID_EX.io.out.pc_next
+    EX_MEM.io.in.zero   := alu.io.zero
+    EX_MEM.io.in.rd     := alu.io.reg.rd
+    EX_MEM.io.in.rs2    := ID_EX.io.out.rs.rs2 
     EX_MEM.io.in.rd_sel := ID_EX.io.out.rd_sel
 
-    dataMem.io.M        := EX_MEM.io.out.M
+    dataMem.io.mem.op   := EX_MEM.io.out.MEM.op
     dataMem.io.rs.rs1   := EX_MEM.io.out.rd 
-    dataMem.io.rs.rs2   := ID_EX.io.out.rs.rs2
+    dataMem.io.rs.rs2   := EX_MEM.io.out.rs2
+    pc.io.branch        := EX_MEM.io.out.MEM.branch & EX_MEM.io.out.zero
 
-    // MEM/WB----------------------------------------
+    // MEM/WB----------------------------------------------------------------------------------------
 
     MEM_WB.io.in.WB     := EX_MEM.io.out.WB
-    MEM_WB.io.in.rd_sel := EX_MEM.io.out.rd_sel
-    MEM_WB.io.in.rd_alu := EX_MEM.io.out.rd
     MEM_WB.io.in.rd_mem := dataMem.io.rd
+    MEM_WB.io.in.rd_alu := EX_MEM.io.out.rd
+    MEM_WB.io.in.rd_sel := EX_MEM.io.out.rd_sel
 
     regs.io.sel.rd      := MEM_WB.io.out.rd_sel
-    val memToReg         = MEM_WB.io.out.WB.memToReg
-    val rd_alu           = MEM_WB.io.out.rd_alu
-    val rd_mem           = MEM_WB.io.out.rd_mem
-    
-    regs.io.reg.rd      := Mux(memToReg, rd_mem, rd_alu)
+    regs.io.reg.rd      := Mux(MEM_WB.io.out.WB.memToReg, MEM_WB.io.out.rd_mem, MEM_WB.io.out.rd_alu)
 
-    // out-------------------------------------------
+    // out-------------------------------------------------------------------------------------------
     
     io.rd       := regs.io.reg.rd
-    io.rs.rs1   := ID_EX.io.in.rs.rs1 // regs.io.reg.rs.rs1
+    io.rs.rs1   := ID_EX.io.in.rs.rs1
     io.rs.rs2   := ID_EX.io.in.rs.rs2             
 }
 

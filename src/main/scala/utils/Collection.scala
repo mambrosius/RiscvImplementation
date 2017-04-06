@@ -9,7 +9,6 @@ package utils
 
 import chisel3._
 import chisel3.util._
-//import utils
 
 object Collection {
 
@@ -59,22 +58,29 @@ object Collection {
 		val rd = Input(UInt(5.W))
 	}
 
+	class IF_ID_io extends Bundle {
+		val pc_next = Input(UInt(Constant.WORD_SIZE))
+		val inst 	= Input(UInt(Constant.WORD_SIZE))
+	}
+
 	class ID_EX_io extends Bundle {
-		val pc   	= Input(UInt(Constant.WORD_SIZE))
+		val WB 		= new WB
+		val MEM 	= new MEM
+		val EX 		= new EX
+		val pc_next = Input(UInt(Constant.WORD_SIZE))
 		val imm12 	= Input(UInt(Constant.WORD_SIZE))
 		val rd_sel 	= Input(UInt(5.W))
-		val rs 		= new rs
-		val EX 		= new EX
-		val M 		= new M
-		val WB 		= new WB
+		val rs 		= new rs	
 	}
 
 	class EX_MEM_io extends Bundle {
-		val pc   	= Input(UInt(Constant.WORD_SIZE))
-		val rd   	= Input(UInt(Constant.WORD_SIZE))
-		val rd_sel 	= Input(UInt(5.W))
-		val M 		= new M
 		val WB 		= new WB
+		val MEM 	= new MEM
+		val zero 	= Input(Bool())
+		val pc_next = Input(UInt(Constant.WORD_SIZE))
+		val rd   	= Input(UInt(Constant.WORD_SIZE))
+		val rs2   	= Input(UInt(Constant.WORD_SIZE))
+		val rd_sel 	= Input(UInt(5.W))
 	}
 
 	class MEM_WB_io extends Bundle {
@@ -85,21 +91,27 @@ object Collection {
 	}
 
 	class EX extends Bundle {
-		val ctrl 	= new ctrl
-		//val regDst  = Output()
-		//val alu_src = Output(UInt(7.W)) // should be Bool()
-		//val aluOp  = new Bundle {}
+		val alu_src = Input(Bool())
+		val aluOp  	= new aluOp 
 	}
 
-	class M extends Bundle {
-		val memWrite = Input(Bool())
-		val memRead  = Input(Bool())
-		//val branch   = Input()
+	class MEM extends Bundle {
+		val op 		= new memOp
+		val branch  = Input(Bool())
+	}
+
+	class memOp extends Bundle {
+		val write 	= Input(Bool())
+		val read  	= Input(Bool())
 	}
 
 	class WB extends Bundle {
 		val regWrite = Input(Bool())
 		val memToReg = Input(Bool())
 	}
-}
 
+	class aluOp extends Bundle {
+		val func = Input(UInt(3.W))
+		val alt  = Input(Bool())
+	}
+}

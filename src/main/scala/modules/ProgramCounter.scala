@@ -13,15 +13,15 @@ import utils.Constant
 class ProgramCounter extends Module {
 	
 	val io = IO(new Bundle {
-		val reset = Input(Bool())
-		val count = Output(UInt(Constant.WORD_SIZE))
+		val branch 	= Input(Bool())
+		val pc_src 	= Input(UInt(Constant.WORD_SIZE))
+		val pc_next = Output(UInt(Constant.WORD_SIZE))
+		val pc 		= Output(UInt(Constant.WORD_SIZE))
 	}) 
 
-	val countReg = Reg(init = 0.asUInt(Constant.WORD_SIZE))
+	val pc_reg 	= Reg(init = 0.asUInt(Constant.WORD_SIZE))
 	
-	// reg
-	countReg := Mux(io.reset, Constant.ZERO, countReg + 1.U)
-	
-	// out
-	io.count := countReg
+	io.pc_next 	:= pc_reg + 1.U;
+	pc_reg 		:= Mux(io.branch, io.pc_src, io.pc_next)
+	io.pc 		:= pc_reg 
 }

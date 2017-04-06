@@ -11,19 +11,21 @@ import modules.ProgramCounter
 
 class ProgramCounterTest(c: ProgramCounter) extends PeekPokeTester(c) {
 
-	poke(c.io.reset, false.B)
+	poke(c.io.branch, false.B)
 
 	for (i <- 0 until 10) {
-		expect(c.io.count, i)
+		expect(c.io.pc, i)
 		step(1)			
 	}
-
-	poke(c.io.reset, true.B)
+	/*
+	poke(c.io.branch, true.B)
 
 	for (i <- 0 until 10) {
 		step(1)	
-		expect(c.io.count, 0)
+		expect(c.io.pc, 0)
 	}
+
+	*/
 }
 
 object ProgramCounterTest extends App {

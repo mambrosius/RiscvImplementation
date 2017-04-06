@@ -14,15 +14,20 @@ class Control extends Module {
 
 	val io = IO(new Bundle {
 		val ctrl = new Collection.ctrl
-		val EX 	 = Flipped(new Collection.EX)
-		val M 	 = Flipped(new Collection.M)
 		val WB 	 = Flipped(new Collection.WB)
+		val MEM  = Flipped(new Collection.MEM)
+		val EX 	 = Flipped(new Collection.EX)
 	})
 
-	io.EX.ctrl := io.ctrl
-	io.M.memRead  := Mux(io.ctrl.opcode === Constant.LOAD, true.B, false.B)
-	io.M.memWrite := Mux(io.ctrl.opcode === Constant.STORE, true.B, false.B)
+	io.EX.alu_src 	 	:= Mux(io.ctrl.opcode === Constant.R, false.B, true.B)
+	val funct7 		  	 = Mux(io.EX.alu_src, 0.U, io.ctrl.funct7) 
+	io.EX.aluOp.alt  	:= Mux(funct7 === 32.U, true.B, false.B)
+	io.EX.aluOp.func 	:= io.ctrl.funct3	
 
-	io.WB.memToReg := Mux(io.ctrl.opcode === Constant.LOAD, true.B, false.B)
-	io.WB.regWrite := true.B 
+	io.MEM.branch		:= Mux(io.ctrl.opcode === Constant.BRANCH, true.B, false.B)
+	io.MEM.op.read 		:= Mux(io.ctrl.opcode === Constant.LOAD, true.B, false.B)
+	io.MEM.op.write 	:= Mux(io.ctrl.opcode === Constant.STORE, true.B, false.B)
+
+	io.WB.memToReg 	 	:= Mux(io.ctrl.opcode === Constant.LOAD, true.B, false.B)
+	io.WB.regWrite 	 	:= true.B 
 }
