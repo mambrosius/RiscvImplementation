@@ -12,27 +12,45 @@ import chisel3.util._
 
 object Collection {
 
-	class F extends Bundle {
+	class field extends Bundle {
+		
 		// format fields //--------------------
-		val sel 			= new sel
-		val ctrl 			= new ctrl
+		val sel  = new sel
+		val ctrl = new ctrl
+		val imm  = new Bundle {
+			val I 	= Input(UInt(12.W))
+			val S 	= Input(UInt(12.W)) 
+			val SB 	= Input(UInt(12.W))
+			val U 	= Input(UInt(20.W))
+			val UJ 	= Input(UInt(20.W))
+		}
+
+		/*
     	val imm5 	 		= Input(UInt(5.W))
     	val imm7 	 		= Input(UInt(7.W))
     	val imm12  	 		= Input(UInt(12.W))
     	val imm20    		= Input(UInt(20.W))
-    	// unique for SB //--------------------
+    	*/
+    	/*
     	val SB = new Bundle {
     		val imm4_1 		= Input(UInt(4.W))
     		val imm10_5 	= Input(UInt(6.W))
     		val imm11 		= Input(UInt(1.W))
-    		val imm12 		= Input(UInt(1.W))}
+    		val imm12 		= Input(UInt(1.W))
+    		val imm 		= Input(UInt(12.W))
+    	}
+    	*/
+
     	// unique for UJ //--------------------
+    	/*
     	val UJ = new Bundle {
     		val imm10_1 	= Input(UInt(10.W))
     		val imm11 		= Input(UInt(1.W))
     		val imm19_12	= Input(UInt(8.W))
     		val imm20 		= Input(UInt(1.W))
+    		val imm			= Input(UInt(20.W))
     	}
+    	*/
     }
 
 	class ctrl extends Bundle {
@@ -68,7 +86,8 @@ object Collection {
 		val MEM 	= new MEM
 		val EX 		= new EX
 		val pc_next = Input(UInt(Constant.WORD_SIZE))
-		val imm12 	= Input(UInt(Constant.WORD_SIZE))
+		val imm_i 	= Input(UInt(Constant.WORD_SIZE))
+		val imm_sb  = Input(UInt(Constant.WORD_SIZE)) // temp
 		val rd_sel 	= Input(UInt(5.W))
 		val rs 		= new rs	
 	}

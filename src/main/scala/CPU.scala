@@ -44,8 +44,8 @@ class CPU extends Module {
 
     decoder.io.inst     := IF_ID.io.out.inst
 
-    regs.io.sel.rs      := decoder.io.F.sel.rs
-    control.io.ctrl     := decoder.io.F.ctrl
+    regs.io.sel.rs      := decoder.io.field.sel.rs
+    control.io.ctrl     := decoder.io.field.ctrl
 
     // ID/EX-----------------------------------------------------------------------------------------
 
@@ -54,18 +54,19 @@ class CPU extends Module {
     ID_EX.io.in.EX      := control.io.EX
     ID_EX.io.in.pc_next := IF_ID.io.out.pc_next
     ID_EX.io.in.rs      := regs.io.reg.rs
-    ID_EX.io.in.imm12   := decoder.io.F.imm12
-    ID_EX.io.in.rd_sel  := decoder.io.F.sel.rd
+    ID_EX.io.in.imm_i   := decoder.io.field.imm.I
+    ID_EX.io.in.imm_sb  := decoder.io.field.imm.SB // temp
+    ID_EX.io.in.rd_sel  := decoder.io.field.sel.rd
     
     alu.io.aluOp        := ID_EX.io.out.EX.aluOp
     alu.io.reg.rs.rs1   := ID_EX.io.out.rs.rs1
-    alu.io.reg.rs.rs2   := Mux(ID_EX.io.out.EX.alu_src, ID_EX.io.out.imm12, ID_EX.io.out.rs.rs2)
+    alu.io.reg.rs.rs2   := Mux(ID_EX.io.out.EX.alu_src, ID_EX.io.out.imm_i, ID_EX.io.out.rs.rs2)
     
     // EX/MEM----------------------------------------------------------------------------------------
 
     EX_MEM.io.in.WB     := ID_EX.io.out.WB
     EX_MEM.io.in.MEM    := ID_EX.io.out.MEM
-    EX_MEM.io.in.pc_next:= ID_EX.io.out.pc_next
+    EX_MEM.io.in.pc_next:= (ID_EX.io.out.pc_next + ID_EX.io.out.imm_sb)
     EX_MEM.io.in.zero   := alu.io.zero
     EX_MEM.io.in.rd     := alu.io.reg.rd
     EX_MEM.io.in.rs2    := ID_EX.io.out.rs.rs2 
@@ -75,6 +76,7 @@ class CPU extends Module {
     dataMem.io.rs.rs1   := EX_MEM.io.out.rd 
     dataMem.io.rs.rs2   := EX_MEM.io.out.rs2
     pc.io.branch        := EX_MEM.io.out.MEM.branch & EX_MEM.io.out.zero
+    pc.io.pc_src        := EX_MEM.io.out.pc_next
 
     // MEM/WB----------------------------------------------------------------------------------------
 
