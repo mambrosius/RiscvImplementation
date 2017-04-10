@@ -11,6 +11,7 @@ package utils
 
 import chisel3._
 import scala.io.Source._
+import utils.Constants._
 import java.io.FileNotFoundException
 
 object Bin {
@@ -27,12 +28,12 @@ object Bin {
 		} 
 
 		val programLines 	= source.getLines.toArray 				
-    	val instructionMem 	= Mem(programLines.length, UInt(32.W)) 	
+    	val instructionMem 	= Mem(programLines.length, UInt(WORD_SIZE)) 	
 
     	// converts the instruction elements into UInt
 		for (i <- 0 to programLines.length - 1) {
 
-    		instructionMem(i) := {"b" + programLines(i)}.asUInt(32.W)
+    		instructionMem(i) := {"b" + programLines(i)}.U (WORD_SIZE)
     	} 
 
     	source.close

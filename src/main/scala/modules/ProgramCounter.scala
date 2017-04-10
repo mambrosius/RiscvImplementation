@@ -19,7 +19,7 @@ class ProgramCounter extends Module {
 		val pc 		= Output(UInt(WORD_SIZE))
 	}) 
 
-	val pc_reg 	= Reg(init = 0.asUInt(WORD_SIZE))
+	val pc_reg 	= Reg(init = 0.U (WORD_SIZE))
 	
 	io.pc_next 	:= pc_reg + 1.U;
 	pc_reg 		:= Mux(io.branch, io.pc_src, io.pc_next)

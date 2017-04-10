@@ -18,8 +18,7 @@ class Registers extends Module {
         val reg   = Flipped(new REG)
     }) 
 
-    // generates a vector of 32 bit UInt registers initialized to zero
-    val x =  Reg(init = Vec(Seq.fill(32)(0.asUInt(WORD_SIZE))))
+    val x =  Reg(init = Vec.fill(32) { 0.U (WORD_SIZE) })
 
     x(io.sel.rd)  := io.reg.rd
 

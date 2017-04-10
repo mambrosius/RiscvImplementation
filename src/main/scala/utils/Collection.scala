@@ -13,22 +13,18 @@ import utils.Constants._
 
 object Collection {
 
-	class FIELD extends Bundle {
-		val sel  = new SEL
-		val ctrl = new CTRL
-		val imm  = new Bundle {
-			val I 	= Input(UInt(12.W))
-			val S 	= Input(UInt(12.W)) 
-			val SB 	= Input(UInt(12.W))
-			val U 	= Input(UInt(20.W))
-			val UJ 	= Input(UInt(20.W))
-		}
-    }
-
 	class CTRL extends Bundle {
 		val opcode 	= Input(UInt(7.W))
 		val funct3 	= Input(UInt(3.W))
 		val funct7 	= Input(UInt(7.W))
+	}
+
+	class IMM extends Bundle {
+		val I 	= Input(UInt(12.W))
+		val S 	= Input(UInt(12.W)) 
+		val SB 	= Input(UInt(12.W))
+		val U 	= Input(UInt(20.W))
+		val UJ 	= Input(UInt(20.W))
 	}
 
 	class RS extends Bundle {
@@ -58,7 +54,7 @@ object Collection {
 		val MEM 	= new MEM
 		val EX 		= new EX
 		val pc_next = Input(UInt(WORD_SIZE))
-		val imm_i 	= Input(UInt(WORD_SIZE))
+		val imm 	= Input(UInt(WORD_SIZE))
 		val rd_sel 	= Input(UInt(5.W))
 		val rs 		= new RS	
 	}
@@ -87,13 +83,10 @@ object Collection {
 	}
 
 	class MEM extends Bundle {
-		val op 		= new MEM_OP
 		val branch  = Input(Bool())
-	}
-
-	class MEM_OP extends Bundle {
 		val write 	= Input(Bool())
 		val read  	= Input(Bool())
+		val func 	= Input(UInt(3.W))
 	}
 
 	class WB extends Bundle {

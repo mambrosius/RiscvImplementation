@@ -36,7 +36,7 @@ class ALU extends Module {
             XOR     -> (rs1 ^ op2),
             SRL     -> Mux(io.aluOp.alt, ZERO, rs1 >> shamt),
             OR      -> (rs1 | op2))),
-        I -> MuxLookup(io.aluOp.func, ZERO, Array(
+       I -> MuxLookup(io.aluOp.func, ZERO, Array(
             ADD     -> (rs1 + op2), 
             SLL     -> (rs1 << shamt),
             //SLT   -> ZERO,
@@ -44,7 +44,7 @@ class ALU extends Module {
             XOR     -> (rs1 ^ op2),
             SRL     -> Mux(io.aluOp.alt, ZERO, rs1 >> shamt),
             OR      -> (rs1 | op2))),
-        LOAD -> rs1,
+        LOAD -> (rs1 + op2),
         /*MuxLookup(io.aluOp.func, ZERO, Array(
             LB     -> ZERO,
             LH     -> ZERO,
