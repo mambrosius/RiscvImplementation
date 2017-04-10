@@ -9,13 +9,14 @@ package modules
 
 import chisel3._
 import chisel3.util._
-import utils._
+import utils.Constants._
+import utils.Collection._
 
 class Decoder extends Module {
 	
 	val io = IO(new Bundle {
-		val inst 	= Input(UInt(Constant.WORD_SIZE))
-		val field 	= Flipped(new Collection.field)
+		val inst 	= Input(UInt(WORD_SIZE))
+		val field 	= Flipped(new FIELD)
 	})
 	
 	// S imm

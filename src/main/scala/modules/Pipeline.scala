@@ -5,19 +5,17 @@
 //
 // Version: 0.1 (February 2017)
 
-package utils
-
 import chisel3._
 import chisel3.util._
-import utils._
+import utils.Collection._
 
 object Pipeline {
  	
 	class IF_ID extends Module {
 
 		val io = IO(new Bundle {
-			val in 	= new Collection.IF_ID_io
-			val out = Flipped(new Collection.IF_ID_io)
+			val in 	= new IF_ID_io
+			val out = Flipped(new IF_ID_io)
 		})
 		
 		io.out := Reg(next = io.in)
@@ -26,8 +24,8 @@ object Pipeline {
 	class ID_EX extends Module {
 		
 		val io = IO(new Bundle {
-			val in  = new Collection.ID_EX_io
-			val out = Flipped(new Collection.ID_EX_io) 
+			val in  = new ID_EX_io
+			val out = Flipped(new ID_EX_io) 
 		})
 		
 		io.out := Reg(next = io.in)
@@ -36,8 +34,8 @@ object Pipeline {
 	class EX_MEM extends Module {
 
 		val io = IO(new Bundle {
-			val in  = new Collection.EX_MEM_io
-			val out = Flipped(new Collection.EX_MEM_io) 
+			val in  = new EX_MEM_io
+			val out = Flipped(new EX_MEM_io) 
 		})
 
 		io.out := Reg(next = io.in)
@@ -46,8 +44,8 @@ object Pipeline {
 	class MEM_WB extends Module {
 
 		val io = IO(new Bundle {
-			val in  = new Collection.MEM_WB_io
-			val out = Flipped(new Collection.MEM_WB_io) 
+			val in  = new MEM_WB_io
+			val out = Flipped(new MEM_WB_io) 
 		})
 
 		io.out := Reg(next = io.in)

@@ -8,19 +8,20 @@
 package modules
 
 import chisel3._
-import utils._
+import utils.Constants._
+import utils.Collection._
 
 class Registers extends Module {
     
     val io = IO(new Bundle {
-        val sel   = new Collection.sel
-        val reg   = Flipped(new Collection.reg)
+        val sel   = new SEL
+        val reg   = Flipped(new REG)
     }) 
 
     // generates a vector of 32 bit UInt registers initialized to zero
-    val x =  Reg(init = Vec(Seq.fill(32)(0.asUInt(Constant.WORD_SIZE))))
+    val x =  Reg(init = Vec(Seq.fill(32)(0.asUInt(WORD_SIZE))))
 
-    x(io.sel.rd)    := io.reg.rd
+    x(io.sel.rd)  := io.reg.rd
 
     // out
     io.reg.rs.rs1 := x(io.sel.rs.rs1)
