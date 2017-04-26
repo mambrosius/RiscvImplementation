@@ -20,8 +20,10 @@ class Control extends Module {
 		val EX 	 = Flipped(new EX)
 	})
 
-	io.EX.alu_src 	 	:= io.ctrl.opcode =/= R 
-	val funct7 			 = Mux(io.EX.alu_src, ZERO, io.ctrl.funct7) 
+	io.EX.alu_sel 		:= !(io.ctrl.opcode === BRANCH || io.ctrl.opcode === R)
+	io.EX.dst_sel 		:= !(io.ctrl.opcode === LOAD)
+
+	val funct7 			 = Mux(io.EX.alu_sel, ZERO, io.ctrl.funct7) 
 	io.EX.aluOp.alt  	:= funct7 === 32.U
 	io.EX.aluOp.func 	:= io.ctrl.funct3
 	io.EX.opcode 		:= io.ctrl.opcode	
@@ -32,5 +34,5 @@ class Control extends Module {
 	io.MEM.branch		:= io.ctrl.opcode === BRANCH 
 	
 	io.WB.memToReg 	 	:= io.MEM.read 
-	io.WB.regWrite 	 	:= TRUE 
+	io.WB.regWrite 	 	:= io.ctrl.opcode === R || io.ctrl.opcode === I || io.ctrl.opcode === LOAD 
 }

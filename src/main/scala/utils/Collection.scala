@@ -53,10 +53,11 @@ object Collection {
 		val WB 		= new WB
 		val MEM 	= new MEM
 		val EX 		= new EX
+		val rs 		= new RS
+		val sel 	= new SEL
 		val pc_next = Input(UInt(WORD_SIZE))
 		val imm 	= Input(UInt(WORD_SIZE))
-		val rd_sel 	= Input(UInt(5.W))
-		val rs 		= new RS	
+		//val rd_sel 	= Input(UInt(5.W))	
 	}
 
 	class EX_MEM_io extends Bundle {
@@ -66,19 +67,20 @@ object Collection {
 		val pc_next = Input(UInt(WORD_SIZE))
 		val rd   	= Input(UInt(WORD_SIZE))
 		val rs2   	= Input(UInt(WORD_SIZE))
-		val rd_sel 	= Input(UInt(5.W))
+		val dst 	= Input(UInt(5.W))
 	}
 
 	class MEM_WB_io extends Bundle {
 		val WB 		= new WB
-		val rd_sel 	= Input(UInt(5.W))
 		val rd_alu  = Input(UInt(WORD_SIZE))
 		val rd_mem 	= Input(UInt(WORD_SIZE))
+		val dst 	= Input(UInt(5.W))
 	}
 
 	class EX extends Bundle {
 		val opcode 	= Input(UInt(7.W))
-		val alu_src = Input(Bool())
+		val alu_sel = Input(Bool())
+		val dst_sel = Input(Bool())
 		val aluOp  	= new ALU_OP 
 	}
 

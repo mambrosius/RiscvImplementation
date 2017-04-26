@@ -16,9 +16,8 @@ object Pipeline {
 		val io = IO(new Bundle {
 			val in 	= new IF_ID_io
 			val out = Flipped(new IF_ID_io)
-		})
-		
-		io.out := Reg(next = io.in)
+		})		
+		io.out := RegNext(io.in)
 	}
 	
 	class ID_EX extends Module {
@@ -27,8 +26,7 @@ object Pipeline {
 			val in  = new ID_EX_io
 			val out = Flipped(new ID_EX_io) 
 		})
-		
-		io.out := Reg(next = io.in)
+		io.out := RegNext(io.in)
 	}
 
 	class EX_MEM extends Module {
@@ -37,8 +35,7 @@ object Pipeline {
 			val in  = new EX_MEM_io
 			val out = Flipped(new EX_MEM_io) 
 		})
-
-		io.out := Reg(next = io.in)
+		io.out := RegNext(io.in)
 	}
 
 	class MEM_WB extends Module {
@@ -47,7 +44,6 @@ object Pipeline {
 			val in  = new MEM_WB_io
 			val out = Flipped(new MEM_WB_io) 
 		})
-
-		io.out := Reg(next = io.in)
+		io.out := RegNext(io.in)
 	}
 }

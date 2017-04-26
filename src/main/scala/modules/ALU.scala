@@ -3,7 +3,7 @@
 // Author:  Morten Ambrosius Andreasen (s141227@student.dtu.dk)
 //          Technical Univevalueity of Denmark, DTU Compute
 //
-// Vevalueion: 0.1 (February 2017)
+// Version: 0.1 (February 2017)
 
 package modules
 
@@ -36,7 +36,7 @@ class ALU extends Module {
             XOR     -> (rs1 ^ op2),
             SRL     -> Mux(io.aluOp.alt, ZERO, rs1 >> shamt),
             OR      -> (rs1 | op2))),
-       I -> MuxLookup(io.aluOp.func, ZERO, Array(
+        I -> MuxLookup(io.aluOp.func, ZERO, Array(
             ADD     -> (rs1 + op2), 
             SLL     -> (rs1 << shamt),
             //SLT   -> ZERO,

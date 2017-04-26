@@ -5,8 +5,6 @@
 //
 // Version: 0.1 (February 2017)
 
-// note: modify read() to reading bytes instead of words. 
-
 package utils
 
 import chisel3._

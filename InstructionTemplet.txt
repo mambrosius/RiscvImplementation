@@ -22,7 +22,7 @@ S -> succesor
 P -> predecessor 
 */
 
-NOP 		-	  0000000_00000_00000_000_00000_0000000 	
+NOP 		-	  0000000_00000_00000_000_00000_0000000
 
 // Loads 
 LB    		-	   oooooooooooo_bbbbb_000_ddddd_0000011

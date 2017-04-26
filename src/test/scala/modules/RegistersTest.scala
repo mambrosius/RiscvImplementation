@@ -11,13 +11,26 @@ import modules.Registers
 
 class RegistersTest(c: Registers) extends PeekPokeTester(c) {
 
-	poke(c.io.sel.rs.rs1, 0.U)	
-	poke(c.io.sel.rs.rs2, 1.U)
+	step(1)
+
+	poke(c.io.reg.rd, 43.U)
+	poke(c.io.sel.rd, 2.U)
 	
+	step(1)
+	
+	poke(c.io.reg.rd, 14.U)
+	poke(c.io.sel.rd, 2.U)
+	poke(c.io.sel.rs.rs1, 2.U)
+
+	expect(c.io.reg.rs.rs1, 0.U)
+	
+
+	//poke(c.io.sel.rs.rs2, 1.U)
+	/*
 	poke(c.io.sel.rd, 2.U)
 	poke(c.io.reg.rd, 43.U)
 
-	expect(c.io.reg.rs.rs1, 0.U)
+	
 	expect(c.io.reg.rs.rs2, 0.U)
 
 	step(1)
@@ -41,7 +54,7 @@ class RegistersTest(c: Registers) extends PeekPokeTester(c) {
 
 	expect(c.io.reg.rs.rs1, 14.U)
 	expect(c.io.reg.rs.rs2, 42.U)
-	
+	*/
 }
 
 object RegistersTest extends App {

@@ -16,9 +16,49 @@ class TestCPU(c: CPU) extends PeekPokeTester(c) {
 		step(1)	
 
 		//expect(c.io.imm_sb, 0.U)
-		expect(c.io.rd, 0.U)
-		expect(c.io.pc, 0.U)
-		// expect(c.io.pc_next, 0.U)
+		
+		expect(c.io.rd_exMem, 2.U)
+		expect(c.io.rd_memWb, 2.U)
+		expect(c.io.dst_exMem, 6.U)
+		expect(c.io.dst_memWb, 6.U)
+		//expect(c.io.regWrite_exMem, 6.U)
+		//expect(c.io.regWrite_memWb, 6.U)
+		
+		//expect(c.io.rd_sel, 6.U)
+
+		expect(c.io.fwd_rs1, 6.U)
+		expect(c.io.rs1, 2.U)
+		expect(c.io.op1, 2.U)
+		expect(c.io.sel_rs1, 6.U)
+
+
+		expect(c.io.fwd_rs2, 6.U)
+		expect(c.io.rs2, 2.U)
+		expect(c.io.alu_src, 2.U)
+		expect(c.io.op2, 2.U)
+		expect(c.io.sel_rs2, 6.U)
+
+		/*
+		
+
+		
+		
+		
+
+		
+		*/
+		
+		
+		//expect(c.io.rs1_ifId, 2.U)
+		//expect(c.io.rs2_ifId, 2.U)
+		
+		//expect(c.io.alu_sel, 2.U)
+		
+
+
+
+		//expect(c.io.pc, 0.U)
+		//expect(c.io.pc_next, 0.U)
 		//expect(c.io.inst, 0.U)
 		//expect(c.io.imm_i, 0.U)
 		//expect(c.io.zero, FALSE)

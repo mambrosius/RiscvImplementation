@@ -24,7 +24,6 @@ class DataMemory extends Module {
 	// note: check SeqMem()
 	val dataMem = Mem(MEM_SIZE * 4, 0.U (BYTE_SIZE))
 	
-
 	when (io.mem.write) {
 		switch(io.mem.func) {
 			is (LB) {

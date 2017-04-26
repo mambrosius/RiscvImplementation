@@ -19,6 +19,8 @@ object Constants {
 	val WORD_SIZE 	=    32.W
 	val MEM_SIZE 	=  1024
 	
+	val FWD_EX		= "b10".U
+	val FWD_MEM		= "b01".U
 
 	// opcodes (RV32I)
 	//---------------------
