@@ -22,6 +22,9 @@ object Constants {
 	val FWD_EX		= "b10".U
 	val FWD_MEM		= "b01".U
 
+	val FREQ 		= 50000000
+	val BAUD 		= 115200
+
 	// opcodes (RV32I)
 	//---------------------
 	val LOAD	 	=   3.U

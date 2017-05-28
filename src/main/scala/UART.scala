@@ -10,6 +10,7 @@
 
 import chisel3._
 import chisel3.util._
+import utils.Constants._
 
 object UART extends App { 
     chisel3.Driver.execute(args, () => new UART)
@@ -20,8 +21,8 @@ class UART extends Module {
     val io = IO(new Bundle {
         val rxd = Input(Bool())
         val txd = Output(Bool())
-        val enq = Decoupled(UInt(8.W))
-        val deq = Flipped(Decoupled(UInt(8.W)))
+        val enq = Decoupled(UInt(BYTE_SIZE))
+        val deq = Flipped(Decoupled(UInt(BYTE_SIZE)))
     })
 
     val tx = Module(new BufferedTx)
@@ -35,18 +36,16 @@ class UART extends Module {
 
 class Tx extends Module {
     val io = IO(new Bundle {
-        val enq  = Flipped(Decoupled(UInt(8.W)))       
+        val enq  = Flipped(Decoupled(UInt(BYTE_SIZE)))       
         val txd  = Output(Bool())
     })
 
-    val FREQ      = 50000000        // TODO: Add to Constant.scala
-    val BAUD      = 300          // TODO: Add to Constant.scala
     val TICK_MAX  = (FREQ/BAUD).U 
     
     val idle :: sending = Enum(11)  // 2 or 1 stop bit?
 
     val data      = RegInit(UInt(9.W), "b111111111".U) 
-    val ticks     = RegInit(UInt(32.W), 0.U)
+    val ticks     = RegInit(UInt(WORD_SIZE), ZERO)
     val state     = RegInit(idle)
 
     io.enq.ready := state === idle
@@ -55,7 +54,7 @@ class Tx extends Module {
         is (idle) {
             when (io.enq.valid) {
                 data  := Cat(io.enq.bits, "b0".U)
-                ticks := 0.U
+                ticks := ZERO
                 state := sending.last
             }   
         } 
@@ -63,7 +62,7 @@ class Tx extends Module {
         is (sending) {
             when (ticks === TICK_MAX) {
                 data  := Cat("b1".U, data >> 1)
-                ticks := 0.U
+                ticks := ZERO
                 state := state - 1.U
             } .otherwise {
                 ticks := ticks + 1.U
@@ -76,40 +75,38 @@ class Tx extends Module {
 class Rx extends Module {
     val io = IO(new Bundle {
         val rxd = Input(Bool())
-        val deq = Decoupled(UInt(8.W))
+        val deq = Decoupled(UInt(BYTE_SIZE))
     })
 
-    val FREQ      = 50000000     // TODO: Add to Constant.scala
-    val BAUD      = 300          // TODO: Add to Constant.scala
     val TICK_MAX  = (FREQ/BAUD).U 
     val TICK_HALF = TICK_MAX/2.U 
 
     val idle :: stop :: reading = Enum(11)  
 
     val data      = RegInit(UInt(9.W), "b000000000".U) 
-    val ticks     = RegInit(UInt(32.W), TICK_HALF)
+    val ticks     = RegInit(UInt(WORD_SIZE), TICK_HALF)
     val state     = RegInit(idle)
-    val valid     = RegInit(Bool(), false.B)
+    val valid     = RegInit(Bool(), FALSE)
 
     when (valid && io.deq.ready) {
-        valid := false.B
+        valid := FALSE
     }
 
     switch (state) {
         is (idle) {
-            when (io.rxd === 0.U) {
-                when (ticks != 0.U) {
+            when (io.rxd === ZERO) {
+                when (ticks != ZERO) {
                     ticks := ticks - 1.U
                 } .otherwise {
                     ticks := TICK_MAX
                     state := reading.last
-                    valid := false.B
+                    valid := FALSE
                 }
             }
         }
     
         is (reading) {
-            when (ticks === 0.U) {
+            when (ticks === ZERO) {
                 data  := Cat(io.rxd, data >> 1)
                 ticks := TICK_MAX
                 state := state - 1.U
@@ -122,7 +119,7 @@ class Rx extends Module {
             when (ticks === TICK_HALF) {
                 ticks := ticks - 1.U
                 state := idle
-                valid := true.B
+                valid := TRUE
             } .otherwise {
                 ticks := ticks - 1.U
             }
@@ -135,13 +132,13 @@ class Rx extends Module {
 
 class BufferedTx extends Module {
     val io = IO(new Bundle {    
-        val enq = Flipped(Decoupled(UInt(8.W)))
+        val enq = Flipped(Decoupled(UInt(BYTE_SIZE)))
         val cnt = Output(UInt(6.W))
         val txd = Output(Bool())
     })
     
     // move entries (16) to Constant.scala
-    val queue = Module(new Queue(UInt(8.W), 16)) 
+    val queue = Module(new Queue(UInt(BYTE_SIZE), 16)) 
     val tx    = Module(new Tx)
 
     queue.io.enq <> io.enq
@@ -153,12 +150,12 @@ class BufferedTx extends Module {
 class BufferedRx extends Module {
     val io = IO(new Bundle {
         val rxd = Input(Bool())
-        val deq = Decoupled(UInt(8.W))
+        val deq = Decoupled(UInt(BYTE_SIZE))
         val cnt = Output(UInt(6.W))
     })
     
     // move entries (16) to Constant.scala
-    val queue = Module(new Queue(UInt(8.W), 16)) 
+    val queue = Module(new Queue(UInt(BYTE_SIZE), 16)) 
     val rx    = Module(new Rx)
 
     queue.io.enq <> rx.io.deq
@@ -167,9 +164,9 @@ class BufferedRx extends Module {
     io.cnt       <> queue.io.count
 }
 
-
-
-//  Send 'hello'.
+//  following is from: 
+// (https://github.com/schoeberl/chisel-examples/blob/master/examples/src/main/scala/uart/Uart.scala)
+//  Send 'hello'.  
 /* 
 class Sender(frequency: Int, baudRate: Int) extends Module {
   val io = new Bundle {
@@ -191,96 +188,6 @@ class Sender(frequency: Int, baudRate: Int) extends Module {
   
   when (tx.io.channel.ready && cntReg =/= UInt(5)) {
     cntReg := cntReg + UInt(1)
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class BufferedTxTester(dut: BufferedTx) extends Tester(dut) {
-
-  step(2)
-  poke(dut.io.channel.valid, 1)
-  poke(dut.io.channel.data, 'A')
-  // now we have a buffer, keep valid only a single cycle
-  step(1)
-  poke(dut.io.channel.valid, 0)
-  poke(dut.io.channel.data, 0)
-  step(40)
-  poke(dut.io.channel.valid, 1)
-  poke(dut.io.channel.data, 'B')
-  step(1)
-  poke(dut.io.channel.valid, 0)
-  poke(dut.io.channel.data, 0)
-  step(30)
-}
-
-object BufferedTxTester {
-  def main(args: Array[String]): Unit = {
-    chiselMainTest(Array[String]("--backend", "c", "--compile", "--test",
-      "--genHarness", "--vcd", "--targetDir", "generated"),
-      () => Module(new BufferedTx(10000, 3000))) {
-        c => new BufferedTxTester(c)
-      }
-  }
-}
-
-class SenderTester(dut: Sender) extends Tester(dut) {
-  step(300)
-}
-
-
-
-object SenderTester {
-  def main(args: Array[String]): Unit = {
-    chiselMainTest(Array[String]("--backend", "v", "--compile", "--test",
-      "--genHarness", "--vcd", "--targetDir", "generated"),
-      () => Module(new Sender(10000, 3000))) {
-        c => new SenderTester(c)
-      }
-  }
-}
-
-object SenderMain {
-  def main(args: Array[String]): Unit = {
-    chiselMain(Array[String]("--backend", "v", "--targetDir", "generated"),
-      () => Module(new Sender(50000000, 115200)))
-  }
-}
-
-object TxMain {
-  def main(args: Array[String]): Unit = {
-    chiselMain(Array[String]("--backend", "v", "--targetDir", "generated"),
-      () => Module(new Tx(50000000, 9600)))
-  }
-}
-
- 
-class Echo extends Module {
-  val io = new Bundle {
-    val txd = Bits(OUTPUT, 1) 
-    val rxd = Bits(INPUT, 1)
-  }
-  
-  io.txd := io.rxd 
-}
-
-object EchoMain {
-  def main(args: Array[String]): Unit = {
-    chiselMain(Array("--backend", "v", "--targetDir", "generated"),
-      () => Module(new Echo()))
   }
 }
 */
