@@ -22,73 +22,84 @@ S -> succesor
 P -> predecessor 
 */
 
-NOP 		-	  0000000_00000_00000_000_00000_0000000
+0000000_00000_00000_000_00000_0000000	-	NOP
 
-// Loads 
-LB    		-	   oooooooooooo_bbbbb_000_ddddd_0000011
-LH    		-	   oooooooooooo_bbbbb_001_ddddd_0000011 
-LW    		-	   oooooooooooo_bbbbb_010_ddddd_0000011 
-LBU   		-	   oooooooooooo_bbbbb_100_ddddd_0000011 
-LHU   		-	   oooooooooooo_bbbbb_101_ddddd_0000011 
+// LOADS-------------------------------------------------------
+
+oooooooooooo_bbbbb_000_ddddd_0000011	-	LB 	rd, rs1, imm
+oooooooooooo_bbbbb_001_ddddd_0000011 	-	LH 	rd, rs1, imm
+oooooooooooo_bbbbb_010_ddddd_0000011 	-	LW 	rd, rs1, imm
+oooooooooooo_bbbbb_100_ddddd_0000011 	-	LBU rd, rs1, imm
+oooooooooooo_bbbbb_101_ddddd_0000011 	-	LHU rd, rs1, imm
+
+// STORES------------------------------------------------------ 
+
+ooooooo_sssss_bbbbb_000_ooooo_0100011 	-	SB rs1, rs2, imm
+ooooooo_sssss_bbbbb_001_ooooo_0100011 	- 	SH rs1, rs2, imm 
+ooooooo_sssss_bbbbb_010_ooooo_0100011 	- 	SW rs1, rs2, imm
 	
-// Stores 
-SB 			-	  ooooooo_sssss_bbbbb_000_ooooo_0100011 
-SH 			-	  ooooooo_sssss_bbbbb_001_ooooo_0100011  
-SW 			-	  ooooooo_sssss_bbbbb_010_ooooo_0100011 
-	
-// Shifts		 
-SLL   		- 	  0000000_sssss_sssss_001_ddddd_0110011 
-SLLI  		- 	  0000000_iiiii_sssss_001_ddddd_0010011
-SRL   		- 	  0000000_sssss_sssss_101_ddddd_0110011 
-SRLI  		- 	  0000000_iiiii_sssss_101_ddddd_0010011 
-SRA   		- 	  0100000_sssss_sssss_101_ddddd_0110011
-SRAI  		- 	  0100000_iiiii_sssss_101_ddddd_0010011 
+// SHIFTS------------------------------------------------------
+
+0000000_sssss_sssss_001_ddddd_0110011 	- 	SLL  rd, rs1, rs2
+0000000_iiiii_sssss_001_ddddd_0010011 	- 	SLLI rd, rs1, shamt
+0000000_sssss_sssss_101_ddddd_0110011 	- 	SRL  rd, rs1, rs2
+0000000_iiiii_sssss_101_ddddd_0010011 	- 	SRLI rd, rs1, shamt
+0100000_sssss_sssss_101_ddddd_0110011 	- 	SRA  rd, rs1, rs2
+0100000_iiiii_sssss_101_ddddd_0010011 	- 	SRAI rd, rs1, shamt
   
-// Arithmetic  
-ADD 		- 	  0000000_sssss_sssss_000_ddddd_0110011
-ADDI 		- 	   iiiiiiiiiiii_sssss_000_ddddd_0010011 
-SUB 		- 	  0100000_sssss_sssss_000_ddddd_0110011
-LUI 		-        iiiiiiiiiiiiiiiiiiii_ddddd_0110111
-AUIPC		- 	     iiiiiiiiiiiiiiiiiiii_ddddd_0010111
+// ARITHMETIC--------------------------------------------------
+
+0000000_sssss_sssss_000_ddddd_0110011 	- 	ADD   rd, rs1, rs2
+iiiiiiiiiiii_sssss_000_ddddd_0010011 	- 	ADDI  rd, rs1, imm
+0100000_sssss_sssss_000_ddddd_0110011	- 	SUB   rd, rs1, rs2
+iiiiiiiiiiiiiiiiiiii_ddddd_0110111 		- 	LUI   rd, imm
+iiiiiiiiiiiiiiiiiiii_ddddd_0010111 		- 	AUIPC rd, imm
   
-// Logical   
-XOR   		- 	  0000000_sssss_sssss_100_ddddd_0110011 
-XORI  		- 	   iiiiiiiiiiii_sssss_100_ddddd_0010011  
-OR    		- 	  0000000_sssss_sssss_110_ddddd_0110011 
-ORI   		- 	   iiiiiiiiiiii_sssss_110_ddddd_0010011  
-AND   		- 	  0000000_sssss_sssss_111_ddddd_0110011
-ANDI  		- 	   iiiiiiiiiiii_sssss_111_ddddd_0010011
+// LOGICAL-----------------------------------------------------
 
-// Compare 
-SLT   		- 	  0000000_sssss_sssss_010_ddddd_0110011 
-SLTI  		- 	   iiiiiiiiiiii_sssss_010_ddddd_0010011
-SLTU  		- 	  0000000_sssss_sssss_011_ddddd_0110011
-SLTIU 		- 	   iiiiiiiiiiii_sssss_011_ddddd_0010011
+0000000_sssss_sssss_100_ddddd_0110011 	- 	XOR  rd, rs1, rs2
+iiiiiiiiiiii_sssss_100_ddddd_0010011 	-	XORI rd, rs1, imm
+0000000_sssss_sssss_110_ddddd_0110011 	- 	OR 	 rd, rs1, rs2
+iiiiiiiiiiii_sssss_110_ddddd_0010011  	- 	ORI  rd, rs1, imm
+0000000_sssss_sssss_111_ddddd_0110011 	- 	AND  rd, rs1, rs2
+iiiiiiiiiiii_sssss_111_ddddd_0010011 	- 	ANDI rd, rs1, imm
 
-// Branches 
-BEQ   		- 	o_oooooo_sssss_sssss_000_oooo_o_1100011 
-BNE   		- 	o_oooooo_sssss_sssss_001_oooo_o_1100011 
-BLT   		- 	o_oooooo_sssss_sssss_100_oooo_o_1100011 
-BGE   		- 	o_oooooo_sssss_sssss_101_oooo_o_1100011 
-BLTU  		- 	o_oooooo_sssss_sssss_110_oooo_o_1100011 
-BGEU  		- 	o_oooooo_sssss_sssss_111_oooo_o_1100011 
+// COMPARE-----------------------------------------------------
 
-// Jump and link
-JAL   		- 	  o_oooooooooo_o_oooooooo_ddddd_1101111
-JALR  		- 	   oooooooooooo_bbbbb_000_ddddd_1100111
+0000000_sssss_sssss_010_ddddd_0110011 	- 	SLT   rd, rs1, rs2
+iiiiiiiiiiii_sssss_010_ddddd_0010011 	- 	SLTI  rd, rs1, imm
+0000000_sssss_sssss_011_ddddd_0110011 	- 	SLTU  rd, rs1, rs2
+iiiiiiiiiiii_sssss_011_ddddd_0010011 	- 	SLTIU rd, rs1, imm
 
-// Synch
-FENCE 		- 0_P_P_P_P_S_S_S_S_sssss_xxx_ddddd_0001111
-FENCE_I 	- 	   000000000000_00000_xxx_00000_0001111
+// BRANCHES---------------------------------------------------- 
 
-// System
-SCALL       -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
-SBREAK      - 	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
+o_oooooo_sssss_sssss_000_oooo_o_1100011 - 	BEQ  rs1, rs2, imm
+o_oooooo_sssss_sssss_001_oooo_o_1100011 - 	BNE  rs1, rs2, imm
+o_oooooo_sssss_sssss_100_oooo_o_1100011 -	BLT  rs1, rs2, imm
+o_oooooo_sssss_sssss_101_oooo_o_1100011 - 	BGE  rs1, rs2, imm
+o_oooooo_sssss_sssss_110_oooo_o_1100011 - 	BLTU rs1, rs2, imm
+o_oooooo_sssss_sssss_111_oooo_o_1100011 - 	BGEU rs1, rs2, imm
 
-// Counters 
-RDCYCLE     - 	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
-RDCYCLEH    -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
-RDTIME      -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
-RDTIMEH     -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
-RDINSTRET   -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
-RDINSTRETH  -	  xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx
+// JUMP AND LINK-----------------------------------------------
+
+o_oooooooooo_o_oooooooo_ddddd_1101111 	- 	JAL  rd, imm
+oooooooooooo_bbbbb_000_ddddd_1100111 	- 	JALR rd, rs1, imm
+
+// SYNCH-------------------------------------------------------
+
+0_P_P_P_P_S_S_S_S_sssss_xxx_ddddd_0001111 	-	FENCH
+000000000000_00000_xxx_00000_0001111 		- 	FENCH_I
+
+// SYSTEM------------------------------------------------------
+
+xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx 	- 	SCALL
+xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx 	- 	SBREAK
+
+// COUNTERS----------------------------------------------------
+
+xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx 	- 	RDCYCLE.   rd
+xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx 	- 	RDCYCLEH   rd
+xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx 	- 	RDTIME 	   rd
+xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx 	- 	RDTIMEH    rd
+xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx 	- 	RDINSTRET  rd
+xxxxxxx_xxxxx_xxxxx_xxx_xxxxx_xxxxxxx 	- 	RDINSTRETH rd

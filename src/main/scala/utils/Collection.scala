@@ -65,8 +65,8 @@ object Collection {
 		val MEM 	= new MEM
 		val zero 	= Input(Bool())
 		val pc_next = Input(UInt(WORD_SIZE))
-		val rd   	= Input(UInt(WORD_SIZE))
-		val rs2   	= Input(UInt(WORD_SIZE))
+		val aluRes  = Input(UInt(WORD_SIZE))
+		val op2   	= Input(UInt(WORD_SIZE))
 		val dst 	= Input(UInt(5.W))
 	}
 

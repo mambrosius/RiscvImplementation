@@ -49,7 +49,13 @@ class CPU extends Module {
         val dst_exMem = Output(UInt(5.W))
         val dst_memWb = Output(UInt(5.W))
         val regWrite_exMem = Output(Bool())
-        val regWrite_memWb = Output(Bool())        
+        val regWrite_memWb = Output(Bool())
+
+        val memRead   = Output(Bool())
+        val memWrite  = Output(Bool())
+        val memRes    = Output(UInt(WORD_SIZE))
+        val wData     = Output(UInt(WORD_SIZE))
+
     })  
  
     // program ------------------------------------------------------------------------------------------
@@ -65,6 +71,7 @@ class CPU extends Module {
     val alu         = Module(new ALU)
     val dataMem     = Module(new DataMemory)
     val fwdUnit     = Module(new ForwardingUnit)
+    val hazardUnit  = Module(new DetectHazardUnit)
     
     // pipes --------------------------------------------------------------------------------------------
     
@@ -111,32 +118,32 @@ class CPU extends Module {
     alu.io.aluOp                := ID_EX.io.out.EX.aluOp
     
     alu.io.reg.rs.rs1 := MuxLookup(fwdUnit.io.fwd_rs1, ZERO, Array(
-        FWD_EX  -> EX_MEM.io.out.rd, 
+        FWD_EX  -> EX_MEM.io.out.aluRes, 
         FWD_MEM -> regs.io.reg.rd,
         ZERO    -> ID_EX.io.out.rs.rs1))
 
     alu.io.reg.rs.rs2 := MuxLookup(fwdUnit.io.fwd_rs2, 5.U, Array(
-        FWD_EX  -> EX_MEM.io.out.rd, 
+        FWD_EX  -> EX_MEM.io.out.aluRes, 
         FWD_MEM -> regs.io.reg.rd,
         ZERO    -> Mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, ID_EX.io.out.rs.rs2)))
 
     EX_MEM.io.in.WB         := ID_EX.io.out.WB
     EX_MEM.io.in.MEM        := ID_EX.io.out.MEM
     EX_MEM.io.in.zero       := alu.io.zero
-    EX_MEM.io.in.rd         := alu.io.reg.rd
-    EX_MEM.io.in.rs2        := ID_EX.io.out.rs.rs2 
+    EX_MEM.io.in.aluRes     := alu.io.reg.rd
+    EX_MEM.io.in.op2        := alu.io.reg.rs.rs2 
 
     EX_MEM.io.in.dst        := Mux(ID_EX.io.out.EX.dst_sel, ID_EX.io.out.sel.rd, ID_EX.io.out.sel.rs.rs2)
 
     // MEM ----------------------------------------------------------------------------------------------
 
     dataMem.io.mem          := EX_MEM.io.out.MEM
-    dataMem.io.reg.rs.rs1   := EX_MEM.io.out.rd 
-    dataMem.io.reg.rs.rs2   := EX_MEM.io.out.rs2
+    dataMem.io.reg.rs.rs1   := EX_MEM.io.out.aluRes 
+    dataMem.io.reg.rs.rs2   := EX_MEM.io.out.op2
    
     MEM_WB.io.in.WB         := EX_MEM.io.out.WB
     MEM_WB.io.in.rd_mem     := dataMem.io.reg.rd
-    MEM_WB.io.in.rd_alu     := EX_MEM.io.out.rd
+    MEM_WB.io.in.rd_alu     := EX_MEM.io.out.aluRes
     MEM_WB.io.in.dst        := EX_MEM.io.out.dst
 
     // WB -----------------------------------------------------------------------------------------------
@@ -165,7 +172,7 @@ class CPU extends Module {
     io.alu_src  := Mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, ID_EX.io.out.rs.rs2)
     io.op1      := alu.io.reg.rs.rs1
     io.op2      := alu.io.reg.rs.rs2
-    io.rd_exMem := EX_MEM.io.out.rd
+    io.rd_exMem := EX_MEM.io.out.aluRes
     io.rd_memWb := regs.io.reg.rd 
    
     io.zero      := EX_MEM.io.out.zero
@@ -179,8 +186,13 @@ class CPU extends Module {
 
     io.regWrite_exMem := EX_MEM.io.out.WB.regWrite
     io.regWrite_memWb := MEM_WB.io.out.WB.regWrite 
+
+    io.memRead   := EX_MEM.io.out.MEM.read
+    io.memWrite  := EX_MEM.io.out.MEM.write
+    io.memRes    := dataMem.io.reg.rd
+    io.wData     := EX_MEM.io.out.op2 
 }
 
 object CPU extends App { 
-    chisel3.Driver.execute(args: Array[String], () => new CPU)
+    chisel3.Driver.execute(args, () => new CPU)
 }

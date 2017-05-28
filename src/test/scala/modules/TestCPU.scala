@@ -26,17 +26,20 @@ class TestCPU(c: CPU) extends PeekPokeTester(c) {
 		
 		//expect(c.io.rd_sel, 6.U)
 
-		expect(c.io.fwd_rs1, 6.U)
-		expect(c.io.rs1, 2.U)
+		//expect(c.io.fwd_rs1, 6.U)
+		//expect(c.io.rs1, 2.U)
 		expect(c.io.op1, 2.U)
-		expect(c.io.sel_rs1, 6.U)
+		//expect(c.io.sel_rs1, 6.U)
+		expect(c.io.memRead, 2.U)
+		expect(c.io.memWrite, 2.U)
+		expect(c.io.memRes, 2.U)
+		expect(c.io.wData, 2.U)
 
-
-		expect(c.io.fwd_rs2, 6.U)
-		expect(c.io.rs2, 2.U)
-		expect(c.io.alu_src, 2.U)
+		//expect(c.io.fwd_rs2, 6.U)
+		//expect(c.io.rs2, 2.U)
+		//expect(c.io.alu_src, 2.U)
 		expect(c.io.op2, 2.U)
-		expect(c.io.sel_rs2, 6.U)
+		//expect(c.io.sel_rs2, 6.U)
 
 		/*
 		
