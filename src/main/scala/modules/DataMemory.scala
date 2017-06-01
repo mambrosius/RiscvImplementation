@@ -23,29 +23,33 @@ class DataMemory extends Module {
 
 	// note: check SeqMem()
 	val dataMem = Mem(MEM_SIZE, 0.U (WORD_SIZE))
-	/*
+	
 	when (io.mem.write) {
+
 		switch(io.mem.func) {
 			is (LB) {
-				dataMem.write(io.reg.rs.rs1, io.reg.rs.rs2(7,0))} 
+				dataMem(io.reg.rs.rs1) := io.reg.rs.rs2(7,0)} 
 			is (LH) {
-				dataMem.write(io.reg.rs.rs1, io.reg.rs.rs2(15,0))} 
+				dataMem(io.reg.rs.rs1) := io.reg.rs.rs2(15,0)} 
 			is (LW) {
-				dataMem.write(io.reg.rs.rs1, io.reg.rs.rs2)}
+				dataMem(io.reg.rs.rs1) := io.reg.rs.rs2}
 		}
 	}	
 
 	when (io.mem.read) {
+		
+		val rdata 		= dataMem(io.reg.rs.rs1)
+
 		switch(io.mem.func) {
 			is (SB) {
-				io.reg.rd  := dataMem.read(io.reg.rs.rs1)(7,0)}
+				io.reg.rd  := rdata(7,0)}
 			is (SH) {
-				io.reg.rd  := dataMem.read(io.reg.rs.rs1)(15,0)}
+				io.reg.rd  := rdata(15,0)}
 			is (SW) {
-				io.reg.rd  := dataMem.read(io.reg.rs.rs1)}
+				io.reg.rd  := rdata}
 		}
 	}
-	*/
+
 	/*
 	when (io.mem.write) {
 		switch(io.mem.func) {
