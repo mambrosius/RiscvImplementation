@@ -25,7 +25,6 @@ class DataMemory extends Module {
 	val dataMem = Mem(MEM_SIZE, 0.U (WORD_SIZE))
 	
 	when (io.mem.write) {
-
 		switch(io.mem.func) {
 			is (LB) {
 				dataMem(io.reg.rs.rs1) := io.reg.rs.rs2(7,0)} 
@@ -38,7 +37,7 @@ class DataMemory extends Module {
 
 	when (io.mem.read) {
 		
-		val rdata 		= dataMem(io.reg.rs.rs1)
+		val rdata = dataMem(io.reg.rs.rs1)
 
 		switch(io.mem.func) {
 			is (SB) {
@@ -49,6 +48,8 @@ class DataMemory extends Module {
 				io.reg.rd  := rdata}
 		}
 	}
+
+
 
 	/*
 	when (io.mem.write) {

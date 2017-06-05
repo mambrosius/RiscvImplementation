@@ -15,8 +15,20 @@ import utils.Collection._
 class CPU extends Module {
     
     val io = IO(new Bundle {
+
+        val txd      = Output(Bool())
+        
+        /*
+        val pc       = Output(UInt(WORD_SIZE))
+        val rd_memWb = Output(UInt(WORD_SIZE))
+        
+        val aPrint   = Output(UInt(8.W))
+        val memW     = Output(Bool())
+        */
+        //val wData   = Output(UInt(WORD_SIZE))
+        /*
         val branch  = Output(Bool())
-        val pc      = Output(UInt(WORD_SIZE))
+        
         val pc_next = Output(UInt(WORD_SIZE))
         
         val inst    = Output(UInt(WORD_SIZE))
@@ -35,7 +47,7 @@ class CPU extends Module {
         val op1      = Output(UInt(WORD_SIZE))
         val op2      = Output(UInt(WORD_SIZE))
         val rd_exMem = Output(UInt(WORD_SIZE))
-        val rd_memWb = Output(UInt(WORD_SIZE))
+        
 
         val zero     = Output(Bool())
         val alu_res  = Output(UInt(WORD_SIZE))
@@ -54,8 +66,8 @@ class CPU extends Module {
         val memRead   = Output(Bool())
         val memWrite  = Output(Bool())
         val memRes    = Output(UInt(WORD_SIZE))
-        val wData     = Output(UInt(WORD_SIZE))
-
+        
+        */
     })  
  
     // program ------------------------------------------------------------------------------------------
@@ -72,6 +84,8 @@ class CPU extends Module {
     val dataMem     = Module(new DataMemory)
     val fwdUnit     = Module(new ForwardingUnit)
     val hazardUnit  = Module(new DetectHazardUnit)
+
+    val uart        = Module(new UART)
     
     // pipes --------------------------------------------------------------------------------------------
     
@@ -82,10 +96,8 @@ class CPU extends Module {
     
     // IF -----------------------------------------------------------------------------------------------
     
-    io.pc                   := counter.io.pc
-
     IF_ID.io.in.pc_next     := counter.io.pc_next
-    IF_ID.io.in.inst        := instMem.read(io.pc)
+    IF_ID.io.in.inst        := instMem.read(counter.io.pc)
 
     // ID -----------------------------------------------------------------------------------------------
 
@@ -152,8 +164,30 @@ class CPU extends Module {
     regs.io.regWrite        := MEM_WB.io.out.WB.regWrite
     regs.io.reg.rd          := Mux(MEM_WB.io.out.WB.memToReg, MEM_WB.io.out.rd_mem, MEM_WB.io.out.rd_alu)
 
+    // UART ---------------------------------------------------------------------------------------------
+
+    uart.io.ctl.enq.valid := TRUE   // for test the tx is set to always true 
+
+    when (EX_MEM.io.out.MEM.write && dataMem.io.reg.rs.rs1 === 1025.U) {
+        uart.io.ctl.enq.bits := dataMem.io.reg.rs.rs2(7,0)
+    } .otherwise {
+        uart.io.ctl.enq.bits := 0.U
+    }
+
+    io.txd := uart.io.txd
+
     // test signals -------------------------------------------------------------------------------------
 
+    /*    
+    
+    io.pc       := counter.io.pc
+    io.rd_memWb := regs.io.reg.rd
+
+    io.memW     := EX_MEM.io.out.MEM.write
+    io.aPrint   := uart.io.ctl.enq.bits
+    */
+
+    /*
     io.pc       := counter.io.pc
     io.pc_next  := counter.io.pc_next
 
@@ -173,7 +207,7 @@ class CPU extends Module {
     io.op1      := alu.io.reg.rs.rs1
     io.op2      := alu.io.reg.rs.rs2
     io.rd_exMem := EX_MEM.io.out.aluRes
-    io.rd_memWb := regs.io.reg.rd 
+     
    
     io.zero      := EX_MEM.io.out.zero
     io.alu_res   := alu.io.reg.rd  
@@ -191,6 +225,7 @@ class CPU extends Module {
     io.memWrite  := EX_MEM.io.out.MEM.write
     io.memRes    := dataMem.io.reg.rd
     io.wData     := EX_MEM.io.out.op2 
+    */
 }
 
 object CPU extends App { 

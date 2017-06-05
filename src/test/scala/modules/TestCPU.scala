@@ -10,8 +10,42 @@ import chisel3.iotesters.PeekPokeTester
 import modules._
 import utils.Constants._
 
-class TestCPU(c: CPU) extends PeekPokeTester(c) {
+// this test is made for the hello.hex program
+class ComTest(dut: CPU) extends PeekPokeTester(dut) {
+
+	for (i <- 0 until 50) {
+		
+		expect(dut.io.pc, i + 21)
+		expect(dut.io.txd, 0)
+		expect(dut.io.aPrint, 0)
+		expect(dut.io.memW, FALSE)
+		step(1)
+
+
+		
+
+
+		//expect(dut.io.rd_memWb, 40.U)
+		
+	}
+
+	reset()
+	expect(dut.io.pc, 21)
+
+
+
+
+}
+
+class TestCPU(dut: CPU) extends PeekPokeTester(dut) {
+
+	new ComTest(dut);
 	
+
+
+
+
+	/*
 	for (i <- 0 until 20) {
 		step(1)	
 
@@ -38,28 +72,11 @@ class TestCPU(c: CPU) extends PeekPokeTester(c) {
 		//expect(c.io.fwd_rs2, 6.U)
 		//expect(c.io.rs2, 2.U)
 		//expect(c.io.alu_src, 2.U)
-		expect(c.io.op2, 2.U)
+		//expect(c.io.op2, 2.U)
 		//expect(c.io.sel_rs2, 6.U)
-
-		/*
-		
-
-		
-		
-		
-
-		
-		*/
-		
-		
 		//expect(c.io.rs1_ifId, 2.U)
 		//expect(c.io.rs2_ifId, 2.U)
-		
 		//expect(c.io.alu_sel, 2.U)
-		
-
-
-
 		//expect(c.io.pc, 0.U)
 		//expect(c.io.pc_next, 0.U)
 		//expect(c.io.inst, 0.U)
@@ -71,7 +88,7 @@ class TestCPU(c: CPU) extends PeekPokeTester(c) {
 		//expect(c.io.opcode, 0.U)
 		//expect(c.io.rs.rs1, 1.U)
 		//expect(c.io.rs.rs2, 0.U)
-	}
+	}*/
 
 	/*
 	step(5)
@@ -91,21 +108,10 @@ class TestCPU(c: CPU) extends PeekPokeTester(c) {
 		step(1)	
 		expect(c.io.rd, 2.U)
 	}*/
-	
-	// Note : Why cant i add two UInts as updatable index..
-	/*
-	poke(c.io.reset, false.B)
-
-	for (i <- 0 until 10) {
-		poke(c.io.instAddr, i)
-		step(1)	
-		expect(c.io.inst, 69633.asUInt(32.W) + i.asUInt(32.W))
-	}
-	*/
 }
 
 object TestCPU extends App {
 	iotesters.Driver.execute(args, () => new CPU) {
-		c => new TestCPU(c)		
+		dut => new TestCPU(dut)		
 	}
 }

@@ -18,7 +18,7 @@ object Bin {
 
 		val source = try {
 
-			fromFile("bin/program.bin")
+			fromFile("bin/hello.hex")
 
 		} catch {
 			case e: FileNotFoundException => 
@@ -31,7 +31,7 @@ object Bin {
     	// converts the instruction elements into UInt
 		for (i <- 0 to programLines.length - 1) {
 
-    		instructionMem(i) := {"b" + programLines(i)}.U (WORD_SIZE)
+    		instructionMem(i) := {"h" + programLines(i)}.U (WORD_SIZE)
     	} 
 
     	source.close

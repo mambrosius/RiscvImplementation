@@ -8,6 +8,8 @@
 // modified from: 
 //  https://github.com/nyuichi/chisel-uart/blob/master/src/main/scala/Uart.scala
 
+package modules
+
 import chisel3._
 import chisel3.util._
 import utils.Constants._
@@ -16,13 +18,20 @@ object UART extends App {
     chisel3.Driver.execute(args, () => new UART)
 }
 
+class UartIO() extends Bundle {
+  val enq = Decoupled(UInt(8.W))
+  val deq = Flipped(Decoupled(UInt(8.W)))
+}
+
 class UART extends Module {
 
     val io = IO(new Bundle {
+
+        val ctl = Flipped(new UartIO())
         val rxd = Input(Bool())
         val txd = Output(Bool())
-        val enq = Decoupled(UInt(BYTE_SIZE))
-        val deq = Flipped(Decoupled(UInt(BYTE_SIZE)))
+        //val deq = Decoupled(UInt(BYTE_SIZE))
+        //val enq = Flipped(Decoupled(UInt(BYTE_SIZE)))
     })
 
     val tx = Module(new BufferedTx)
@@ -30,9 +39,18 @@ class UART extends Module {
 
     tx.io.txd <> io.txd
     rx.io.rxd <> io.rxd
-    tx.io.enq <> io.deq
-    rx.io.deq <> io.enq
+    tx.io.enq <> io.ctl.enq
+    rx.io.deq <> io.ctl.deq
+
+    /*
+    rx.io.rxd   := io.rxd
+    tx.io.enq   := io.enq
+    io.deq      := rx.io.deq
+    io.txd      := tx.io.txd
+    */
 }
+
+
 
 class Tx extends Module {
     val io = IO(new Bundle {
@@ -138,13 +156,15 @@ class BufferedTx extends Module {
     })
     
     // move entries (16) to Constant.scala
-    val queue = Module(new Queue(UInt(BYTE_SIZE), 16)) 
-    val tx    = Module(new Tx)
+    val queue1 = Module(new Queue(UInt(8.W), 16)) 
+    val queue2 = Module(new Queue(UInt(8.W), 16)) 
+    val tx     = Module(new Tx)
 
-    queue.io.enq <> io.enq
-    tx.io.enq    <> queue.io.deq
-    io.txd       <> tx.io.txd
-    io.cnt       <> queue.io.count
+    queue1.io.enq <> io.enq
+    queue2.io.enq <> queue1.io.deq
+    tx.io.enq     <> queue2.io.deq
+    io.txd        <> tx.io.txd
+    io.cnt        <> queue1.io.count
 }
 
 class BufferedRx extends Module {
@@ -163,6 +183,7 @@ class BufferedRx extends Module {
     io.rxd       <> rx.io.rxd
     io.cnt       <> queue.io.count
 }
+
 
 //  following is from: 
 // (https://github.com/schoeberl/chisel-examples/blob/master/examples/src/main/scala/uart/Uart.scala)
