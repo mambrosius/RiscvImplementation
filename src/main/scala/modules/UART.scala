@@ -18,39 +18,67 @@ object UART extends App {
     chisel3.Driver.execute(args, () => new UART)
 }
 
-class UartIO() extends Bundle {
-  val enq = Decoupled(UInt(8.W))
-  val deq = Flipped(Decoupled(UInt(8.W)))
-}
-
 class UART extends Module {
 
     val io = IO(new Bundle {
-
-        val ctl = Flipped(new UartIO())
-        val rxd = Input(Bool())
-        val txd = Output(Bool())
+        //val rxd = Input(Bool())
         //val deq = Decoupled(UInt(BYTE_SIZE))
-        //val enq = Flipped(Decoupled(UInt(BYTE_SIZE)))
+        
+        val in    = Input(UInt(BYTE_SIZE))
+        val valid = Output(Bool())
+        val txd   = Output(Bool())
+        
+        // test -----------------------------
+
+        //val data  = Output(UInt(BYTE_SIZE))
+
+        //val cnt = Output(UInt(5.W))
+        
+        val r0 = Output(UInt(BYTE_SIZE))
+        val r1 = Output(UInt(BYTE_SIZE))
+        val r2 = Output(UInt(BYTE_SIZE))
+        val r3 = Output(UInt(BYTE_SIZE))
     })
 
-    val tx = Module(new BufferedTx)
-    val rx = Module(new BufferedRx)
+    val tx = Module(new Tx)
+    //val rx = Module(new BufferedRx)
 
-    tx.io.txd <> io.txd
-    rx.io.rxd <> io.rxd
-    tx.io.enq <> io.ctl.enq
-    rx.io.deq <> io.ctl.deq
+    val q   = RegInit(Vec(Seq.fill(4)(0.asUInt(BYTE_SIZE))))
+    val ptr = RegInit(UInt(2.W), 0.U)
+    val cnt = RegInit(UInt(2.W), 0.U)
+    val i   = RegInit(UInt(4.W), ptr + cnt)
 
-    /*
-    rx.io.rxd   := io.rxd
-    tx.io.enq   := io.enq
-    io.deq      := rx.io.deq
-    io.txd      := tx.io.txd
-    */
+    i := ptr + cnt
+    
+    io.r0 := q(0.U)
+    io.r1 := q(1.U)
+    io.r2 := q(2.U)
+    io.r3 := q(3.U)
+
+    when (io.in =/= 0.U && cnt =/= 4.U) {    
+        q(i) := io.in
+        cnt  := cnt + 1.U
+    }
+
+    when (tx.io.enq.ready && cnt =/= 0.U) {
+        tx.io.enq.bits := q(ptr)
+        cnt := cnt - 1.U
+        // q(ptr) := 0.U
+        ptr := ptr + 1.U    
+    } 
+
+    tx.io.enq.valid := cnt =/= 0.U
+
+
+    when ((io.in =/= 0.U || cnt =/= 0.U) && tx.io.enq.ready) {
+        io.valid := FALSE
+    } .otherwise {
+        io.valid := tx.io.enq.ready    
+    }
+
+    io.txd  <> tx.io.txd    
+    //io.data := q(ptr)
 }
-
-
 
 class Tx extends Module {
     val io = IO(new Bundle {
@@ -60,7 +88,7 @@ class Tx extends Module {
 
     val TICK_MAX  = (FREQ/BAUD).U 
     
-    val idle :: sending = Enum(11)  // 2 or 1 stop bit?
+    val idle :: sending = Enum(12)  // 2 stop bits?
 
     val data      = RegInit(UInt(9.W), "b111111111".U) 
     val ticks     = RegInit(UInt(WORD_SIZE), ZERO)
@@ -148,6 +176,7 @@ class Rx extends Module {
     io.deq.bits  := data(7, 0)
 }
 
+/*
 class BufferedTx extends Module {
     val io = IO(new Bundle {    
         val enq = Flipped(Decoupled(UInt(BYTE_SIZE)))
@@ -155,17 +184,14 @@ class BufferedTx extends Module {
         val txd = Output(Bool())
     })
     
-    // move entries (16) to Constant.scala
-    val queue1 = Module(new Queue(UInt(8.W), 16)) 
-    val queue2 = Module(new Queue(UInt(8.W), 16)) 
-    val tx     = Module(new Tx)
+    val q  = Module(new Queue(UInt(BYTE_SIZE), 16)) // move entries (16) to Constant.scala
+    val tx = Module(new Tx)
 
-    queue1.io.enq <> io.enq
-    queue2.io.enq <> queue1.io.deq
-    tx.io.enq     <> queue2.io.deq
-    io.txd        <> tx.io.txd
-    io.cnt        <> queue1.io.count
-}
+    q.io.enq  <> io.enq
+    tx.io.enq <> q.io.deq
+    io.txd    <> tx.io.txd
+    io.cnt    <> q.io.count
+} */
 
 class BufferedRx extends Module {
     val io = IO(new Bundle {
@@ -174,8 +200,7 @@ class BufferedRx extends Module {
         val cnt = Output(UInt(6.W))
     })
     
-    // move entries (16) to Constant.scala
-    val queue = Module(new Queue(UInt(BYTE_SIZE), 16)) 
+    val queue = Module(new Queue(UInt(BYTE_SIZE), 16)) // move entries (16) to Constant.scala
     val rx    = Module(new Rx)
 
     queue.io.enq <> rx.io.deq
@@ -183,32 +208,3 @@ class BufferedRx extends Module {
     io.rxd       <> rx.io.rxd
     io.cnt       <> queue.io.count
 }
-
-
-//  following is from: 
-// (https://github.com/schoeberl/chisel-examples/blob/master/examples/src/main/scala/uart/Uart.scala)
-//  Send 'hello'.  
-/* 
-class Sender(frequency: Int, baudRate: Int) extends Module {
-  val io = new Bundle {
-    val txd = Bits(OUTPUT, 1)    
-  }
-  
-  val tx = Module(new BufferedTx(frequency, baudRate))
-  
-  io.txd := tx.io.txd
-  
-  // This is not super elegant
-  val hello = Array[Bits](Bits('H'), Bits('e'), Bits('l'), Bits('l'), Bits('o'))
-  val text = Vec[Bits](hello)
-
-  val cntReg = Reg(init = UInt(0, 3))
-  
-  tx.io.channel.data := text(cntReg)
-  tx.io.channel.valid := cntReg =/= UInt(5)
-  
-  when (tx.io.channel.ready && cntReg =/= UInt(5)) {
-    cntReg := cntReg + UInt(1)
-  }
-}
-*/

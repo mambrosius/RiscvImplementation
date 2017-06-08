@@ -10,37 +10,25 @@ import chisel3.iotesters.PeekPokeTester
 import modules._
 import utils.Constants._
 
-// this test is made for the hello.hex program
-class ComTest(dut: CPU) extends PeekPokeTester(dut) {
-
-	for (i <- 0 until 50) {
-		
-		expect(dut.io.pc, i + 21)
-		expect(dut.io.txd, 0)
-		expect(dut.io.aPrint, 0)
-		expect(dut.io.memW, FALSE)
-		step(1)
-
-
-		
-
-
-		//expect(dut.io.rd_memWb, 40.U)
-		
-	}
-
-	reset()
-	expect(dut.io.pc, 21)
-
-
-
-
-}
-
 class TestCPU(dut: CPU) extends PeekPokeTester(dut) {
 
-	new ComTest(dut);
+	//new ComTest(dut);
+		
+	for (i <- 0 until 100) {
+		//expect(dut.io.txd, 2.U)
+		//expect(dut.io.pc, 0)
+		//expect(dut.io.valid, FALSE)
+
+		//expect(dut.io.data, 0.U)
+		expect(dut.io.r0 , 2.U)
+		expect(dut.io.r1 , 2.U)
+		expect(dut.io.r2 , 2.U)
+		expect(dut.io.r3 , 2.U)
 	
+		step(434)
+		//step(1)
+	}
+
 
 
 
@@ -110,6 +98,25 @@ class TestCPU(dut: CPU) extends PeekPokeTester(dut) {
 	}*/
 }
 
+// this test is made for the hello.hex program
+/*
+class ComTest(dut: CPU) extends PeekPokeTester(dut) {
+
+	for (i <- 0 until 50) {
+		
+		expect(dut.io.pc, i + 21)
+		//expect(dut.io.txd, 0)
+		expect(dut.io.aPrint, 0)
+		//expect(dut.io.memW, FALSE)
+		step(1)
+
+		//expect(dut.io.rd_memWb, 40.U)
+	}
+
+	reset()
+	expect(dut.io.pc, 21)
+}
+*/
 object TestCPU extends App {
 	iotesters.Driver.execute(args, () => new CPU) {
 		dut => new TestCPU(dut)		
