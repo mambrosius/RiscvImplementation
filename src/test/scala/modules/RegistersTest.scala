@@ -10,6 +10,7 @@ import chisel3.iotesters.PeekPokeTester
 import modules.Registers
 
 class RegistersTest(c: Registers) extends PeekPokeTester(c) {
+	/*
 
 	step(1)
 
@@ -24,7 +25,7 @@ class RegistersTest(c: Registers) extends PeekPokeTester(c) {
 
 	expect(c.io.reg.rs.rs1, 0.U)
 	
-
+	*/
 	//poke(c.io.sel.rs.rs2, 1.U)
 	/*
 	poke(c.io.sel.rd, 2.U)

@@ -11,77 +11,79 @@ import chisel3._
 
 object Constants {
 
-	val ZERO		=	  0.U
-	val TRUE		=  true.B
-	val FALSE 		= false.B
+	// attributes -----------------------------------------
 
-	val BYTE_SIZE	=     8.W
-	val WORD_SIZE 	=    32.W
-	val MEM_SIZE 	=  1024
+	val MEM_D 	 = 512
+	val BAUD 	 = 115200
+	val FREQ 	 = 50000000
 	
-	val FWD_EX		= "b10".U
-	val FWD_MEM		= "b01".U
+	// constants ------------------------------------------
 
-	val FREQ 		= 50000000
-	val BAUD 		= 115200
+	val ZERO	 = 0.U
+	val START 	 = 21.U
+	val TRUE	 = true.B
+	val FALSE 	 = false.B
+	
+	val RS_W 	 = 5.W
+	val RD_W 	 = 5.W
+	val OPCODE_W = 7.W
+	val FUNCT3_W = 3.W
+	val FUNCT7_W = 7.W
+	val BYTE_W	 = 8.W
+	val WORD_W 	 = 32.W
 
-	// opcodes (RV32I)
-	//---------------------
-	val LOAD	 	=   3.U
-	val SYNCH	 	=  15.U
-	val I  			=  19.U
-	val STORE 	 	=  35.U
-	val R 			=  51.U
-	val BRANCH 	 	=  99.U
-	// Loads 
-	val LB    		=   0.U
-	val LH    		=   1.U
-	val LW    		=   2.U
-	val LBU   		=   4.U
-	val LHU   		=   5.U
-	// Stores 
-	val SB    		=   0.U
-	val SH    		=   1.U
-	val SW    		=   2.U
-	// Shifts		 
-	val SLL   		=   1.U 
-	val SRL   		=   5.U 
-	val SRA   		=   5.U 
-	val SRAI  		=   6.U 
-	// Arithmetic 
-	val ADD   		=   0.U  
-	val SUB   		=   0.U
-	val LUI   		=  55.U
-	val AUIPC 		=  23.U
-	// Logical 
-	val XOR   		=   4.U  
-	val OR    		=   6.U  
-	val AND   		=   7.U
-	// Compare 
-	val SLT   		=   2.U
-	val SLTU  		=   3.U
-	// Branches 
-	val BEQ   		=   0.U 
-	val BNE   		=   1.U
-	val BLT   		=   4.U
-	val BGE   		=   5.U
-	val BLTU  		=   6.U
-	val BGEU  		=   7.U
-	// Jump and link
-	val JAL   		= 111.U
-	val JALR  		= 103.U
-	// Synch
-	val FENCE 		=  15.U
-	val FENCE_I 	=  15.U
-	// System
-	val SCALL       = null
-	val SBREAK      = null
-	// Counters 
-	val RDCYCLE     = null
-	val RDCYCLEH    = null
-	val RDTIME      = null
-	val RDTIMEH     = null
-	val RDINSTRET   = null
-	val RDINSTRETH  = null
-	//---------------------
+	val FWD_EX	 = "b10".U
+	val FWD_MEM	 = "b01".U
+
+	// opcodes --------------------------------------------
+
+	val L  		= "h03".U 	// load
+	val I  		= "h13".U 	// immediate
+	val S  		= "h23".U 	// store
+	val R  		= "h33".U 	// register
+	val B 		= "h63".U	// branch
+	val LUI   	= "h37".U 	// load upper imm
+	val AUIPC 	= "h17".U 	// add upper imm to pc
+	val JALR  	= "h67".U 	// jump and link register
+	val JAL   	= "h6f".U 	// jump and link
+	val SYNCH	= "h0f".U   // fence
+
+	// funct3 ---------------------------------------------
+ 
+	val LB  	= "b000".U  // load byte		
+	val LH  	= "b001".U 	// load halfword
+	val LW    	= "b010".U 	// load word
+	val LBU   	= "b100".U 	// load byte unsigned
+	val LHU   	= "b101".U  // load half unsigned
+	 
+	val SB    	= "b000".U 	// store byte	
+	val SH    	= "b001".U	// store halfword 
+	val SW    	= "b010".U  // store word	
+		 
+	val SLL   	= "b001".U 	// shift left
+	val SRL   	= "b101".U 	// shift right
+	val SRA   	= "b101".U 	// shift right arithmetic 
+	val SRAI  	= "b110".U 	// shift right arith imm	
+	
+	val ADD   	= "b000".U 	// arithmetic add   
+	val SUB   	= "b000".U	// arithmetic sub	
+	 
+	val XOR   	= "b100".U 	// logical xor		
+	val OR    	= "b110".U	// logical or	
+	val AND   	= "b111".U 	// logical and
+	 
+	val SLT   	= "b010".U 	// set less than
+	val SLTU  	= "b011".U 	// set less than unsigned	
+	
+	val BEQ   	= "b000".U  // branch if equal  
+	val BNE   	= "b001".U 	// branch if not equal 
+	val BLT   	= "b100".U  // branch if less than 
+	val BGE   	= "b101".U  // branch if greater or equal 
+	val BLTU  	= "b110".U  // blt unsigned 
+	val BGEU  	= "b111".U  // bge unsigned
+	
+	val FENCE 	= "hf".U 	// synch thread
+	val FENCE_I = "hf".U 	// synch instruction and data
+
+	//-----------------------------------------------------
 }

@@ -12,13 +12,13 @@ import scala.io.Source._
 import utils.Constants._
 import java.io.FileNotFoundException
 
-object Bin {
+object Program {
 
 	def read() : Mem[UInt] = {
 
 		val source = try {
 
-			fromFile("bin/hello.hex")
+			fromFile("bin/reverse.hex")
 
 		} catch {
 			case e: FileNotFoundException => 
@@ -26,12 +26,12 @@ object Bin {
 		} 
 
 		val programLines 	= source.getLines.toArray 				
-    	val instructionMem 	= Mem(programLines.length, UInt(WORD_SIZE)) 	
+    	val instructionMem 	= Mem(programLines.length, UInt(WORD_W)) 	
 
     	// converts the instruction elements into UInt
 		for (i <- 0 to programLines.length - 1) {
 
-    		instructionMem(i) := {"h" + programLines(i)}.U (WORD_SIZE)
+    		instructionMem(i) := {"h" + programLines(i)}.U (WORD_W)
     	} 
 
     	source.close

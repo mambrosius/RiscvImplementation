@@ -15,77 +15,49 @@ import utils.Collection._
 class ALU extends Module {
 
     val io = IO(new Bundle {
-        val aluOp  = new ALU_OP
-        val reg    = new REG
-        val opcode = Input(UInt(7.W))
+        val opcode = Input(UInt(OPCODE_W))
+        val alu_op = new ALU_OP
+        val op     = new OP   
         val zero   = Output(Bool())
         val branch = Output(Bool())
+        val res    = Output(UInt(WORD_W))
     })
 
-    val rs1   = io.reg.rs.rs1
-    val op2   = io.reg.rs.rs2
+    val op1   = io.op.op1
+    val op2   = io.op.op2
     val shamt = op2(4, 0) 
     
-    io.reg.rd := MuxLookup(io.opcode, ZERO, Array(
+    io.res := MuxLookup(io.opcode, ZERO, Array(
 
-        R -> MuxLookup(io.aluOp.func, ZERO, Array(
-            ADD     -> Mux(io.aluOp.alt, rs1 - op2, rs1 + op2), 
-            SLL     -> (rs1 << shamt),
+        R -> MuxLookup(io.alu_op.func, ZERO, Array(
+            ADD     -> Mux(io.alu_op.alt, op1 - op2, op1 + op2), 
+            SLL     -> (op1 << shamt),
             //SLT   -> ZERO,
-            SLTU    -> (rs1 < op2),
-            XOR     -> (rs1 ^ op2),
-            SRL     -> Mux(io.aluOp.alt, ZERO, rs1 >> shamt),
-            OR      -> (rs1 | op2))),
-        I -> MuxLookup(io.aluOp.func, ZERO, Array(
-            ADD     -> (rs1 + op2), 
-            SLL     -> (rs1 << shamt),
+            SLTU    -> (op1 < op2),
+            XOR     -> (op1 ^ op2),
+            SRL     -> Mux(io.alu_op.alt, ZERO, op1 >> shamt),
+            OR      -> (op1 | op2))),
+        I -> MuxLookup(io.alu_op.func, ZERO, Array(
+            ADD     -> (op1 + op2), 
+            SLL     -> (op1 << shamt),
             //SLT   -> ZERO,
-            SLTU    -> (rs1 < op2),
-            XOR     -> (rs1 ^ op2),
-            SRL     -> Mux(io.aluOp.alt, ZERO, rs1 >> shamt),
-            OR      -> (rs1 | op2))),
-        LOAD -> (rs1 + op2),
-        /*MuxLookup(io.aluOp.func, ZERO, Array(
-            LB     -> ZERO,
-            LH     -> ZERO,
-            LW     -> ZERO,
-            LBU    -> ZERO,
-            LHU    -> ZERO,
-        ))*/ 
-        STORE -> rs1,
-        /*MuxLookup(io.aluOp.func, ZERO, Array(
-            SB     -> ZERO,
-            SH     -> ZERO,
-            SW     -> ZERO,
-        ))*/ 
-        BRANCH -> (rs1 - op2)
+            SLTU    -> (op1 < op2),
+            XOR     -> (op1 ^ op2),
+            SRL     -> Mux(io.alu_op.alt, ZERO, op1 >> shamt),
+            OR      -> (op1 | op2))),
+        L -> (op1 + op2), 
+        S -> (op1 + op2), 
+        B -> (op1 - op2)
+
         /*MuxLookup(io.aluOp.func, FALSE, Array(
-            BEQ     -> (rs1 - op2),
-            BNE     -> (rs1 != op2),
-            BLT     -> (rs1 < op2),
-            BGE     -> (rs1 > op2)
+            BEQ     -> (op1 - op2),
+            BNE     -> (op1 != op2),
+            BLT     -> (op1 < op2),
+            BGE     -> (op1 > op2)
             BLTU  ->
             BGEU  ->
         ))*/        
     ))
 
-    io.zero := io.reg.rd === ZERO    
-    
-    /*
-    io.reg.rd := MuxLookup(io.aluOp.func, ZERO, Array(
-        ADD     -> Mux(io.aluOp.alt, rs1 - op2, rs1 + op2), 
-        SLL     -> (rs1 << shamt),
-        //SLT   -> ZERO,
-        SLTU    -> (rs1 < op2),
-        XOR     -> (rs1 ^ op2),
-        SRL     -> Mux(io.aluOp.alt, ZERO, rs1 >> shamt),
-        OR      -> (rs1 | op2),
-        
-        STORE   -> rs1,
-        LOAD    -> rs1
-        //,BRANCH -> (rs1 - op2)
-        ))
-
-    io.zero := io.reg.rd === ZERO
-    */
+    io.zero := io.res === ZERO    
 }

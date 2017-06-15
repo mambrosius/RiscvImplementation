@@ -9,50 +9,30 @@ import chisel3._
 import chisel3.iotesters.PeekPokeTester
 import modules.DataMemory
 
-class DataMemoryTest(c: DataMemory) extends PeekPokeTester(c) {
+class DataMemoryTest(dut: DataMemory) extends PeekPokeTester(dut) {
+	/*
+	poke(dut.io.mem.read, false)
+	poke(dut.io.mem.write, true)
+	poke(dut.io.mem.func, 2)
+
+	poke(dut.io.reg.rs.rs1, 3)
+	poke(dut.io.reg.rs.rs2, 524578)
+
+	step(1)
+
+	poke(dut.io.mem.read, true)
+	poke(dut.io.mem.write, false)
+	poke(dut.io.mem.func, 2)
 	
-	poke(c.io.mem.read, false.B)
-	poke(c.io.mem.write, true.B)
-	poke(c.io.reg.rs.rs1, 3.U)
-	poke(c.io.reg.rs.rs2, 17.U)
+	poke(dut.io.reg.rs.rs1, 3)
+	expect(dut.io.reg.rd, 2)
 
 	step(1)
-
-	poke(c.io.mem.read, false.B)
-	poke(c.io.mem.write, true.B)
-	poke(c.io.reg.rs.rs1, 1.U)
-	poke(c.io.reg.rs.rs2, 3.U)
-
-	step(1)
-
-	poke(c.io.mem.read, true.B)
-	poke(c.io.mem.write, false.B)
-	poke(c.io.reg.rs.rs1, 3.U)
-	poke(c.io.reg.rs.rs2, 0.U)
-
-	expect(c.io.reg.rd, 17.U)
-
-	step(1)
-
-	poke(c.io.mem.read, true.B)
-	poke(c.io.mem.write, false.B)
-	poke(c.io.reg.rs.rs1, 0.U)
-	poke(c.io.reg.rs.rs2, 0.U)
-
-	expect(c.io.reg.rd, 0.U)
-
-	step(1)
-
-	poke(c.io.mem.read, true.B)
-	poke(c.io.mem.write, false.B)
-	poke(c.io.reg.rs.rs1, 1.U)
-	poke(c.io.reg.rs.rs2, 0.U)
-
-	expect(c.io.reg.rd, 3.U)
+	*/
 }
 
 object DataMemoryTest extends App {
 	iotesters.Driver.execute(args, () => new DataMemory) {
-		c => new DataMemoryTest(c)
+		dut => new DataMemoryTest(dut)
 	}	
 }

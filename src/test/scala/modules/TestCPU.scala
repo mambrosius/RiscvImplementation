@@ -14,18 +14,32 @@ class TestCPU(dut: CPU) extends PeekPokeTester(dut) {
 
 	//new ComTest(dut);
 		
-	for (i <- 0 until 100) {
-		//expect(dut.io.txd, 2.U)
+	for (i <- 0 until 50) {
+		
+		expect(dut.io.txd, 2.U)
 		//expect(dut.io.pc, 0)
 		//expect(dut.io.valid, FALSE)
-
 		//expect(dut.io.data, 0.U)
+		/*
 		expect(dut.io.r0 , 2.U)
 		expect(dut.io.r1 , 2.U)
 		expect(dut.io.r2 , 2.U)
 		expect(dut.io.r3 , 2.U)
-	
-		step(434)
+		*/
+
+		/*
+		expect(dut.io.alu_res, 10.U)
+		expect(dut.io.alu_op1, 10.U)
+		expect(dut.io.alu_op2, 10.U)
+		expect(dut.io.imm, 10.U)
+		*/
+		//expect(dut.io.alu_sel, 2.U)
+		//expect(dut.io.opcode, 1000.U)
+		//expect(dut.io.rd, 1000.U)
+		//expect(dut.io.fwd1, 5.U)
+		//expect(dut.io.fwd2, 5.U)
+
+		step(434) // 434
 		//step(1)
 	}
 

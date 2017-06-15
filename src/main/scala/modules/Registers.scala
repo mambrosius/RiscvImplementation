@@ -14,17 +14,22 @@ import utils.Collection._
 class Registers extends Module {
     
     val io = IO(new Bundle {
-        val sel   	 = new SEL
-        val reg   	 = Flipped(new REG)
-        val regWrite = Input(Bool())
+        val rs    = new RS
+        val reg_w = Input(Bool())
+        val rd    = Input(UInt(RD_W))
+        val res   = Input(UInt(WORD_W))
+        val op    = Flipped(new OP)
     }) 
 
-    val x = Mem(32, UInt(WORD_SIZE))
-    when (io.regWrite) { x(io.sel.rd) := io.reg.rd }
+    val x = Mem(32, UInt(WORD_W))
+    // val x = RegInit(Vec(Seq.fill(32)(0.asUInt(BYTE_SIZE))))
     
-    val fwd_rs1 = io.regWrite && (io.reg.rd =/= ZERO) && (io.sel.rd === io.sel.rs.rs1)
-    val fwd_rs2 = io.regWrite && (io.reg.rd =/= ZERO) && (io.sel.rd === io.sel.rs.rs2)
+    x(0.U) := ZERO
+    when (io.reg_w) { x(io.rd) := io.res }
+    
+    val fwd_rs1 = io.reg_w && (io.res =/= ZERO) && (io.rd === io.rs.rs1)
+    val fwd_rs2 = io.reg_w && (io.res =/= ZERO) && (io.rd === io.rs.rs2)
 
-    io.reg.rs.rs1 := Mux(fwd_rs1, io.reg.rd, x(io.sel.rs.rs1))
-    io.reg.rs.rs2 := Mux(fwd_rs2, io.reg.rd, x(io.sel.rs.rs2))
+    io.op.op1 := Mux(fwd_rs1, io.res, x(io.rs.rs1))
+    io.op.op2 := Mux(fwd_rs2, io.res, x(io.rs.rs2))
 }

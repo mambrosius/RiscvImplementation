@@ -10,7 +10,7 @@ import chisel3.iotesters.PeekPokeTester
 import modules._
 
 class TestUART(dut: UART) extends PeekPokeTester(dut) {
-    
+    /*
     val integer = 
 
     poke(dut.io.in, 3.U)
@@ -21,7 +21,7 @@ class TestUART(dut: UART) extends PeekPokeTester(dut) {
         expect(dut.io.txd, 2.U)
         step(434)    
     }
-
+    */
     /*
     step(1)
     poke(dut.io.enq.bits, 104.U)

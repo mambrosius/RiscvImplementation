@@ -14,27 +14,26 @@ import utils.Collection._
 class ForwardingUnit extends Module {
 
 	val io = IO(new Bundle {
-		val regWrite_exMem  = Input(Bool())
-		val regWrite_memWb 	= Input(Bool())
-		val sel_rs1			= Input(UInt(5.W))
-		val sel_rs2 		= Input(UInt(5.W))
-		val dst_exMem 		= Input(UInt(5.W))
-		val dst_memWb 		= Input(UInt(5.W))
-		val fwd_rs1 		= Output(UInt(2.W))
-		val fwd_rs2 		= Output(UInt(2.W))
+		val reg_w_mem = Input(Bool())
+		val reg_w_wb  = Input(Bool())
+		val rs 		  = new RS 
+		val rd_mem 	  = Input(UInt(RD_W))
+		val rd_wb 	  = Input(UInt(RD_W))
+		val fwd_rs1   = Output(UInt(2.W))
+		val fwd_rs2   = Output(UInt(2.W))
 	})
 	
-	when (io.regWrite_exMem && (io.dst_exMem =/= ZERO) && (io.dst_exMem === io.sel_rs1)) {
+	when (io.reg_w_mem && (io.rd_mem =/= ZERO) && (io.rd_mem === io.rs.rs1)) {
 		io.fwd_rs1 := FWD_EX
-	} .elsewhen (io.regWrite_memWb && (io.dst_memWb =/= ZERO) && (io.dst_memWb === io.sel_rs1)) { 
+	} .elsewhen (io.reg_w_wb && (io.rd_wb =/= ZERO) && (io.rd_wb === io.rs.rs1)) { 
 		io.fwd_rs1 := FWD_MEM
 	} .otherwise {
 		io.fwd_rs1 := ZERO		
 	}
 
-	when (io.regWrite_exMem && (io.dst_exMem =/= ZERO) && (io.dst_exMem === io.sel_rs2)) {
+	when (io.reg_w_mem && (io.rd_mem =/= ZERO) && (io.rd_mem === io.rs.rs2)) {
 		io.fwd_rs2 := FWD_EX
-	} .elsewhen (io.regWrite_memWb && (io.dst_memWb =/= ZERO) && (io.dst_memWb === io.sel_rs2)) {
+	} .elsewhen (io.reg_w_wb && (io.rd_wb =/= ZERO) && (io.rd_wb === io.rs.rs2)) {
 		io.fwd_rs2 := FWD_MEM
 	} .otherwise {
 		io.fwd_rs2 := ZERO

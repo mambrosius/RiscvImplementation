@@ -24,28 +24,27 @@ class UART extends Module {
         //val rxd = Input(Bool())
         //val deq = Decoupled(UInt(BYTE_SIZE))
         
-        val in    = Input(UInt(BYTE_SIZE))
+        val in    = Input(UInt(BYTE_W))
         val valid = Output(Bool())
         val txd   = Output(Bool())
         
         // test -----------------------------
 
-        //val data  = Output(UInt(BYTE_SIZE))
-
-        //val cnt = Output(UInt(5.W))
+        //val data = Output(UInt(BYTE_SIZE))
+        //val cnt  = Output(UInt(5.W))
         
-        val r0 = Output(UInt(BYTE_SIZE))
-        val r1 = Output(UInt(BYTE_SIZE))
-        val r2 = Output(UInt(BYTE_SIZE))
-        val r3 = Output(UInt(BYTE_SIZE))
+        val r0 = Output(UInt(BYTE_W))
+        val r1 = Output(UInt(BYTE_W))
+        val r2 = Output(UInt(BYTE_W))
+        val r3 = Output(UInt(BYTE_W))
     })
 
     val tx = Module(new Tx)
     //val rx = Module(new BufferedRx)
 
-    val q   = RegInit(Vec(Seq.fill(4)(0.asUInt(BYTE_SIZE))))
-    val ptr = RegInit(UInt(2.W), 0.U)
-    val cnt = RegInit(UInt(2.W), 0.U)
+    val q   = RegInit(Vec(Seq.fill(4)(0.asUInt(BYTE_W))))
+    val ptr = RegInit(UInt(2.W), ZERO)
+    val cnt = RegInit(UInt(2.W), ZERO)
     val i   = RegInit(UInt(4.W), ptr + cnt)
 
     i := ptr + cnt
@@ -82,16 +81,16 @@ class UART extends Module {
 
 class Tx extends Module {
     val io = IO(new Bundle {
-        val enq  = Flipped(Decoupled(UInt(BYTE_SIZE)))       
+        val enq  = Flipped(Decoupled(UInt(BYTE_W)))       
         val txd  = Output(Bool())
     })
 
     val TICK_MAX  = (FREQ/BAUD).U 
     
-    val idle :: sending = Enum(12)  // 2 stop bits?
+    val idle :: sending = Enum(12)
 
     val data      = RegInit(UInt(9.W), "b111111111".U) 
-    val ticks     = RegInit(UInt(WORD_SIZE), ZERO)
+    val ticks     = RegInit(UInt(WORD_W), ZERO)
     val state     = RegInit(idle)
 
     io.enq.ready := state === idle
@@ -121,7 +120,7 @@ class Tx extends Module {
 class Rx extends Module {
     val io = IO(new Bundle {
         val rxd = Input(Bool())
-        val deq = Decoupled(UInt(BYTE_SIZE))
+        val deq = Decoupled(UInt(BYTE_W))
     })
 
     val TICK_MAX  = (FREQ/BAUD).U 
@@ -130,7 +129,7 @@ class Rx extends Module {
     val idle :: stop :: reading = Enum(11)  
 
     val data      = RegInit(UInt(9.W), "b000000000".U) 
-    val ticks     = RegInit(UInt(WORD_SIZE), TICK_HALF)
+    val ticks     = RegInit(UInt(WORD_W), TICK_HALF)
     val state     = RegInit(idle)
     val valid     = RegInit(Bool(), FALSE)
 
@@ -196,11 +195,11 @@ class BufferedTx extends Module {
 class BufferedRx extends Module {
     val io = IO(new Bundle {
         val rxd = Input(Bool())
-        val deq = Decoupled(UInt(BYTE_SIZE))
+        val deq = Decoupled(UInt(BYTE_W))
         val cnt = Output(UInt(6.W))
     })
     
-    val queue = Module(new Queue(UInt(BYTE_SIZE), 16)) // move entries (16) to Constant.scala
+    val queue = Module(new Queue(UInt(BYTE_W), 16)) // move entries (16) to Constant.scala
     val rx    = Module(new Rx)
 
     queue.io.enq <> rx.io.deq
