@@ -14,10 +14,15 @@ object Pipeline {
 	class IF_ID extends Module {
 
 		val io = IO(new Bundle {
-			val in 	= new IF_ID_io
-			val out = Flipped(new IF_ID_io)
-		})		
-		io.out := RegNext(io.in)
+			val stall	= Input(Bool())
+			val in 		= new IF_ID_io
+			val out 	= Flipped(new IF_ID_io)
+		})
+
+		val reg = RegNext(io.in)
+
+		when (io.stall) { reg := reg } 
+		io.out := reg		
 	}
 	
 	class ID_EX extends Module {

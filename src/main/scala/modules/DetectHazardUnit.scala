@@ -14,12 +14,11 @@ import utils.Collection._
 class DetectHazardUnit extends Module {
 
 	val io = IO(new Bundle{
-		val rs1_id 	= Input(UInt(RS_W))
-		val rs2_id 	= Input(UInt(RS_W))
-		val rs2_ex 	= Input(UInt(RS_W))
-		val memRead = Input(Bool())
+		val rs_id 	= new RS
+		val rd_ex 	= Input(UInt(RS_W))
+		val mem_r 	= Input(Bool())
 		val stall 	= Output(Bool())
 	})
 
-	io.stall := io.memRead && ((io.rs2_ex === io.rs1_id) || (io.rs2_ex === io.rs2_id))
+	io.stall := io.mem_r && ((io.rd_ex === io.rs_id.rs1) || (io.rd_ex === io.rs_id.rs2))
 }

@@ -16,8 +16,17 @@ class TestCPU(dut: CPU) extends PeekPokeTester(dut) {
 		
 	for (i <- 0 until 50) {
 		
-		expect(dut.io.txd, 2.U)
-		//expect(dut.io.pc, 0)
+		expect(dut.io.pc, "h1000".U)
+		expect(dut.io.inst, 10000000)
+		expect(dut.io.stall, 2)
+		expect(dut.io.rs1_id, 2)
+		expect(dut.io.rs2_id, 2)
+		expect(dut.io.rd_ex, 2)
+		expect(dut.io.mem_r, 2)
+		expect(dut.io.read, 2)
+
+		//expect(dut.io.txd, 2.U)
+		
 		//expect(dut.io.valid, FALSE)
 		//expect(dut.io.data, 0.U)
 		/*
@@ -39,8 +48,7 @@ class TestCPU(dut: CPU) extends PeekPokeTester(dut) {
 		//expect(dut.io.fwd1, 5.U)
 		//expect(dut.io.fwd2, 5.U)
 
-		step(434) // 434
-		//step(1)
+		step(1) // 434
 	}
 
 

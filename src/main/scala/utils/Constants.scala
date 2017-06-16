@@ -11,6 +11,10 @@ import chisel3._
 
 object Constants {
 
+	// program
+
+	val PROGRAM  = "bin/stall.hex"
+
 	// attributes -----------------------------------------
 
 	val MEM_D 	 = 512
@@ -20,7 +24,7 @@ object Constants {
 	// constants ------------------------------------------
 
 	val ZERO	 = 0.U
-	val START 	 = 21.U
+	val START 	 = 84.U
 	val TRUE	 = true.B
 	val FALSE 	 = false.B
 	

@@ -13,6 +13,7 @@ import utils.Constants._
 class ProgramCounter extends Module {
 	
 	val io = IO(new Bundle {
+		val stall 	= Input(Bool())
 		val branch 	= Input(Bool())
 		val pc_src 	= Input(UInt(WORD_W))
 		val pc_next = Output(UInt(WORD_W))
@@ -20,7 +21,11 @@ class ProgramCounter extends Module {
 	}) 
 
 	val pc_reg  = RegInit(UInt(WORD_W), START) 
-	io.pc_next 	:= pc_reg + 1.U;
-	pc_reg 		:= Mux(io.branch, io.pc_src, io.pc_next)
+
+	when (!io.stall) {
+		io.pc_next 	:= pc_reg + 4.U;
+		pc_reg 		:= Mux(io.branch, io.pc_src, io.pc_next)
+	}
+	
 	io.pc 		:= pc_reg 
 }

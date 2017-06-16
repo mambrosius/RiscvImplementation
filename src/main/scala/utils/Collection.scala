@@ -65,13 +65,9 @@ object Collection {
 		val zero 	= Input(Bool())
 		val WB 		= new WB
 		val MEM 	= new MEM
-		
 		val op 		= new OP 
 		val rd 		= Input(UInt(RD_W))
-		val pc_next = Input(UInt(WORD_W))
-		//val aluRes= Input(UInt(WORD_W))
-		//val op2   = Input(UInt(WORD_W))
-		
+		val pc_src  = Input(UInt(WORD_W))
 	}
 
 	class MEM_WB_io extends Bundle {
@@ -84,7 +80,6 @@ object Collection {
 	class EX extends Bundle {
 		val opcode 	= Input(UInt(OPCODE_W))
 		val alu_sel = Input(Bool())
-		val dst_sel = Input(Bool())
 		val alu_op  = new ALU_OP 
 	}
 

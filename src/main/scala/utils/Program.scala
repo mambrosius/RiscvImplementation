@@ -18,7 +18,7 @@ object Program {
 
 		val source = try {
 
-			fromFile("bin/reverse.hex")
+			fromFile(PROGRAM)
 
 		} catch {
 			case e: FileNotFoundException => 
@@ -26,12 +26,18 @@ object Program {
 		} 
 
 		val programLines 	= source.getLines.toArray 				
-    	val instructionMem 	= Mem(programLines.length, UInt(WORD_W)) 	
+    	val instructionMem 	= Mem(programLines.length * 4, UInt(BYTE_W)) 	
 
     	// converts the instruction elements into UInt
 		for (i <- 0 to programLines.length - 1) {
+			val base = i * 4
+			val instruction = {"h" + programLines(i)}.U (WORD_W)
+			instructionMem(base)   		:= instruction(7,0)
+			instructionMem(base + 1) 	:= instruction(15,8)
+			instructionMem(base + 2) 	:= instruction(23,16)
+			instructionMem(base + 3) 	:= instruction(31,24)
 
-    		instructionMem(i) := {"h" + programLines(i)}.U (WORD_W)
+    		//instructionMem(i) := {"h" + programLines(i)}.U (WORD_W)
     	} 
 
     	source.close

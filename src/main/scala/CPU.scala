@@ -26,13 +26,23 @@ class CPU extends Module {
         val r2 = Output(UInt(BYTE_W))
         val r3 = Output(UInt(BYTE_W))
 
+        val inst = Output(UInt(WORD_W))
+
+        val pc      = Output(UInt(WORD_W))
+        val stall   = Output(Bool())
+        val rs1_id  = Output(UInt(RS_W))
+        val rs2_id  = Output(UInt(RS_W))
+        val rd_ex   = Output(UInt(RD_W))
+        val mem_r   = Output(Bool())
+        val read    = Output(Bool())
+
         /*
         // Program counter
         val pc      = Output(UInt(WORD_W))
         val pc_next = Output(UInt(WORD_W)) 
         
         // Decoder
-        val inst    = Output(UInt(WORD_W))
+        
         val opcode  = Output(UInt(WORD_W))
         val imm     = Output(UInt(WORD_W))
         val op1     = Output(UInt(WORD_W))
@@ -52,12 +62,9 @@ class CPU extends Module {
         */
     })  
  
-    // program ------------------------------------------------------------------------------------------
-    
-    val instMem     = Program.read    
-    
     // modules ------------------------------------------------------------------------------------------
     
+    val instMem     = Module(new InstructionMemory)
     val counter     = Module(new ProgramCounter)
     val decoder     = Module(new Decoder)
     val control     = Module(new Control)
@@ -78,24 +85,29 @@ class CPU extends Module {
     // IF -----------------------------------------------------------------------------------------------
     
     //counter.io.pc_src     := IF_ID.io.out.pc_next + decoder.io.imm.SB
-    counter.io.branch       := (control.io.MEM.branch && (regs.io.op.op1 === regs.io.op.op2)) || !uart.io.valid
-    counter.io.pc_src       := Mux(uart.io.valid, IF_ID.io.out.pc_next + decoder.io.imm, EX_MEM.io.out.pc_next - 1.U)
+    //counter.io.branch     := (control.io.MEM.branch && (regs.io.op.op1 === regs.io.op.op2)) || !uart.io.valid
+    counter.io.stall        := hazardUnit.io.stall
+    counter.io.branch       := EX_MEM.io.out.zero && EX_MEM.io.out.MEM.branch
+    //counter.io.pc_src     := Mux(uart.io.valid, IF_ID.io.out.pc_next + decoder.io.imm, EX_MEM.io.out.pc_next - 1.U)
+    counter.io.pc_src       := EX_MEM.io.out.pc_src 
+    instMem.io.pc           := counter.io.pc
 
+    IF_ID.io.stall          := hazardUnit.io.stall
     IF_ID.io.in.pc_next     := counter.io.pc_next
-    IF_ID.io.in.inst        := instMem.read(counter.io.pc)
+    IF_ID.io.in.inst        := instMem.io.inst
 
     // ID -----------------------------------------------------------------------------------------------
 
     decoder.io.inst         := IF_ID.io.out.inst
     regs.io.rs              := decoder.io.rs
     
-    // hazardUnit
+    hazardUnit.io.rs_id     := decoder.io.rs
+    hazardUnit.io.rd_ex     := ID_EX.io.out.rd 
+    hazardUnit.io.mem_r     := ID_EX.io.out.MEM.read
 
-    //control.io.ctrl       := decoder.io.ctrl
-    control.io.ctrl.opcode  := Mux(uart.io.valid, decoder.io.ctrl.opcode, ZERO) // test signal 
-    control.io.ctrl.funct3  := Mux(uart.io.valid, decoder.io.ctrl.funct3, ZERO) // test signal 
-    control.io.ctrl.funct7  := Mux(uart.io.valid, decoder.io.ctrl.funct7, ZERO) // test signal 
-    
+    control.io.stall        := hazardUnit.io.stall
+    control.io.ctrl         := decoder.io.ctrl
+
     ID_EX.io.in.WB          := control.io.WB
     ID_EX.io.in.MEM         := control.io.MEM
     ID_EX.io.in.EX          := control.io.EX
@@ -126,16 +138,14 @@ class CPU extends Module {
         FWD_MEM -> Mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, regs.io.res),
         ZERO    -> Mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, ID_EX.io.out.op.op2)))
  
-    EX_MEM.io.in.pc_next    := ID_EX.io.out.pc_next
-    
+    EX_MEM.io.in.pc_src     := ID_EX.io.out.pc_next + (ID_EX.io.out.imm << 2)
     EX_MEM.io.in.WB         := ID_EX.io.out.WB
     EX_MEM.io.in.MEM        := ID_EX.io.out.MEM
     EX_MEM.io.in.op.op2     := ID_EX.io.out.op.op2 
-
     EX_MEM.io.in.zero       := alu.io.zero
     EX_MEM.io.in.op.op1     := alu.io.res
     
-    EX_MEM.io.in.rd         := Mux(ID_EX.io.out.EX.dst_sel, ID_EX.io.out.rd, ID_EX.io.out.rs.rs2)
+    EX_MEM.io.in.rd         := ID_EX.io.out.rd
 
     // MEM ----------------------------------------------------------------------------------------------
 
@@ -170,9 +180,19 @@ class CPU extends Module {
     io.r2 := uart.io.r2
     io.r3 := uart.io.r3
 
+    io.inst  := instMem.io.inst
+    
+    io.pc     := counter.io.pc
+    io.stall  := hazardUnit.io.stall
+    io.rs1_id := decoder.io.rs.rs1
+    io.rs2_id := decoder.io.rs.rs2
+    io.rd_ex  := ID_EX.io.out.rd
+    io.mem_r  := ID_EX.io.out.MEM.read
+
+    io.read   := control.io.MEM.read
     /*
     io.pc       := counter.io.pc
-    io.inst     := instMem.read(io.pc)
+    
     io.pc_next  := counter.io.pc_next
 
     io.opcode   := ID_EX.io.out.EX.opcode

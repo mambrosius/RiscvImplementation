@@ -1,5 +1,513 @@
 ;buildInfoPackage: chisel3, version: 3.0-SNAPSHOT, scalaVersion: 2.11.7, sbtVersion: 0.13.12, builtAtString: 2017-05-25 17:44:19.669, builtAtMillis: 1495734259669
 circuit CPU : 
+  module InstructionMemory : 
+    input clock : Clock
+    input reset : UInt<1>
+    output io : {flip pc : UInt<32>, inst : UInt<32>}
+    
+    clock is invalid
+    reset is invalid
+    io is invalid
+    cmem rom : UInt<8>[240] @[Program.scala 29:38]
+    infer mport _T_8 = rom[UInt<1>("h00")], clock
+    _T_8 <= UInt<8>("h07f") @[Program.scala 35:57]
+    infer mport _T_11 = rom[UInt<1>("h01")], clock
+    _T_11 <= UInt<8>("h045") @[Program.scala 36:57]
+    infer mport _T_14 = rom[UInt<2>("h02")], clock
+    _T_14 <= UInt<8>("h04c") @[Program.scala 37:57]
+    infer mport _T_17 = rom[UInt<2>("h03")], clock
+    _T_17 <= UInt<8>("h046") @[Program.scala 38:57]
+    infer mport _T_21 = rom[UInt<3>("h04")], clock
+    _T_21 <= UInt<8>("h01") @[Program.scala 35:57]
+    infer mport _T_24 = rom[UInt<3>("h05")], clock
+    _T_24 <= UInt<8>("h01") @[Program.scala 36:57]
+    infer mport _T_27 = rom[UInt<3>("h06")], clock
+    _T_27 <= UInt<8>("h01") @[Program.scala 37:57]
+    infer mport _T_30 = rom[UInt<3>("h07")], clock
+    _T_30 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_34 = rom[UInt<4>("h08")], clock
+    _T_34 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_37 = rom[UInt<4>("h09")], clock
+    _T_37 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_40 = rom[UInt<4>("h0a")], clock
+    _T_40 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_43 = rom[UInt<4>("h0b")], clock
+    _T_43 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_47 = rom[UInt<4>("h0c")], clock
+    _T_47 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_50 = rom[UInt<4>("h0d")], clock
+    _T_50 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_53 = rom[UInt<4>("h0e")], clock
+    _T_53 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_56 = rom[UInt<4>("h0f")], clock
+    _T_56 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_60 = rom[UInt<5>("h010")], clock
+    _T_60 <= UInt<8>("h02") @[Program.scala 35:57]
+    infer mport _T_63 = rom[UInt<5>("h011")], clock
+    _T_63 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_66 = rom[UInt<5>("h012")], clock
+    _T_66 <= UInt<8>("h0f3") @[Program.scala 37:57]
+    infer mport _T_69 = rom[UInt<5>("h013")], clock
+    _T_69 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_73 = rom[UInt<5>("h014")], clock
+    _T_73 <= UInt<8>("h01") @[Program.scala 35:57]
+    infer mport _T_76 = rom[UInt<5>("h015")], clock
+    _T_76 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_79 = rom[UInt<5>("h016")], clock
+    _T_79 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_82 = rom[UInt<5>("h017")], clock
+    _T_82 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_86 = rom[UInt<5>("h018")], clock
+    _T_86 <= UInt<8>("h054") @[Program.scala 35:57]
+    infer mport _T_89 = rom[UInt<5>("h019")], clock
+    _T_89 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_92 = rom[UInt<5>("h01a")], clock
+    _T_92 <= UInt<8>("h01") @[Program.scala 37:57]
+    infer mport _T_95 = rom[UInt<5>("h01b")], clock
+    _T_95 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_99 = rom[UInt<5>("h01c")], clock
+    _T_99 <= UInt<8>("h034") @[Program.scala 35:57]
+    infer mport _T_102 = rom[UInt<5>("h01d")], clock
+    _T_102 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_105 = rom[UInt<5>("h01e")], clock
+    _T_105 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_108 = rom[UInt<5>("h01f")], clock
+    _T_108 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_112 = rom[UInt<6>("h020")], clock
+    _T_112 <= UInt<8>("h0dc") @[Program.scala 35:57]
+    infer mport _T_115 = rom[UInt<6>("h021")], clock
+    _T_115 <= UInt<8>("h01") @[Program.scala 36:57]
+    infer mport _T_118 = rom[UInt<6>("h022")], clock
+    _T_118 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_121 = rom[UInt<6>("h023")], clock
+    _T_121 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_125 = rom[UInt<6>("h024")], clock
+    _T_125 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_128 = rom[UInt<6>("h025")], clock
+    _T_128 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_131 = rom[UInt<6>("h026")], clock
+    _T_131 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_134 = rom[UInt<6>("h027")], clock
+    _T_134 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_138 = rom[UInt<6>("h028")], clock
+    _T_138 <= UInt<8>("h034") @[Program.scala 35:57]
+    infer mport _T_141 = rom[UInt<6>("h029")], clock
+    _T_141 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_144 = rom[UInt<6>("h02a")], clock
+    _T_144 <= UInt<8>("h020") @[Program.scala 37:57]
+    infer mport _T_147 = rom[UInt<6>("h02b")], clock
+    _T_147 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_151 = rom[UInt<6>("h02c")], clock
+    _T_151 <= UInt<8>("h01") @[Program.scala 35:57]
+    infer mport _T_154 = rom[UInt<6>("h02d")], clock
+    _T_154 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_157 = rom[UInt<6>("h02e")], clock
+    _T_157 <= UInt<8>("h028") @[Program.scala 37:57]
+    infer mport _T_160 = rom[UInt<6>("h02f")], clock
+    _T_160 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_164 = rom[UInt<6>("h030")], clock
+    _T_164 <= UInt<8>("h06") @[Program.scala 35:57]
+    infer mport _T_167 = rom[UInt<6>("h031")], clock
+    _T_167 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_170 = rom[UInt<6>("h032")], clock
+    _T_170 <= UInt<8>("h05") @[Program.scala 37:57]
+    infer mport _T_173 = rom[UInt<6>("h033")], clock
+    _T_173 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_177 = rom[UInt<6>("h034")], clock
+    _T_177 <= UInt<8>("h01") @[Program.scala 35:57]
+    infer mport _T_180 = rom[UInt<6>("h035")], clock
+    _T_180 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_183 = rom[UInt<6>("h036")], clock
+    _T_183 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_186 = rom[UInt<6>("h037")], clock
+    _T_186 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_190 = rom[UInt<6>("h038")], clock
+    _T_190 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_193 = rom[UInt<6>("h039")], clock
+    _T_193 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_196 = rom[UInt<6>("h03a")], clock
+    _T_196 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_199 = rom[UInt<6>("h03b")], clock
+    _T_199 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_203 = rom[UInt<6>("h03c")], clock
+    _T_203 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_206 = rom[UInt<6>("h03d")], clock
+    _T_206 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_209 = rom[UInt<6>("h03e")], clock
+    _T_209 <= UInt<8>("h01") @[Program.scala 37:57]
+    infer mport _T_212 = rom[UInt<6>("h03f")], clock
+    _T_212 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_216 = rom[UInt<7>("h040")], clock
+    _T_216 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_219 = rom[UInt<7>("h041")], clock
+    _T_219 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_222 = rom[UInt<7>("h042")], clock
+    _T_222 <= UInt<8>("h01") @[Program.scala 37:57]
+    infer mport _T_225 = rom[UInt<7>("h043")], clock
+    _T_225 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_229 = rom[UInt<7>("h044")], clock
+    _T_229 <= UInt<8>("h0cc") @[Program.scala 35:57]
+    infer mport _T_232 = rom[UInt<7>("h045")], clock
+    _T_232 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_235 = rom[UInt<7>("h046")], clock
+    _T_235 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_238 = rom[UInt<7>("h047")], clock
+    _T_238 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_242 = rom[UInt<7>("h048")], clock
+    _T_242 <= UInt<8>("h0cc") @[Program.scala 35:57]
+    infer mport _T_245 = rom[UInt<7>("h049")], clock
+    _T_245 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_248 = rom[UInt<7>("h04a")], clock
+    _T_248 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_251 = rom[UInt<7>("h04b")], clock
+    _T_251 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_255 = rom[UInt<7>("h04c")], clock
+    _T_255 <= UInt<8>("h05") @[Program.scala 35:57]
+    infer mport _T_258 = rom[UInt<7>("h04d")], clock
+    _T_258 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_261 = rom[UInt<7>("h04e")], clock
+    _T_261 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_264 = rom[UInt<7>("h04f")], clock
+    _T_264 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_268 = rom[UInt<7>("h050")], clock
+    _T_268 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_271 = rom[UInt<7>("h051")], clock
+    _T_271 <= UInt<8>("h010") @[Program.scala 36:57]
+    infer mport _T_274 = rom[UInt<7>("h052")], clock
+    _T_274 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_277 = rom[UInt<7>("h053")], clock
+    _T_277 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_281 = rom[UInt<7>("h054")], clock
+    _T_281 <= UInt<8>("h013") @[Program.scala 35:57]
+    infer mport _T_284 = rom[UInt<7>("h055")], clock
+    _T_284 <= UInt<8>("h03") @[Program.scala 36:57]
+    infer mport _T_287 = rom[UInt<7>("h056")], clock
+    _T_287 <= UInt<8>("h010") @[Program.scala 37:57]
+    infer mport _T_290 = rom[UInt<7>("h057")], clock
+    _T_290 <= UInt<8>("h040") @[Program.scala 38:57]
+    infer mport _T_294 = rom[UInt<7>("h058")], clock
+    _T_294 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_297 = rom[UInt<7>("h059")], clock
+    _T_297 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_300 = rom[UInt<7>("h05a")], clock
+    _T_300 <= UInt<8>("h080") @[Program.scala 37:57]
+    infer mport _T_303 = rom[UInt<7>("h05b")], clock
+    _T_303 <= UInt<8>("h06") @[Program.scala 38:57]
+    infer mport _T_307 = rom[UInt<7>("h05c")], clock
+    _T_307 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_310 = rom[UInt<7>("h05d")], clock
+    _T_310 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_313 = rom[UInt<7>("h05e")], clock
+    _T_313 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_316 = rom[UInt<7>("h05f")], clock
+    _T_316 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_320 = rom[UInt<7>("h060")], clock
+    _T_320 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_323 = rom[UInt<7>("h061")], clock
+    _T_323 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_326 = rom[UInt<7>("h062")], clock
+    _T_326 <= UInt<8>("h050") @[Program.scala 37:57]
+    infer mport _T_329 = rom[UInt<7>("h063")], clock
+    _T_329 <= UInt<8>("h06") @[Program.scala 38:57]
+    infer mport _T_333 = rom[UInt<7>("h064")], clock
+    _T_333 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_336 = rom[UInt<7>("h065")], clock
+    _T_336 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_339 = rom[UInt<7>("h066")], clock
+    _T_339 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_342 = rom[UInt<7>("h067")], clock
+    _T_342 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_346 = rom[UInt<7>("h068")], clock
+    _T_346 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_349 = rom[UInt<7>("h069")], clock
+    _T_349 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_352 = rom[UInt<7>("h06a")], clock
+    _T_352 <= UInt<8>("h0c0") @[Program.scala 37:57]
+    infer mport _T_355 = rom[UInt<7>("h06b")], clock
+    _T_355 <= UInt<8>("h06") @[Program.scala 38:57]
+    infer mport _T_359 = rom[UInt<7>("h06c")], clock
+    _T_359 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_362 = rom[UInt<7>("h06d")], clock
+    _T_362 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_365 = rom[UInt<7>("h06e")], clock
+    _T_365 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_368 = rom[UInt<7>("h06f")], clock
+    _T_368 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_372 = rom[UInt<7>("h070")], clock
+    _T_372 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_375 = rom[UInt<7>("h071")], clock
+    _T_375 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_378 = rom[UInt<7>("h072")], clock
+    _T_378 <= UInt<8>("h0c0") @[Program.scala 37:57]
+    infer mport _T_381 = rom[UInt<7>("h073")], clock
+    _T_381 <= UInt<8>("h06") @[Program.scala 38:57]
+    infer mport _T_385 = rom[UInt<7>("h074")], clock
+    _T_385 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_388 = rom[UInt<7>("h075")], clock
+    _T_388 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_391 = rom[UInt<7>("h076")], clock
+    _T_391 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_394 = rom[UInt<7>("h077")], clock
+    _T_394 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_398 = rom[UInt<7>("h078")], clock
+    _T_398 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_401 = rom[UInt<7>("h079")], clock
+    _T_401 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_404 = rom[UInt<7>("h07a")], clock
+    _T_404 <= UInt<8>("h0f0") @[Program.scala 37:57]
+    infer mport _T_407 = rom[UInt<7>("h07b")], clock
+    _T_407 <= UInt<8>("h06") @[Program.scala 38:57]
+    infer mport _T_411 = rom[UInt<7>("h07c")], clock
+    _T_411 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_414 = rom[UInt<7>("h07d")], clock
+    _T_414 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_417 = rom[UInt<7>("h07e")], clock
+    _T_417 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_420 = rom[UInt<7>("h07f")], clock
+    _T_420 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_424 = rom[UInt<8>("h080")], clock
+    _T_424 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_427 = rom[UInt<8>("h081")], clock
+    _T_427 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_430 = rom[UInt<8>("h082")], clock
+    _T_430 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_433 = rom[UInt<8>("h083")], clock
+    _T_433 <= UInt<8>("h02") @[Program.scala 38:57]
+    infer mport _T_437 = rom[UInt<8>("h084")], clock
+    _T_437 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_440 = rom[UInt<8>("h085")], clock
+    _T_440 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_443 = rom[UInt<8>("h086")], clock
+    _T_443 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_446 = rom[UInt<8>("h087")], clock
+    _T_446 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_450 = rom[UInt<8>("h088")], clock
+    _T_450 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_453 = rom[UInt<8>("h089")], clock
+    _T_453 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_456 = rom[UInt<8>("h08a")], clock
+    _T_456 <= UInt<8>("h070") @[Program.scala 37:57]
+    infer mport _T_459 = rom[UInt<8>("h08b")], clock
+    _T_459 <= UInt<8>("h07") @[Program.scala 38:57]
+    infer mport _T_463 = rom[UInt<8>("h08c")], clock
+    _T_463 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_466 = rom[UInt<8>("h08d")], clock
+    _T_466 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_469 = rom[UInt<8>("h08e")], clock
+    _T_469 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_472 = rom[UInt<8>("h08f")], clock
+    _T_472 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_476 = rom[UInt<8>("h090")], clock
+    _T_476 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_479 = rom[UInt<8>("h091")], clock
+    _T_479 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_482 = rom[UInt<8>("h092")], clock
+    _T_482 <= UInt<8>("h0f0") @[Program.scala 37:57]
+    infer mport _T_485 = rom[UInt<8>("h093")], clock
+    _T_485 <= UInt<8>("h06") @[Program.scala 38:57]
+    infer mport _T_489 = rom[UInt<8>("h094")], clock
+    _T_489 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_492 = rom[UInt<8>("h095")], clock
+    _T_492 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_495 = rom[UInt<8>("h096")], clock
+    _T_495 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_498 = rom[UInt<8>("h097")], clock
+    _T_498 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_502 = rom[UInt<8>("h098")], clock
+    _T_502 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_505 = rom[UInt<8>("h099")], clock
+    _T_505 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_508 = rom[UInt<8>("h09a")], clock
+    _T_508 <= UInt<8>("h020") @[Program.scala 37:57]
+    infer mport _T_511 = rom[UInt<8>("h09b")], clock
+    _T_511 <= UInt<8>("h07") @[Program.scala 38:57]
+    infer mport _T_515 = rom[UInt<8>("h09c")], clock
+    _T_515 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_518 = rom[UInt<8>("h09d")], clock
+    _T_518 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_521 = rom[UInt<8>("h09e")], clock
+    _T_521 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_524 = rom[UInt<8>("h09f")], clock
+    _T_524 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_528 = rom[UInt<8>("h0a0")], clock
+    _T_528 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_531 = rom[UInt<8>("h0a1")], clock
+    _T_531 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_534 = rom[UInt<8>("h0a2")], clock
+    _T_534 <= UInt<8>("h0c0") @[Program.scala 37:57]
+    infer mport _T_537 = rom[UInt<8>("h0a3")], clock
+    _T_537 <= UInt<8>("h06") @[Program.scala 38:57]
+    infer mport _T_541 = rom[UInt<8>("h0a4")], clock
+    _T_541 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_544 = rom[UInt<8>("h0a5")], clock
+    _T_544 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_547 = rom[UInt<8>("h0a6")], clock
+    _T_547 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_550 = rom[UInt<8>("h0a7")], clock
+    _T_550 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_554 = rom[UInt<8>("h0a8")], clock
+    _T_554 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_557 = rom[UInt<8>("h0a9")], clock
+    _T_557 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_560 = rom[UInt<8>("h0aa")], clock
+    _T_560 <= UInt<8>("h040") @[Program.scala 37:57]
+    infer mport _T_563 = rom[UInt<8>("h0ab")], clock
+    _T_563 <= UInt<8>("h06") @[Program.scala 38:57]
+    infer mport _T_567 = rom[UInt<8>("h0ac")], clock
+    _T_567 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_570 = rom[UInt<8>("h0ad")], clock
+    _T_570 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_573 = rom[UInt<8>("h0ae")], clock
+    _T_573 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_576 = rom[UInt<8>("h0af")], clock
+    _T_576 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_580 = rom[UInt<8>("h0b0")], clock
+    _T_580 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_583 = rom[UInt<8>("h0b1")], clock
+    _T_583 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_586 = rom[UInt<8>("h0b2")], clock
+    _T_586 <= UInt<8>("h010") @[Program.scala 37:57]
+    infer mport _T_589 = rom[UInt<8>("h0b3")], clock
+    _T_589 <= UInt<8>("h02") @[Program.scala 38:57]
+    infer mport _T_593 = rom[UInt<8>("h0b4")], clock
+    _T_593 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_596 = rom[UInt<8>("h0b5")], clock
+    _T_596 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_599 = rom[UInt<8>("h0b6")], clock
+    _T_599 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_602 = rom[UInt<8>("h0b7")], clock
+    _T_602 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_606 = rom[UInt<8>("h0b8")], clock
+    _T_606 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_609 = rom[UInt<8>("h0b9")], clock
+    _T_609 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_612 = rom[UInt<8>("h0ba")], clock
+    _T_612 <= UInt<8>("h0a0") @[Program.scala 37:57]
+    infer mport _T_615 = rom[UInt<8>("h0bb")], clock
+    _T_615 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_619 = rom[UInt<8>("h0bc")], clock
+    _T_619 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_622 = rom[UInt<8>("h0bd")], clock
+    _T_622 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_625 = rom[UInt<8>("h0be")], clock
+    _T_625 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_628 = rom[UInt<8>("h0bf")], clock
+    _T_628 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_632 = rom[UInt<8>("h0c0")], clock
+    _T_632 <= UInt<8>("h093") @[Program.scala 35:57]
+    infer mport _T_635 = rom[UInt<8>("h0c1")], clock
+    _T_635 <= UInt<8>("h02") @[Program.scala 36:57]
+    infer mport _T_638 = rom[UInt<8>("h0c2")], clock
+    _T_638 <= UInt<8>("h0d0") @[Program.scala 37:57]
+    infer mport _T_641 = rom[UInt<8>("h0c3")], clock
+    _T_641 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_645 = rom[UInt<8>("h0c4")], clock
+    _T_645 <= UInt<8>("h023") @[Program.scala 35:57]
+    infer mport _T_648 = rom[UInt<8>("h0c5")], clock
+    _T_648 <= UInt<8>("h020") @[Program.scala 36:57]
+    infer mport _T_651 = rom[UInt<8>("h0c6")], clock
+    _T_651 <= UInt<8>("h053") @[Program.scala 37:57]
+    infer mport _T_654 = rom[UInt<8>("h0c7")], clock
+    _T_654 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_658 = rom[UInt<8>("h0c8")], clock
+    _T_658 <= UInt<8>("h067") @[Program.scala 35:57]
+    infer mport _T_661 = rom[UInt<8>("h0c9")], clock
+    _T_661 <= UInt<8>("h080") @[Program.scala 36:57]
+    infer mport _T_664 = rom[UInt<8>("h0ca")], clock
+    _T_664 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_667 = rom[UInt<8>("h0cb")], clock
+    _T_667 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_671 = rom[UInt<8>("h0cc")], clock
+    _T_671 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_674 = rom[UInt<8>("h0cd")], clock
+    _T_674 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_677 = rom[UInt<8>("h0ce")], clock
+    _T_677 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_680 = rom[UInt<8>("h0cf")], clock
+    _T_680 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_684 = rom[UInt<8>("h0d0")], clock
+    _T_684 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_687 = rom[UInt<8>("h0d1")], clock
+    _T_687 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_690 = rom[UInt<8>("h0d2")], clock
+    _T_690 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_693 = rom[UInt<8>("h0d3")], clock
+    _T_693 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_697 = rom[UInt<8>("h0d4")], clock
+    _T_697 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_700 = rom[UInt<8>("h0d5")], clock
+    _T_700 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_703 = rom[UInt<8>("h0d6")], clock
+    _T_703 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_706 = rom[UInt<8>("h0d7")], clock
+    _T_706 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_710 = rom[UInt<8>("h0d8")], clock
+    _T_710 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_713 = rom[UInt<8>("h0d9")], clock
+    _T_713 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_716 = rom[UInt<8>("h0da")], clock
+    _T_716 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_719 = rom[UInt<8>("h0db")], clock
+    _T_719 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_723 = rom[UInt<8>("h0dc")], clock
+    _T_723 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_726 = rom[UInt<8>("h0dd")], clock
+    _T_726 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_729 = rom[UInt<8>("h0de")], clock
+    _T_729 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_732 = rom[UInt<8>("h0df")], clock
+    _T_732 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_736 = rom[UInt<8>("h0e0")], clock
+    _T_736 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_739 = rom[UInt<8>("h0e1")], clock
+    _T_739 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_742 = rom[UInt<8>("h0e2")], clock
+    _T_742 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_745 = rom[UInt<8>("h0e3")], clock
+    _T_745 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_749 = rom[UInt<8>("h0e4")], clock
+    _T_749 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_752 = rom[UInt<8>("h0e5")], clock
+    _T_752 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_755 = rom[UInt<8>("h0e6")], clock
+    _T_755 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_758 = rom[UInt<8>("h0e7")], clock
+    _T_758 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_762 = rom[UInt<8>("h0e8")], clock
+    _T_762 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_765 = rom[UInt<8>("h0e9")], clock
+    _T_765 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_768 = rom[UInt<8>("h0ea")], clock
+    _T_768 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_771 = rom[UInt<8>("h0eb")], clock
+    _T_771 <= UInt<8>("h00") @[Program.scala 38:57]
+    infer mport _T_775 = rom[UInt<8>("h0ec")], clock
+    _T_775 <= UInt<8>("h00") @[Program.scala 35:57]
+    infer mport _T_778 = rom[UInt<8>("h0ed")], clock
+    _T_778 <= UInt<8>("h00") @[Program.scala 36:57]
+    infer mport _T_781 = rom[UInt<8>("h0ee")], clock
+    _T_781 <= UInt<8>("h00") @[Program.scala 37:57]
+    infer mport _T_784 = rom[UInt<8>("h0ef")], clock
+    _T_784 <= UInt<8>("h00") @[Program.scala 38:57]
+    node _T_787 = add(io.pc, UInt<2>("h03")) @[InstructionMemory.scala 24:35]
+    node _T_788 = tail(_T_787, 1) @[InstructionMemory.scala 24:35]
+    node _T_789 = bits(_T_788, 7, 0)
+    read mport _T_790 = rom[_T_789], clock
+    node _T_792 = add(io.pc, UInt<2>("h02")) @[InstructionMemory.scala 24:58]
+    node _T_793 = tail(_T_792, 1) @[InstructionMemory.scala 24:58]
+    node _T_794 = bits(_T_793, 7, 0)
+    read mport _T_795 = rom[_T_794], clock
+    node _T_797 = add(io.pc, UInt<1>("h01")) @[InstructionMemory.scala 24:81]
+    node _T_798 = tail(_T_797, 1) @[InstructionMemory.scala 24:81]
+    node _T_799 = bits(_T_798, 7, 0)
+    read mport _T_800 = rom[_T_799], clock
+    node _T_801 = bits(io.pc, 7, 0)
+    read mport _T_802 = rom[_T_801], clock
+    node _T_803 = cat(_T_800, _T_802) @[Cat.scala 30:58]
+    node _T_804 = cat(_T_790, _T_795) @[Cat.scala 30:58]
+    node _T_805 = cat(_T_804, _T_803) @[Cat.scala 30:58]
+    io.inst <= _T_805 @[InstructionMemory.scala 24:13]
+    
   module ProgramCounter : 
     input clock : Clock
     input reset : UInt<1>
@@ -8,8 +516,8 @@ circuit CPU :
     clock is invalid
     reset is invalid
     io is invalid
-    reg pc_reg : UInt<32>, clock with : (reset => (reset, UInt<5>("h015"))) @[ProgramCounter.scala 22:30]
-    node _T_8 = add(pc_reg, UInt<1>("h01")) @[ProgramCounter.scala 23:35]
+    reg pc_reg : UInt<32>, clock with : (reset => (reset, UInt<7>("h054"))) @[ProgramCounter.scala 22:30]
+    node _T_8 = add(pc_reg, UInt<3>("h04")) @[ProgramCounter.scala 23:35]
     node _T_9 = tail(_T_8, 1) @[ProgramCounter.scala 23:35]
     io.pc_next <= _T_9 @[ProgramCounter.scala 23:25]
     node _T_10 = mux(io.branch, io.pc_src, io.pc_next) @[ProgramCounter.scala 24:31]
@@ -395,15 +903,15 @@ circuit CPU :
   module DetectHazardUnit : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {flip rs1_id : UInt<5>, flip rs2_id : UInt<5>, flip rs2_ex : UInt<5>, flip memRead : UInt<1>, stall : UInt<1>}
+    output io : {flip rs1_id : UInt<5>, flip rs2_id : UInt<5>, flip rs2_ex : UInt<5>, flip mem_r : UInt<1>, stall : UInt<1>}
     
     clock is invalid
     reset is invalid
     io is invalid
-    node _T_7 = eq(io.rs2_ex, io.rs1_id) @[DetectHazardUnit.scala 24:47]
-    node _T_8 = eq(io.rs2_ex, io.rs2_id) @[DetectHazardUnit.scala 24:76]
-    node _T_9 = or(_T_7, _T_8) @[DetectHazardUnit.scala 24:62]
-    node _T_10 = and(io.memRead, _T_9) @[DetectHazardUnit.scala 24:32]
+    node _T_7 = eq(io.rs2_ex, io.rs1_id) @[DetectHazardUnit.scala 24:45]
+    node _T_8 = eq(io.rs2_ex, io.rs2_id) @[DetectHazardUnit.scala 24:74]
+    node _T_9 = or(_T_7, _T_8) @[DetectHazardUnit.scala 24:60]
+    node _T_10 = and(io.mem_r, _T_9) @[DetectHazardUnit.scala 24:30]
     io.stall <= _T_10 @[DetectHazardUnit.scala 24:18]
     
   module Tx : 
@@ -654,219 +1162,91 @@ circuit CPU :
   module CPU : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {txd : UInt<1>, r0 : UInt<8>, r1 : UInt<8>, r2 : UInt<8>, r3 : UInt<8>}
+    output io : {txd : UInt<1>, r0 : UInt<8>, r1 : UInt<8>, r2 : UInt<8>, r3 : UInt<8>, inst : UInt<32>}
     
     clock is invalid
     reset is invalid
     io is invalid
-    cmem instMem : UInt<32>[65] @[Program.scala 29:38]
-    infer mport _T_53 = instMem[UInt<1>("h00")], clock
-    _T_53 <= UInt<32>("h0464c457f") @[Program.scala 34:35]
-    infer mport _T_56 = instMem[UInt<1>("h01")], clock
-    _T_56 <= UInt<32>("h010101") @[Program.scala 34:35]
-    infer mport _T_59 = instMem[UInt<2>("h02")], clock
-    _T_59 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_62 = instMem[UInt<2>("h03")], clock
-    _T_62 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_65 = instMem[UInt<3>("h04")], clock
-    _T_65 <= UInt<32>("h0f30002") @[Program.scala 34:35]
-    infer mport _T_68 = instMem[UInt<3>("h05")], clock
-    _T_68 <= UInt<32>("h01") @[Program.scala 34:35]
-    infer mport _T_71 = instMem[UInt<3>("h06")], clock
-    _T_71 <= UInt<32>("h010054") @[Program.scala 34:35]
-    infer mport _T_74 = instMem[UInt<3>("h07")], clock
-    _T_74 <= UInt<32>("h034") @[Program.scala 34:35]
-    infer mport _T_77 = instMem[UInt<4>("h08")], clock
-    _T_77 <= UInt<32>("h01dc") @[Program.scala 34:35]
-    infer mport _T_80 = instMem[UInt<4>("h09")], clock
-    _T_80 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_83 = instMem[UInt<4>("h0a")], clock
-    _T_83 <= UInt<32>("h0200034") @[Program.scala 34:35]
-    infer mport _T_86 = instMem[UInt<4>("h0b")], clock
-    _T_86 <= UInt<32>("h0280001") @[Program.scala 34:35]
-    infer mport _T_89 = instMem[UInt<4>("h0c")], clock
-    _T_89 <= UInt<32>("h050006") @[Program.scala 34:35]
-    infer mport _T_92 = instMem[UInt<4>("h0d")], clock
-    _T_92 <= UInt<32>("h01") @[Program.scala 34:35]
-    infer mport _T_95 = instMem[UInt<4>("h0e")], clock
-    _T_95 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_98 = instMem[UInt<4>("h0f")], clock
-    _T_98 <= UInt<32>("h010000") @[Program.scala 34:35]
-    infer mport _T_101 = instMem[UInt<5>("h010")], clock
-    _T_101 <= UInt<32>("h010000") @[Program.scala 34:35]
-    infer mport _T_104 = instMem[UInt<5>("h011")], clock
-    _T_104 <= UInt<32>("h0cc") @[Program.scala 34:35]
-    infer mport _T_107 = instMem[UInt<5>("h012")], clock
-    _T_107 <= UInt<32>("h0cc") @[Program.scala 34:35]
-    infer mport _T_110 = instMem[UInt<5>("h013")], clock
-    _T_110 <= UInt<32>("h05") @[Program.scala 34:35]
-    infer mport _T_113 = instMem[UInt<5>("h014")], clock
-    _T_113 <= UInt<32>("h01000") @[Program.scala 34:35]
-    infer mport _T_116 = instMem[UInt<5>("h015")], clock
-    _T_116 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_119 = instMem[UInt<5>("h016")], clock
-    _T_119 <= UInt<32>("h040100313") @[Program.scala 34:35]
-    infer mport _T_122 = instMem[UInt<5>("h017")], clock
-    _T_122 <= UInt<32>("h06800293") @[Program.scala 34:35]
-    infer mport _T_125 = instMem[UInt<5>("h018")], clock
-    _T_125 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_128 = instMem[UInt<5>("h019")], clock
-    _T_128 <= UInt<32>("h06500293") @[Program.scala 34:35]
-    infer mport _T_131 = instMem[UInt<5>("h01a")], clock
-    _T_131 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_134 = instMem[UInt<5>("h01b")], clock
-    _T_134 <= UInt<32>("h06c00293") @[Program.scala 34:35]
-    infer mport _T_137 = instMem[UInt<5>("h01c")], clock
-    _T_137 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_140 = instMem[UInt<5>("h01d")], clock
-    _T_140 <= UInt<32>("h06c00293") @[Program.scala 34:35]
-    infer mport _T_143 = instMem[UInt<5>("h01e")], clock
-    _T_143 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_146 = instMem[UInt<5>("h01f")], clock
-    _T_146 <= UInt<32>("h06f00293") @[Program.scala 34:35]
-    infer mport _T_149 = instMem[UInt<6>("h020")], clock
-    _T_149 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_152 = instMem[UInt<6>("h021")], clock
-    _T_152 <= UInt<32>("h02000293") @[Program.scala 34:35]
-    infer mport _T_155 = instMem[UInt<6>("h022")], clock
-    _T_155 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_158 = instMem[UInt<6>("h023")], clock
-    _T_158 <= UInt<32>("h07700293") @[Program.scala 34:35]
-    infer mport _T_161 = instMem[UInt<6>("h024")], clock
-    _T_161 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_164 = instMem[UInt<6>("h025")], clock
-    _T_164 <= UInt<32>("h06f00293") @[Program.scala 34:35]
-    infer mport _T_167 = instMem[UInt<6>("h026")], clock
-    _T_167 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_170 = instMem[UInt<6>("h027")], clock
-    _T_170 <= UInt<32>("h07200293") @[Program.scala 34:35]
-    infer mport _T_173 = instMem[UInt<6>("h028")], clock
-    _T_173 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_176 = instMem[UInt<6>("h029")], clock
-    _T_176 <= UInt<32>("h06c00293") @[Program.scala 34:35]
-    infer mport _T_179 = instMem[UInt<6>("h02a")], clock
-    _T_179 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_182 = instMem[UInt<6>("h02b")], clock
-    _T_182 <= UInt<32>("h06400293") @[Program.scala 34:35]
-    infer mport _T_185 = instMem[UInt<6>("h02c")], clock
-    _T_185 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_188 = instMem[UInt<6>("h02d")], clock
-    _T_188 <= UInt<32>("h02100293") @[Program.scala 34:35]
-    infer mport _T_191 = instMem[UInt<6>("h02e")], clock
-    _T_191 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_194 = instMem[UInt<6>("h02f")], clock
-    _T_194 <= UInt<32>("h0a00293") @[Program.scala 34:35]
-    infer mport _T_197 = instMem[UInt<6>("h030")], clock
-    _T_197 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_200 = instMem[UInt<6>("h031")], clock
-    _T_200 <= UInt<32>("h0d00293") @[Program.scala 34:35]
-    infer mport _T_203 = instMem[UInt<6>("h032")], clock
-    _T_203 <= UInt<32>("h0530023") @[Program.scala 34:35]
-    infer mport _T_206 = instMem[UInt<6>("h033")], clock
-    _T_206 <= UInt<32>("h08067") @[Program.scala 34:35]
-    infer mport _T_209 = instMem[UInt<6>("h034")], clock
-    _T_209 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_212 = instMem[UInt<6>("h035")], clock
-    _T_212 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_215 = instMem[UInt<6>("h036")], clock
-    _T_215 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_218 = instMem[UInt<6>("h037")], clock
-    _T_218 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_221 = instMem[UInt<6>("h038")], clock
-    _T_221 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_224 = instMem[UInt<6>("h039")], clock
-    _T_224 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_227 = instMem[UInt<6>("h03a")], clock
-    _T_227 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_230 = instMem[UInt<6>("h03b")], clock
-    _T_230 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_233 = instMem[UInt<6>("h03c")], clock
-    _T_233 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_236 = instMem[UInt<6>("h03d")], clock
-    _T_236 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_239 = instMem[UInt<6>("h03e")], clock
-    _T_239 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_242 = instMem[UInt<6>("h03f")], clock
-    _T_242 <= UInt<32>("h00") @[Program.scala 34:35]
-    infer mport _T_245 = instMem[UInt<7>("h040")], clock
-    _T_245 <= UInt<32>("h00") @[Program.scala 34:35]
-    inst counter of ProgramCounter @[CPU.scala 61:29]
+    inst instMem of InstructionMemory @[CPU.scala 59:29]
+    instMem.io is invalid
+    instMem.clock <= clock
+    instMem.reset <= reset
+    inst counter of ProgramCounter @[CPU.scala 60:29]
     counter.io is invalid
     counter.clock <= clock
     counter.reset <= reset
-    inst decoder of Decoder @[CPU.scala 62:29]
+    inst decoder of Decoder @[CPU.scala 61:29]
     decoder.io is invalid
     decoder.clock <= clock
     decoder.reset <= reset
-    inst control of Control @[CPU.scala 63:29]
+    inst control of Control @[CPU.scala 62:29]
     control.io is invalid
     control.clock <= clock
     control.reset <= reset
-    inst regs of Registers @[CPU.scala 64:29]
+    inst regs of Registers @[CPU.scala 63:29]
     regs.io is invalid
     regs.clock <= clock
     regs.reset <= reset
-    inst alu of ALU @[CPU.scala 65:29]
+    inst alu of ALU @[CPU.scala 64:29]
     alu.io is invalid
     alu.clock <= clock
     alu.reset <= reset
-    inst dataMem of DataMemory @[CPU.scala 66:29]
+    inst dataMem of DataMemory @[CPU.scala 65:29]
     dataMem.io is invalid
     dataMem.clock <= clock
     dataMem.reset <= reset
-    inst fwdUnit of ForwardingUnit @[CPU.scala 67:29]
+    inst fwdUnit of ForwardingUnit @[CPU.scala 66:29]
     fwdUnit.io is invalid
     fwdUnit.clock <= clock
     fwdUnit.reset <= reset
-    inst hazardUnit of DetectHazardUnit @[CPU.scala 68:29]
+    inst hazardUnit of DetectHazardUnit @[CPU.scala 67:29]
     hazardUnit.io is invalid
     hazardUnit.clock <= clock
     hazardUnit.reset <= reset
-    inst uart of UART @[CPU.scala 69:29]
+    inst uart of UART @[CPU.scala 68:29]
     uart.io is invalid
     uart.clock <= clock
     uart.reset <= reset
-    inst IF_ID of PipelineIF_ID @[CPU.scala 73:29]
+    inst IF_ID of PipelineIF_ID @[CPU.scala 72:29]
     IF_ID.io is invalid
     IF_ID.clock <= clock
     IF_ID.reset <= reset
-    inst ID_EX of PipelineID_EX @[CPU.scala 74:29]
+    inst ID_EX of PipelineID_EX @[CPU.scala 73:29]
     ID_EX.io is invalid
     ID_EX.clock <= clock
     ID_EX.reset <= reset
-    inst EX_MEM of PipelineEX_MEM @[CPU.scala 75:29]
+    inst EX_MEM of PipelineEX_MEM @[CPU.scala 74:29]
     EX_MEM.io is invalid
     EX_MEM.clock <= clock
     EX_MEM.reset <= reset
-    inst MEM_WB of PipelineMEM_WB @[CPU.scala 76:29]
+    inst MEM_WB of PipelineMEM_WB @[CPU.scala 75:29]
     MEM_WB.io is invalid
     MEM_WB.clock <= clock
     MEM_WB.reset <= reset
-    node _T_247 = eq(regs.io.op.op1, regs.io.op.op2) @[CPU.scala 81:74]
-    node _T_248 = and(control.io.MEM.branch, _T_247) @[CPU.scala 81:55]
-    node _T_250 = eq(uart.io.valid, UInt<1>("h00")) @[CPU.scala 81:98]
-    node _T_251 = or(_T_248, _T_250) @[CPU.scala 81:95]
-    counter.io.branch <= _T_251 @[CPU.scala 81:29]
-    node _T_252 = add(IF_ID.io.out.pc_next, decoder.io.imm) @[CPU.scala 82:72]
-    node _T_253 = tail(_T_252, 1) @[CPU.scala 82:72]
-    node _T_255 = sub(EX_MEM.io.out.pc_next, UInt<1>("h01")) @[CPU.scala 82:112]
-    node _T_256 = asUInt(_T_255) @[CPU.scala 82:112]
-    node _T_257 = tail(_T_256, 1) @[CPU.scala 82:112]
-    node _T_258 = mux(uart.io.valid, _T_253, _T_257) @[CPU.scala 82:35]
-    counter.io.pc_src <= _T_258 @[CPU.scala 82:29]
+    node _T_51 = eq(regs.io.op.op1, regs.io.op.op2) @[CPU.scala 80:74]
+    node _T_52 = and(control.io.MEM.branch, _T_51) @[CPU.scala 80:55]
+    node _T_54 = eq(uart.io.valid, UInt<1>("h00")) @[CPU.scala 80:98]
+    node _T_55 = or(_T_52, _T_54) @[CPU.scala 80:95]
+    counter.io.branch <= _T_55 @[CPU.scala 80:29]
+    node _T_56 = add(IF_ID.io.out.pc_next, decoder.io.imm) @[CPU.scala 81:72]
+    node _T_57 = tail(_T_56, 1) @[CPU.scala 81:72]
+    node _T_59 = sub(EX_MEM.io.out.pc_next, UInt<1>("h01")) @[CPU.scala 81:112]
+    node _T_60 = asUInt(_T_59) @[CPU.scala 81:112]
+    node _T_61 = tail(_T_60, 1) @[CPU.scala 81:112]
+    node _T_62 = mux(uart.io.valid, _T_57, _T_61) @[CPU.scala 81:35]
+    counter.io.pc_src <= _T_62 @[CPU.scala 81:29]
+    instMem.io.pc <= counter.io.pc @[CPU.scala 82:29]
     IF_ID.io.in.pc_next <= counter.io.pc_next @[CPU.scala 84:29]
-    node _T_259 = bits(counter.io.pc, 6, 0)
-    read mport _T_260 = instMem[_T_259], clock
-    IF_ID.io.in.inst <= _T_260 @[CPU.scala 85:29]
+    IF_ID.io.in.inst <= instMem.io.inst @[CPU.scala 85:29]
     decoder.io.inst <= IF_ID.io.out.inst @[CPU.scala 89:29]
     regs.io.rs.rs2 <= decoder.io.rs.rs2 @[CPU.scala 90:29]
     regs.io.rs.rs1 <= decoder.io.rs.rs1 @[CPU.scala 90:29]
-    node _T_261 = mux(uart.io.valid, decoder.io.ctrl.opcode, UInt<1>("h00")) @[CPU.scala 95:35]
-    control.io.ctrl.opcode <= _T_261 @[CPU.scala 95:29]
-    node _T_262 = mux(uart.io.valid, decoder.io.ctrl.funct3, UInt<1>("h00")) @[CPU.scala 96:35]
-    control.io.ctrl.funct3 <= _T_262 @[CPU.scala 96:29]
-    node _T_263 = mux(uart.io.valid, decoder.io.ctrl.funct7, UInt<1>("h00")) @[CPU.scala 97:35]
-    control.io.ctrl.funct7 <= _T_263 @[CPU.scala 97:29]
+    node _T_63 = mux(uart.io.valid, decoder.io.ctrl.opcode, UInt<1>("h00")) @[CPU.scala 95:35]
+    control.io.ctrl.opcode <= _T_63 @[CPU.scala 95:29]
+    node _T_64 = mux(uart.io.valid, decoder.io.ctrl.funct3, UInt<1>("h00")) @[CPU.scala 96:35]
+    control.io.ctrl.funct3 <= _T_64 @[CPU.scala 96:29]
+    node _T_65 = mux(uart.io.valid, decoder.io.ctrl.funct7, UInt<1>("h00")) @[CPU.scala 97:35]
+    control.io.ctrl.funct7 <= _T_65 @[CPU.scala 97:29]
     ID_EX.io.in.WB.rd_mem <= control.io.WB.rd_mem @[CPU.scala 99:29]
     ID_EX.io.in.WB.reg_w <= control.io.WB.reg_w @[CPU.scala 99:29]
     ID_EX.io.in.MEM.func <= control.io.MEM.func @[CPU.scala 100:29]
@@ -894,23 +1274,23 @@ circuit CPU :
     alu.io.opcode <= ID_EX.io.out.EX.opcode @[CPU.scala 116:29]
     alu.io.alu_op.alt <= ID_EX.io.out.EX.alu_op.alt @[CPU.scala 117:29]
     alu.io.alu_op.func <= ID_EX.io.out.EX.alu_op.func @[CPU.scala 117:29]
-    node _T_264 = eq(UInt<1>("h00"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
-    node _T_265 = mux(_T_264, ID_EX.io.out.op.op1, UInt<1>("h00")) @[Mux.scala 46:16]
-    node _T_266 = eq(UInt<1>("h01"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
-    node _T_267 = mux(_T_266, regs.io.res, _T_265) @[Mux.scala 46:16]
-    node _T_268 = eq(UInt<2>("h02"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
-    node _T_269 = mux(_T_268, EX_MEM.io.out.op.op1, _T_267) @[Mux.scala 46:16]
-    alu.io.op.op1 <= _T_269 @[CPU.scala 119:19]
-    node _T_270 = mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, EX_MEM.io.out.op.op1) @[CPU.scala 125:23]
-    node _T_271 = mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, regs.io.res) @[CPU.scala 126:23]
-    node _T_272 = mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, ID_EX.io.out.op.op2) @[CPU.scala 127:23]
-    node _T_273 = eq(UInt<1>("h00"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
-    node _T_274 = mux(_T_273, _T_272, UInt<1>("h00")) @[Mux.scala 46:16]
-    node _T_275 = eq(UInt<1>("h01"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
-    node _T_276 = mux(_T_275, _T_271, _T_274) @[Mux.scala 46:16]
-    node _T_277 = eq(UInt<2>("h02"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
-    node _T_278 = mux(_T_277, _T_270, _T_276) @[Mux.scala 46:16]
-    alu.io.op.op2 <= _T_278 @[CPU.scala 124:19]
+    node _T_66 = eq(UInt<1>("h00"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
+    node _T_67 = mux(_T_66, ID_EX.io.out.op.op1, UInt<1>("h00")) @[Mux.scala 46:16]
+    node _T_68 = eq(UInt<1>("h01"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
+    node _T_69 = mux(_T_68, regs.io.res, _T_67) @[Mux.scala 46:16]
+    node _T_70 = eq(UInt<2>("h02"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
+    node _T_71 = mux(_T_70, EX_MEM.io.out.op.op1, _T_69) @[Mux.scala 46:16]
+    alu.io.op.op1 <= _T_71 @[CPU.scala 119:19]
+    node _T_72 = mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, EX_MEM.io.out.op.op1) @[CPU.scala 125:23]
+    node _T_73 = mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, regs.io.res) @[CPU.scala 126:23]
+    node _T_74 = mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, ID_EX.io.out.op.op2) @[CPU.scala 127:23]
+    node _T_75 = eq(UInt<1>("h00"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
+    node _T_76 = mux(_T_75, _T_74, UInt<1>("h00")) @[Mux.scala 46:16]
+    node _T_77 = eq(UInt<1>("h01"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
+    node _T_78 = mux(_T_77, _T_73, _T_76) @[Mux.scala 46:16]
+    node _T_79 = eq(UInt<2>("h02"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
+    node _T_80 = mux(_T_79, _T_72, _T_78) @[Mux.scala 46:16]
+    alu.io.op.op2 <= _T_80 @[CPU.scala 124:19]
     EX_MEM.io.in.pc_next <= ID_EX.io.out.pc_next @[CPU.scala 129:29]
     EX_MEM.io.in.WB.rd_mem <= ID_EX.io.out.WB.rd_mem @[CPU.scala 131:29]
     EX_MEM.io.in.WB.reg_w <= ID_EX.io.out.WB.reg_w @[CPU.scala 131:29]
@@ -921,8 +1301,8 @@ circuit CPU :
     EX_MEM.io.in.op.op2 <= ID_EX.io.out.op.op2 @[CPU.scala 133:29]
     EX_MEM.io.in.zero <= alu.io.zero @[CPU.scala 135:29]
     EX_MEM.io.in.op.op1 <= alu.io.res @[CPU.scala 136:29]
-    node _T_279 = mux(ID_EX.io.out.EX.dst_sel, ID_EX.io.out.rd, ID_EX.io.out.rs.rs2) @[CPU.scala 138:35]
-    EX_MEM.io.in.rd <= _T_279 @[CPU.scala 138:29]
+    node _T_81 = mux(ID_EX.io.out.EX.dst_sel, ID_EX.io.out.rd, ID_EX.io.out.rs.rs2) @[CPU.scala 138:35]
+    EX_MEM.io.in.rd <= _T_81 @[CPU.scala 138:29]
     dataMem.io.mem.func <= EX_MEM.io.out.MEM.func @[CPU.scala 142:29]
     dataMem.io.mem.read <= EX_MEM.io.out.MEM.read @[CPU.scala 142:29]
     dataMem.io.mem.write <= EX_MEM.io.out.MEM.write @[CPU.scala 142:29]
@@ -936,15 +1316,15 @@ circuit CPU :
     MEM_WB.io.in.alu_res <= EX_MEM.io.out.op.op1 @[CPU.scala 148:29]
     regs.io.rd <= MEM_WB.io.out.rd @[CPU.scala 152:29]
     regs.io.reg_w <= MEM_WB.io.out.WB.reg_w @[CPU.scala 153:29]
-    node _T_280 = mux(MEM_WB.io.out.WB.rd_mem, MEM_WB.io.out.mem_res, MEM_WB.io.out.alu_res) @[CPU.scala 154:35]
-    regs.io.res <= _T_280 @[CPU.scala 154:29]
-    node _T_282 = eq(dataMem.io.op.op1, UInt<11>("h0401")) @[CPU.scala 158:56]
-    node _T_283 = and(EX_MEM.io.out.MEM.write, _T_282) @[CPU.scala 158:35]
-    when _T_283 : @[CPU.scala 158:68]
+    node _T_82 = mux(MEM_WB.io.out.WB.rd_mem, MEM_WB.io.out.mem_res, MEM_WB.io.out.alu_res) @[CPU.scala 154:35]
+    regs.io.res <= _T_82 @[CPU.scala 154:29]
+    node _T_84 = eq(dataMem.io.op.op1, UInt<11>("h0401")) @[CPU.scala 158:56]
+    node _T_85 = and(EX_MEM.io.out.MEM.write, _T_84) @[CPU.scala 158:35]
+    when _T_85 : @[CPU.scala 158:68]
       uart.io.in <= dataMem.io.op.op2 @[CPU.scala 159:20]
       skip @[CPU.scala 158:68]
-    node _T_285 = eq(_T_283, UInt<1>("h00")) @[CPU.scala 158:68]
-    when _T_285 : @[CPU.scala 160:18]
+    node _T_87 = eq(_T_85, UInt<1>("h00")) @[CPU.scala 158:68]
+    when _T_87 : @[CPU.scala 160:18]
       uart.io.in <= UInt<1>("h00") @[CPU.scala 161:20]
       skip @[CPU.scala 160:18]
     io.txd <= uart.io.txd @[CPU.scala 164:12]
@@ -952,4 +1332,5 @@ circuit CPU :
     io.r1 <= uart.io.r1 @[CPU.scala 169:11]
     io.r2 <= uart.io.r2 @[CPU.scala 170:11]
     io.r3 <= uart.io.r3 @[CPU.scala 171:11]
+    io.inst <= instMem.io.inst @[CPU.scala 173:13]
     

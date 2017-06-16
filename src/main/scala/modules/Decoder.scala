@@ -22,32 +22,32 @@ class Decoder extends Module {
 		val imm 	= Output(UInt(WORD_W))
 	})
 	
-	val inst = io.inst
+	io.ctrl.opcode 	:= io.inst(6,0)
+	io.rd 			:= io.inst(11,7)
+	io.ctrl.funct3 	:= io.inst(14,12)
+	io.rs.rs1  		:= io.inst(19,15)
+	io.rs.rs2  		:= Mux(io.ctrl.opcode === I || io.ctrl.opcode === L, 0.asUInt(RS_W), io.inst(24,20))
+	io.ctrl.funct7 	:= Mux(io.ctrl.opcode === R, io.inst(31,25), 0.asUInt(FUNCT7_W))
 
-	io.ctrl.opcode 	:= inst(6,0)
-	io.rd 			:= inst(11,7)
-	io.ctrl.funct3 	:= inst(14,12)
-	io.rs.rs1  		:= inst(19,15)
-	io.rs.rs2  		:= inst(24,20)
-	io.ctrl.funct7 	:= Mux(io.ctrl.opcode === R, inst(31,25), 0.asUInt(FUNCT7_W))
+	val sign = Mux(io.inst(31), "hfffff".asUInt(20.W), "h00000".asUInt(20.W)) 
 
 	switch (io.ctrl.opcode) {
 		is (I) { 
-			io.imm := Cat(0.asUInt(20.W), inst(31, 20))}
+			io.imm := Cat(sign, io.inst(31, 20))}
 		is (L) { 
-			io.imm := Cat(0.asUInt(20.W), inst(31, 20))}
+			io.imm := Cat(sign, io.inst(31, 20))}
 		is (JALR) { 
-			io.imm := Cat(0.asUInt(20.W), inst(31, 20))}	
+			io.imm := Cat(sign, io.inst(31, 20))}	
 		is (S) { 
-			io.imm := Cat(0.asUInt(20.W), inst(31,25), inst(11,7))}
+			io.imm := Cat(sign, io.inst(31,25), io.inst(11,7))}
 		is (B) { 
-			io.imm := Cat(0.asUInt(20.W), inst(31), inst(7), inst(30,25), inst(11,8))}
+			io.imm := Cat(sign, io.inst(31), io.inst(7), io.inst(30,25), io.inst(11,8))}
 		is (LUI) { 
-			io.imm := Cat(0.asUInt(12.W), inst(31,12))}
+			io.imm := Cat(sign(11,0), io.inst(31,12))}
 		is (AUIPC) { 
-			io.imm := Cat(0.asUInt(12.W), inst(31,12))}
+			io.imm := Cat(sign(11,0), io.inst(31,12))}
 		is (JAL) {
-			io.imm := Cat(0.asUInt(11.W), inst(31), inst(19,12), inst(20), inst(30,21), 0.asUInt(1.W))
+			io.imm := Cat(sign(10,0), io.inst(31), io.inst(19,12), io.inst(20), io.inst(30,21), 0.asUInt(1.W))
 		}
 	}
 }
