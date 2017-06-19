@@ -18,8 +18,6 @@ class ALU extends Module {
         val opcode = Input(UInt(OPCODE_W))
         val alu_op = new ALU_OP
         val op     = new OP   
-        val zero   = Output(Bool())
-        val branch = Output(Bool())
         val res    = Output(UInt(WORD_W))
     })
 
@@ -46,18 +44,6 @@ class ALU extends Module {
             SRL     -> Mux(io.alu_op.alt, ZERO, op1 >> shamt),
             OR      -> (op1 | op2))),
         L -> (op1 + op2), 
-        S -> (op1 + op2), 
-        B -> (op1 - op2)
-
-        /*MuxLookup(io.aluOp.func, FALSE, Array(
-            BEQ     -> (op1 - op2),
-            BNE     -> (op1 != op2),
-            BLT     -> (op1 < op2),
-            BGE     -> (op1 > op2)
-            BLTU  ->
-            BGEU  ->
-        ))*/        
-    ))
-
-    io.zero := io.res === ZERO    
+        S -> (op1 + op2)      
+    )) 
 }

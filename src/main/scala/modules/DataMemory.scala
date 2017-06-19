@@ -5,8 +5,6 @@
 //
 // Version: 0.1 (February 2017)
 
-// have to be synchroeous
-
 package modules
 
 import chisel3._
@@ -17,13 +15,20 @@ import utils.Collection._
 class DataMemory extends Module {
  
 	val io = IO(new Bundle {
-		val mem = new MEM // remove branch from MEM collection
-		val op  = new OP
-		val res = Output(UInt(WORD_W))
+		val mem 	= new MEM
+		val op  	= new OP
+		val tx_req  = Input(Bool())
+		val rx 		= Input(UInt(BYTE_W))
+		val res 	= Output(UInt(WORD_W))
+		val tx  	= Output(UInt(BYTE_W))
+
+		val rx_out  = Output(UInt(BYTE_W))
+		val rx_cnt  = Output(UInt(BYTE_W))
 	})
 
 	val data_mem = Mem(MEM_D, 0.U (BYTE_W))
-	
+	val rx_cnt   = RegInit(UInt(4.W), ZERO)
+
 	when (io.mem.write) {
 		switch(io.mem.func) {
 			is (LB) {
@@ -54,4 +59,15 @@ class DataMemory extends Module {
 			}
 		}
 	} .otherwise { io.res := ZERO }
+
+	io.tx := Mux((io.op.op1 === TX_ADDR) && !io.tx_req, io.op.op2, ZERO)
+
+	when (io.rx =/= ZERO) { 
+		rx_cnt := rx_cnt + 1.U
+		data_mem(RX_CNT)  := rx_cnt
+		data_mem(RX_ADDR) := io.rx 
+	}	
+
+	io.rx_cnt := data_mem(RX_CNT)
+	io.rx_out := data_mem(RX_ADDR)	 
 }

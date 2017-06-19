@@ -1,4 +1,4 @@
-// CPU -- for test and later for complete implementation 
+// CPU -- top level of SiUZ 
 //
 // Author:  Morten Ambrosius Andreasen (s141227@student.dtu.dk)
 //          Technical University of Denmark, DTU Compute
@@ -16,17 +16,27 @@ class CPU extends Module {
     
     val io = IO(new Bundle {
 
-        val txd = Output(Bool())
+        val rxd     = Input(Bool())
+        val txd     = Output(Bool())
+        val rx_out  = Output(UInt(BYTE_W))
+        val rx_cnt  = Output(UInt(BYTE_W))
+        val rx_in   = Input(UInt(BYTE_W))
         
-
         // test signals -----------------------
+        
+        /*
+        val imm     = Output(UInt(WORD_W))
+        val pc      = Output(UInt(WORD_W))
+        val op1     = Output(UInt(WORD_W))
+        val op2     = Output(UInt(WORD_W))
 
-        val r0 = Output(UInt(BYTE_W))
-        val r1 = Output(UInt(BYTE_W))
-        val r2 = Output(UInt(BYTE_W))
-        val r3 = Output(UInt(BYTE_W))
-
-        val inst = Output(UInt(WORD_W))
+        val branch   = Output(Bool())
+        val branch_t = Output(UInt(WORD_W))
+        val func     = Output(UInt(BYTE_W))
+  
+        val inst    = Output(UInt(WORD_W))
+        val reg     = Output(UInt(BYTE_W))
+        val data    = Output(UInt(BYTE_W))
 
         val pc      = Output(UInt(WORD_W))
         val stall   = Output(Bool())
@@ -35,14 +45,32 @@ class CPU extends Module {
         val rd_ex   = Output(UInt(RD_W))
         val mem_r   = Output(Bool())
         val read    = Output(Bool())
+        
+        val tx_req  = Output(Bool())
 
-        /*
+        val res     = Output(UInt(WORD_W))
+        val reg_w   = Output(Bool())
+        val rdy   = Output(Bool())
+
+        val op1     = Output(UInt(WORD_W))
+        val op2     = Output(UInt(WORD_W))
+
+        val w_data  = Output(UInt(WORD_W))
+
+        val fwd1    = Output(UInt(2.W))
+        val fwd2    = Output(UInt(2.W))
+        
+        val alu_sel = Output(Bool())
+        val alu_res = Output(UInt(WORD_W))
+        val pc_src  = Output(UInt(WORD_W))
+        
+        val stall   = Output(Bool())
+        
         // Program counter
         val pc      = Output(UInt(WORD_W))
         val pc_next = Output(UInt(WORD_W)) 
         
         // Decoder
-        
         val opcode  = Output(UInt(WORD_W))
         val imm     = Output(UInt(WORD_W))
         val op1     = Output(UInt(WORD_W))
@@ -62,7 +90,7 @@ class CPU extends Module {
         */
     })  
  
-    // modules ------------------------------------------------------------------------------------------
+    // modules --------------------------------------------------------------------------------
     
     val instMem     = Module(new InstructionMemory)
     val counter     = Module(new ProgramCounter)
@@ -75,28 +103,30 @@ class CPU extends Module {
     val hazardUnit  = Module(new DetectHazardUnit)
     val uart        = Module(new UART)
     
-    // pipes --------------------------------------------------------------------------------------------
+    // pipes ----------------------------------------------------------------------------------
     
     val IF_ID       = Module(new Pipeline.IF_ID)
     val ID_EX       = Module(new Pipeline.ID_EX)
     val EX_MEM      = Module(new Pipeline.EX_MEM)
     val MEM_WB      = Module(new Pipeline.MEM_WB)
     
-    // IF -----------------------------------------------------------------------------------------------
+    // IF -------------------------------------------------------------------------------------
     
-    //counter.io.pc_src     := IF_ID.io.out.pc_next + decoder.io.imm.SB
-    //counter.io.branch     := (control.io.MEM.branch && (regs.io.op.op1 === regs.io.op.op2)) || !uart.io.valid
-    counter.io.stall        := hazardUnit.io.stall
-    counter.io.branch       := EX_MEM.io.out.zero && EX_MEM.io.out.MEM.branch
-    //counter.io.pc_src     := Mux(uart.io.valid, IF_ID.io.out.pc_next + decoder.io.imm, EX_MEM.io.out.pc_next - 1.U)
-    counter.io.pc_src       := EX_MEM.io.out.pc_src 
+    counter.io.jump         := control.io.jump
+    counter.io.stall        := hazardUnit.io.stall || io.branch
+    counter.io.branch       := io.branch || dataMem.io.tx =/= ZERO
+    
+    counter.io.branch_t     := Mux(dataMem.io.tx =/= ZERO, EX_MEM.io.out.pc_next, IF_ID.io.out.pc_next + (decoder.io.imm << 1))
+    io.branch_t             := counter.io.branch_t   
+
+    counter.io.jump_t       := EX_MEM.io.out.pc_next + decoder.io.imm
     instMem.io.pc           := counter.io.pc
 
-    IF_ID.io.stall          := hazardUnit.io.stall
+    IF_ID.io.stall          := hazardUnit.io.stall 
     IF_ID.io.in.pc_next     := counter.io.pc_next
     IF_ID.io.in.inst        := instMem.io.inst
 
-    // ID -----------------------------------------------------------------------------------------------
+    // ID -------------------------------------------------------------------------------------
 
     decoder.io.inst         := IF_ID.io.out.inst
     regs.io.rs              := decoder.io.rs
@@ -104,8 +134,9 @@ class CPU extends Module {
     hazardUnit.io.rs_id     := decoder.io.rs
     hazardUnit.io.rd_ex     := ID_EX.io.out.rd 
     hazardUnit.io.mem_r     := ID_EX.io.out.MEM.read
-
-    control.io.stall        := hazardUnit.io.stall
+    hazardUnit.io.tx_req    := uart.io.tx_req
+    
+    control.io.flush        := hazardUnit.io.stall || io.branch
     control.io.ctrl         := decoder.io.ctrl
 
     ID_EX.io.in.WB          := control.io.WB
@@ -117,7 +148,19 @@ class CPU extends Module {
     ID_EX.io.in.rs          := decoder.io.rs
     ID_EX.io.in.rd          := decoder.io.rd
     
-    // EX -----------------------------------------------------------------------------------------------
+    when (decoder.io.ctrl.opcode === B) {    
+        val compare = regs.io.op.op1 - regs.io.op.op2
+        io.branch := MuxLookup(decoder.io.ctrl.funct3, FALSE, Array(
+            BEQ -> (compare === ZERO),
+            BNE -> (compare =/= ZERO), 
+            BLT -> (compare(31)), 
+            BGE -> (!compare(31))        
+        ))
+    } .otherwise {
+        io.branch := FALSE
+    }
+
+    // EX -------------------------------------------------------------------------------------
 
     fwdUnit.io.rs           := ID_EX.io.out.rs
     fwdUnit.io.rd_mem       := EX_MEM.io.out.rd
@@ -133,54 +176,66 @@ class CPU extends Module {
         FWD_MEM -> regs.io.res,
         ZERO    -> ID_EX.io.out.op.op1))
 
-    alu.io.op.op2 := MuxLookup(fwdUnit.io.fwd_rs2, ZERO, Array(
-        FWD_EX  -> Mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, EX_MEM.io.out.op.op1), 
-        FWD_MEM -> Mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, regs.io.res),
-        ZERO    -> Mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, ID_EX.io.out.op.op2)))
- 
-    EX_MEM.io.in.pc_src     := ID_EX.io.out.pc_next + (ID_EX.io.out.imm << 2)
-    EX_MEM.io.in.WB         := ID_EX.io.out.WB
-    EX_MEM.io.in.MEM        := ID_EX.io.out.MEM
-    EX_MEM.io.in.op.op2     := ID_EX.io.out.op.op2 
-    EX_MEM.io.in.zero       := alu.io.zero
-    EX_MEM.io.in.op.op1     := alu.io.res
-    
+    val op2 = MuxLookup(fwdUnit.io.fwd_rs2, ZERO, Array(
+        FWD_EX  -> EX_MEM.io.out.op.op1, 
+        FWD_MEM -> regs.io.res,
+        ZERO    -> ID_EX.io.out.op.op2))
+    alu.io.op.op2 := Mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, op2)
+
+    EX_MEM.io.in.MEM.write  := Mux(uart.io.tx_req, FALSE, ID_EX.io.out.MEM.write)
+    EX_MEM.io.in.MEM.read   := Mux(uart.io.tx_req, FALSE, ID_EX.io.out.MEM.read)
+    EX_MEM.io.in.MEM.func   := Mux(uart.io.tx_req, 0.asUInt(FUNCT3_W), ID_EX.io.out.MEM.func)
+    EX_MEM.io.in.WB.reg_w   := Mux(uart.io.tx_req, FALSE, ID_EX.io.out.WB.reg_w)
+    EX_MEM.io.in.WB.rd_mem  := Mux(uart.io.tx_req, FALSE, ID_EX.io.out.WB.rd_mem)
+
+    EX_MEM.io.in.op.op2     := op2
+    EX_MEM.io.in.op.op1     := alu.io.res    
+    EX_MEM.io.in.pc_next    := ID_EX.io.out.pc_next
     EX_MEM.io.in.rd         := ID_EX.io.out.rd
 
-    // MEM ----------------------------------------------------------------------------------------------
+    // MEM ------------------------------------------------------------------------------------
 
     dataMem.io.mem          := EX_MEM.io.out.MEM
     dataMem.io.op           := EX_MEM.io.out.op 
+    dataMem.io.tx_req       := uart.io.tx_req
    
     MEM_WB.io.in.WB         := EX_MEM.io.out.WB
     MEM_WB.io.in.rd         := EX_MEM.io.out.rd
     MEM_WB.io.in.mem_res    := dataMem.io.res
     MEM_WB.io.in.alu_res    := EX_MEM.io.out.op.op1
 
-    // WB -----------------------------------------------------------------------------------------------
+    // WB -------------------------------------------------------------------------------------
 
-    regs.io.rd              := MEM_WB.io.out.rd
-    regs.io.reg_w           := MEM_WB.io.out.WB.reg_w
-    regs.io.res             := Mux(MEM_WB.io.out.WB.rd_mem, MEM_WB.io.out.mem_res, MEM_WB.io.out.alu_res)
+    regs.io.rd    := MEM_WB.io.out.rd
+    regs.io.reg_w := MEM_WB.io.out.WB.reg_w
+    regs.io.res   := Mux(MEM_WB.io.out.WB.rd_mem, MEM_WB.io.out.mem_res, MEM_WB.io.out.alu_res)
 
-    // UART ---------------------------------------------------------------------------------------------
+    // UART -----------------------------------------------------------------------------------
 
-    when (EX_MEM.io.out.MEM.write && dataMem.io.op.op1 === 1025.U) { // add to constants
-        uart.io.in := dataMem.io.op.op2
-    } .otherwise {
-        uart.io.in := ZERO
-    }
+    uart.io.rxd   := io.rxd
+    dataMem.io.rx := io.rx_in  // uart.io.out
+    uart.io.in    := dataMem.io.tx
+    io.txd        := uart.io.txd
 
-    io.txd := uart.io.txd
+    io.rx_cnt     := dataMem.io.rx_cnt
+
+    // test signals ---------------------------------------------------------------------------
     
-    // test signals -------------------------------------------------------------------------------------
+    /*
     
-    io.r0 := uart.io.r0 
-    io.r1 := uart.io.r1
-    io.r2 := uart.io.r2
-    io.r3 := uart.io.r3
+    io.pc     := counter.io.pc  
 
-    io.inst  := instMem.io.inst
+    io.op1    := regs.io.op.op1
+    io.op2    := regs.io.op.op2 
+    io.imm    := decoder.io.imm
+    io.func   := decoder.io.ctrl.funct3
+    
+    io.rx_out := dataMem.io.rx_out
+    io.branch := Mux(uart.io.tx_req, FALSE, ID_EX.io.out.MEM.branch)
+    io.zero   := alu.io.zero
+
+    io.data   := dataMem.io.tx 
+    io.inst   := instMem.io.inst
     
     io.pc     := counter.io.pc
     io.stall  := hazardUnit.io.stall
@@ -190,6 +245,22 @@ class CPU extends Module {
     io.mem_r  := ID_EX.io.out.MEM.read
 
     io.read   := control.io.MEM.read
+    io.reg    := uart.io.reg
+    io.tx_req   := uart.io.tx_req
+
+    io.res      := Mux(MEM_WB.io.out.WB.rd_mem, MEM_WB.io.out.mem_res, MEM_WB.io.out.alu_res)
+    io.reg_w    := MEM_WB.io.out.WB.reg_w
+
+    io.fwd1     := fwdUnit.io.fwd_rs1
+    io.fwd2     := fwdUnit.io.fwd_rs2
+    io.alu_sel  := ID_EX.io.out.EX.alu_sel
+    io.alu_res  := EX_MEM.io.out.op.op1
+
+    io.pc_src   := EX_MEM.io.out.pc_src 
+    io.w_data   := op2
+
+    io.stall    := hazardUnit.io.stall
+    */
     /*
     io.pc       := counter.io.pc
     
@@ -203,9 +274,6 @@ class CPU extends Module {
     
     io.imm      := decoder.io.imm
     io.alu_sel  := ID_EX.io.out.EX.alu_sel
-
-    io.fwd1     := fwdUnit.io.fwd_rs1
-    io.fwd2     := fwdUnit.io.fwd_rs2
 
     io.op1      := ID_EX.io.out.op.op1
     io.op2      := ID_EX.io.out.op.op2

@@ -32,6 +32,8 @@ class Decoder extends Module {
 	val sign = Mux(io.inst(31), "hfffff".asUInt(20.W), "h00000".asUInt(20.W)) 
 
 	switch (io.ctrl.opcode) {
+		is (R) {
+			io.imm := 0.asUInt(32.W)}
 		is (I) { 
 			io.imm := Cat(sign, io.inst(31, 20))}
 		is (L) { 

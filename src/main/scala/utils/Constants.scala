@@ -11,9 +11,9 @@ import chisel3._
 
 object Constants {
 
-	// program
+	// program --------------------------------------------
 
-	val PROGRAM  = "bin/stall.hex"
+	val PROGRAM  = "bin/hello.hex"
 
 	// attributes -----------------------------------------
 
@@ -21,10 +21,14 @@ object Constants {
 	val BAUD 	 = 115200
 	val FREQ 	 = 50000000
 	
+	val RX_ADDR  = 495.U
+	val RX_CNT   = 511.U
+	val TX_ADDR  = 512.U
+
 	// constants ------------------------------------------
 
 	val ZERO	 = 0.U
-	val START 	 = 84.U
+	val START 	 = 80.U
 	val TRUE	 = true.B
 	val FALSE 	 = false.B
 	

@@ -29,20 +29,6 @@ object Collection {
 		val op2 = Input(UInt(WORD_W))
 	}
 
-	/*
-	class REG extends Bundle {
-		val rs = new RS
-		val rd = Output(UInt(WORD_W))
-	}
-
-	class SEL extends Bundle {
-		val rs = new Bundle {
-			val rs1 = Input(UInt(RS_W))
-			val rs2 = Input(UInt(RS_W))}
-		val rd = Input(UInt(RD_W))
-	}
-	*/
-
 	class IF_ID_io extends Bundle {
 		val pc_next = Input(UInt(WORD_W))
 		val inst 	= Input(UInt(WORD_W))
@@ -57,17 +43,14 @@ object Collection {
 		val rd 		= Input(UInt(RD_W))
 		val imm 	= Input(UInt(WORD_W))
 		val pc_next = Input(UInt(WORD_W))
-		
-		//val rd_sel 	= Input(UInt(5.W))	
 	}
 
 	class EX_MEM_io extends Bundle {
-		val zero 	= Input(Bool())
-		val WB 		= new WB
-		val MEM 	= new MEM
-		val op 		= new OP 
-		val rd 		= Input(UInt(RD_W))
-		val pc_src  = Input(UInt(WORD_W))
+		val WB 		 = new WB
+		val MEM 	 = new MEM
+		val op 		 = new OP 
+		val rd 		 = Input(UInt(RD_W))
+		val pc_next  = Input(UInt(WORD_W))
 	}
 
 	class MEM_WB_io extends Bundle {
@@ -84,7 +67,6 @@ object Collection {
 	}
 
 	class MEM extends Bundle {
-		val branch  = Input(Bool())
 		val write 	= Input(Bool())
 		val read  	= Input(Bool())
 		val func 	= Input(UInt(FUNCT3_W))

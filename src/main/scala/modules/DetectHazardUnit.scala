@@ -17,8 +17,9 @@ class DetectHazardUnit extends Module {
 		val rs_id 	= new RS
 		val rd_ex 	= Input(UInt(RS_W))
 		val mem_r 	= Input(Bool())
+		val tx_req  = Input(Bool())
 		val stall 	= Output(Bool())
 	})
 
-	io.stall := io.mem_r && ((io.rd_ex === io.rs_id.rs1) || (io.rd_ex === io.rs_id.rs2))
+	io.stall := (io.mem_r && ((io.rd_ex === io.rs_id.rs1) || (io.rd_ex === io.rs_id.rs2))) || io.tx_req
 }

@@ -13,8 +13,44 @@ import utils.Constants._
 class TestCPU(dut: CPU) extends PeekPokeTester(dut) {
 
 	//new ComTest(dut);
+	//poke(dut.io.rx_in, 13.U)	
+	
+	for (i <- 0 until 30) {
 		
-	for (i <- 0 until 50) {
+		//expect(dut.io.txd, 2.U)
+		expect(dut.io.pc, 0.U)
+		//expect(dut.io.branch, 2.U)
+		//expect(dut.io.branch_t, 3.U)
+
+
+		/*
+		expect(dut.io.op1, 0.U)
+		expect(dut.io.op2, 0.U)
+		expect(dut.io.imm, 40.U)
+		expect(dut.io.func, 8.U)
+		
+		expect(dut.io.data, 0.U)
+		expect(dut.io.pc, 96.U)
+		expect(dut.io.op1, 0.U)
+		expect(dut.io.op2, 0.U)
+		expect(dut.io.tx_req, 2.U)
+		expect(dut.io.reg, 0.U)
+		expect(dut.io.rdy, 2.U)
+
+		expect(dut.io.res, 20.U)
+		expect(dut.io.reg_w, 2.U)
+		expect(dut.io.inst, 4.U)
+		
+		expect(dut.io.op1, 10.U)
+		expect(dut.io.op2, 10.U)
+
+		expect(dut.io.fwd1, 10.U)
+		expect(dut.io.fwd2, 10.U)
+		expect(dut.io.stall, 2.U)
+		expect(dut.io.alu_sel, 10.U)
+		expect(dut.io.alu_res, 10.U)
+		expect(dut.io.w_data, 10.U)
+		expect(dut.io.pc_src, 10.U)
 		
 		expect(dut.io.pc, "h1000".U)
 		expect(dut.io.inst, 10000000)
@@ -24,35 +60,29 @@ class TestCPU(dut: CPU) extends PeekPokeTester(dut) {
 		expect(dut.io.rd_ex, 2)
 		expect(dut.io.mem_r, 2)
 		expect(dut.io.read, 2)
-
-		//expect(dut.io.txd, 2.U)
-		
-		//expect(dut.io.valid, FALSE)
-		//expect(dut.io.data, 0.U)
-		/*
+			
+		expect(dut.io.valid, FALSE)
+		expect(dut.io.data, 0.U)
+	
 		expect(dut.io.r0 , 2.U)
 		expect(dut.io.r1 , 2.U)
 		expect(dut.io.r2 , 2.U)
 		expect(dut.io.r3 , 2.U)
-		*/
-
-		/*
+		
 		expect(dut.io.alu_res, 10.U)
 		expect(dut.io.alu_op1, 10.U)
 		expect(dut.io.alu_op2, 10.U)
 		expect(dut.io.imm, 10.U)
+		
+		expect(dut.io.alu_sel, 2.U)
+		expect(dut.io.opcode, 1000.U)
+		expect(dut.io.rd, 1000.U)
+		expect(dut.io.fwd1, 5.U)
+		expect(dut.io.fwd2, 5.U)
 		*/
-		//expect(dut.io.alu_sel, 2.U)
-		//expect(dut.io.opcode, 1000.U)
-		//expect(dut.io.rd, 1000.U)
-		//expect(dut.io.fwd1, 5.U)
-		//expect(dut.io.fwd2, 5.U)
 
 		step(1) // 434
 	}
-
-
-
 
 
 	/*
