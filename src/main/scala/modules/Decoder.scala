@@ -49,7 +49,7 @@ class Decoder extends Module {
 		is (AUIPC) { 
 			io.imm := Cat(sign(11,0), io.inst(31,12))}
 		is (JAL) {
-			io.imm := Cat(sign(10,0), io.inst(31), io.inst(19,12), io.inst(20), io.inst(30,21), 0.asUInt(1.W))
+			io.imm := Cat(sign(11,0), io.inst(31), io.inst(19,12), io.inst(20), io.inst(30,21))
 		}
 	}
 }

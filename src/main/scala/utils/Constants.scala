@@ -13,7 +13,7 @@ object Constants {
 
 	// program --------------------------------------------
 
-	val PROGRAM  = "bin/hello.hex"
+	val PROGRAM  = "bin/reverse.hex"
 
 	// attributes -----------------------------------------
 
@@ -71,7 +71,6 @@ object Constants {
 	val SLL   	= "b001".U 	// shift left
 	val SRL   	= "b101".U 	// shift right
 	val SRA   	= "b101".U 	// shift right arithmetic 
-	val SRAI  	= "b110".U 	// shift right arith imm	
 	
 	val ADD   	= "b000".U 	// arithmetic add   
 	val SUB   	= "b000".U	// arithmetic sub	

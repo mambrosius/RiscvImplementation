@@ -61,15 +61,14 @@ object Collection {
 	}
 
 	class EX extends Bundle {
-		val opcode 	= Input(UInt(OPCODE_W))
-		val alu_sel = Input(Bool())
-		val alu_op  = new ALU_OP 
+		val alu_sel  = Input(Bool())
+		val alu_ctrl = new ALU_CTRL 
 	}
 
 	class MEM extends Bundle {
+		val func 	= Input(UInt(FUNCT3_W))
 		val write 	= Input(Bool())
 		val read  	= Input(Bool())
-		val func 	= Input(UInt(FUNCT3_W))
 	}
 
 	class WB extends Bundle {
@@ -77,8 +76,9 @@ object Collection {
 		val rd_mem 	= Input(Bool())
 	}
 
-	class ALU_OP extends Bundle {
-		val func = Input(UInt(FUNCT3_W))
-		val alt  = Input(Bool())
+	class ALU_CTRL extends Bundle {
+		val func 	= Input(UInt(FUNCT3_W))
+		val alt  	= Input(Bool())
+		val flush 	= Input(Bool())
 	}
 }

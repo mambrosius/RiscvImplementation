@@ -1200,11 +1200,11 @@ module InstructionMemory(
   assign rom__T_108_addr = 8'h1f;
   assign rom__T_108_mask = 1'h1;
   assign rom__T_108_en = 1'h1;
-  assign rom__T_112_data = 8'hc0;
+  assign rom__T_112_data = 8'h20;
   assign rom__T_112_addr = 8'h20;
   assign rom__T_112_mask = 1'h1;
   assign rom__T_112_en = 1'h1;
-  assign rom__T_115_data = 8'h1;
+  assign rom__T_115_data = 8'h2;
   assign rom__T_115_addr = 8'h21;
   assign rom__T_115_mask = 1'h1;
   assign rom__T_115_en = 1'h1;
@@ -1344,7 +1344,7 @@ module InstructionMemory(
   assign rom__T_225_addr = 8'h43;
   assign rom__T_225_mask = 1'h1;
   assign rom__T_225_en = 1'h1;
-  assign rom__T_229_data = 8'h9c;
+  assign rom__T_229_data = 8'hd4;
   assign rom__T_229_addr = 8'h44;
   assign rom__T_229_mask = 1'h1;
   assign rom__T_229_en = 1'h1;
@@ -1360,7 +1360,7 @@ module InstructionMemory(
   assign rom__T_238_addr = 8'h47;
   assign rom__T_238_mask = 1'h1;
   assign rom__T_238_en = 1'h1;
-  assign rom__T_242_data = 8'h9c;
+  assign rom__T_242_data = 8'hd4;
   assign rom__T_242_addr = 8'h48;
   assign rom__T_242_mask = 1'h1;
   assign rom__T_242_en = 1'h1;
@@ -1412,11 +1412,11 @@ module InstructionMemory(
   assign rom__T_281_addr = 8'h54;
   assign rom__T_281_mask = 1'h1;
   assign rom__T_281_en = 1'h1;
-  assign rom__T_284_data = 8'h0;
+  assign rom__T_284_data = 8'h4;
   assign rom__T_284_addr = 8'h55;
   assign rom__T_284_mask = 1'h1;
   assign rom__T_284_en = 1'h1;
-  assign rom__T_287_data = 8'h0;
+  assign rom__T_287_data = 8'hd0;
   assign rom__T_287_addr = 8'h56;
   assign rom__T_287_mask = 1'h1;
   assign rom__T_287_en = 1'h1;
@@ -1424,7 +1424,7 @@ module InstructionMemory(
   assign rom__T_290_addr = 8'h57;
   assign rom__T_290_mask = 1'h1;
   assign rom__T_290_en = 1'h1;
-  assign rom__T_294_data = 8'h13;
+  assign rom__T_294_data = 8'h93;
   assign rom__T_294_addr = 8'h58;
   assign rom__T_294_mask = 1'h1;
   assign rom__T_294_en = 1'h1;
@@ -1432,19 +1432,19 @@ module InstructionMemory(
   assign rom__T_297_addr = 8'h59;
   assign rom__T_297_mask = 1'h1;
   assign rom__T_297_en = 1'h1;
-  assign rom__T_300_data = 8'hd0;
+  assign rom__T_300_data = 8'hf0;
   assign rom__T_300_addr = 8'h5a;
   assign rom__T_300_mask = 1'h1;
   assign rom__T_300_en = 1'h1;
-  assign rom__T_303_data = 8'h0;
+  assign rom__T_303_data = 8'h1e;
   assign rom__T_303_addr = 8'h5b;
   assign rom__T_303_mask = 1'h1;
   assign rom__T_303_en = 1'h1;
-  assign rom__T_307_data = 8'h93;
+  assign rom__T_307_data = 8'h13;
   assign rom__T_307_addr = 8'h5c;
   assign rom__T_307_mask = 1'h1;
   assign rom__T_307_en = 1'h1;
-  assign rom__T_310_data = 8'h4;
+  assign rom__T_310_data = 8'h9;
   assign rom__T_310_addr = 8'h5d;
   assign rom__T_310_mask = 1'h1;
   assign rom__T_310_en = 1'h1;
@@ -1452,11 +1452,11 @@ module InstructionMemory(
   assign rom__T_313_addr = 8'h5e;
   assign rom__T_313_mask = 1'h1;
   assign rom__T_313_en = 1'h1;
-  assign rom__T_316_data = 8'h1e;
+  assign rom__T_316_data = 8'h1f;
   assign rom__T_316_addr = 8'h5f;
   assign rom__T_316_mask = 1'h1;
   assign rom__T_316_en = 1'h1;
-  assign rom__T_320_data = 8'h13;
+  assign rom__T_320_data = 8'h93;
   assign rom__T_320_addr = 8'h60;
   assign rom__T_320_mask = 1'h1;
   assign rom__T_320_en = 1'h1;
@@ -1464,27 +1464,27 @@ module InstructionMemory(
   assign rom__T_323_addr = 8'h61;
   assign rom__T_323_mask = 1'h1;
   assign rom__T_323_en = 1'h1;
-  assign rom__T_326_data = 8'hf0;
+  assign rom__T_326_data = 8'h0;
   assign rom__T_326_addr = 8'h62;
   assign rom__T_326_mask = 1'h1;
   assign rom__T_326_en = 1'h1;
-  assign rom__T_329_data = 8'h1f;
+  assign rom__T_329_data = 8'h20;
   assign rom__T_329_addr = 8'h63;
   assign rom__T_329_mask = 1'h1;
   assign rom__T_329_en = 1'h1;
-  assign rom__T_333_data = 8'h93;
+  assign rom__T_333_data = 8'h23;
   assign rom__T_333_addr = 8'h64;
   assign rom__T_333_mask = 1'h1;
   assign rom__T_333_en = 1'h1;
-  assign rom__T_336_data = 8'h9;
+  assign rom__T_336_data = 8'h0;
   assign rom__T_336_addr = 8'h65;
   assign rom__T_336_mask = 1'h1;
   assign rom__T_336_en = 1'h1;
-  assign rom__T_339_data = 8'h0;
+  assign rom__T_339_data = 8'h9;
   assign rom__T_339_addr = 8'h66;
   assign rom__T_339_mask = 1'h1;
   assign rom__T_339_en = 1'h1;
-  assign rom__T_342_data = 8'h20;
+  assign rom__T_342_data = 8'h0;
   assign rom__T_342_addr = 8'h67;
   assign rom__T_342_mask = 1'h1;
   assign rom__T_342_en = 1'h1;
@@ -1504,15 +1504,15 @@ module InstructionMemory(
   assign rom__T_355_addr = 8'h6b;
   assign rom__T_355_mask = 1'h1;
   assign rom__T_355_en = 1'h1;
-  assign rom__T_359_data = 8'h3;
+  assign rom__T_359_data = 8'hb3;
   assign rom__T_359_addr = 8'h6c;
   assign rom__T_359_mask = 1'h1;
   assign rom__T_359_en = 1'h1;
-  assign rom__T_362_data = 8'h83;
+  assign rom__T_362_data = 8'h82;
   assign rom__T_362_addr = 8'h6d;
   assign rom__T_362_mask = 1'h1;
   assign rom__T_362_en = 1'h1;
-  assign rom__T_365_data = 8'h4;
+  assign rom__T_365_data = 8'h92;
   assign rom__T_365_addr = 8'h6e;
   assign rom__T_365_mask = 1'h1;
   assign rom__T_365_en = 1'h1;
@@ -1520,15 +1520,15 @@ module InstructionMemory(
   assign rom__T_368_addr = 8'h6f;
   assign rom__T_368_mask = 1'h1;
   assign rom__T_368_en = 1'h1;
-  assign rom__T_372_data = 8'h13;
+  assign rom__T_372_data = 8'h3;
   assign rom__T_372_addr = 8'h70;
   assign rom__T_372_mask = 1'h1;
   assign rom__T_372_en = 1'h1;
-  assign rom__T_375_data = 8'h0;
+  assign rom__T_375_data = 8'h83;
   assign rom__T_375_addr = 8'h71;
   assign rom__T_375_mask = 1'h1;
   assign rom__T_375_en = 1'h1;
-  assign rom__T_378_data = 8'h0;
+  assign rom__T_378_data = 8'h2;
   assign rom__T_378_addr = 8'h72;
   assign rom__T_378_mask = 1'h1;
   assign rom__T_378_en = 1'h1;
@@ -1540,7 +1540,7 @@ module InstructionMemory(
   assign rom__T_385_addr = 8'h74;
   assign rom__T_385_mask = 1'h1;
   assign rom__T_385_en = 1'h1;
-  assign rom__T_388_data = 8'h8;
+  assign rom__T_388_data = 8'h6;
   assign rom__T_388_addr = 8'h75;
   assign rom__T_388_mask = 1'h1;
   assign rom__T_388_en = 1'h1;
@@ -1576,23 +1576,23 @@ module InstructionMemory(
   assign rom__T_414_addr = 8'h7d;
   assign rom__T_414_mask = 1'h1;
   assign rom__T_414_en = 1'h1;
-  assign rom__T_417_data = 8'h9f;
+  assign rom__T_417_data = 8'hdf;
   assign rom__T_417_addr = 8'h7e;
   assign rom__T_417_mask = 1'h1;
   assign rom__T_417_en = 1'h1;
-  assign rom__T_420_data = 8'hfd;
+  assign rom__T_420_data = 8'hfe;
   assign rom__T_420_addr = 8'h7f;
   assign rom__T_420_mask = 1'h1;
   assign rom__T_420_en = 1'h1;
-  assign rom__T_424_data = 8'h13;
+  assign rom__T_424_data = 8'h93;
   assign rom__T_424_addr = 8'h80;
   assign rom__T_424_mask = 1'h1;
   assign rom__T_424_en = 1'h1;
-  assign rom__T_427_data = 8'h0;
+  assign rom__T_427_data = 8'h2;
   assign rom__T_427_addr = 8'h81;
   assign rom__T_427_mask = 1'h1;
   assign rom__T_427_en = 1'h1;
-  assign rom__T_430_data = 8'h0;
+  assign rom__T_430_data = 8'ha0;
   assign rom__T_430_addr = 8'h82;
   assign rom__T_430_mask = 1'h1;
   assign rom__T_430_en = 1'h1;
@@ -1600,15 +1600,15 @@ module InstructionMemory(
   assign rom__T_433_addr = 8'h83;
   assign rom__T_433_mask = 1'h1;
   assign rom__T_433_en = 1'h1;
-  assign rom__T_437_data = 8'h13;
+  assign rom__T_437_data = 8'h23;
   assign rom__T_437_addr = 8'h84;
   assign rom__T_437_mask = 1'h1;
   assign rom__T_437_en = 1'h1;
-  assign rom__T_440_data = 8'h0;
+  assign rom__T_440_data = 8'h80;
   assign rom__T_440_addr = 8'h85;
   assign rom__T_440_mask = 1'h1;
   assign rom__T_440_en = 1'h1;
-  assign rom__T_443_data = 8'h0;
+  assign rom__T_443_data = 8'h59;
   assign rom__T_443_addr = 8'h86;
   assign rom__T_443_mask = 1'h1;
   assign rom__T_443_en = 1'h1;
@@ -1620,15 +1620,15 @@ module InstructionMemory(
   assign rom__T_450_addr = 8'h88;
   assign rom__T_450_mask = 1'h1;
   assign rom__T_450_en = 1'h1;
-  assign rom__T_453_data = 8'h82;
+  assign rom__T_453_data = 8'h2;
   assign rom__T_453_addr = 8'h89;
   assign rom__T_453_mask = 1'h1;
   assign rom__T_453_en = 1'h1;
-  assign rom__T_456_data = 8'h2;
+  assign rom__T_456_data = 8'hd0;
   assign rom__T_456_addr = 8'h8a;
   assign rom__T_456_mask = 1'h1;
   assign rom__T_456_en = 1'h1;
-  assign rom__T_459_data = 8'h3;
+  assign rom__T_459_data = 8'h0;
   assign rom__T_459_addr = 8'h8b;
   assign rom__T_459_mask = 1'h1;
   assign rom__T_459_en = 1'h1;
@@ -1648,15 +1648,15 @@ module InstructionMemory(
   assign rom__T_472_addr = 8'h8f;
   assign rom__T_472_mask = 1'h1;
   assign rom__T_472_en = 1'h1;
-  assign rom__T_476_data = 8'h13;
+  assign rom__T_476_data = 8'h83;
   assign rom__T_476_addr = 8'h90;
   assign rom__T_476_mask = 1'h1;
   assign rom__T_476_en = 1'h1;
-  assign rom__T_479_data = 8'h0;
+  assign rom__T_479_data = 8'h2;
   assign rom__T_479_addr = 8'h91;
   assign rom__T_479_mask = 1'h1;
   assign rom__T_479_en = 1'h1;
-  assign rom__T_482_data = 8'h0;
+  assign rom__T_482_data = 8'h9;
   assign rom__T_482_addr = 8'h92;
   assign rom__T_482_mask = 1'h1;
   assign rom__T_482_en = 1'h1;
@@ -1664,15 +1664,15 @@ module InstructionMemory(
   assign rom__T_485_addr = 8'h93;
   assign rom__T_485_mask = 1'h1;
   assign rom__T_485_en = 1'h1;
-  assign rom__T_489_data = 8'h13;
+  assign rom__T_489_data = 8'h33;
   assign rom__T_489_addr = 8'h94;
   assign rom__T_489_mask = 1'h1;
   assign rom__T_489_en = 1'h1;
-  assign rom__T_492_data = 8'h0;
+  assign rom__T_492_data = 8'h83;
   assign rom__T_492_addr = 8'h95;
   assign rom__T_492_mask = 1'h1;
   assign rom__T_492_en = 1'h1;
-  assign rom__T_495_data = 8'h0;
+  assign rom__T_495_data = 8'h92;
   assign rom__T_495_addr = 8'h96;
   assign rom__T_495_mask = 1'h1;
   assign rom__T_495_en = 1'h1;
@@ -1680,31 +1680,31 @@ module InstructionMemory(
   assign rom__T_498_addr = 8'h97;
   assign rom__T_498_mask = 1'h1;
   assign rom__T_498_en = 1'h1;
-  assign rom__T_502_data = 8'h6f;
+  assign rom__T_502_data = 8'h3;
   assign rom__T_502_addr = 8'h98;
   assign rom__T_502_mask = 1'h1;
   assign rom__T_502_en = 1'h1;
-  assign rom__T_505_data = 8'hf0;
+  assign rom__T_505_data = 8'h3;
   assign rom__T_505_addr = 8'h99;
   assign rom__T_505_mask = 1'h1;
   assign rom__T_505_en = 1'h1;
-  assign rom__T_508_data = 8'hdf;
+  assign rom__T_508_data = 8'h3;
   assign rom__T_508_addr = 8'h9a;
   assign rom__T_508_mask = 1'h1;
   assign rom__T_508_en = 1'h1;
-  assign rom__T_511_data = 8'hfb;
+  assign rom__T_511_data = 8'h0;
   assign rom__T_511_addr = 8'h9b;
   assign rom__T_511_mask = 1'h1;
   assign rom__T_511_en = 1'h1;
-  assign rom__T_515_data = 8'h0;
+  assign rom__T_515_data = 8'h23;
   assign rom__T_515_addr = 8'h9c;
   assign rom__T_515_mask = 1'h1;
   assign rom__T_515_en = 1'h1;
-  assign rom__T_518_data = 8'h0;
+  assign rom__T_518_data = 8'h80;
   assign rom__T_518_addr = 8'h9d;
   assign rom__T_518_mask = 1'h1;
   assign rom__T_518_en = 1'h1;
-  assign rom__T_521_data = 8'h0;
+  assign rom__T_521_data = 8'h69;
   assign rom__T_521_addr = 8'h9e;
   assign rom__T_521_mask = 1'h1;
   assign rom__T_521_en = 1'h1;
@@ -1712,15 +1712,15 @@ module InstructionMemory(
   assign rom__T_524_addr = 8'h9f;
   assign rom__T_524_mask = 1'h1;
   assign rom__T_524_en = 1'h1;
-  assign rom__T_528_data = 8'h0;
+  assign rom__T_528_data = 8'h13;
   assign rom__T_528_addr = 8'ha0;
   assign rom__T_528_mask = 1'h1;
   assign rom__T_528_en = 1'h1;
-  assign rom__T_531_data = 8'h0;
+  assign rom__T_531_data = 8'h3;
   assign rom__T_531_addr = 8'ha1;
   assign rom__T_531_mask = 1'h1;
   assign rom__T_531_en = 1'h1;
-  assign rom__T_534_data = 8'h0;
+  assign rom__T_534_data = 8'h10;
   assign rom__T_534_addr = 8'ha2;
   assign rom__T_534_mask = 1'h1;
   assign rom__T_534_en = 1'h1;
@@ -1728,23 +1728,23 @@ module InstructionMemory(
   assign rom__T_537_addr = 8'ha3;
   assign rom__T_537_mask = 1'h1;
   assign rom__T_537_en = 1'h1;
-  assign rom__T_541_data = 8'h0;
+  assign rom__T_541_data = 8'hb3;
   assign rom__T_541_addr = 8'ha4;
   assign rom__T_541_mask = 1'h1;
   assign rom__T_541_en = 1'h1;
-  assign rom__T_544_data = 8'h0;
+  assign rom__T_544_data = 8'h83;
   assign rom__T_544_addr = 8'ha5;
   assign rom__T_544_mask = 1'h1;
   assign rom__T_544_en = 1'h1;
-  assign rom__T_547_data = 8'h0;
+  assign rom__T_547_data = 8'h62;
   assign rom__T_547_addr = 8'ha6;
   assign rom__T_547_mask = 1'h1;
   assign rom__T_547_en = 1'h1;
-  assign rom__T_550_data = 8'h0;
+  assign rom__T_550_data = 8'h40;
   assign rom__T_550_addr = 8'ha7;
   assign rom__T_550_mask = 1'h1;
   assign rom__T_550_en = 1'h1;
-  assign rom__T_554_data = 8'h0;
+  assign rom__T_554_data = 8'h23;
   assign rom__T_554_addr = 8'ha8;
   assign rom__T_554_mask = 1'h1;
   assign rom__T_554_en = 1'h1;
@@ -1752,7 +1752,7 @@ module InstructionMemory(
   assign rom__T_557_addr = 8'ha9;
   assign rom__T_557_mask = 1'h1;
   assign rom__T_557_en = 1'h1;
-  assign rom__T_560_data = 8'h0;
+  assign rom__T_560_data = 8'h79;
   assign rom__T_560_addr = 8'haa;
   assign rom__T_560_mask = 1'h1;
   assign rom__T_560_en = 1'h1;
@@ -1760,7 +1760,7 @@ module InstructionMemory(
   assign rom__T_563_addr = 8'hab;
   assign rom__T_563_mask = 1'h1;
   assign rom__T_563_en = 1'h1;
-  assign rom__T_567_data = 8'h0;
+  assign rom__T_567_data = 8'h13;
   assign rom__T_567_addr = 8'hac;
   assign rom__T_567_mask = 1'h1;
   assign rom__T_567_en = 1'h1;
@@ -1776,7 +1776,7 @@ module InstructionMemory(
   assign rom__T_576_addr = 8'haf;
   assign rom__T_576_mask = 1'h1;
   assign rom__T_576_en = 1'h1;
-  assign rom__T_580_data = 8'h0;
+  assign rom__T_580_data = 8'h13;
   assign rom__T_580_addr = 8'hb0;
   assign rom__T_580_mask = 1'h1;
   assign rom__T_580_en = 1'h1;
@@ -1792,23 +1792,23 @@ module InstructionMemory(
   assign rom__T_589_addr = 8'hb3;
   assign rom__T_589_mask = 1'h1;
   assign rom__T_589_en = 1'h1;
-  assign rom__T_593_data = 8'h0;
+  assign rom__T_593_data = 8'he3;
   assign rom__T_593_addr = 8'hb4;
   assign rom__T_593_mask = 1'h1;
   assign rom__T_593_en = 1'h1;
-  assign rom__T_596_data = 8'h0;
+  assign rom__T_596_data = 8'hde;
   assign rom__T_596_addr = 8'hb5;
   assign rom__T_596_mask = 1'h1;
   assign rom__T_596_en = 1'h1;
-  assign rom__T_599_data = 8'h0;
+  assign rom__T_599_data = 8'h63;
   assign rom__T_599_addr = 8'hb6;
   assign rom__T_599_mask = 1'h1;
   assign rom__T_599_en = 1'h1;
-  assign rom__T_602_data = 8'h0;
+  assign rom__T_602_data = 8'hfc;
   assign rom__T_602_addr = 8'hb7;
   assign rom__T_602_mask = 1'h1;
   assign rom__T_602_en = 1'h1;
-  assign rom__T_606_data = 8'h0;
+  assign rom__T_606_data = 8'h13;
   assign rom__T_606_addr = 8'hb8;
   assign rom__T_606_mask = 1'h1;
   assign rom__T_606_en = 1'h1;
@@ -1824,15 +1824,15 @@ module InstructionMemory(
   assign rom__T_615_addr = 8'hbb;
   assign rom__T_615_mask = 1'h1;
   assign rom__T_615_en = 1'h1;
-  assign rom__T_619_data = 8'h0;
+  assign rom__T_619_data = 8'h93;
   assign rom__T_619_addr = 8'hbc;
   assign rom__T_619_mask = 1'h1;
   assign rom__T_619_en = 1'h1;
-  assign rom__T_622_data = 8'h0;
+  assign rom__T_622_data = 8'h2;
   assign rom__T_622_addr = 8'hbd;
   assign rom__T_622_mask = 1'h1;
   assign rom__T_622_en = 1'h1;
-  assign rom__T_625_data = 8'h0;
+  assign rom__T_625_data = 8'ha0;
   assign rom__T_625_addr = 8'hbe;
   assign rom__T_625_mask = 1'h1;
   assign rom__T_625_en = 1'h1;
@@ -1840,15 +1840,15 @@ module InstructionMemory(
   assign rom__T_628_addr = 8'hbf;
   assign rom__T_628_mask = 1'h1;
   assign rom__T_628_en = 1'h1;
-  assign rom__T_632_data = 8'h0;
+  assign rom__T_632_data = 8'h23;
   assign rom__T_632_addr = 8'hc0;
   assign rom__T_632_mask = 1'h1;
   assign rom__T_632_en = 1'h1;
-  assign rom__T_635_data = 8'h0;
+  assign rom__T_635_data = 8'h80;
   assign rom__T_635_addr = 8'hc1;
   assign rom__T_635_mask = 1'h1;
   assign rom__T_635_en = 1'h1;
-  assign rom__T_638_data = 8'h0;
+  assign rom__T_638_data = 8'h59;
   assign rom__T_638_addr = 8'hc2;
   assign rom__T_638_mask = 1'h1;
   assign rom__T_638_en = 1'h1;
@@ -1856,15 +1856,15 @@ module InstructionMemory(
   assign rom__T_641_addr = 8'hc3;
   assign rom__T_641_mask = 1'h1;
   assign rom__T_641_en = 1'h1;
-  assign rom__T_645_data = 8'h0;
+  assign rom__T_645_data = 8'h93;
   assign rom__T_645_addr = 8'hc4;
   assign rom__T_645_mask = 1'h1;
   assign rom__T_645_en = 1'h1;
-  assign rom__T_648_data = 8'h0;
+  assign rom__T_648_data = 8'h2;
   assign rom__T_648_addr = 8'hc5;
   assign rom__T_648_mask = 1'h1;
   assign rom__T_648_en = 1'h1;
-  assign rom__T_651_data = 8'h0;
+  assign rom__T_651_data = 8'hd0;
   assign rom__T_651_addr = 8'hc6;
   assign rom__T_651_mask = 1'h1;
   assign rom__T_651_en = 1'h1;
@@ -1872,15 +1872,15 @@ module InstructionMemory(
   assign rom__T_654_addr = 8'hc7;
   assign rom__T_654_mask = 1'h1;
   assign rom__T_654_en = 1'h1;
-  assign rom__T_658_data = 8'h0;
+  assign rom__T_658_data = 8'h23;
   assign rom__T_658_addr = 8'hc8;
   assign rom__T_658_mask = 1'h1;
   assign rom__T_658_en = 1'h1;
-  assign rom__T_661_data = 8'h0;
+  assign rom__T_661_data = 8'h80;
   assign rom__T_661_addr = 8'hc9;
   assign rom__T_661_mask = 1'h1;
   assign rom__T_661_en = 1'h1;
-  assign rom__T_664_data = 8'h0;
+  assign rom__T_664_data = 8'h59;
   assign rom__T_664_addr = 8'hca;
   assign rom__T_664_mask = 1'h1;
   assign rom__T_664_en = 1'h1;
@@ -1888,7 +1888,7 @@ module InstructionMemory(
   assign rom__T_667_addr = 8'hcb;
   assign rom__T_667_mask = 1'h1;
   assign rom__T_667_en = 1'h1;
-  assign rom__T_671_data = 8'h0;
+  assign rom__T_671_data = 8'h13;
   assign rom__T_671_addr = 8'hcc;
   assign rom__T_671_mask = 1'h1;
   assign rom__T_671_en = 1'h1;
@@ -1904,19 +1904,19 @@ module InstructionMemory(
   assign rom__T_680_addr = 8'hcf;
   assign rom__T_680_mask = 1'h1;
   assign rom__T_680_en = 1'h1;
-  assign rom__T_684_data = 8'h0;
+  assign rom__T_684_data = 8'h6f;
   assign rom__T_684_addr = 8'hd0;
   assign rom__T_684_mask = 1'h1;
   assign rom__T_684_en = 1'h1;
-  assign rom__T_687_data = 8'h0;
+  assign rom__T_687_data = 8'hf0;
   assign rom__T_687_addr = 8'hd1;
   assign rom__T_687_mask = 1'h1;
   assign rom__T_687_en = 1'h1;
-  assign rom__T_690_data = 8'h0;
+  assign rom__T_690_data = 8'h9f;
   assign rom__T_690_addr = 8'hd2;
   assign rom__T_690_mask = 1'h1;
   assign rom__T_690_en = 1'h1;
-  assign rom__T_693_data = 8'h0;
+  assign rom__T_693_data = 8'hf9;
   assign rom__T_693_addr = 8'hd3;
   assign rom__T_693_mask = 1'h1;
   assign rom__T_693_en = 1'h1;
@@ -2896,28 +2896,24 @@ endmodule
 module ProgramCounter(
   input         clock,
   input         reset,
-  input         io_jump,
+  input         io_src_sel,
   input         io_stall,
-  input         io_branch,
-  input  [31:0] io_jump_t,
-  input  [31:0] io_branch_t,
+  input  [31:0] io_pc_src,
   output [31:0] io_pc_next,
   output [31:0] io_pc
 );
   reg [31:0] pc_reg;
   reg [31:0] _GEN_0;
-  wire [31:0] pc_src;
-  wire [32:0] _T_11;
+  wire [32:0] _T_9;
+  wire [31:0] _T_10;
+  wire [31:0] _T_11;
   wire [31:0] _T_12;
-  wire [31:0] _T_13;
-  wire [31:0] _T_14;
-  assign io_pc_next = _T_13;
+  assign io_pc_next = _T_11;
   assign io_pc = pc_reg;
-  assign pc_src = io_branch ? io_branch_t : io_pc_next;
-  assign _T_11 = pc_reg + 32'h4;
-  assign _T_12 = _T_11[31:0];
-  assign _T_13 = io_stall ? pc_reg : _T_12;
-  assign _T_14 = io_jump ? io_jump_t : pc_src;
+  assign _T_9 = pc_reg + 32'h4;
+  assign _T_10 = _T_9[31:0];
+  assign _T_11 = io_stall ? pc_reg : _T_10;
+  assign _T_12 = io_src_sel ? io_pc_src : io_pc_next;
 `ifdef RANDOMIZE
   integer initvar;
   initial begin
@@ -2934,14 +2930,10 @@ module ProgramCounter(
     if (reset) begin
       pc_reg <= 32'h50;
     end else begin
-      if (io_jump) begin
-        pc_reg <= io_jump_t;
+      if (io_src_sel) begin
+        pc_reg <= io_pc_src;
       end else begin
-        if (io_branch) begin
-          pc_reg <= io_branch_t;
-        end else begin
-          pc_reg <= io_pc_next;
-        end
+        pc_reg <= io_pc_next;
       end
     end
   end
@@ -2999,15 +2991,13 @@ module Decoder(
   wire  _T_63;
   wire [31:0] _GEN_7;
   wire  _T_67;
-  wire [10:0] _T_68;
   wire [7:0] _T_70;
   wire  _T_71;
   wire [9:0] _T_72;
-  wire [10:0] _T_74;
-  wire [11:0] _T_75;
-  wire [11:0] _T_76;
-  wire [19:0] _T_77;
-  wire [31:0] _T_78;
+  wire [10:0] _T_73;
+  wire [12:0] _T_74;
+  wire [20:0] _T_75;
+  wire [31:0] _T_76;
   wire [31:0] _GEN_8;
   assign io_ctrl_opcode = _T_17;
   assign io_ctrl_funct3 = _T_19;
@@ -3059,92 +3049,79 @@ module Decoder(
   assign _T_63 = 7'h17 == io_ctrl_opcode;
   assign _GEN_7 = _T_63 ? _T_62 : _GEN_6;
   assign _T_67 = 7'h6f == io_ctrl_opcode;
-  assign _T_68 = sign[10:0];
   assign _T_70 = io_inst[19:12];
   assign _T_71 = io_inst[20];
   assign _T_72 = io_inst[30:21];
-  assign _T_74 = {_T_71,_T_72};
-  assign _T_75 = {_T_74,1'h0};
-  assign _T_76 = {_T_68,_T_31};
-  assign _T_77 = {_T_76,_T_70};
-  assign _T_78 = {_T_77,_T_75};
-  assign _GEN_8 = _T_67 ? _T_78 : _GEN_7;
+  assign _T_73 = {_T_71,_T_72};
+  assign _T_74 = {_T_60,_T_31};
+  assign _T_75 = {_T_74,_T_70};
+  assign _T_76 = {_T_75,_T_73};
+  assign _GEN_8 = _T_67 ? _T_76 : _GEN_7;
 endmodule
 module Control(
   input  [6:0] io_ctrl_opcode,
   input  [2:0] io_ctrl_funct3,
   input  [6:0] io_ctrl_funct7,
-  input        io_stall,
+  input        io_flush,
   output       io_WB_reg_w,
   output       io_WB_rd_mem,
-  output       io_MEM_branch,
+  output [2:0] io_MEM_func,
   output       io_MEM_write,
   output       io_MEM_read,
-  output [2:0] io_MEM_func,
-  output [6:0] io_EX_opcode,
   output       io_EX_alu_sel,
-  output [2:0] io_EX_alu_op_func,
-  output       io_EX_alu_op_alt,
+  output [2:0] io_EX_alu_ctrl_func,
+  output       io_EX_alu_ctrl_alt,
+  output       io_EX_alu_ctrl_flush,
   output       io_jump
 );
+  wire  _T_28;
+  wire  _T_29;
   wire  _T_30;
   wire  _T_31;
   wire  _T_32;
   wire  _T_33;
-  wire  _T_34;
-  wire  _T_35;
+  wire [2:0] _T_34;
   wire  _T_36;
   wire  _T_37;
-  wire [2:0] _T_38;
-  wire [6:0] _T_39;
+  wire  _T_38;
+  wire  _T_39;
+  wire  _T_40;
   wire  _T_41;
   wire  _T_42;
   wire  _T_43;
-  wire  _T_44;
   wire  _T_45;
   wire  _T_46;
-  wire  _T_47;
-  wire  _T_48;
-  wire  _T_49;
-  wire  _T_50;
-  wire  _T_52;
-  wire  _T_53;
-  assign io_WB_reg_w = _T_53;
-  assign io_WB_rd_mem = _T_47;
-  assign io_MEM_branch = _T_46;
-  assign io_MEM_write = _T_44;
-  assign io_MEM_read = _T_42;
-  assign io_MEM_func = _T_38;
-  assign io_EX_opcode = _T_39;
-  assign io_EX_alu_sel = _T_35;
-  assign io_EX_alu_op_func = _T_38;
-  assign io_EX_alu_op_alt = _T_37;
-  assign io_jump = _T_31;
-  assign _T_30 = io_ctrl_opcode == 7'h6f;
-  assign _T_31 = io_stall ? 1'h0 : _T_30;
-  assign _T_32 = io_ctrl_opcode != 7'h33;
-  assign _T_33 = io_ctrl_opcode != 7'h63;
-  assign _T_34 = _T_32 & _T_33;
-  assign _T_35 = io_stall ? 1'h0 : _T_34;
-  assign _T_36 = io_ctrl_funct7[5];
-  assign _T_37 = io_stall ? 1'h0 : _T_36;
-  assign _T_38 = io_stall ? 3'h0 : io_ctrl_funct3;
-  assign _T_39 = io_stall ? 7'h0 : io_ctrl_opcode;
-  assign _T_41 = io_ctrl_opcode == 7'h3;
-  assign _T_42 = io_stall ? 1'h0 : _T_41;
-  assign _T_43 = io_ctrl_opcode == 7'h23;
-  assign _T_44 = io_stall ? 1'h0 : _T_43;
-  assign _T_45 = io_ctrl_opcode == 7'h63;
-  assign _T_46 = io_stall ? 1'h0 : _T_45;
-  assign _T_47 = io_stall ? 1'h0 : io_MEM_read;
-  assign _T_48 = io_ctrl_opcode == 7'h33;
-  assign _T_49 = io_ctrl_opcode == 7'h13;
-  assign _T_50 = _T_48 | _T_49;
-  assign _T_52 = _T_50 | _T_41;
-  assign _T_53 = io_stall ? 1'h0 : _T_52;
+  assign io_WB_reg_w = _T_46;
+  assign io_WB_rd_mem = _T_40;
+  assign io_MEM_func = _T_34;
+  assign io_MEM_write = _T_39;
+  assign io_MEM_read = _T_37;
+  assign io_EX_alu_sel = _T_31;
+  assign io_EX_alu_ctrl_func = _T_34;
+  assign io_EX_alu_ctrl_alt = _T_33;
+  assign io_EX_alu_ctrl_flush = io_flush;
+  assign io_jump = _T_29;
+  assign _T_28 = io_ctrl_opcode == 7'h6f;
+  assign _T_29 = io_flush ? 1'h0 : _T_28;
+  assign _T_30 = io_ctrl_opcode != 7'h33;
+  assign _T_31 = io_flush ? 1'h0 : _T_30;
+  assign _T_32 = io_ctrl_funct7[5];
+  assign _T_33 = io_flush ? 1'h0 : _T_32;
+  assign _T_34 = io_flush ? 3'h0 : io_ctrl_funct3;
+  assign _T_36 = io_ctrl_opcode == 7'h3;
+  assign _T_37 = io_flush ? 1'h0 : _T_36;
+  assign _T_38 = io_ctrl_opcode == 7'h23;
+  assign _T_39 = io_flush ? 1'h0 : _T_38;
+  assign _T_40 = io_flush ? 1'h0 : io_MEM_read;
+  assign _T_41 = io_ctrl_opcode == 7'h33;
+  assign _T_42 = io_ctrl_opcode == 7'h13;
+  assign _T_43 = _T_41 | _T_42;
+  assign _T_45 = _T_43 | _T_36;
+  assign _T_46 = io_flush ? 1'h0 : _T_45;
 endmodule
 module Registers(
   input         clock,
+  input         reset,
   input  [4:0]  io_rs_rs1,
   input  [4:0]  io_rs_rs2,
   input         io_reg_w,
@@ -3153,194 +3130,952 @@ module Registers(
   output [31:0] io_op_op1,
   output [31:0] io_op_op2
 );
-  reg [31:0] x [0:31];
-  reg [31:0] _GEN_0;
-  wire [31:0] x__T_23_data;
-  wire [4:0] x__T_23_addr;
-  wire [31:0] x__T_25_data;
-  wire [4:0] x__T_25_addr;
-  wire [31:0] x__T_15_data;
-  wire [4:0] x__T_15_addr;
-  wire  x__T_15_mask;
-  wire  x__T_15_en;
-  wire [31:0] x__T_16_data;
-  wire [4:0] x__T_16_addr;
-  wire  x__T_16_mask;
-  wire  x__T_16_en;
-  wire  _T_17;
-  wire  _T_18;
-  wire  _T_19;
+  wire [31:0] _T_46_0;
+  wire [31:0] _T_46_1;
+  wire [31:0] _T_46_2;
+  wire [31:0] _T_46_3;
+  wire [31:0] _T_46_4;
+  wire [31:0] _T_46_5;
+  wire [31:0] _T_46_6;
+  wire [31:0] _T_46_7;
+  wire [31:0] _T_46_8;
+  wire [31:0] _T_46_9;
+  wire [31:0] _T_46_10;
+  wire [31:0] _T_46_11;
+  wire [31:0] _T_46_12;
+  wire [31:0] _T_46_13;
+  wire [31:0] _T_46_14;
+  wire [31:0] _T_46_15;
+  wire [31:0] _T_46_16;
+  wire [31:0] _T_46_17;
+  wire [31:0] _T_46_18;
+  wire [31:0] _T_46_19;
+  wire [31:0] _T_46_20;
+  wire [31:0] _T_46_21;
+  wire [31:0] _T_46_22;
+  wire [31:0] _T_46_23;
+  wire [31:0] _T_46_24;
+  wire [31:0] _T_46_25;
+  wire [31:0] _T_46_26;
+  wire [31:0] _T_46_27;
+  wire [31:0] _T_46_28;
+  wire [31:0] _T_46_29;
+  wire [31:0] _T_46_30;
+  wire [31:0] _T_46_31;
+  reg [31:0] x_0;
+  reg [31:0] _GEN_129;
+  reg [31:0] x_1;
+  reg [31:0] _GEN_130;
+  reg [31:0] x_2;
+  reg [31:0] _GEN_131;
+  reg [31:0] x_3;
+  reg [31:0] _GEN_132;
+  reg [31:0] x_4;
+  reg [31:0] _GEN_133;
+  reg [31:0] x_5;
+  reg [31:0] _GEN_134;
+  reg [31:0] x_6;
+  reg [31:0] _GEN_135;
+  reg [31:0] x_7;
+  reg [31:0] _GEN_136;
+  reg [31:0] x_8;
+  reg [31:0] _GEN_137;
+  reg [31:0] x_9;
+  reg [31:0] _GEN_138;
+  reg [31:0] x_10;
+  reg [31:0] _GEN_139;
+  reg [31:0] x_11;
+  reg [31:0] _GEN_140;
+  reg [31:0] x_12;
+  reg [31:0] _GEN_141;
+  reg [31:0] x_13;
+  reg [31:0] _GEN_142;
+  reg [31:0] x_14;
+  reg [31:0] _GEN_143;
+  reg [31:0] x_15;
+  reg [31:0] _GEN_144;
+  reg [31:0] x_16;
+  reg [31:0] _GEN_145;
+  reg [31:0] x_17;
+  reg [31:0] _GEN_146;
+  reg [31:0] x_18;
+  reg [31:0] _GEN_147;
+  reg [31:0] x_19;
+  reg [31:0] _GEN_148;
+  reg [31:0] x_20;
+  reg [31:0] _GEN_149;
+  reg [31:0] x_21;
+  reg [31:0] _GEN_150;
+  reg [31:0] x_22;
+  reg [31:0] _GEN_151;
+  reg [31:0] x_23;
+  reg [31:0] _GEN_152;
+  reg [31:0] x_24;
+  reg [31:0] _GEN_153;
+  reg [31:0] x_25;
+  reg [31:0] _GEN_154;
+  reg [31:0] x_26;
+  reg [31:0] _GEN_155;
+  reg [31:0] x_27;
+  reg [31:0] _GEN_156;
+  reg [31:0] x_28;
+  reg [31:0] _GEN_157;
+  reg [31:0] x_29;
+  reg [31:0] _GEN_158;
+  reg [31:0] x_30;
+  reg [31:0] _GEN_159;
+  reg [31:0] x_31;
+  reg [31:0] _GEN_160;
+  wire  _T_249;
+  wire  _T_250;
+  wire  _T_251;
   wire  fwd_rs1;
-  wire  _T_22;
+  wire  _T_254;
   wire  fwd_rs2;
-  wire [31:0] _T_24;
-  wire [31:0] _T_26;
-  assign io_op_op1 = _T_24;
-  assign io_op_op2 = _T_26;
-  assign x__T_23_addr = io_rs_rs1;
-  assign x__T_23_data = x[x__T_23_addr];
-  assign x__T_25_addr = io_rs_rs2;
-  assign x__T_25_data = x[x__T_25_addr];
-  assign x__T_15_data = 32'h0;
-  assign x__T_15_addr = 5'h0;
-  assign x__T_15_mask = 1'h1;
-  assign x__T_15_en = 1'h1;
-  assign x__T_16_data = io_res;
-  assign x__T_16_addr = io_rd;
-  assign x__T_16_mask = io_reg_w;
-  assign x__T_16_en = io_reg_w;
-  assign _T_17 = io_res != 32'h0;
-  assign _T_18 = io_reg_w & _T_17;
-  assign _T_19 = io_rd == io_rs_rs1;
-  assign fwd_rs1 = _T_18 & _T_19;
-  assign _T_22 = io_rd == io_rs_rs2;
-  assign fwd_rs2 = _T_18 & _T_22;
-  assign _T_24 = fwd_rs1 ? io_res : x__T_23_data;
-  assign _T_26 = fwd_rs2 ? io_res : x__T_25_data;
+  wire [31:0] _GEN_0;
+  wire [31:0] _GEN_3;
+  wire [31:0] _GEN_4;
+  wire [31:0] _GEN_5;
+  wire [31:0] _GEN_6;
+  wire [31:0] _GEN_7;
+  wire [31:0] _GEN_8;
+  wire [31:0] _GEN_9;
+  wire [31:0] _GEN_10;
+  wire [31:0] _GEN_11;
+  wire [31:0] _GEN_12;
+  wire [31:0] _GEN_13;
+  wire [31:0] _GEN_14;
+  wire [31:0] _GEN_15;
+  wire [31:0] _GEN_16;
+  wire [31:0] _GEN_17;
+  wire [31:0] _GEN_18;
+  wire [31:0] _GEN_19;
+  wire [31:0] _GEN_20;
+  wire [31:0] _GEN_21;
+  wire [31:0] _GEN_22;
+  wire [31:0] _GEN_23;
+  wire [31:0] _GEN_24;
+  wire [31:0] _GEN_25;
+  wire [31:0] _GEN_26;
+  wire [31:0] _GEN_27;
+  wire [31:0] _GEN_28;
+  wire [31:0] _GEN_29;
+  wire [31:0] _GEN_30;
+  wire [31:0] _GEN_31;
+  wire [31:0] _GEN_32;
+  wire [31:0] _GEN_33;
+  wire [31:0] _T_261;
+  wire [31:0] _GEN_1;
+  wire [31:0] _GEN_34;
+  wire [31:0] _GEN_35;
+  wire [31:0] _GEN_36;
+  wire [31:0] _GEN_37;
+  wire [31:0] _GEN_38;
+  wire [31:0] _GEN_39;
+  wire [31:0] _GEN_40;
+  wire [31:0] _GEN_41;
+  wire [31:0] _GEN_42;
+  wire [31:0] _GEN_43;
+  wire [31:0] _GEN_44;
+  wire [31:0] _GEN_45;
+  wire [31:0] _GEN_46;
+  wire [31:0] _GEN_47;
+  wire [31:0] _GEN_48;
+  wire [31:0] _GEN_49;
+  wire [31:0] _GEN_50;
+  wire [31:0] _GEN_51;
+  wire [31:0] _GEN_52;
+  wire [31:0] _GEN_53;
+  wire [31:0] _GEN_54;
+  wire [31:0] _GEN_55;
+  wire [31:0] _GEN_56;
+  wire [31:0] _GEN_57;
+  wire [31:0] _GEN_58;
+  wire [31:0] _GEN_59;
+  wire [31:0] _GEN_60;
+  wire [31:0] _GEN_61;
+  wire [31:0] _GEN_62;
+  wire [31:0] _GEN_63;
+  wire [31:0] _GEN_64;
+  wire [31:0] _T_265;
+  wire [31:0] _GEN_2;
+  wire [31:0] _GEN_65;
+  wire [31:0] _GEN_66;
+  wire [31:0] _GEN_67;
+  wire [31:0] _GEN_68;
+  wire [31:0] _GEN_69;
+  wire [31:0] _GEN_70;
+  wire [31:0] _GEN_71;
+  wire [31:0] _GEN_72;
+  wire [31:0] _GEN_73;
+  wire [31:0] _GEN_74;
+  wire [31:0] _GEN_75;
+  wire [31:0] _GEN_76;
+  wire [31:0] _GEN_77;
+  wire [31:0] _GEN_78;
+  wire [31:0] _GEN_79;
+  wire [31:0] _GEN_80;
+  wire [31:0] _GEN_81;
+  wire [31:0] _GEN_82;
+  wire [31:0] _GEN_83;
+  wire [31:0] _GEN_84;
+  wire [31:0] _GEN_85;
+  wire [31:0] _GEN_86;
+  wire [31:0] _GEN_87;
+  wire [31:0] _GEN_88;
+  wire [31:0] _GEN_89;
+  wire [31:0] _GEN_90;
+  wire [31:0] _GEN_91;
+  wire [31:0] _GEN_92;
+  wire [31:0] _GEN_93;
+  wire [31:0] _GEN_94;
+  wire [31:0] _GEN_95;
+  wire [31:0] _GEN_96;
+  wire [31:0] _GEN_97;
+  wire [31:0] _GEN_98;
+  wire [31:0] _GEN_99;
+  wire [31:0] _GEN_100;
+  wire [31:0] _GEN_101;
+  wire [31:0] _GEN_102;
+  wire [31:0] _GEN_103;
+  wire [31:0] _GEN_104;
+  wire [31:0] _GEN_105;
+  wire [31:0] _GEN_106;
+  wire [31:0] _GEN_107;
+  wire [31:0] _GEN_108;
+  wire [31:0] _GEN_109;
+  wire [31:0] _GEN_110;
+  wire [31:0] _GEN_111;
+  wire [31:0] _GEN_112;
+  wire [31:0] _GEN_113;
+  wire [31:0] _GEN_114;
+  wire [31:0] _GEN_115;
+  wire [31:0] _GEN_116;
+  wire [31:0] _GEN_117;
+  wire [31:0] _GEN_118;
+  wire [31:0] _GEN_119;
+  wire [31:0] _GEN_120;
+  wire [31:0] _GEN_121;
+  wire [31:0] _GEN_122;
+  wire [31:0] _GEN_123;
+  wire [31:0] _GEN_124;
+  wire [31:0] _GEN_125;
+  wire [31:0] _GEN_126;
+  wire [31:0] _GEN_127;
+  wire [31:0] _GEN_128;
+  assign io_op_op1 = _T_261;
+  assign io_op_op2 = _T_265;
+  assign _T_46_0 = 32'h0;
+  assign _T_46_1 = 32'h0;
+  assign _T_46_2 = 32'h0;
+  assign _T_46_3 = 32'h0;
+  assign _T_46_4 = 32'h0;
+  assign _T_46_5 = 32'h0;
+  assign _T_46_6 = 32'h0;
+  assign _T_46_7 = 32'h0;
+  assign _T_46_8 = 32'h0;
+  assign _T_46_9 = 32'h0;
+  assign _T_46_10 = 32'h0;
+  assign _T_46_11 = 32'h0;
+  assign _T_46_12 = 32'h0;
+  assign _T_46_13 = 32'h0;
+  assign _T_46_14 = 32'h0;
+  assign _T_46_15 = 32'h0;
+  assign _T_46_16 = 32'h0;
+  assign _T_46_17 = 32'h0;
+  assign _T_46_18 = 32'h0;
+  assign _T_46_19 = 32'h0;
+  assign _T_46_20 = 32'h0;
+  assign _T_46_21 = 32'h0;
+  assign _T_46_22 = 32'h0;
+  assign _T_46_23 = 32'h0;
+  assign _T_46_24 = 32'h0;
+  assign _T_46_25 = 32'h0;
+  assign _T_46_26 = 32'h0;
+  assign _T_46_27 = 32'h0;
+  assign _T_46_28 = 32'h0;
+  assign _T_46_29 = 32'h0;
+  assign _T_46_30 = 32'h0;
+  assign _T_46_31 = 32'h0;
+  assign _T_249 = io_res != 32'h0;
+  assign _T_250 = io_reg_w & _T_249;
+  assign _T_251 = io_rd == io_rs_rs1;
+  assign fwd_rs1 = _T_250 & _T_251;
+  assign _T_254 = io_rd == io_rs_rs2;
+  assign fwd_rs2 = _T_250 & _T_254;
+  assign _GEN_0 = _GEN_33;
+  assign _GEN_3 = 5'h1 == io_rs_rs1 ? x_1 : x_0;
+  assign _GEN_4 = 5'h2 == io_rs_rs1 ? x_2 : _GEN_3;
+  assign _GEN_5 = 5'h3 == io_rs_rs1 ? x_3 : _GEN_4;
+  assign _GEN_6 = 5'h4 == io_rs_rs1 ? x_4 : _GEN_5;
+  assign _GEN_7 = 5'h5 == io_rs_rs1 ? x_5 : _GEN_6;
+  assign _GEN_8 = 5'h6 == io_rs_rs1 ? x_6 : _GEN_7;
+  assign _GEN_9 = 5'h7 == io_rs_rs1 ? x_7 : _GEN_8;
+  assign _GEN_10 = 5'h8 == io_rs_rs1 ? x_8 : _GEN_9;
+  assign _GEN_11 = 5'h9 == io_rs_rs1 ? x_9 : _GEN_10;
+  assign _GEN_12 = 5'ha == io_rs_rs1 ? x_10 : _GEN_11;
+  assign _GEN_13 = 5'hb == io_rs_rs1 ? x_11 : _GEN_12;
+  assign _GEN_14 = 5'hc == io_rs_rs1 ? x_12 : _GEN_13;
+  assign _GEN_15 = 5'hd == io_rs_rs1 ? x_13 : _GEN_14;
+  assign _GEN_16 = 5'he == io_rs_rs1 ? x_14 : _GEN_15;
+  assign _GEN_17 = 5'hf == io_rs_rs1 ? x_15 : _GEN_16;
+  assign _GEN_18 = 5'h10 == io_rs_rs1 ? x_16 : _GEN_17;
+  assign _GEN_19 = 5'h11 == io_rs_rs1 ? x_17 : _GEN_18;
+  assign _GEN_20 = 5'h12 == io_rs_rs1 ? x_18 : _GEN_19;
+  assign _GEN_21 = 5'h13 == io_rs_rs1 ? x_19 : _GEN_20;
+  assign _GEN_22 = 5'h14 == io_rs_rs1 ? x_20 : _GEN_21;
+  assign _GEN_23 = 5'h15 == io_rs_rs1 ? x_21 : _GEN_22;
+  assign _GEN_24 = 5'h16 == io_rs_rs1 ? x_22 : _GEN_23;
+  assign _GEN_25 = 5'h17 == io_rs_rs1 ? x_23 : _GEN_24;
+  assign _GEN_26 = 5'h18 == io_rs_rs1 ? x_24 : _GEN_25;
+  assign _GEN_27 = 5'h19 == io_rs_rs1 ? x_25 : _GEN_26;
+  assign _GEN_28 = 5'h1a == io_rs_rs1 ? x_26 : _GEN_27;
+  assign _GEN_29 = 5'h1b == io_rs_rs1 ? x_27 : _GEN_28;
+  assign _GEN_30 = 5'h1c == io_rs_rs1 ? x_28 : _GEN_29;
+  assign _GEN_31 = 5'h1d == io_rs_rs1 ? x_29 : _GEN_30;
+  assign _GEN_32 = 5'h1e == io_rs_rs1 ? x_30 : _GEN_31;
+  assign _GEN_33 = 5'h1f == io_rs_rs1 ? x_31 : _GEN_32;
+  assign _T_261 = fwd_rs1 ? io_res : _GEN_0;
+  assign _GEN_1 = _GEN_64;
+  assign _GEN_34 = 5'h1 == io_rs_rs2 ? x_1 : x_0;
+  assign _GEN_35 = 5'h2 == io_rs_rs2 ? x_2 : _GEN_34;
+  assign _GEN_36 = 5'h3 == io_rs_rs2 ? x_3 : _GEN_35;
+  assign _GEN_37 = 5'h4 == io_rs_rs2 ? x_4 : _GEN_36;
+  assign _GEN_38 = 5'h5 == io_rs_rs2 ? x_5 : _GEN_37;
+  assign _GEN_39 = 5'h6 == io_rs_rs2 ? x_6 : _GEN_38;
+  assign _GEN_40 = 5'h7 == io_rs_rs2 ? x_7 : _GEN_39;
+  assign _GEN_41 = 5'h8 == io_rs_rs2 ? x_8 : _GEN_40;
+  assign _GEN_42 = 5'h9 == io_rs_rs2 ? x_9 : _GEN_41;
+  assign _GEN_43 = 5'ha == io_rs_rs2 ? x_10 : _GEN_42;
+  assign _GEN_44 = 5'hb == io_rs_rs2 ? x_11 : _GEN_43;
+  assign _GEN_45 = 5'hc == io_rs_rs2 ? x_12 : _GEN_44;
+  assign _GEN_46 = 5'hd == io_rs_rs2 ? x_13 : _GEN_45;
+  assign _GEN_47 = 5'he == io_rs_rs2 ? x_14 : _GEN_46;
+  assign _GEN_48 = 5'hf == io_rs_rs2 ? x_15 : _GEN_47;
+  assign _GEN_49 = 5'h10 == io_rs_rs2 ? x_16 : _GEN_48;
+  assign _GEN_50 = 5'h11 == io_rs_rs2 ? x_17 : _GEN_49;
+  assign _GEN_51 = 5'h12 == io_rs_rs2 ? x_18 : _GEN_50;
+  assign _GEN_52 = 5'h13 == io_rs_rs2 ? x_19 : _GEN_51;
+  assign _GEN_53 = 5'h14 == io_rs_rs2 ? x_20 : _GEN_52;
+  assign _GEN_54 = 5'h15 == io_rs_rs2 ? x_21 : _GEN_53;
+  assign _GEN_55 = 5'h16 == io_rs_rs2 ? x_22 : _GEN_54;
+  assign _GEN_56 = 5'h17 == io_rs_rs2 ? x_23 : _GEN_55;
+  assign _GEN_57 = 5'h18 == io_rs_rs2 ? x_24 : _GEN_56;
+  assign _GEN_58 = 5'h19 == io_rs_rs2 ? x_25 : _GEN_57;
+  assign _GEN_59 = 5'h1a == io_rs_rs2 ? x_26 : _GEN_58;
+  assign _GEN_60 = 5'h1b == io_rs_rs2 ? x_27 : _GEN_59;
+  assign _GEN_61 = 5'h1c == io_rs_rs2 ? x_28 : _GEN_60;
+  assign _GEN_62 = 5'h1d == io_rs_rs2 ? x_29 : _GEN_61;
+  assign _GEN_63 = 5'h1e == io_rs_rs2 ? x_30 : _GEN_62;
+  assign _GEN_64 = 5'h1f == io_rs_rs2 ? x_31 : _GEN_63;
+  assign _T_265 = fwd_rs2 ? io_res : _GEN_1;
+  assign _GEN_2 = io_res;
+  assign _GEN_65 = 5'h0 == io_rd ? _GEN_2 : 32'h0;
+  assign _GEN_66 = 5'h1 == io_rd ? _GEN_2 : x_1;
+  assign _GEN_67 = 5'h2 == io_rd ? _GEN_2 : x_2;
+  assign _GEN_68 = 5'h3 == io_rd ? _GEN_2 : x_3;
+  assign _GEN_69 = 5'h4 == io_rd ? _GEN_2 : x_4;
+  assign _GEN_70 = 5'h5 == io_rd ? _GEN_2 : x_5;
+  assign _GEN_71 = 5'h6 == io_rd ? _GEN_2 : x_6;
+  assign _GEN_72 = 5'h7 == io_rd ? _GEN_2 : x_7;
+  assign _GEN_73 = 5'h8 == io_rd ? _GEN_2 : x_8;
+  assign _GEN_74 = 5'h9 == io_rd ? _GEN_2 : x_9;
+  assign _GEN_75 = 5'ha == io_rd ? _GEN_2 : x_10;
+  assign _GEN_76 = 5'hb == io_rd ? _GEN_2 : x_11;
+  assign _GEN_77 = 5'hc == io_rd ? _GEN_2 : x_12;
+  assign _GEN_78 = 5'hd == io_rd ? _GEN_2 : x_13;
+  assign _GEN_79 = 5'he == io_rd ? _GEN_2 : x_14;
+  assign _GEN_80 = 5'hf == io_rd ? _GEN_2 : x_15;
+  assign _GEN_81 = 5'h10 == io_rd ? _GEN_2 : x_16;
+  assign _GEN_82 = 5'h11 == io_rd ? _GEN_2 : x_17;
+  assign _GEN_83 = 5'h12 == io_rd ? _GEN_2 : x_18;
+  assign _GEN_84 = 5'h13 == io_rd ? _GEN_2 : x_19;
+  assign _GEN_85 = 5'h14 == io_rd ? _GEN_2 : x_20;
+  assign _GEN_86 = 5'h15 == io_rd ? _GEN_2 : x_21;
+  assign _GEN_87 = 5'h16 == io_rd ? _GEN_2 : x_22;
+  assign _GEN_88 = 5'h17 == io_rd ? _GEN_2 : x_23;
+  assign _GEN_89 = 5'h18 == io_rd ? _GEN_2 : x_24;
+  assign _GEN_90 = 5'h19 == io_rd ? _GEN_2 : x_25;
+  assign _GEN_91 = 5'h1a == io_rd ? _GEN_2 : x_26;
+  assign _GEN_92 = 5'h1b == io_rd ? _GEN_2 : x_27;
+  assign _GEN_93 = 5'h1c == io_rd ? _GEN_2 : x_28;
+  assign _GEN_94 = 5'h1d == io_rd ? _GEN_2 : x_29;
+  assign _GEN_95 = 5'h1e == io_rd ? _GEN_2 : x_30;
+  assign _GEN_96 = 5'h1f == io_rd ? _GEN_2 : x_31;
+  assign _GEN_97 = io_reg_w ? _GEN_65 : 32'h0;
+  assign _GEN_98 = io_reg_w ? _GEN_66 : x_1;
+  assign _GEN_99 = io_reg_w ? _GEN_67 : x_2;
+  assign _GEN_100 = io_reg_w ? _GEN_68 : x_3;
+  assign _GEN_101 = io_reg_w ? _GEN_69 : x_4;
+  assign _GEN_102 = io_reg_w ? _GEN_70 : x_5;
+  assign _GEN_103 = io_reg_w ? _GEN_71 : x_6;
+  assign _GEN_104 = io_reg_w ? _GEN_72 : x_7;
+  assign _GEN_105 = io_reg_w ? _GEN_73 : x_8;
+  assign _GEN_106 = io_reg_w ? _GEN_74 : x_9;
+  assign _GEN_107 = io_reg_w ? _GEN_75 : x_10;
+  assign _GEN_108 = io_reg_w ? _GEN_76 : x_11;
+  assign _GEN_109 = io_reg_w ? _GEN_77 : x_12;
+  assign _GEN_110 = io_reg_w ? _GEN_78 : x_13;
+  assign _GEN_111 = io_reg_w ? _GEN_79 : x_14;
+  assign _GEN_112 = io_reg_w ? _GEN_80 : x_15;
+  assign _GEN_113 = io_reg_w ? _GEN_81 : x_16;
+  assign _GEN_114 = io_reg_w ? _GEN_82 : x_17;
+  assign _GEN_115 = io_reg_w ? _GEN_83 : x_18;
+  assign _GEN_116 = io_reg_w ? _GEN_84 : x_19;
+  assign _GEN_117 = io_reg_w ? _GEN_85 : x_20;
+  assign _GEN_118 = io_reg_w ? _GEN_86 : x_21;
+  assign _GEN_119 = io_reg_w ? _GEN_87 : x_22;
+  assign _GEN_120 = io_reg_w ? _GEN_88 : x_23;
+  assign _GEN_121 = io_reg_w ? _GEN_89 : x_24;
+  assign _GEN_122 = io_reg_w ? _GEN_90 : x_25;
+  assign _GEN_123 = io_reg_w ? _GEN_91 : x_26;
+  assign _GEN_124 = io_reg_w ? _GEN_92 : x_27;
+  assign _GEN_125 = io_reg_w ? _GEN_93 : x_28;
+  assign _GEN_126 = io_reg_w ? _GEN_94 : x_29;
+  assign _GEN_127 = io_reg_w ? _GEN_95 : x_30;
+  assign _GEN_128 = io_reg_w ? _GEN_96 : x_31;
 `ifdef RANDOMIZE
   integer initvar;
   initial begin
     `ifndef verilator
       #0.002 begin end
     `endif
-  _GEN_0 = {1{$random}};
-  `ifdef RANDOMIZE_MEM_INIT
-  for (initvar = 0; initvar < 32; initvar = initvar+1)
-    x[initvar] = _GEN_0[31:0];
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_129 = {1{$random}};
+  x_0 = _GEN_129[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_130 = {1{$random}};
+  x_1 = _GEN_130[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_131 = {1{$random}};
+  x_2 = _GEN_131[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_132 = {1{$random}};
+  x_3 = _GEN_132[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_133 = {1{$random}};
+  x_4 = _GEN_133[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_134 = {1{$random}};
+  x_5 = _GEN_134[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_135 = {1{$random}};
+  x_6 = _GEN_135[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_136 = {1{$random}};
+  x_7 = _GEN_136[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_137 = {1{$random}};
+  x_8 = _GEN_137[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_138 = {1{$random}};
+  x_9 = _GEN_138[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_139 = {1{$random}};
+  x_10 = _GEN_139[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_140 = {1{$random}};
+  x_11 = _GEN_140[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_141 = {1{$random}};
+  x_12 = _GEN_141[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_142 = {1{$random}};
+  x_13 = _GEN_142[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_143 = {1{$random}};
+  x_14 = _GEN_143[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_144 = {1{$random}};
+  x_15 = _GEN_144[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_145 = {1{$random}};
+  x_16 = _GEN_145[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_146 = {1{$random}};
+  x_17 = _GEN_146[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_147 = {1{$random}};
+  x_18 = _GEN_147[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_148 = {1{$random}};
+  x_19 = _GEN_148[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_149 = {1{$random}};
+  x_20 = _GEN_149[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_150 = {1{$random}};
+  x_21 = _GEN_150[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_151 = {1{$random}};
+  x_22 = _GEN_151[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_152 = {1{$random}};
+  x_23 = _GEN_152[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_153 = {1{$random}};
+  x_24 = _GEN_153[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_154 = {1{$random}};
+  x_25 = _GEN_154[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_155 = {1{$random}};
+  x_26 = _GEN_155[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_156 = {1{$random}};
+  x_27 = _GEN_156[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_157 = {1{$random}};
+  x_28 = _GEN_157[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_158 = {1{$random}};
+  x_29 = _GEN_158[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_159 = {1{$random}};
+  x_30 = _GEN_159[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_160 = {1{$random}};
+  x_31 = _GEN_160[31:0];
   `endif
   end
 `endif
   always @(posedge clock) begin
-    if(x__T_15_en & x__T_15_mask) begin
-      x[x__T_15_addr] <= x__T_15_data;
+    if (reset) begin
+      x_0 <= _T_46_0;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h0 == io_rd) begin
+          x_0 <= _GEN_2;
+        end else begin
+          x_0 <= 32'h0;
+        end
+      end else begin
+        x_0 <= 32'h0;
+      end
     end
-    if(x__T_16_en & x__T_16_mask) begin
-      x[x__T_16_addr] <= x__T_16_data;
+    if (reset) begin
+      x_1 <= _T_46_1;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h1 == io_rd) begin
+          x_1 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_2 <= _T_46_2;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h2 == io_rd) begin
+          x_2 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_3 <= _T_46_3;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h3 == io_rd) begin
+          x_3 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_4 <= _T_46_4;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h4 == io_rd) begin
+          x_4 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_5 <= _T_46_5;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h5 == io_rd) begin
+          x_5 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_6 <= _T_46_6;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h6 == io_rd) begin
+          x_6 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_7 <= _T_46_7;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h7 == io_rd) begin
+          x_7 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_8 <= _T_46_8;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h8 == io_rd) begin
+          x_8 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_9 <= _T_46_9;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h9 == io_rd) begin
+          x_9 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_10 <= _T_46_10;
+    end else begin
+      if (io_reg_w) begin
+        if (5'ha == io_rd) begin
+          x_10 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_11 <= _T_46_11;
+    end else begin
+      if (io_reg_w) begin
+        if (5'hb == io_rd) begin
+          x_11 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_12 <= _T_46_12;
+    end else begin
+      if (io_reg_w) begin
+        if (5'hc == io_rd) begin
+          x_12 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_13 <= _T_46_13;
+    end else begin
+      if (io_reg_w) begin
+        if (5'hd == io_rd) begin
+          x_13 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_14 <= _T_46_14;
+    end else begin
+      if (io_reg_w) begin
+        if (5'he == io_rd) begin
+          x_14 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_15 <= _T_46_15;
+    end else begin
+      if (io_reg_w) begin
+        if (5'hf == io_rd) begin
+          x_15 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_16 <= _T_46_16;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h10 == io_rd) begin
+          x_16 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_17 <= _T_46_17;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h11 == io_rd) begin
+          x_17 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_18 <= _T_46_18;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h12 == io_rd) begin
+          x_18 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_19 <= _T_46_19;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h13 == io_rd) begin
+          x_19 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_20 <= _T_46_20;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h14 == io_rd) begin
+          x_20 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_21 <= _T_46_21;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h15 == io_rd) begin
+          x_21 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_22 <= _T_46_22;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h16 == io_rd) begin
+          x_22 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_23 <= _T_46_23;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h17 == io_rd) begin
+          x_23 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_24 <= _T_46_24;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h18 == io_rd) begin
+          x_24 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_25 <= _T_46_25;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h19 == io_rd) begin
+          x_25 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_26 <= _T_46_26;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h1a == io_rd) begin
+          x_26 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_27 <= _T_46_27;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h1b == io_rd) begin
+          x_27 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_28 <= _T_46_28;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h1c == io_rd) begin
+          x_28 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_29 <= _T_46_29;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h1d == io_rd) begin
+          x_29 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_30 <= _T_46_30;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h1e == io_rd) begin
+          x_30 <= _GEN_2;
+        end
+      end
+    end
+    if (reset) begin
+      x_31 <= _T_46_31;
+    end else begin
+      if (io_reg_w) begin
+        if (5'h1f == io_rd) begin
+          x_31 <= _GEN_2;
+        end
+      end
     end
   end
 endmodule
 module ALU(
-  input  [6:0]  io_opcode,
-  input  [2:0]  io_alu_op_func,
-  input         io_alu_op_alt,
   input  [31:0] io_op_op1,
   input  [31:0] io_op_op2,
-  output        io_zero,
+  input  [2:0]  io_alu_ctrl_func,
+  input         io_alu_ctrl_alt,
+  input         io_alu_ctrl_flush,
   output [31:0] io_res
 );
   wire [4:0] shamt;
+  wire [32:0] _T_8;
   wire [32:0] _T_9;
+  wire [31:0] compare;
   wire [32:0] _T_10;
   wire [31:0] _T_11;
-  wire [32:0] _T_12;
-  wire [31:0] _T_13;
-  wire [31:0] _T_14;
-  wire [62:0] _GEN_0;
-  wire [62:0] _T_15;
-  wire  _T_16;
   wire [31:0] _T_17;
-  wire [31:0] _T_18;
-  wire [31:0] _T_19;
-  wire [31:0] _T_20;
-  wire  _T_21;
+  wire [62:0] _GEN_0;
+  wire [62:0] _T_18;
+  wire  _T_19;
+  wire  _T_20;
+  wire [31:0] _T_21;
   wire [31:0] _T_22;
-  wire  _T_23;
+  wire [31:0] _T_23;
   wire [31:0] _T_24;
   wire  _T_25;
   wire [31:0] _T_26;
   wire  _T_27;
   wire [31:0] _T_28;
   wire  _T_29;
-  wire [62:0] _T_30;
+  wire [31:0] _T_30;
   wire  _T_31;
-  wire [62:0] _T_32;
-  wire [62:0] _T_52;
-  wire  _T_60;
-  wire [31:0] _T_61;
-  wire  _T_62;
-  wire [31:0] _T_63;
-  wire  _T_64;
-  wire [31:0] _T_65;
-  wire  _T_66;
-  wire [62:0] _T_67;
-  wire  _T_68;
-  wire [62:0] _T_69;
-  wire  _T_70;
-  assign io_zero = _T_70;
-  assign io_res = _T_69[31:0];
+  wire [31:0] _T_32;
+  wire  _T_33;
+  wire [31:0] _T_34;
+  wire  _T_35;
+  wire [31:0] _T_36;
+  wire  _T_37;
+  wire [62:0] _T_38;
+  wire  _T_39;
+  wire [62:0] _T_40;
+  wire [62:0] _T_41;
+  assign io_res = _T_41[31:0];
   assign shamt = io_op_op2[4:0];
-  assign _T_9 = io_op_op1 - io_op_op2;
-  assign _T_10 = $unsigned(_T_9);
+  assign _T_8 = io_op_op1 - io_op_op2;
+  assign _T_9 = $unsigned(_T_8);
+  assign compare = _T_9[31:0];
+  assign _T_10 = io_op_op1 + io_op_op2;
   assign _T_11 = _T_10[31:0];
-  assign _T_12 = io_op_op1 + io_op_op2;
-  assign _T_13 = _T_12[31:0];
-  assign _T_14 = io_alu_op_alt ? _T_11 : _T_13;
+  assign _T_17 = io_alu_ctrl_alt ? compare : _T_11;
   assign _GEN_0 = {{31'd0}, io_op_op1};
-  assign _T_15 = _GEN_0 << shamt;
-  assign _T_16 = io_op_op1 < io_op_op2;
-  assign _T_17 = io_op_op1 ^ io_op_op2;
-  assign _T_18 = io_op_op1 >> shamt;
-  assign _T_19 = io_alu_op_alt ? 32'h0 : _T_18;
-  assign _T_20 = io_op_op1 | io_op_op2;
-  assign _T_21 = 3'h6 == io_alu_op_func;
-  assign _T_22 = _T_21 ? _T_20 : 32'h0;
-  assign _T_23 = 3'h5 == io_alu_op_func;
-  assign _T_24 = _T_23 ? _T_19 : _T_22;
-  assign _T_25 = 3'h4 == io_alu_op_func;
-  assign _T_26 = _T_25 ? _T_17 : _T_24;
-  assign _T_27 = 3'h3 == io_alu_op_func;
-  assign _T_28 = _T_27 ? {{31'd0}, _T_16} : _T_26;
-  assign _T_29 = 3'h1 == io_alu_op_func;
-  assign _T_30 = _T_29 ? _T_15 : {{31'd0}, _T_28};
-  assign _T_31 = 3'h0 == io_alu_op_func;
-  assign _T_32 = _T_31 ? {{31'd0}, _T_14} : _T_30;
-  assign _T_52 = _T_31 ? {{31'd0}, _T_13} : _T_30;
-  assign _T_60 = 7'h63 == io_opcode;
-  assign _T_61 = _T_60 ? _T_11 : 32'h0;
-  assign _T_62 = 7'h23 == io_opcode;
-  assign _T_63 = _T_62 ? _T_13 : _T_61;
-  assign _T_64 = 7'h3 == io_opcode;
-  assign _T_65 = _T_64 ? _T_13 : _T_63;
-  assign _T_66 = 7'h13 == io_opcode;
-  assign _T_67 = _T_66 ? _T_52 : {{31'd0}, _T_65};
-  assign _T_68 = 7'h33 == io_opcode;
-  assign _T_69 = _T_68 ? _T_32 : _T_67;
-  assign _T_70 = io_res == 32'h0;
+  assign _T_18 = _GEN_0 << shamt;
+  assign _T_19 = compare[31];
+  assign _T_20 = io_op_op1 < io_op_op2;
+  assign _T_21 = io_op_op1 ^ io_op_op2;
+  assign _T_22 = io_op_op1 >> shamt;
+  assign _T_23 = io_op_op1 | io_op_op2;
+  assign _T_24 = io_op_op1 & io_op_op2;
+  assign _T_25 = 3'h7 == io_alu_ctrl_func;
+  assign _T_26 = _T_25 ? _T_24 : _T_11;
+  assign _T_27 = 3'h6 == io_alu_ctrl_func;
+  assign _T_28 = _T_27 ? _T_23 : _T_26;
+  assign _T_29 = 3'h5 == io_alu_ctrl_func;
+  assign _T_30 = _T_29 ? _T_22 : _T_28;
+  assign _T_31 = 3'h4 == io_alu_ctrl_func;
+  assign _T_32 = _T_31 ? _T_21 : _T_30;
+  assign _T_33 = 3'h3 == io_alu_ctrl_func;
+  assign _T_34 = _T_33 ? {{31'd0}, _T_20} : _T_32;
+  assign _T_35 = 3'h2 == io_alu_ctrl_func;
+  assign _T_36 = _T_35 ? {{31'd0}, _T_19} : _T_34;
+  assign _T_37 = 3'h1 == io_alu_ctrl_func;
+  assign _T_38 = _T_37 ? _T_18 : {{31'd0}, _T_36};
+  assign _T_39 = 3'h0 == io_alu_ctrl_func;
+  assign _T_40 = _T_39 ? {{31'd0}, _T_17} : _T_38;
+  assign _T_41 = io_alu_ctrl_flush ? 63'h0 : _T_40;
 endmodule
 module DataMemory(
   input         clock,
   input         reset,
+  input  [2:0]  io_mem_func,
   input         io_mem_write,
   input         io_mem_read,
-  input  [2:0]  io_mem_func,
   input  [31:0] io_op_op1,
   input  [31:0] io_op_op2,
   input         io_tx_req,
   input  [7:0]  io_rx,
   output [31:0] io_res,
   output [7:0]  io_tx,
+  output [7:0]  io_rx_out,
   output [7:0]  io_rx_cnt
 );
   reg [7:0] data_mem [0:511];
   reg [31:0] _GEN_0;
-  wire [7:0] data_mem__T_55_data;
-  wire [8:0] data_mem__T_55_addr;
-  wire [7:0] data_mem__T_61_data;
-  wire [8:0] data_mem__T_61_addr;
-  wire [7:0] data_mem__T_63_data;
-  wire [8:0] data_mem__T_63_addr;
-  wire [7:0] data_mem__T_70_data;
-  wire [8:0] data_mem__T_70_addr;
+  wire [7:0] data_mem__T_69_data;
+  wire [8:0] data_mem__T_69_addr;
   wire [7:0] data_mem__T_75_data;
   wire [8:0] data_mem__T_75_addr;
-  wire [7:0] data_mem__T_80_data;
-  wire [8:0] data_mem__T_80_addr;
-  wire [7:0] data_mem__T_82_data;
-  wire [8:0] data_mem__T_82_addr;
-  wire [7:0] data_mem__T_99_data;
-  wire [8:0] data_mem__T_99_addr;
-  wire [7:0] data_mem__T_100_data;
-  wire [8:0] data_mem__T_100_addr;
+  wire [7:0] data_mem__T_77_data;
+  wire [8:0] data_mem__T_77_addr;
+  wire [7:0] data_mem__T_84_data;
+  wire [8:0] data_mem__T_84_addr;
+  wire [7:0] data_mem__T_89_data;
+  wire [8:0] data_mem__T_89_addr;
+  wire [7:0] data_mem__T_94_data;
+  wire [8:0] data_mem__T_94_addr;
+  wire [7:0] data_mem__T_96_data;
+  wire [8:0] data_mem__T_96_addr;
+  wire [7:0] data_mem__T_109_data;
+  wire [8:0] data_mem__T_109_addr;
+  wire [7:0] data_mem__T_113_data;
+  wire [8:0] data_mem__T_113_addr;
+  wire [7:0] data_mem__T_120_data;
+  wire [8:0] data_mem__T_120_addr;
   wire [7:0] data_mem__T_19_data;
   wire [8:0] data_mem__T_19_addr;
   wire  data_mem__T_19_mask;
@@ -3349,36 +4084,47 @@ module DataMemory(
   wire [8:0] data_mem__T_23_addr;
   wire  data_mem__T_23_mask;
   wire  data_mem__T_23_en;
-  wire [7:0] data_mem__T_29_data;
-  wire [8:0] data_mem__T_29_addr;
-  wire  data_mem__T_29_mask;
-  wire  data_mem__T_29_en;
+  wire [7:0] data_mem__T_27_data;
+  wire [8:0] data_mem__T_27_addr;
+  wire  data_mem__T_27_mask;
+  wire  data_mem__T_27_en;
   wire [7:0] data_mem__T_33_data;
   wire [8:0] data_mem__T_33_addr;
   wire  data_mem__T_33_mask;
   wire  data_mem__T_33_en;
-  wire [7:0] data_mem__T_39_data;
-  wire [8:0] data_mem__T_39_addr;
-  wire  data_mem__T_39_mask;
-  wire  data_mem__T_39_en;
-  wire [7:0] data_mem__T_45_data;
-  wire [8:0] data_mem__T_45_addr;
-  wire  data_mem__T_45_mask;
-  wire  data_mem__T_45_en;
-  wire [7:0] data_mem__T_51_data;
-  wire [8:0] data_mem__T_51_addr;
-  wire  data_mem__T_51_mask;
-  wire  data_mem__T_51_en;
-  wire [7:0] data_mem__T_97_data;
-  wire [8:0] data_mem__T_97_addr;
-  wire  data_mem__T_97_mask;
-  wire  data_mem__T_97_en;
-  wire [7:0] data_mem__T_98_data;
-  wire [8:0] data_mem__T_98_addr;
-  wire  data_mem__T_98_mask;
-  wire  data_mem__T_98_en;
-  wire [7:0] _GEN_127;
-  reg [3:0] rx_cnt;
+  wire [7:0] data_mem__T_37_data;
+  wire [8:0] data_mem__T_37_addr;
+  wire  data_mem__T_37_mask;
+  wire  data_mem__T_37_en;
+  wire [7:0] data_mem__T_43_data;
+  wire [8:0] data_mem__T_43_addr;
+  wire  data_mem__T_43_mask;
+  wire  data_mem__T_43_en;
+  wire [7:0] data_mem__T_47_data;
+  wire [8:0] data_mem__T_47_addr;
+  wire  data_mem__T_47_mask;
+  wire  data_mem__T_47_en;
+  wire [7:0] data_mem__T_53_data;
+  wire [8:0] data_mem__T_53_addr;
+  wire  data_mem__T_53_mask;
+  wire  data_mem__T_53_en;
+  wire [7:0] data_mem__T_59_data;
+  wire [8:0] data_mem__T_59_addr;
+  wire  data_mem__T_59_mask;
+  wire  data_mem__T_59_en;
+  wire [7:0] data_mem__T_65_data;
+  wire [8:0] data_mem__T_65_addr;
+  wire  data_mem__T_65_mask;
+  wire  data_mem__T_65_en;
+  wire [7:0] data_mem__T_108_data;
+  wire [8:0] data_mem__T_108_addr;
+  wire  data_mem__T_108_mask;
+  wire  data_mem__T_108_en;
+  wire [7:0] data_mem__T_119_data;
+  wire [8:0] data_mem__T_119_addr;
+  wire  data_mem__T_119_mask;
+  wire  data_mem__T_119_en;
+  reg [7:0] rx_out;
   reg [31:0] _GEN_1;
   wire  _T_17;
   wire [8:0] _T_18;
@@ -3386,164 +4132,208 @@ module DataMemory(
   wire  _T_21;
   wire [8:0] _T_22;
   wire [7:0] _T_24;
-  wire [32:0] _T_26;
-  wire [31:0] _T_27;
-  wire [8:0] _T_28;
-  wire [7:0] _T_30;
-  wire  _T_31;
+  wire  _T_25;
+  wire [8:0] _T_26;
+  wire [7:0] _T_28;
+  wire [32:0] _T_30;
+  wire [31:0] _T_31;
   wire [8:0] _T_32;
   wire [7:0] _T_34;
-  wire [8:0] _T_38;
-  wire [7:0] _T_40;
-  wire [32:0] _T_42;
-  wire [31:0] _T_43;
-  wire [8:0] _T_44;
-  wire [7:0] _T_46;
-  wire [32:0] _T_48;
-  wire [31:0] _T_49;
-  wire [8:0] _T_50;
-  wire [7:0] _T_52;
-  wire  _GEN_22;
-  wire  _GEN_26;
+  wire  _T_35;
+  wire [8:0] _T_36;
+  wire [7:0] _T_38;
+  wire [8:0] _T_42;
+  wire [7:0] _T_44;
+  wire  _T_45;
+  wire [8:0] _T_46;
+  wire [7:0] _T_48;
+  wire [8:0] _T_52;
+  wire [7:0] _T_54;
+  wire [32:0] _T_56;
+  wire [31:0] _T_57;
+  wire [8:0] _T_58;
+  wire [7:0] _T_60;
+  wire [32:0] _T_62;
+  wire [31:0] _T_63;
+  wire [8:0] _T_64;
+  wire [7:0] _T_66;
   wire  _GEN_32;
-  wire [8:0] _T_54;
-  wire [7:0] _GEN_43;
-  wire [8:0] _T_60;
-  wire [8:0] _T_62;
-  wire [15:0] _T_64;
-  wire [15:0] _GEN_48;
-  wire [8:0] _T_69;
+  wire  _GEN_36;
+  wire  _GEN_40;
+  wire  _GEN_46;
+  wire  _GEN_52;
+  wire [8:0] _T_68;
+  wire [7:0] _GEN_63;
   wire [8:0] _T_74;
-  wire [8:0] _T_79;
-  wire [8:0] _T_81;
-  wire [15:0] _T_83;
-  wire [15:0] _T_84;
-  wire [31:0] _T_85;
-  wire [31:0] _GEN_55;
-  wire  _GEN_58;
-  wire  _GEN_62;
-  wire  _GEN_66;
-  wire  _T_87;
-  wire [31:0] _GEN_70;
-  wire  _T_88;
-  wire  _T_90;
-  wire  _T_91;
-  wire [31:0] _T_92;
-  wire  _T_93;
-  wire [4:0] _T_95;
-  wire [3:0] _T_96;
-  wire [3:0] _GEN_71;
-  assign io_res = _GEN_70;
-  assign io_tx = _T_92[7:0];
-  assign io_rx_cnt = data_mem__T_99_data;
-  assign data_mem__T_55_addr = _T_54;
-  assign data_mem__T_55_data = data_mem[data_mem__T_55_addr];
-  assign data_mem__T_61_addr = _T_60;
-  assign data_mem__T_61_data = data_mem[data_mem__T_61_addr];
-  assign data_mem__T_63_addr = _T_62;
-  assign data_mem__T_63_data = data_mem[data_mem__T_63_addr];
-  assign data_mem__T_70_addr = _T_69;
-  assign data_mem__T_70_data = data_mem[data_mem__T_70_addr];
+  wire [8:0] _T_76;
+  wire [15:0] _T_78;
+  wire [15:0] _GEN_68;
+  wire [8:0] _T_83;
+  wire [8:0] _T_88;
+  wire [8:0] _T_93;
+  wire [8:0] _T_95;
+  wire [15:0] _T_97;
+  wire [15:0] _T_98;
+  wire [31:0] _T_99;
+  wire [31:0] _GEN_75;
+  wire  _GEN_78;
+  wire  _GEN_82;
+  wire  _GEN_86;
+  wire  _T_101;
+  wire [31:0] _GEN_90;
+  wire  _T_102;
+  wire  _T_104;
+  wire  _T_105;
+  wire [31:0] _T_106;
+  wire  _T_107;
+  wire [8:0] _T_111;
+  wire [7:0] _T_112;
+  wire [8:0] _GEN_166;
+  wire [9:0] _T_114;
+  wire [8:0] _T_115;
+  wire [9:0] _T_117;
+  wire [8:0] _T_118;
+  wire [7:0] _GEN_97;
+  assign io_res = _GEN_90;
+  assign io_tx = _T_106[7:0];
+  assign io_rx_out = rx_out;
+  assign io_rx_cnt = data_mem__T_120_data;
+  assign data_mem__T_69_addr = _T_68;
+  assign data_mem__T_69_data = data_mem[data_mem__T_69_addr];
   assign data_mem__T_75_addr = _T_74;
   assign data_mem__T_75_data = data_mem[data_mem__T_75_addr];
-  assign data_mem__T_80_addr = _T_79;
-  assign data_mem__T_80_data = data_mem[data_mem__T_80_addr];
-  assign data_mem__T_82_addr = _T_81;
-  assign data_mem__T_82_data = data_mem[data_mem__T_82_addr];
-  assign data_mem__T_99_addr = 9'h1ff;
-  assign data_mem__T_99_data = data_mem[data_mem__T_99_addr];
-  assign data_mem__T_100_addr = 9'h1ef;
-  assign data_mem__T_100_data = data_mem[data_mem__T_100_addr];
+  assign data_mem__T_77_addr = _T_76;
+  assign data_mem__T_77_data = data_mem[data_mem__T_77_addr];
+  assign data_mem__T_84_addr = _T_83;
+  assign data_mem__T_84_data = data_mem[data_mem__T_84_addr];
+  assign data_mem__T_89_addr = _T_88;
+  assign data_mem__T_89_data = data_mem[data_mem__T_89_addr];
+  assign data_mem__T_94_addr = _T_93;
+  assign data_mem__T_94_data = data_mem[data_mem__T_94_addr];
+  assign data_mem__T_96_addr = _T_95;
+  assign data_mem__T_96_data = data_mem[data_mem__T_96_addr];
+  assign data_mem__T_109_addr = 9'h1ff;
+  assign data_mem__T_109_data = data_mem[data_mem__T_109_addr];
+  assign data_mem__T_113_addr = 9'h1ff;
+  assign data_mem__T_113_data = data_mem[data_mem__T_113_addr];
+  assign data_mem__T_120_addr = 9'h1ff;
+  assign data_mem__T_120_data = data_mem[data_mem__T_120_addr];
   assign data_mem__T_19_data = _T_20;
   assign data_mem__T_19_addr = _T_18;
-  assign data_mem__T_19_mask = _GEN_22;
-  assign data_mem__T_19_en = _GEN_22;
+  assign data_mem__T_19_mask = _GEN_32;
+  assign data_mem__T_19_en = _GEN_32;
   assign data_mem__T_23_data = _T_24;
   assign data_mem__T_23_addr = _T_22;
-  assign data_mem__T_23_mask = _GEN_26;
-  assign data_mem__T_23_en = _GEN_26;
-  assign data_mem__T_29_data = _T_30;
-  assign data_mem__T_29_addr = _T_28;
-  assign data_mem__T_29_mask = _GEN_26;
-  assign data_mem__T_29_en = _GEN_26;
+  assign data_mem__T_23_mask = _GEN_36;
+  assign data_mem__T_23_en = _GEN_36;
+  assign data_mem__T_27_data = _T_28;
+  assign data_mem__T_27_addr = _T_26;
+  assign data_mem__T_27_mask = _GEN_40;
+  assign data_mem__T_27_en = _GEN_40;
   assign data_mem__T_33_data = _T_34;
   assign data_mem__T_33_addr = _T_32;
-  assign data_mem__T_33_mask = _GEN_32;
-  assign data_mem__T_33_en = _GEN_32;
-  assign data_mem__T_39_data = _T_40;
-  assign data_mem__T_39_addr = _T_38;
-  assign data_mem__T_39_mask = _GEN_32;
-  assign data_mem__T_39_en = _GEN_32;
-  assign data_mem__T_45_data = _T_46;
-  assign data_mem__T_45_addr = _T_44;
-  assign data_mem__T_45_mask = _GEN_32;
-  assign data_mem__T_45_en = _GEN_32;
-  assign data_mem__T_51_data = _T_52;
-  assign data_mem__T_51_addr = _T_50;
-  assign data_mem__T_51_mask = _GEN_32;
-  assign data_mem__T_51_en = _GEN_32;
-  assign data_mem__T_97_data = _GEN_127;
-  assign data_mem__T_97_addr = 9'h1ff;
-  assign data_mem__T_97_mask = _T_93;
-  assign data_mem__T_97_en = _T_93;
-  assign data_mem__T_98_data = io_rx;
-  assign data_mem__T_98_addr = 9'h1ef;
-  assign data_mem__T_98_mask = _T_93;
-  assign data_mem__T_98_en = _T_93;
-  assign _GEN_127 = {{4'd0}, rx_cnt};
+  assign data_mem__T_33_mask = _GEN_40;
+  assign data_mem__T_33_en = _GEN_40;
+  assign data_mem__T_37_data = _T_38;
+  assign data_mem__T_37_addr = _T_36;
+  assign data_mem__T_37_mask = _GEN_46;
+  assign data_mem__T_37_en = _GEN_46;
+  assign data_mem__T_43_data = _T_44;
+  assign data_mem__T_43_addr = _T_42;
+  assign data_mem__T_43_mask = _GEN_46;
+  assign data_mem__T_43_en = _GEN_46;
+  assign data_mem__T_47_data = _T_48;
+  assign data_mem__T_47_addr = _T_46;
+  assign data_mem__T_47_mask = _GEN_52;
+  assign data_mem__T_47_en = _GEN_52;
+  assign data_mem__T_53_data = _T_54;
+  assign data_mem__T_53_addr = _T_52;
+  assign data_mem__T_53_mask = _GEN_52;
+  assign data_mem__T_53_en = _GEN_52;
+  assign data_mem__T_59_data = _T_60;
+  assign data_mem__T_59_addr = _T_58;
+  assign data_mem__T_59_mask = _GEN_52;
+  assign data_mem__T_59_en = _GEN_52;
+  assign data_mem__T_65_data = _T_66;
+  assign data_mem__T_65_addr = _T_64;
+  assign data_mem__T_65_mask = _GEN_52;
+  assign data_mem__T_65_en = _GEN_52;
+  assign data_mem__T_108_data = _T_112;
+  assign data_mem__T_108_addr = 9'h1ff;
+  assign data_mem__T_108_mask = _T_107;
+  assign data_mem__T_108_en = _T_107;
+  assign data_mem__T_119_data = io_rx;
+  assign data_mem__T_119_addr = _T_118;
+  assign data_mem__T_119_mask = _T_107;
+  assign data_mem__T_119_en = _T_107;
   assign _T_17 = 3'h0 == io_mem_func;
   assign _T_18 = io_op_op1[8:0];
   assign _T_20 = io_op_op2[7:0];
-  assign _T_21 = 3'h1 == io_mem_func;
+  assign _T_21 = 3'h4 == io_mem_func;
   assign _T_22 = io_op_op1[8:0];
   assign _T_24 = io_op_op2[7:0];
-  assign _T_26 = io_op_op1 + 32'h1;
-  assign _T_27 = _T_26[31:0];
-  assign _T_28 = _T_27[8:0];
-  assign _T_30 = io_op_op2[15:8];
-  assign _T_31 = 3'h2 == io_mem_func;
-  assign _T_32 = io_op_op1[8:0];
-  assign _T_34 = io_op_op2[7:0];
-  assign _T_38 = _T_27[8:0];
-  assign _T_40 = io_op_op2[15:8];
-  assign _T_42 = io_op_op1 + 32'h2;
-  assign _T_43 = _T_42[31:0];
-  assign _T_44 = _T_43[8:0];
-  assign _T_46 = io_op_op2[23:16];
-  assign _T_48 = io_op_op1 + 32'h3;
-  assign _T_49 = _T_48[31:0];
-  assign _T_50 = _T_49[8:0];
-  assign _T_52 = io_op_op2[31:24];
-  assign _GEN_22 = io_mem_write ? _T_17 : 1'h0;
-  assign _GEN_26 = io_mem_write ? _T_21 : 1'h0;
-  assign _GEN_32 = io_mem_write ? _T_31 : 1'h0;
-  assign _T_54 = io_op_op1[8:0];
-  assign _GEN_43 = data_mem__T_55_data;
-  assign _T_60 = _T_27[8:0];
-  assign _T_62 = io_op_op1[8:0];
-  assign _T_64 = {data_mem__T_61_data,data_mem__T_63_data};
-  assign _GEN_48 = _T_21 ? _T_64 : {{8'd0}, _GEN_43};
-  assign _T_69 = _T_49[8:0];
-  assign _T_74 = _T_43[8:0];
-  assign _T_79 = _T_27[8:0];
-  assign _T_81 = io_op_op1[8:0];
-  assign _T_83 = {data_mem__T_80_data,data_mem__T_82_data};
-  assign _T_84 = {data_mem__T_70_data,data_mem__T_75_data};
-  assign _T_85 = {_T_84,_T_83};
-  assign _GEN_55 = _T_31 ? _T_85 : {{16'd0}, _GEN_48};
-  assign _GEN_58 = io_mem_read ? _T_17 : 1'h0;
-  assign _GEN_62 = io_mem_read ? _T_21 : 1'h0;
-  assign _GEN_66 = io_mem_read ? _T_31 : 1'h0;
-  assign _T_87 = io_mem_read == 1'h0;
-  assign _GEN_70 = _T_87 ? 32'h0 : _GEN_55;
-  assign _T_88 = io_op_op1 == 32'h200;
-  assign _T_90 = io_tx_req == 1'h0;
-  assign _T_91 = _T_88 & _T_90;
-  assign _T_92 = _T_91 ? io_op_op2 : 32'h0;
-  assign _T_93 = io_rx != 8'h0;
-  assign _T_95 = rx_cnt + 4'h1;
-  assign _T_96 = _T_95[3:0];
-  assign _GEN_71 = _T_93 ? _T_96 : rx_cnt;
+  assign _T_25 = 3'h1 == io_mem_func;
+  assign _T_26 = io_op_op1[8:0];
+  assign _T_28 = io_op_op2[7:0];
+  assign _T_30 = io_op_op1 + 32'h1;
+  assign _T_31 = _T_30[31:0];
+  assign _T_32 = _T_31[8:0];
+  assign _T_34 = io_op_op2[15:8];
+  assign _T_35 = 3'h5 == io_mem_func;
+  assign _T_36 = io_op_op1[8:0];
+  assign _T_38 = io_op_op2[7:0];
+  assign _T_42 = _T_31[8:0];
+  assign _T_44 = io_op_op2[15:8];
+  assign _T_45 = 3'h2 == io_mem_func;
+  assign _T_46 = io_op_op1[8:0];
+  assign _T_48 = io_op_op2[7:0];
+  assign _T_52 = _T_31[8:0];
+  assign _T_54 = io_op_op2[15:8];
+  assign _T_56 = io_op_op1 + 32'h2;
+  assign _T_57 = _T_56[31:0];
+  assign _T_58 = _T_57[8:0];
+  assign _T_60 = io_op_op2[23:16];
+  assign _T_62 = io_op_op1 + 32'h3;
+  assign _T_63 = _T_62[31:0];
+  assign _T_64 = _T_63[8:0];
+  assign _T_66 = io_op_op2[31:24];
+  assign _GEN_32 = io_mem_write ? _T_17 : 1'h0;
+  assign _GEN_36 = io_mem_write ? _T_21 : 1'h0;
+  assign _GEN_40 = io_mem_write ? _T_25 : 1'h0;
+  assign _GEN_46 = io_mem_write ? _T_35 : 1'h0;
+  assign _GEN_52 = io_mem_write ? _T_45 : 1'h0;
+  assign _T_68 = io_op_op1[8:0];
+  assign _GEN_63 = data_mem__T_69_data;
+  assign _T_74 = _T_31[8:0];
+  assign _T_76 = io_op_op1[8:0];
+  assign _T_78 = {data_mem__T_75_data,data_mem__T_77_data};
+  assign _GEN_68 = _T_25 ? _T_78 : {{8'd0}, _GEN_63};
+  assign _T_83 = _T_63[8:0];
+  assign _T_88 = _T_57[8:0];
+  assign _T_93 = _T_31[8:0];
+  assign _T_95 = io_op_op1[8:0];
+  assign _T_97 = {data_mem__T_94_data,data_mem__T_96_data};
+  assign _T_98 = {data_mem__T_84_data,data_mem__T_89_data};
+  assign _T_99 = {_T_98,_T_97};
+  assign _GEN_75 = _T_45 ? _T_99 : {{16'd0}, _GEN_68};
+  assign _GEN_78 = io_mem_read ? _T_17 : 1'h0;
+  assign _GEN_82 = io_mem_read ? _T_25 : 1'h0;
+  assign _GEN_86 = io_mem_read ? _T_45 : 1'h0;
+  assign _T_101 = io_mem_read == 1'h0;
+  assign _GEN_90 = _T_101 ? 32'h0 : _GEN_75;
+  assign _T_102 = io_op_op1 == 32'h200;
+  assign _T_104 = io_tx_req == 1'h0;
+  assign _T_105 = _T_102 & _T_104;
+  assign _T_106 = _T_105 ? io_op_op2 : 32'h0;
+  assign _T_107 = io_rx != 8'h0;
+  assign _T_111 = data_mem__T_109_data + 8'h1;
+  assign _T_112 = _T_111[7:0];
+  assign _GEN_166 = {{1'd0}, data_mem__T_113_data};
+  assign _T_114 = 9'h1ef + _GEN_166;
+  assign _T_115 = _T_114[8:0];
+  assign _T_117 = _T_115 + 9'h1;
+  assign _T_118 = _T_117[8:0];
+  assign _GEN_97 = _T_107 ? io_rx : rx_out;
 `ifdef RANDOMIZE
   integer initvar;
   initial begin
@@ -3557,7 +4347,7 @@ module DataMemory(
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_1 = {1{$random}};
-  rx_cnt = _GEN_1[3:0];
+  rx_out = _GEN_1[7:0];
   `endif
   end
 `endif
@@ -3568,32 +4358,41 @@ module DataMemory(
     if(data_mem__T_23_en & data_mem__T_23_mask) begin
       data_mem[data_mem__T_23_addr] <= data_mem__T_23_data;
     end
-    if(data_mem__T_29_en & data_mem__T_29_mask) begin
-      data_mem[data_mem__T_29_addr] <= data_mem__T_29_data;
+    if(data_mem__T_27_en & data_mem__T_27_mask) begin
+      data_mem[data_mem__T_27_addr] <= data_mem__T_27_data;
     end
     if(data_mem__T_33_en & data_mem__T_33_mask) begin
       data_mem[data_mem__T_33_addr] <= data_mem__T_33_data;
     end
-    if(data_mem__T_39_en & data_mem__T_39_mask) begin
-      data_mem[data_mem__T_39_addr] <= data_mem__T_39_data;
+    if(data_mem__T_37_en & data_mem__T_37_mask) begin
+      data_mem[data_mem__T_37_addr] <= data_mem__T_37_data;
     end
-    if(data_mem__T_45_en & data_mem__T_45_mask) begin
-      data_mem[data_mem__T_45_addr] <= data_mem__T_45_data;
+    if(data_mem__T_43_en & data_mem__T_43_mask) begin
+      data_mem[data_mem__T_43_addr] <= data_mem__T_43_data;
     end
-    if(data_mem__T_51_en & data_mem__T_51_mask) begin
-      data_mem[data_mem__T_51_addr] <= data_mem__T_51_data;
+    if(data_mem__T_47_en & data_mem__T_47_mask) begin
+      data_mem[data_mem__T_47_addr] <= data_mem__T_47_data;
     end
-    if(data_mem__T_97_en & data_mem__T_97_mask) begin
-      data_mem[data_mem__T_97_addr] <= data_mem__T_97_data;
+    if(data_mem__T_53_en & data_mem__T_53_mask) begin
+      data_mem[data_mem__T_53_addr] <= data_mem__T_53_data;
     end
-    if(data_mem__T_98_en & data_mem__T_98_mask) begin
-      data_mem[data_mem__T_98_addr] <= data_mem__T_98_data;
+    if(data_mem__T_59_en & data_mem__T_59_mask) begin
+      data_mem[data_mem__T_59_addr] <= data_mem__T_59_data;
+    end
+    if(data_mem__T_65_en & data_mem__T_65_mask) begin
+      data_mem[data_mem__T_65_addr] <= data_mem__T_65_data;
+    end
+    if(data_mem__T_108_en & data_mem__T_108_mask) begin
+      data_mem[data_mem__T_108_addr] <= data_mem__T_108_data;
+    end
+    if(data_mem__T_119_en & data_mem__T_119_mask) begin
+      data_mem[data_mem__T_119_addr] <= data_mem__T_119_data;
     end
     if (reset) begin
-      rx_cnt <= 4'h0;
+      rx_out <= 8'h0;
     end else begin
-      if (_T_93) begin
-        rx_cnt <= _T_96;
+      if (_T_107) begin
+        rx_out <= io_rx;
       end
     end
   end
@@ -3665,22 +4464,390 @@ module DetectHazardUnit(
   input  [4:0] io_rd_ex,
   input        io_mem_r,
   input        io_tx_req,
-  output       io_stall,
-  input        io_branch
+  output       io_stall
 );
+  wire  _T_8;
   wire  _T_9;
   wire  _T_10;
   wire  _T_11;
   wire  _T_12;
+  assign io_stall = _T_12;
+  assign _T_8 = io_rd_ex == io_rs_id_rs1;
+  assign _T_9 = io_rd_ex == io_rs_id_rs2;
+  assign _T_10 = _T_8 | _T_9;
+  assign _T_11 = io_mem_r & _T_10;
+  assign _T_12 = _T_11 | io_tx_req;
+endmodule
+module Rx(
+  input        clock,
+  input        reset,
+  input        io_rxd,
+  input        io_deq_ready,
+  output [7:0] io_deq_bits
+);
+  wire [8:0] TICK_HALF;
+  reg [8:0] data;
+  reg [31:0] _GEN_25;
+  reg [31:0] ticks;
+  reg [31:0] _GEN_29;
+  reg [3:0] state;
+  reg [31:0] _GEN_30;
+  reg  valid;
+  reg [31:0] _GEN_31;
   wire  _T_13;
+  wire  _GEN_0;
   wire  _T_14;
-  assign io_stall = _T_14;
-  assign _T_9 = io_rd_ex == io_rs_id_rs1;
-  assign _T_10 = io_rd_ex == io_rs_id_rs2;
-  assign _T_11 = _T_9 | _T_10;
-  assign _T_12 = io_mem_r & _T_11;
-  assign _T_13 = _T_12 | io_tx_req;
-  assign _T_14 = _T_13 | io_branch;
+  wire  _T_15;
+  wire  _T_16;
+  wire [32:0] _T_18;
+  wire [32:0] _T_19;
+  wire [31:0] _T_20;
+  wire [31:0] _GEN_1;
+  wire  _T_22;
+  wire [31:0] _GEN_2;
+  wire [3:0] _GEN_3;
+  wire  _GEN_4;
+  wire [31:0] _GEN_5;
+  wire [3:0] _GEN_6;
+  wire  _GEN_7;
+  wire [31:0] _GEN_8;
+  wire [3:0] _GEN_9;
+  wire  _GEN_10;
+  wire  _T_23;
+  wire  _T_24;
+  wire  _T_25;
+  wire  _T_26;
+  wire  _T_27;
+  wire  _T_28;
+  wire  _T_29;
+  wire  _T_30;
+  wire  _T_31;
+  wire  _T_32;
+  wire  _T_33;
+  wire  _T_34;
+  wire  _T_35;
+  wire  _T_36;
+  wire  _T_37;
+  wire  _T_38;
+  wire  _T_39;
+  wire  _T_40;
+  wire [7:0] _T_41;
+  wire [8:0] _T_42;
+  wire [4:0] _T_44;
+  wire [4:0] _T_45;
+  wire [3:0] _T_46;
+  wire [8:0] _GEN_11;
+  wire [31:0] _GEN_12;
+  wire [3:0] _GEN_13;
+  wire  _T_48;
+  wire [31:0] _GEN_14;
+  wire [8:0] _GEN_15;
+  wire [31:0] _GEN_16;
+  wire [3:0] _GEN_17;
+  wire  _T_53;
+  wire [31:0] _GEN_28;
+  wire  _T_54;
+  wire [31:0] _GEN_18;
+  wire [3:0] _GEN_19;
+  wire  _GEN_20;
+  wire  _T_60;
+  wire [31:0] _GEN_21;
+  wire [31:0] _GEN_22;
+  wire [3:0] _GEN_23;
+  wire  _GEN_24;
+  wire [7:0] _T_65;
+  wire  _T_66;
+  wire  _T_67;
+  wire [8:0] _GEN_26;
+  wire  _T_70;
+  wire [7:0] _GEN_27;
+  assign io_deq_bits = _GEN_27;
+  assign TICK_HALF = 9'h1b2 / 9'h2;
+  assign _T_13 = valid & io_deq_ready;
+  assign _GEN_0 = _T_13 ? 1'h0 : valid;
+  assign _T_14 = 4'h0 == state;
+  assign _T_15 = io_rxd == 1'h0;
+  assign _T_16 = ticks != 32'h0;
+  assign _T_18 = ticks - 32'h1;
+  assign _T_19 = $unsigned(_T_18);
+  assign _T_20 = _T_19[31:0];
+  assign _GEN_1 = _T_16 ? _T_20 : ticks;
+  assign _T_22 = _T_16 == 1'h0;
+  assign _GEN_2 = _T_22 ? 32'h1b2 : _GEN_1;
+  assign _GEN_3 = _T_22 ? 4'ha : state;
+  assign _GEN_4 = _T_22 ? 1'h0 : _GEN_0;
+  assign _GEN_5 = _T_15 ? _GEN_2 : ticks;
+  assign _GEN_6 = _T_15 ? _GEN_3 : state;
+  assign _GEN_7 = _T_15 ? _GEN_4 : _GEN_0;
+  assign _GEN_8 = _T_14 ? _GEN_5 : ticks;
+  assign _GEN_9 = _T_14 ? _GEN_6 : state;
+  assign _GEN_10 = _T_14 ? _GEN_7 : _GEN_0;
+  assign _T_23 = 4'h2 == state;
+  assign _T_24 = 4'h3 == state;
+  assign _T_25 = 4'h4 == state;
+  assign _T_26 = 4'h5 == state;
+  assign _T_27 = 4'h6 == state;
+  assign _T_28 = 4'h7 == state;
+  assign _T_29 = 4'h8 == state;
+  assign _T_30 = 4'h9 == state;
+  assign _T_31 = 4'ha == state;
+  assign _T_32 = _T_23 | _T_24;
+  assign _T_33 = _T_32 | _T_25;
+  assign _T_34 = _T_33 | _T_26;
+  assign _T_35 = _T_34 | _T_27;
+  assign _T_36 = _T_35 | _T_28;
+  assign _T_37 = _T_36 | _T_29;
+  assign _T_38 = _T_37 | _T_30;
+  assign _T_39 = _T_38 | _T_31;
+  assign _T_40 = ticks == 32'h0;
+  assign _T_41 = data[8:1];
+  assign _T_42 = {io_rxd,_T_41};
+  assign _T_44 = state - 4'h1;
+  assign _T_45 = $unsigned(_T_44);
+  assign _T_46 = _T_45[3:0];
+  assign _GEN_11 = _T_40 ? _T_42 : data;
+  assign _GEN_12 = _T_40 ? 32'h1b2 : _GEN_8;
+  assign _GEN_13 = _T_40 ? _T_46 : _GEN_9;
+  assign _T_48 = _T_40 == 1'h0;
+  assign _GEN_14 = _T_48 ? _T_20 : _GEN_12;
+  assign _GEN_15 = _T_39 ? _GEN_11 : data;
+  assign _GEN_16 = _T_39 ? _GEN_14 : _GEN_8;
+  assign _GEN_17 = _T_39 ? _GEN_13 : _GEN_9;
+  assign _T_53 = 4'h1 == state;
+  assign _GEN_28 = {{23'd0}, TICK_HALF};
+  assign _T_54 = ticks == _GEN_28;
+  assign _GEN_18 = _T_54 ? _T_20 : _GEN_16;
+  assign _GEN_19 = _T_54 ? 4'h0 : _GEN_17;
+  assign _GEN_20 = _T_54 ? 1'h1 : _GEN_10;
+  assign _T_60 = _T_54 == 1'h0;
+  assign _GEN_21 = _T_60 ? _T_20 : _GEN_18;
+  assign _GEN_22 = _T_53 ? _GEN_21 : _GEN_16;
+  assign _GEN_23 = _T_53 ? _GEN_19 : _GEN_17;
+  assign _GEN_24 = _T_53 ? _GEN_20 : _GEN_10;
+  assign _T_65 = data[7:0];
+  assign _T_66 = _T_65 != 8'h0;
+  assign _T_67 = valid & _T_66;
+  assign _GEN_26 = _T_67 ? 9'h0 : _GEN_15;
+  assign _T_70 = _T_67 == 1'h0;
+  assign _GEN_27 = _T_70 ? 8'h0 : _T_65;
+`ifdef RANDOMIZE
+  integer initvar;
+  initial begin
+    `ifndef verilator
+      #0.002 begin end
+    `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_25 = {1{$random}};
+  data = _GEN_25[8:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_29 = {1{$random}};
+  ticks = _GEN_29[31:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_30 = {1{$random}};
+  state = _GEN_30[3:0];
+  `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _GEN_31 = {1{$random}};
+  valid = _GEN_31[0:0];
+  `endif
+  end
+`endif
+  always @(posedge clock) begin
+    if (reset) begin
+      data <= 9'h1ff;
+    end else begin
+      if (_T_67) begin
+        data <= 9'h0;
+      end else begin
+        if (_T_39) begin
+          if (_T_40) begin
+            data <= _T_42;
+          end
+        end
+      end
+    end
+    if (reset) begin
+      ticks <= {{23'd0}, TICK_HALF};
+    end else begin
+      if (_T_53) begin
+        if (_T_60) begin
+          ticks <= _T_20;
+        end else begin
+          if (_T_54) begin
+            ticks <= _T_20;
+          end else begin
+            if (_T_39) begin
+              if (_T_48) begin
+                ticks <= _T_20;
+              end else begin
+                if (_T_40) begin
+                  ticks <= 32'h1b2;
+                end else begin
+                  if (_T_14) begin
+                    if (_T_15) begin
+                      if (_T_22) begin
+                        ticks <= 32'h1b2;
+                      end else begin
+                        if (_T_16) begin
+                          ticks <= _T_20;
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end else begin
+              if (_T_14) begin
+                if (_T_15) begin
+                  if (_T_22) begin
+                    ticks <= 32'h1b2;
+                  end else begin
+                    if (_T_16) begin
+                      ticks <= _T_20;
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end else begin
+        if (_T_39) begin
+          if (_T_48) begin
+            ticks <= _T_20;
+          end else begin
+            if (_T_40) begin
+              ticks <= 32'h1b2;
+            end else begin
+              if (_T_14) begin
+                if (_T_15) begin
+                  if (_T_22) begin
+                    ticks <= 32'h1b2;
+                  end else begin
+                    if (_T_16) begin
+                      ticks <= _T_20;
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end else begin
+          if (_T_14) begin
+            if (_T_15) begin
+              if (_T_22) begin
+                ticks <= 32'h1b2;
+              end else begin
+                if (_T_16) begin
+                  ticks <= _T_20;
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+    if (reset) begin
+      state <= 4'h0;
+    end else begin
+      if (_T_53) begin
+        if (_T_54) begin
+          state <= 4'h0;
+        end else begin
+          if (_T_39) begin
+            if (_T_40) begin
+              state <= _T_46;
+            end else begin
+              if (_T_14) begin
+                if (_T_15) begin
+                  if (_T_22) begin
+                    state <= 4'ha;
+                  end
+                end
+              end
+            end
+          end else begin
+            if (_T_14) begin
+              if (_T_15) begin
+                if (_T_22) begin
+                  state <= 4'ha;
+                end
+              end
+            end
+          end
+        end
+      end else begin
+        if (_T_39) begin
+          if (_T_40) begin
+            state <= _T_46;
+          end else begin
+            if (_T_14) begin
+              if (_T_15) begin
+                if (_T_22) begin
+                  state <= 4'ha;
+                end
+              end
+            end
+          end
+        end else begin
+          if (_T_14) begin
+            if (_T_15) begin
+              if (_T_22) begin
+                state <= 4'ha;
+              end
+            end
+          end
+        end
+      end
+    end
+    if (reset) begin
+      valid <= 1'h1;
+    end else begin
+      if (_T_53) begin
+        if (_T_54) begin
+          valid <= 1'h1;
+        end else begin
+          if (_T_14) begin
+            if (_T_15) begin
+              if (_T_22) begin
+                valid <= 1'h0;
+              end else begin
+                if (_T_13) begin
+                  valid <= 1'h0;
+                end
+              end
+            end else begin
+              if (_T_13) begin
+                valid <= 1'h0;
+              end
+            end
+          end else begin
+            if (_T_13) begin
+              valid <= 1'h0;
+            end
+          end
+        end
+      end else begin
+        if (_T_14) begin
+          if (_T_15) begin
+            if (_T_22) begin
+              valid <= 1'h0;
+            end else begin
+              if (_T_13) begin
+                valid <= 1'h0;
+              end
+            end
+          end else begin
+            valid <= _GEN_0;
+          end
+        end else begin
+          valid <= _GEN_0;
+        end
+      end
+    end
+  end
 endmodule
 module Tx(
   input        clock,
@@ -3885,10 +5052,17 @@ endmodule
 module UART(
   input        clock,
   input        reset,
+  input        io_rxd,
   input  [7:0] io_in,
+  output [7:0] io_out,
   output       io_txd,
   output       io_tx_req
 );
+  wire  rx_clock;
+  wire  rx_reset;
+  wire  rx_io_rxd;
+  wire  rx_io_deq_ready;
+  wire [7:0] rx_io_deq_bits;
   wire  tx_clock;
   wire  tx_reset;
   wire  tx_io_enq_ready;
@@ -3897,19 +5071,26 @@ module UART(
   wire  tx_io_txd;
   reg [7:0] reg$;
   reg [31:0] _GEN_4;
+  wire  _T_8;
   wire  _T_9;
   wire  _T_10;
-  wire  _T_11;
   wire [7:0] _GEN_0;
   wire [7:0] _GEN_1;
-  wire  _T_13;
+  wire  _T_12;
+  wire  _T_17;
   wire  _T_18;
-  wire  _T_19;
   wire [7:0] _GEN_3;
+  wire  _T_22;
   wire  _T_23;
-  wire  _T_24;
   reg  _GEN_2;
   reg [31:0] _GEN_5;
+  Rx rx (
+    .clock(rx_clock),
+    .reset(rx_reset),
+    .io_rxd(rx_io_rxd),
+    .io_deq_ready(rx_io_deq_ready),
+    .io_deq_bits(rx_io_deq_bits)
+  );
   Tx tx (
     .clock(tx_clock),
     .reset(tx_reset),
@@ -3918,23 +5099,28 @@ module UART(
     .io_enq_bits(tx_io_enq_bits),
     .io_txd(tx_io_txd)
   );
+  assign io_out = rx_io_deq_bits;
   assign io_txd = tx_io_txd;
-  assign io_tx_req = _T_24;
+  assign io_tx_req = _T_23;
+  assign rx_clock = clock;
+  assign rx_reset = reset;
+  assign rx_io_rxd = io_rxd;
+  assign rx_io_deq_ready = _GEN_2;
   assign tx_clock = clock;
   assign tx_reset = reset;
-  assign tx_io_enq_valid = _T_9;
+  assign tx_io_enq_valid = _T_8;
   assign tx_io_enq_bits = reg$;
-  assign _T_9 = reg$ != 8'h0;
-  assign _T_10 = reg$ == 8'h0;
-  assign _T_11 = io_in != 8'h0;
-  assign _GEN_0 = _T_11 ? io_in : reg$;
-  assign _GEN_1 = _T_10 ? _GEN_0 : reg$;
-  assign _T_13 = _T_10 == 1'h0;
-  assign _T_18 = tx_io_enq_ready == 1'h0;
-  assign _T_19 = _T_13 & _T_18;
-  assign _GEN_3 = _T_19 ? 8'h0 : _GEN_1;
-  assign _T_23 = _T_9 & tx_io_enq_ready;
-  assign _T_24 = _T_18 | _T_23;
+  assign _T_8 = reg$ != 8'h0;
+  assign _T_9 = reg$ == 8'h0;
+  assign _T_10 = io_in != 8'h0;
+  assign _GEN_0 = _T_10 ? io_in : reg$;
+  assign _GEN_1 = _T_9 ? _GEN_0 : reg$;
+  assign _T_12 = _T_9 == 1'h0;
+  assign _T_17 = tx_io_enq_ready == 1'h0;
+  assign _T_18 = _T_12 & _T_17;
+  assign _GEN_3 = _T_18 ? 8'h0 : _GEN_1;
+  assign _T_22 = _T_8 & tx_io_enq_ready;
+  assign _T_23 = _T_17 | _T_22;
 `ifdef RANDOMIZE
   integer initvar;
   initial begin
@@ -3955,11 +5141,11 @@ module UART(
     if (reset) begin
       reg$ <= 8'h0;
     end else begin
-      if (_T_19) begin
+      if (_T_18) begin
         reg$ <= 8'h0;
       end else begin
-        if (_T_10) begin
-          if (_T_11) begin
+        if (_T_9) begin
+          if (_T_10) begin
             reg$ <= io_in;
           end
         end
@@ -4014,14 +5200,13 @@ module PipelineID_EX(
   input         clock,
   input         io_in_WB_reg_w,
   input         io_in_WB_rd_mem,
-  input         io_in_MEM_branch,
+  input  [2:0]  io_in_MEM_func,
   input         io_in_MEM_write,
   input         io_in_MEM_read,
-  input  [2:0]  io_in_MEM_func,
-  input  [6:0]  io_in_EX_opcode,
   input         io_in_EX_alu_sel,
-  input  [2:0]  io_in_EX_alu_op_func,
-  input         io_in_EX_alu_op_alt,
+  input  [2:0]  io_in_EX_alu_ctrl_func,
+  input         io_in_EX_alu_ctrl_alt,
+  input         io_in_EX_alu_ctrl_flush,
   input  [31:0] io_in_op_op1,
   input  [31:0] io_in_op_op2,
   input  [4:0]  io_in_rs_rs1,
@@ -4031,14 +5216,13 @@ module PipelineID_EX(
   input  [31:0] io_in_pc_next,
   output        io_out_WB_reg_w,
   output        io_out_WB_rd_mem,
-  output        io_out_MEM_branch,
+  output [2:0]  io_out_MEM_func,
   output        io_out_MEM_write,
   output        io_out_MEM_read,
-  output [2:0]  io_out_MEM_func,
-  output [6:0]  io_out_EX_opcode,
   output        io_out_EX_alu_sel,
-  output [2:0]  io_out_EX_alu_op_func,
-  output        io_out_EX_alu_op_alt,
+  output [2:0]  io_out_EX_alu_ctrl_func,
+  output        io_out_EX_alu_ctrl_alt,
+  output        io_out_EX_alu_ctrl_flush,
   output [31:0] io_out_op_op1,
   output [31:0] io_out_op_op2,
   output [4:0]  io_out_rs_rs1,
@@ -4047,57 +5231,54 @@ module PipelineID_EX(
   output [31:0] io_out_imm,
   output [31:0] io_out_pc_next
 );
-  reg  _T_72_WB_reg_w;
+  reg  _T_68_WB_reg_w;
   reg [31:0] _GEN_0;
-  reg  _T_72_WB_rd_mem;
+  reg  _T_68_WB_rd_mem;
   reg [31:0] _GEN_1;
-  reg  _T_72_MEM_branch;
+  reg [2:0] _T_68_MEM_func;
   reg [31:0] _GEN_2;
-  reg  _T_72_MEM_write;
+  reg  _T_68_MEM_write;
   reg [31:0] _GEN_3;
-  reg  _T_72_MEM_read;
+  reg  _T_68_MEM_read;
   reg [31:0] _GEN_4;
-  reg [2:0] _T_72_MEM_func;
+  reg  _T_68_EX_alu_sel;
   reg [31:0] _GEN_5;
-  reg [6:0] _T_72_EX_opcode;
+  reg [2:0] _T_68_EX_alu_ctrl_func;
   reg [31:0] _GEN_6;
-  reg  _T_72_EX_alu_sel;
+  reg  _T_68_EX_alu_ctrl_alt;
   reg [31:0] _GEN_7;
-  reg [2:0] _T_72_EX_alu_op_func;
+  reg  _T_68_EX_alu_ctrl_flush;
   reg [31:0] _GEN_8;
-  reg  _T_72_EX_alu_op_alt;
+  reg [31:0] _T_68_op_op1;
   reg [31:0] _GEN_9;
-  reg [31:0] _T_72_op_op1;
+  reg [31:0] _T_68_op_op2;
   reg [31:0] _GEN_10;
-  reg [31:0] _T_72_op_op2;
+  reg [4:0] _T_68_rs_rs1;
   reg [31:0] _GEN_11;
-  reg [4:0] _T_72_rs_rs1;
+  reg [4:0] _T_68_rs_rs2;
   reg [31:0] _GEN_12;
-  reg [4:0] _T_72_rs_rs2;
+  reg [4:0] _T_68_rd;
   reg [31:0] _GEN_13;
-  reg [4:0] _T_72_rd;
+  reg [31:0] _T_68_imm;
   reg [31:0] _GEN_14;
-  reg [31:0] _T_72_imm;
+  reg [31:0] _T_68_pc_next;
   reg [31:0] _GEN_15;
-  reg [31:0] _T_72_pc_next;
-  reg [31:0] _GEN_16;
-  assign io_out_WB_reg_w = _T_72_WB_reg_w;
-  assign io_out_WB_rd_mem = _T_72_WB_rd_mem;
-  assign io_out_MEM_branch = _T_72_MEM_branch;
-  assign io_out_MEM_write = _T_72_MEM_write;
-  assign io_out_MEM_read = _T_72_MEM_read;
-  assign io_out_MEM_func = _T_72_MEM_func;
-  assign io_out_EX_opcode = _T_72_EX_opcode;
-  assign io_out_EX_alu_sel = _T_72_EX_alu_sel;
-  assign io_out_EX_alu_op_func = _T_72_EX_alu_op_func;
-  assign io_out_EX_alu_op_alt = _T_72_EX_alu_op_alt;
-  assign io_out_op_op1 = _T_72_op_op1;
-  assign io_out_op_op2 = _T_72_op_op2;
-  assign io_out_rs_rs1 = _T_72_rs_rs1;
-  assign io_out_rs_rs2 = _T_72_rs_rs2;
-  assign io_out_rd = _T_72_rd;
-  assign io_out_imm = _T_72_imm;
-  assign io_out_pc_next = _T_72_pc_next;
+  assign io_out_WB_reg_w = _T_68_WB_reg_w;
+  assign io_out_WB_rd_mem = _T_68_WB_rd_mem;
+  assign io_out_MEM_func = _T_68_MEM_func;
+  assign io_out_MEM_write = _T_68_MEM_write;
+  assign io_out_MEM_read = _T_68_MEM_read;
+  assign io_out_EX_alu_sel = _T_68_EX_alu_sel;
+  assign io_out_EX_alu_ctrl_func = _T_68_EX_alu_ctrl_func;
+  assign io_out_EX_alu_ctrl_alt = _T_68_EX_alu_ctrl_alt;
+  assign io_out_EX_alu_ctrl_flush = _T_68_EX_alu_ctrl_flush;
+  assign io_out_op_op1 = _T_68_op_op1;
+  assign io_out_op_op2 = _T_68_op_op2;
+  assign io_out_rs_rs1 = _T_68_rs_rs1;
+  assign io_out_rs_rs2 = _T_68_rs_rs2;
+  assign io_out_rd = _T_68_rd;
+  assign io_out_imm = _T_68_imm;
+  assign io_out_pc_next = _T_68_pc_next;
 `ifdef RANDOMIZE
   integer initvar;
   initial begin
@@ -4106,157 +5287,137 @@ module PipelineID_EX(
     `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_0 = {1{$random}};
-  _T_72_WB_reg_w = _GEN_0[0:0];
+  _T_68_WB_reg_w = _GEN_0[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_1 = {1{$random}};
-  _T_72_WB_rd_mem = _GEN_1[0:0];
+  _T_68_WB_rd_mem = _GEN_1[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_2 = {1{$random}};
-  _T_72_MEM_branch = _GEN_2[0:0];
+  _T_68_MEM_func = _GEN_2[2:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_3 = {1{$random}};
-  _T_72_MEM_write = _GEN_3[0:0];
+  _T_68_MEM_write = _GEN_3[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_4 = {1{$random}};
-  _T_72_MEM_read = _GEN_4[0:0];
+  _T_68_MEM_read = _GEN_4[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_5 = {1{$random}};
-  _T_72_MEM_func = _GEN_5[2:0];
+  _T_68_EX_alu_sel = _GEN_5[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_6 = {1{$random}};
-  _T_72_EX_opcode = _GEN_6[6:0];
+  _T_68_EX_alu_ctrl_func = _GEN_6[2:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_7 = {1{$random}};
-  _T_72_EX_alu_sel = _GEN_7[0:0];
+  _T_68_EX_alu_ctrl_alt = _GEN_7[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_8 = {1{$random}};
-  _T_72_EX_alu_op_func = _GEN_8[2:0];
+  _T_68_EX_alu_ctrl_flush = _GEN_8[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_9 = {1{$random}};
-  _T_72_EX_alu_op_alt = _GEN_9[0:0];
+  _T_68_op_op1 = _GEN_9[31:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_10 = {1{$random}};
-  _T_72_op_op1 = _GEN_10[31:0];
+  _T_68_op_op2 = _GEN_10[31:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_11 = {1{$random}};
-  _T_72_op_op2 = _GEN_11[31:0];
+  _T_68_rs_rs1 = _GEN_11[4:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_12 = {1{$random}};
-  _T_72_rs_rs1 = _GEN_12[4:0];
+  _T_68_rs_rs2 = _GEN_12[4:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_13 = {1{$random}};
-  _T_72_rs_rs2 = _GEN_13[4:0];
+  _T_68_rd = _GEN_13[4:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_14 = {1{$random}};
-  _T_72_rd = _GEN_14[4:0];
+  _T_68_imm = _GEN_14[31:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_15 = {1{$random}};
-  _T_72_imm = _GEN_15[31:0];
-  `endif
-  `ifdef RANDOMIZE_REG_INIT
-  _GEN_16 = {1{$random}};
-  _T_72_pc_next = _GEN_16[31:0];
+  _T_68_pc_next = _GEN_15[31:0];
   `endif
   end
 `endif
   always @(posedge clock) begin
-    _T_72_WB_reg_w <= io_in_WB_reg_w;
-    _T_72_WB_rd_mem <= io_in_WB_rd_mem;
-    _T_72_MEM_branch <= io_in_MEM_branch;
-    _T_72_MEM_write <= io_in_MEM_write;
-    _T_72_MEM_read <= io_in_MEM_read;
-    _T_72_MEM_func <= io_in_MEM_func;
-    _T_72_EX_opcode <= io_in_EX_opcode;
-    _T_72_EX_alu_sel <= io_in_EX_alu_sel;
-    _T_72_EX_alu_op_func <= io_in_EX_alu_op_func;
-    _T_72_EX_alu_op_alt <= io_in_EX_alu_op_alt;
-    _T_72_op_op1 <= io_in_op_op1;
-    _T_72_op_op2 <= io_in_op_op2;
-    _T_72_rs_rs1 <= io_in_rs_rs1;
-    _T_72_rs_rs2 <= io_in_rs_rs2;
-    _T_72_rd <= io_in_rd;
-    _T_72_imm <= io_in_imm;
-    _T_72_pc_next <= io_in_pc_next;
+    _T_68_WB_reg_w <= io_in_WB_reg_w;
+    _T_68_WB_rd_mem <= io_in_WB_rd_mem;
+    _T_68_MEM_func <= io_in_MEM_func;
+    _T_68_MEM_write <= io_in_MEM_write;
+    _T_68_MEM_read <= io_in_MEM_read;
+    _T_68_EX_alu_sel <= io_in_EX_alu_sel;
+    _T_68_EX_alu_ctrl_func <= io_in_EX_alu_ctrl_func;
+    _T_68_EX_alu_ctrl_alt <= io_in_EX_alu_ctrl_alt;
+    _T_68_EX_alu_ctrl_flush <= io_in_EX_alu_ctrl_flush;
+    _T_68_op_op1 <= io_in_op_op1;
+    _T_68_op_op2 <= io_in_op_op2;
+    _T_68_rs_rs1 <= io_in_rs_rs1;
+    _T_68_rs_rs2 <= io_in_rs_rs2;
+    _T_68_rd <= io_in_rd;
+    _T_68_imm <= io_in_imm;
+    _T_68_pc_next <= io_in_pc_next;
   end
 endmodule
 module PipelineEX_MEM(
   input         clock,
-  input         io_in_zero,
   input         io_in_WB_reg_w,
   input         io_in_WB_rd_mem,
-  input         io_in_MEM_branch,
+  input  [2:0]  io_in_MEM_func,
   input         io_in_MEM_write,
   input         io_in_MEM_read,
-  input  [2:0]  io_in_MEM_func,
   input  [31:0] io_in_op_op1,
   input  [31:0] io_in_op_op2,
   input  [4:0]  io_in_rd,
   input  [31:0] io_in_pc_next,
-  input  [31:0] io_in_branch_t,
-  output        io_out_zero,
   output        io_out_WB_reg_w,
   output        io_out_WB_rd_mem,
-  output        io_out_MEM_branch,
+  output [2:0]  io_out_MEM_func,
   output        io_out_MEM_write,
   output        io_out_MEM_read,
-  output [2:0]  io_out_MEM_func,
   output [31:0] io_out_op_op1,
   output [31:0] io_out_op_op2,
   output [4:0]  io_out_rd,
-  output [31:0] io_out_pc_next,
-  output [31:0] io_out_branch_t
+  output [31:0] io_out_pc_next
 );
-  reg  _T_52_zero;
+  reg  _T_40_WB_reg_w;
   reg [31:0] _GEN_0;
-  reg  _T_52_WB_reg_w;
+  reg  _T_40_WB_rd_mem;
   reg [31:0] _GEN_1;
-  reg  _T_52_WB_rd_mem;
+  reg [2:0] _T_40_MEM_func;
   reg [31:0] _GEN_2;
-  reg  _T_52_MEM_branch;
+  reg  _T_40_MEM_write;
   reg [31:0] _GEN_3;
-  reg  _T_52_MEM_write;
+  reg  _T_40_MEM_read;
   reg [31:0] _GEN_4;
-  reg  _T_52_MEM_read;
+  reg [31:0] _T_40_op_op1;
   reg [31:0] _GEN_5;
-  reg [2:0] _T_52_MEM_func;
+  reg [31:0] _T_40_op_op2;
   reg [31:0] _GEN_6;
-  reg [31:0] _T_52_op_op1;
+  reg [4:0] _T_40_rd;
   reg [31:0] _GEN_7;
-  reg [31:0] _T_52_op_op2;
+  reg [31:0] _T_40_pc_next;
   reg [31:0] _GEN_8;
-  reg [4:0] _T_52_rd;
-  reg [31:0] _GEN_9;
-  reg [31:0] _T_52_pc_next;
-  reg [31:0] _GEN_10;
-  reg [31:0] _T_52_branch_t;
-  reg [31:0] _GEN_11;
-  assign io_out_zero = _T_52_zero;
-  assign io_out_WB_reg_w = _T_52_WB_reg_w;
-  assign io_out_WB_rd_mem = _T_52_WB_rd_mem;
-  assign io_out_MEM_branch = _T_52_MEM_branch;
-  assign io_out_MEM_write = _T_52_MEM_write;
-  assign io_out_MEM_read = _T_52_MEM_read;
-  assign io_out_MEM_func = _T_52_MEM_func;
-  assign io_out_op_op1 = _T_52_op_op1;
-  assign io_out_op_op2 = _T_52_op_op2;
-  assign io_out_rd = _T_52_rd;
-  assign io_out_pc_next = _T_52_pc_next;
-  assign io_out_branch_t = _T_52_branch_t;
+  assign io_out_WB_reg_w = _T_40_WB_reg_w;
+  assign io_out_WB_rd_mem = _T_40_WB_rd_mem;
+  assign io_out_MEM_func = _T_40_MEM_func;
+  assign io_out_MEM_write = _T_40_MEM_write;
+  assign io_out_MEM_read = _T_40_MEM_read;
+  assign io_out_op_op1 = _T_40_op_op1;
+  assign io_out_op_op2 = _T_40_op_op2;
+  assign io_out_rd = _T_40_rd;
+  assign io_out_pc_next = _T_40_pc_next;
 `ifdef RANDOMIZE
   integer initvar;
   initial begin
@@ -4265,67 +5426,52 @@ module PipelineEX_MEM(
     `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_0 = {1{$random}};
-  _T_52_zero = _GEN_0[0:0];
+  _T_40_WB_reg_w = _GEN_0[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_1 = {1{$random}};
-  _T_52_WB_reg_w = _GEN_1[0:0];
+  _T_40_WB_rd_mem = _GEN_1[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_2 = {1{$random}};
-  _T_52_WB_rd_mem = _GEN_2[0:0];
+  _T_40_MEM_func = _GEN_2[2:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_3 = {1{$random}};
-  _T_52_MEM_branch = _GEN_3[0:0];
+  _T_40_MEM_write = _GEN_3[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_4 = {1{$random}};
-  _T_52_MEM_write = _GEN_4[0:0];
+  _T_40_MEM_read = _GEN_4[0:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_5 = {1{$random}};
-  _T_52_MEM_read = _GEN_5[0:0];
+  _T_40_op_op1 = _GEN_5[31:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_6 = {1{$random}};
-  _T_52_MEM_func = _GEN_6[2:0];
+  _T_40_op_op2 = _GEN_6[31:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_7 = {1{$random}};
-  _T_52_op_op1 = _GEN_7[31:0];
+  _T_40_rd = _GEN_7[4:0];
   `endif
   `ifdef RANDOMIZE_REG_INIT
   _GEN_8 = {1{$random}};
-  _T_52_op_op2 = _GEN_8[31:0];
-  `endif
-  `ifdef RANDOMIZE_REG_INIT
-  _GEN_9 = {1{$random}};
-  _T_52_rd = _GEN_9[4:0];
-  `endif
-  `ifdef RANDOMIZE_REG_INIT
-  _GEN_10 = {1{$random}};
-  _T_52_pc_next = _GEN_10[31:0];
-  `endif
-  `ifdef RANDOMIZE_REG_INIT
-  _GEN_11 = {1{$random}};
-  _T_52_branch_t = _GEN_11[31:0];
+  _T_40_pc_next = _GEN_8[31:0];
   `endif
   end
 `endif
   always @(posedge clock) begin
-    _T_52_zero <= io_in_zero;
-    _T_52_WB_reg_w <= io_in_WB_reg_w;
-    _T_52_WB_rd_mem <= io_in_WB_rd_mem;
-    _T_52_MEM_branch <= io_in_MEM_branch;
-    _T_52_MEM_write <= io_in_MEM_write;
-    _T_52_MEM_read <= io_in_MEM_read;
-    _T_52_MEM_func <= io_in_MEM_func;
-    _T_52_op_op1 <= io_in_op_op1;
-    _T_52_op_op2 <= io_in_op_op2;
-    _T_52_rd <= io_in_rd;
-    _T_52_pc_next <= io_in_pc_next;
-    _T_52_branch_t <= io_in_branch_t;
+    _T_40_WB_reg_w <= io_in_WB_reg_w;
+    _T_40_WB_rd_mem <= io_in_WB_rd_mem;
+    _T_40_MEM_func <= io_in_MEM_func;
+    _T_40_MEM_write <= io_in_MEM_write;
+    _T_40_MEM_read <= io_in_MEM_read;
+    _T_40_op_op1 <= io_in_op_op1;
+    _T_40_op_op2 <= io_in_op_op2;
+    _T_40_rd <= io_in_rd;
+    _T_40_pc_next <= io_in_pc_next;
   end
 endmodule
 module PipelineMEM_WB(
@@ -4393,25 +5539,22 @@ module PipelineMEM_WB(
   end
 endmodule
 module CPU(
-  input         clock,
-  input         reset,
-  input         io_rxd,
-  output        io_txd,
-  output [7:0]  io_rx_out,
-  output [7:0]  io_rx_cnt,
-  input  [7:0]  io_rx_in,
-  output [31:0] io_pc
+  input        clock,
+  input        reset,
+  input        io_rxd,
+  output       io_txd,
+  output       io_branch,
+  output [7:0] io_rx_out,
+  output [7:0] io_rx_cnt
 );
   wire  instMem_clock;
   wire [31:0] instMem_io_pc;
   wire [31:0] instMem_io_inst;
   wire  counter_clock;
   wire  counter_reset;
-  wire  counter_io_jump;
+  wire  counter_io_src_sel;
   wire  counter_io_stall;
-  wire  counter_io_branch;
-  wire [31:0] counter_io_jump_t;
-  wire [31:0] counter_io_branch_t;
+  wire [31:0] counter_io_pc_src;
   wire [31:0] counter_io_pc_next;
   wire [31:0] counter_io_pc;
   wire [31:0] decoder_io_inst;
@@ -4425,19 +5568,19 @@ module CPU(
   wire [6:0] control_io_ctrl_opcode;
   wire [2:0] control_io_ctrl_funct3;
   wire [6:0] control_io_ctrl_funct7;
-  wire  control_io_stall;
+  wire  control_io_flush;
   wire  control_io_WB_reg_w;
   wire  control_io_WB_rd_mem;
-  wire  control_io_MEM_branch;
+  wire [2:0] control_io_MEM_func;
   wire  control_io_MEM_write;
   wire  control_io_MEM_read;
-  wire [2:0] control_io_MEM_func;
-  wire [6:0] control_io_EX_opcode;
   wire  control_io_EX_alu_sel;
-  wire [2:0] control_io_EX_alu_op_func;
-  wire  control_io_EX_alu_op_alt;
+  wire [2:0] control_io_EX_alu_ctrl_func;
+  wire  control_io_EX_alu_ctrl_alt;
+  wire  control_io_EX_alu_ctrl_flush;
   wire  control_io_jump;
   wire  regs_clock;
+  wire  regs_reset;
   wire [4:0] regs_io_rs_rs1;
   wire [4:0] regs_io_rs_rs2;
   wire  regs_io_reg_w;
@@ -4445,24 +5588,24 @@ module CPU(
   wire [31:0] regs_io_res;
   wire [31:0] regs_io_op_op1;
   wire [31:0] regs_io_op_op2;
-  wire [6:0] alu_io_opcode;
-  wire [2:0] alu_io_alu_op_func;
-  wire  alu_io_alu_op_alt;
   wire [31:0] alu_io_op_op1;
   wire [31:0] alu_io_op_op2;
-  wire  alu_io_zero;
+  wire [2:0] alu_io_alu_ctrl_func;
+  wire  alu_io_alu_ctrl_alt;
+  wire  alu_io_alu_ctrl_flush;
   wire [31:0] alu_io_res;
   wire  dataMem_clock;
   wire  dataMem_reset;
+  wire [2:0] dataMem_io_mem_func;
   wire  dataMem_io_mem_write;
   wire  dataMem_io_mem_read;
-  wire [2:0] dataMem_io_mem_func;
   wire [31:0] dataMem_io_op_op1;
   wire [31:0] dataMem_io_op_op2;
   wire  dataMem_io_tx_req;
   wire [7:0] dataMem_io_rx;
   wire [31:0] dataMem_io_res;
   wire [7:0] dataMem_io_tx;
+  wire [7:0] dataMem_io_rx_out;
   wire [7:0] dataMem_io_rx_cnt;
   wire  fwdUnit_io_reg_w_mem;
   wire  fwdUnit_io_reg_w_wb;
@@ -4478,10 +5621,11 @@ module CPU(
   wire  hazardUnit_io_mem_r;
   wire  hazardUnit_io_tx_req;
   wire  hazardUnit_io_stall;
-  wire  hazardUnit_io_branch;
   wire  uart_clock;
   wire  uart_reset;
+  wire  uart_io_rxd;
   wire [7:0] uart_io_in;
+  wire [7:0] uart_io_out;
   wire  uart_io_txd;
   wire  uart_io_tx_req;
   wire  IF_ID_clock;
@@ -4493,14 +5637,13 @@ module CPU(
   wire  ID_EX_clock;
   wire  ID_EX_io_in_WB_reg_w;
   wire  ID_EX_io_in_WB_rd_mem;
-  wire  ID_EX_io_in_MEM_branch;
+  wire [2:0] ID_EX_io_in_MEM_func;
   wire  ID_EX_io_in_MEM_write;
   wire  ID_EX_io_in_MEM_read;
-  wire [2:0] ID_EX_io_in_MEM_func;
-  wire [6:0] ID_EX_io_in_EX_opcode;
   wire  ID_EX_io_in_EX_alu_sel;
-  wire [2:0] ID_EX_io_in_EX_alu_op_func;
-  wire  ID_EX_io_in_EX_alu_op_alt;
+  wire [2:0] ID_EX_io_in_EX_alu_ctrl_func;
+  wire  ID_EX_io_in_EX_alu_ctrl_alt;
+  wire  ID_EX_io_in_EX_alu_ctrl_flush;
   wire [31:0] ID_EX_io_in_op_op1;
   wire [31:0] ID_EX_io_in_op_op2;
   wire [4:0] ID_EX_io_in_rs_rs1;
@@ -4510,14 +5653,13 @@ module CPU(
   wire [31:0] ID_EX_io_in_pc_next;
   wire  ID_EX_io_out_WB_reg_w;
   wire  ID_EX_io_out_WB_rd_mem;
-  wire  ID_EX_io_out_MEM_branch;
+  wire [2:0] ID_EX_io_out_MEM_func;
   wire  ID_EX_io_out_MEM_write;
   wire  ID_EX_io_out_MEM_read;
-  wire [2:0] ID_EX_io_out_MEM_func;
-  wire [6:0] ID_EX_io_out_EX_opcode;
   wire  ID_EX_io_out_EX_alu_sel;
-  wire [2:0] ID_EX_io_out_EX_alu_op_func;
-  wire  ID_EX_io_out_EX_alu_op_alt;
+  wire [2:0] ID_EX_io_out_EX_alu_ctrl_func;
+  wire  ID_EX_io_out_EX_alu_ctrl_alt;
+  wire  ID_EX_io_out_EX_alu_ctrl_flush;
   wire [31:0] ID_EX_io_out_op_op1;
   wire [31:0] ID_EX_io_out_op_op2;
   wire [4:0] ID_EX_io_out_rs_rs1;
@@ -4526,30 +5668,24 @@ module CPU(
   wire [31:0] ID_EX_io_out_imm;
   wire [31:0] ID_EX_io_out_pc_next;
   wire  EX_MEM_clock;
-  wire  EX_MEM_io_in_zero;
   wire  EX_MEM_io_in_WB_reg_w;
   wire  EX_MEM_io_in_WB_rd_mem;
-  wire  EX_MEM_io_in_MEM_branch;
+  wire [2:0] EX_MEM_io_in_MEM_func;
   wire  EX_MEM_io_in_MEM_write;
   wire  EX_MEM_io_in_MEM_read;
-  wire [2:0] EX_MEM_io_in_MEM_func;
   wire [31:0] EX_MEM_io_in_op_op1;
   wire [31:0] EX_MEM_io_in_op_op2;
   wire [4:0] EX_MEM_io_in_rd;
   wire [31:0] EX_MEM_io_in_pc_next;
-  wire [31:0] EX_MEM_io_in_branch_t;
-  wire  EX_MEM_io_out_zero;
   wire  EX_MEM_io_out_WB_reg_w;
   wire  EX_MEM_io_out_WB_rd_mem;
-  wire  EX_MEM_io_out_MEM_branch;
+  wire [2:0] EX_MEM_io_out_MEM_func;
   wire  EX_MEM_io_out_MEM_write;
   wire  EX_MEM_io_out_MEM_read;
-  wire [2:0] EX_MEM_io_out_MEM_func;
   wire [31:0] EX_MEM_io_out_op_op1;
   wire [31:0] EX_MEM_io_out_op_op2;
   wire [4:0] EX_MEM_io_out_rd;
   wire [31:0] EX_MEM_io_out_pc_next;
-  wire [31:0] EX_MEM_io_out_branch_t;
   wire  MEM_WB_clock;
   wire  MEM_WB_io_in_WB_reg_w;
   wire  MEM_WB_io_in_WB_rd_mem;
@@ -4561,38 +5697,63 @@ module CPU(
   wire [31:0] MEM_WB_io_out_alu_res;
   wire [31:0] MEM_WB_io_out_mem_res;
   wire [4:0] MEM_WB_io_out_rd;
+  wire  _T_52;
+  wire  _T_53;
   wire  _T_54;
   wire  _T_55;
-  wire  _T_56;
+  wire [32:0] _GEN_3;
   wire [32:0] _T_57;
-  wire [31:0] _T_58;
-  wire  _T_60;
-  wire [31:0] _T_61;
+  wire [32:0] _GEN_4;
+  wire [33:0] _T_58;
+  wire [32:0] _T_59;
+  wire [32:0] _T_60;
   wire  _T_62;
-  wire [31:0] _T_63;
-  wire  _T_64;
+  wire [32:0] _T_63;
+  wire [32:0] _T_64;
   wire [31:0] _T_65;
   wire  _T_66;
-  wire [31:0] _T_67;
+  wire  _T_67;
   wire  _T_68;
-  wire [31:0] _T_69;
-  wire  _T_70;
-  wire [31:0] op2;
-  wire [31:0] _T_71;
+  wire  _T_71;
   wire  _T_72;
   wire  _T_73;
   wire  _T_74;
-  wire [2:0] _T_76;
+  wire  _T_75;
+  wire  _T_76;
   wire  _T_77;
   wire  _T_78;
-  wire [32:0] _GEN_0;
-  wire [32:0] _T_79;
-  wire [32:0] _GEN_1;
-  wire [33:0] _T_80;
-  wire [32:0] _T_81;
-  wire [31:0] _T_82;
-  reg [7:0] _GEN_2;
-  reg [31:0] _GEN_3;
+  wire  _T_79;
+  wire  _T_80;
+  wire  _T_81;
+  wire  _T_82;
+  wire  _T_83;
+  wire  _T_84;
+  wire  _T_85;
+  wire  _T_87;
+  wire  _GEN_1;
+  wire  _T_88;
+  wire [31:0] _T_89;
+  wire  _T_90;
+  wire [31:0] _T_91;
+  wire  _T_92;
+  wire [31:0] _T_93;
+  wire  _T_94;
+  wire [31:0] _T_95;
+  wire  _T_96;
+  wire [31:0] _T_97;
+  wire  _T_98;
+  wire [31:0] op2;
+  wire [31:0] _T_99;
+  wire  _T_100;
+  wire  _T_101;
+  wire [2:0] _T_103;
+  wire  _T_104;
+  wire  _T_105;
+  wire [31:0] _T_106;
+  reg [7:0] rx_out;
+  reg [31:0] _GEN_0;
+  wire  _T_108;
+  wire [7:0] _GEN_2;
   InstructionMemory instMem (
     .clock(instMem_clock),
     .io_pc(instMem_io_pc),
@@ -4601,11 +5762,9 @@ module CPU(
   ProgramCounter counter (
     .clock(counter_clock),
     .reset(counter_reset),
-    .io_jump(counter_io_jump),
+    .io_src_sel(counter_io_src_sel),
     .io_stall(counter_io_stall),
-    .io_branch(counter_io_branch),
-    .io_jump_t(counter_io_jump_t),
-    .io_branch_t(counter_io_branch_t),
+    .io_pc_src(counter_io_pc_src),
     .io_pc_next(counter_io_pc_next),
     .io_pc(counter_io_pc)
   );
@@ -4623,21 +5782,21 @@ module CPU(
     .io_ctrl_opcode(control_io_ctrl_opcode),
     .io_ctrl_funct3(control_io_ctrl_funct3),
     .io_ctrl_funct7(control_io_ctrl_funct7),
-    .io_stall(control_io_stall),
+    .io_flush(control_io_flush),
     .io_WB_reg_w(control_io_WB_reg_w),
     .io_WB_rd_mem(control_io_WB_rd_mem),
-    .io_MEM_branch(control_io_MEM_branch),
+    .io_MEM_func(control_io_MEM_func),
     .io_MEM_write(control_io_MEM_write),
     .io_MEM_read(control_io_MEM_read),
-    .io_MEM_func(control_io_MEM_func),
-    .io_EX_opcode(control_io_EX_opcode),
     .io_EX_alu_sel(control_io_EX_alu_sel),
-    .io_EX_alu_op_func(control_io_EX_alu_op_func),
-    .io_EX_alu_op_alt(control_io_EX_alu_op_alt),
+    .io_EX_alu_ctrl_func(control_io_EX_alu_ctrl_func),
+    .io_EX_alu_ctrl_alt(control_io_EX_alu_ctrl_alt),
+    .io_EX_alu_ctrl_flush(control_io_EX_alu_ctrl_flush),
     .io_jump(control_io_jump)
   );
   Registers regs (
     .clock(regs_clock),
+    .reset(regs_reset),
     .io_rs_rs1(regs_io_rs_rs1),
     .io_rs_rs2(regs_io_rs_rs2),
     .io_reg_w(regs_io_reg_w),
@@ -4647,26 +5806,26 @@ module CPU(
     .io_op_op2(regs_io_op_op2)
   );
   ALU alu (
-    .io_opcode(alu_io_opcode),
-    .io_alu_op_func(alu_io_alu_op_func),
-    .io_alu_op_alt(alu_io_alu_op_alt),
     .io_op_op1(alu_io_op_op1),
     .io_op_op2(alu_io_op_op2),
-    .io_zero(alu_io_zero),
+    .io_alu_ctrl_func(alu_io_alu_ctrl_func),
+    .io_alu_ctrl_alt(alu_io_alu_ctrl_alt),
+    .io_alu_ctrl_flush(alu_io_alu_ctrl_flush),
     .io_res(alu_io_res)
   );
   DataMemory dataMem (
     .clock(dataMem_clock),
     .reset(dataMem_reset),
+    .io_mem_func(dataMem_io_mem_func),
     .io_mem_write(dataMem_io_mem_write),
     .io_mem_read(dataMem_io_mem_read),
-    .io_mem_func(dataMem_io_mem_func),
     .io_op_op1(dataMem_io_op_op1),
     .io_op_op2(dataMem_io_op_op2),
     .io_tx_req(dataMem_io_tx_req),
     .io_rx(dataMem_io_rx),
     .io_res(dataMem_io_res),
     .io_tx(dataMem_io_tx),
+    .io_rx_out(dataMem_io_rx_out),
     .io_rx_cnt(dataMem_io_rx_cnt)
   );
   ForwardingUnit fwdUnit (
@@ -4685,13 +5844,14 @@ module CPU(
     .io_rd_ex(hazardUnit_io_rd_ex),
     .io_mem_r(hazardUnit_io_mem_r),
     .io_tx_req(hazardUnit_io_tx_req),
-    .io_stall(hazardUnit_io_stall),
-    .io_branch(hazardUnit_io_branch)
+    .io_stall(hazardUnit_io_stall)
   );
   UART uart (
     .clock(uart_clock),
     .reset(uart_reset),
+    .io_rxd(uart_io_rxd),
     .io_in(uart_io_in),
+    .io_out(uart_io_out),
     .io_txd(uart_io_txd),
     .io_tx_req(uart_io_tx_req)
   );
@@ -4707,14 +5867,13 @@ module CPU(
     .clock(ID_EX_clock),
     .io_in_WB_reg_w(ID_EX_io_in_WB_reg_w),
     .io_in_WB_rd_mem(ID_EX_io_in_WB_rd_mem),
-    .io_in_MEM_branch(ID_EX_io_in_MEM_branch),
+    .io_in_MEM_func(ID_EX_io_in_MEM_func),
     .io_in_MEM_write(ID_EX_io_in_MEM_write),
     .io_in_MEM_read(ID_EX_io_in_MEM_read),
-    .io_in_MEM_func(ID_EX_io_in_MEM_func),
-    .io_in_EX_opcode(ID_EX_io_in_EX_opcode),
     .io_in_EX_alu_sel(ID_EX_io_in_EX_alu_sel),
-    .io_in_EX_alu_op_func(ID_EX_io_in_EX_alu_op_func),
-    .io_in_EX_alu_op_alt(ID_EX_io_in_EX_alu_op_alt),
+    .io_in_EX_alu_ctrl_func(ID_EX_io_in_EX_alu_ctrl_func),
+    .io_in_EX_alu_ctrl_alt(ID_EX_io_in_EX_alu_ctrl_alt),
+    .io_in_EX_alu_ctrl_flush(ID_EX_io_in_EX_alu_ctrl_flush),
     .io_in_op_op1(ID_EX_io_in_op_op1),
     .io_in_op_op2(ID_EX_io_in_op_op2),
     .io_in_rs_rs1(ID_EX_io_in_rs_rs1),
@@ -4724,14 +5883,13 @@ module CPU(
     .io_in_pc_next(ID_EX_io_in_pc_next),
     .io_out_WB_reg_w(ID_EX_io_out_WB_reg_w),
     .io_out_WB_rd_mem(ID_EX_io_out_WB_rd_mem),
-    .io_out_MEM_branch(ID_EX_io_out_MEM_branch),
+    .io_out_MEM_func(ID_EX_io_out_MEM_func),
     .io_out_MEM_write(ID_EX_io_out_MEM_write),
     .io_out_MEM_read(ID_EX_io_out_MEM_read),
-    .io_out_MEM_func(ID_EX_io_out_MEM_func),
-    .io_out_EX_opcode(ID_EX_io_out_EX_opcode),
     .io_out_EX_alu_sel(ID_EX_io_out_EX_alu_sel),
-    .io_out_EX_alu_op_func(ID_EX_io_out_EX_alu_op_func),
-    .io_out_EX_alu_op_alt(ID_EX_io_out_EX_alu_op_alt),
+    .io_out_EX_alu_ctrl_func(ID_EX_io_out_EX_alu_ctrl_func),
+    .io_out_EX_alu_ctrl_alt(ID_EX_io_out_EX_alu_ctrl_alt),
+    .io_out_EX_alu_ctrl_flush(ID_EX_io_out_EX_alu_ctrl_flush),
     .io_out_op_op1(ID_EX_io_out_op_op1),
     .io_out_op_op2(ID_EX_io_out_op_op2),
     .io_out_rs_rs1(ID_EX_io_out_rs_rs1),
@@ -4742,30 +5900,24 @@ module CPU(
   );
   PipelineEX_MEM EX_MEM (
     .clock(EX_MEM_clock),
-    .io_in_zero(EX_MEM_io_in_zero),
     .io_in_WB_reg_w(EX_MEM_io_in_WB_reg_w),
     .io_in_WB_rd_mem(EX_MEM_io_in_WB_rd_mem),
-    .io_in_MEM_branch(EX_MEM_io_in_MEM_branch),
+    .io_in_MEM_func(EX_MEM_io_in_MEM_func),
     .io_in_MEM_write(EX_MEM_io_in_MEM_write),
     .io_in_MEM_read(EX_MEM_io_in_MEM_read),
-    .io_in_MEM_func(EX_MEM_io_in_MEM_func),
     .io_in_op_op1(EX_MEM_io_in_op_op1),
     .io_in_op_op2(EX_MEM_io_in_op_op2),
     .io_in_rd(EX_MEM_io_in_rd),
     .io_in_pc_next(EX_MEM_io_in_pc_next),
-    .io_in_branch_t(EX_MEM_io_in_branch_t),
-    .io_out_zero(EX_MEM_io_out_zero),
     .io_out_WB_reg_w(EX_MEM_io_out_WB_reg_w),
     .io_out_WB_rd_mem(EX_MEM_io_out_WB_rd_mem),
-    .io_out_MEM_branch(EX_MEM_io_out_MEM_branch),
+    .io_out_MEM_func(EX_MEM_io_out_MEM_func),
     .io_out_MEM_write(EX_MEM_io_out_MEM_write),
     .io_out_MEM_read(EX_MEM_io_out_MEM_read),
-    .io_out_MEM_func(EX_MEM_io_out_MEM_func),
     .io_out_op_op1(EX_MEM_io_out_op_op1),
     .io_out_op_op2(EX_MEM_io_out_op_op2),
     .io_out_rd(EX_MEM_io_out_rd),
-    .io_out_pc_next(EX_MEM_io_out_pc_next),
-    .io_out_branch_t(EX_MEM_io_out_branch_t)
+    .io_out_pc_next(EX_MEM_io_out_pc_next)
   );
   PipelineMEM_WB MEM_WB (
     .clock(MEM_WB_clock),
@@ -4781,43 +5933,42 @@ module CPU(
     .io_out_rd(MEM_WB_io_out_rd)
   );
   assign io_txd = uart_io_txd;
-  assign io_rx_out = _GEN_2;
+  assign io_branch = _GEN_1;
+  assign io_rx_out = rx_out;
   assign io_rx_cnt = dataMem_io_rx_cnt;
-  assign io_pc = counter_io_pc;
   assign instMem_clock = clock;
   assign instMem_io_pc = counter_io_pc;
   assign counter_clock = clock;
   assign counter_reset = reset;
-  assign counter_io_jump = control_io_jump;
-  assign counter_io_stall = hazardUnit_io_stall;
-  assign counter_io_branch = _T_56;
-  assign counter_io_jump_t = _T_58;
-  assign counter_io_branch_t = EX_MEM_io_out_branch_t;
+  assign counter_io_src_sel = _T_55;
+  assign counter_io_stall = _T_52;
+  assign counter_io_pc_src = _T_60[31:0];
   assign decoder_io_inst = IF_ID_io_out_inst;
   assign control_io_ctrl_opcode = decoder_io_ctrl_opcode;
   assign control_io_ctrl_funct3 = decoder_io_ctrl_funct3;
   assign control_io_ctrl_funct7 = decoder_io_ctrl_funct7;
-  assign control_io_stall = hazardUnit_io_stall;
+  assign control_io_flush = _T_52;
   assign regs_clock = clock;
+  assign regs_reset = reset;
   assign regs_io_rs_rs1 = decoder_io_rs_rs1;
   assign regs_io_rs_rs2 = decoder_io_rs_rs2;
   assign regs_io_reg_w = MEM_WB_io_out_WB_reg_w;
   assign regs_io_rd = MEM_WB_io_out_rd;
-  assign regs_io_res = _T_82;
-  assign alu_io_opcode = ID_EX_io_out_EX_opcode;
-  assign alu_io_alu_op_func = ID_EX_io_out_EX_alu_op_func;
-  assign alu_io_alu_op_alt = ID_EX_io_out_EX_alu_op_alt;
-  assign alu_io_op_op1 = _T_65;
-  assign alu_io_op_op2 = _T_71;
+  assign regs_io_res = _T_106;
+  assign alu_io_op_op1 = _T_93;
+  assign alu_io_op_op2 = _T_99;
+  assign alu_io_alu_ctrl_func = ID_EX_io_out_EX_alu_ctrl_func;
+  assign alu_io_alu_ctrl_alt = ID_EX_io_out_EX_alu_ctrl_alt;
+  assign alu_io_alu_ctrl_flush = ID_EX_io_out_EX_alu_ctrl_flush;
   assign dataMem_clock = clock;
   assign dataMem_reset = reset;
+  assign dataMem_io_mem_func = EX_MEM_io_out_MEM_func;
   assign dataMem_io_mem_write = EX_MEM_io_out_MEM_write;
   assign dataMem_io_mem_read = EX_MEM_io_out_MEM_read;
-  assign dataMem_io_mem_func = EX_MEM_io_out_MEM_func;
   assign dataMem_io_op_op1 = EX_MEM_io_out_op_op1;
   assign dataMem_io_op_op2 = EX_MEM_io_out_op_op2;
   assign dataMem_io_tx_req = uart_io_tx_req;
-  assign dataMem_io_rx = io_rx_in;
+  assign dataMem_io_rx = uart_io_out;
   assign fwdUnit_io_reg_w_mem = EX_MEM_io_out_WB_reg_w;
   assign fwdUnit_io_reg_w_wb = MEM_WB_io_out_WB_reg_w;
   assign fwdUnit_io_rs_rs1 = ID_EX_io_out_rs_rs1;
@@ -4829,9 +5980,9 @@ module CPU(
   assign hazardUnit_io_rd_ex = ID_EX_io_out_rd;
   assign hazardUnit_io_mem_r = ID_EX_io_out_MEM_read;
   assign hazardUnit_io_tx_req = uart_io_tx_req;
-  assign hazardUnit_io_branch = _T_54;
   assign uart_clock = clock;
   assign uart_reset = reset;
+  assign uart_io_rxd = io_rxd;
   assign uart_io_in = dataMem_io_tx;
   assign IF_ID_clock = clock;
   assign IF_ID_io_stall = hazardUnit_io_stall;
@@ -4840,14 +5991,13 @@ module CPU(
   assign ID_EX_clock = clock;
   assign ID_EX_io_in_WB_reg_w = control_io_WB_reg_w;
   assign ID_EX_io_in_WB_rd_mem = control_io_WB_rd_mem;
-  assign ID_EX_io_in_MEM_branch = control_io_MEM_branch;
+  assign ID_EX_io_in_MEM_func = control_io_MEM_func;
   assign ID_EX_io_in_MEM_write = control_io_MEM_write;
   assign ID_EX_io_in_MEM_read = control_io_MEM_read;
-  assign ID_EX_io_in_MEM_func = control_io_MEM_func;
-  assign ID_EX_io_in_EX_opcode = control_io_EX_opcode;
   assign ID_EX_io_in_EX_alu_sel = control_io_EX_alu_sel;
-  assign ID_EX_io_in_EX_alu_op_func = control_io_EX_alu_op_func;
-  assign ID_EX_io_in_EX_alu_op_alt = control_io_EX_alu_op_alt;
+  assign ID_EX_io_in_EX_alu_ctrl_func = control_io_EX_alu_ctrl_func;
+  assign ID_EX_io_in_EX_alu_ctrl_alt = control_io_EX_alu_ctrl_alt;
+  assign ID_EX_io_in_EX_alu_ctrl_flush = control_io_EX_alu_ctrl_flush;
   assign ID_EX_io_in_op_op1 = regs_io_op_op1;
   assign ID_EX_io_in_op_op2 = regs_io_op_op2;
   assign ID_EX_io_in_rs_rs1 = decoder_io_rs_rs1;
@@ -4856,54 +6006,76 @@ module CPU(
   assign ID_EX_io_in_imm = decoder_io_imm;
   assign ID_EX_io_in_pc_next = IF_ID_io_out_pc_next;
   assign EX_MEM_clock = clock;
-  assign EX_MEM_io_in_zero = alu_io_zero;
-  assign EX_MEM_io_in_WB_reg_w = _T_77;
-  assign EX_MEM_io_in_WB_rd_mem = _T_78;
-  assign EX_MEM_io_in_MEM_branch = _T_72;
-  assign EX_MEM_io_in_MEM_write = _T_73;
-  assign EX_MEM_io_in_MEM_read = _T_74;
-  assign EX_MEM_io_in_MEM_func = _T_76;
+  assign EX_MEM_io_in_WB_reg_w = _T_104;
+  assign EX_MEM_io_in_WB_rd_mem = _T_105;
+  assign EX_MEM_io_in_MEM_func = _T_103;
+  assign EX_MEM_io_in_MEM_write = _T_100;
+  assign EX_MEM_io_in_MEM_read = _T_101;
   assign EX_MEM_io_in_op_op1 = alu_io_res;
   assign EX_MEM_io_in_op_op2 = op2;
   assign EX_MEM_io_in_rd = ID_EX_io_out_rd;
   assign EX_MEM_io_in_pc_next = ID_EX_io_out_pc_next;
-  assign EX_MEM_io_in_branch_t = _T_81[31:0];
   assign MEM_WB_clock = clock;
   assign MEM_WB_io_in_WB_reg_w = EX_MEM_io_out_WB_reg_w;
   assign MEM_WB_io_in_WB_rd_mem = EX_MEM_io_out_WB_rd_mem;
   assign MEM_WB_io_in_alu_res = EX_MEM_io_out_op_op1;
   assign MEM_WB_io_in_mem_res = dataMem_io_res;
   assign MEM_WB_io_in_rd = EX_MEM_io_out_rd;
-  assign _T_54 = EX_MEM_io_out_zero & EX_MEM_io_out_MEM_branch;
-  assign _T_55 = dataMem_io_tx != 8'h0;
-  assign _T_56 = _T_54 | _T_55;
-  assign _T_57 = EX_MEM_io_out_pc_next + decoder_io_imm;
-  assign _T_58 = _T_57[31:0];
-  assign _T_60 = 2'h0 == fwdUnit_io_fwd_rs1;
-  assign _T_61 = _T_60 ? ID_EX_io_out_op_op1 : 32'h0;
-  assign _T_62 = 2'h1 == fwdUnit_io_fwd_rs1;
-  assign _T_63 = _T_62 ? regs_io_res : _T_61;
-  assign _T_64 = 2'h2 == fwdUnit_io_fwd_rs1;
-  assign _T_65 = _T_64 ? EX_MEM_io_out_op_op1 : _T_63;
-  assign _T_66 = 2'h0 == fwdUnit_io_fwd_rs2;
-  assign _T_67 = _T_66 ? ID_EX_io_out_op_op2 : 32'h0;
-  assign _T_68 = 2'h1 == fwdUnit_io_fwd_rs2;
-  assign _T_69 = _T_68 ? regs_io_res : _T_67;
-  assign _T_70 = 2'h2 == fwdUnit_io_fwd_rs2;
-  assign op2 = _T_70 ? EX_MEM_io_out_op_op1 : _T_69;
-  assign _T_71 = ID_EX_io_out_EX_alu_sel ? ID_EX_io_out_imm : op2;
-  assign _T_72 = uart_io_tx_req ? 1'h0 : ID_EX_io_out_MEM_branch;
-  assign _T_73 = uart_io_tx_req ? 1'h0 : ID_EX_io_out_MEM_write;
-  assign _T_74 = uart_io_tx_req ? 1'h0 : ID_EX_io_out_MEM_read;
-  assign _T_76 = uart_io_tx_req ? 3'h0 : ID_EX_io_out_MEM_func;
-  assign _T_77 = uart_io_tx_req ? 1'h0 : ID_EX_io_out_WB_reg_w;
-  assign _T_78 = uart_io_tx_req ? 1'h0 : ID_EX_io_out_WB_rd_mem;
-  assign _GEN_0 = {{1'd0}, ID_EX_io_out_imm};
-  assign _T_79 = _GEN_0 << 1;
-  assign _GEN_1 = {{1'd0}, ID_EX_io_out_pc_next};
-  assign _T_80 = _GEN_1 + _T_79;
-  assign _T_81 = _T_80[32:0];
-  assign _T_82 = MEM_WB_io_out_WB_rd_mem ? MEM_WB_io_out_mem_res : MEM_WB_io_out_alu_res;
+  assign _T_52 = hazardUnit_io_stall | io_branch;
+  assign _T_53 = control_io_jump | io_branch;
+  assign _T_54 = dataMem_io_tx != 8'h0;
+  assign _T_55 = _T_53 | _T_54;
+  assign _GEN_3 = {{1'd0}, decoder_io_imm};
+  assign _T_57 = _GEN_3 << 1;
+  assign _GEN_4 = {{1'd0}, ID_EX_io_out_pc_next};
+  assign _T_58 = _GEN_4 + _T_57;
+  assign _T_59 = _T_58[32:0];
+  assign _T_60 = _T_54 ? {{1'd0}, EX_MEM_io_out_pc_next} : _T_59;
+  assign _T_62 = decoder_io_ctrl_opcode == 7'h63;
+  assign _T_63 = regs_io_op_op1 - regs_io_op_op2;
+  assign _T_64 = $unsigned(_T_63);
+  assign _T_65 = _T_64[31:0];
+  assign _T_66 = _T_65 == 32'h0;
+  assign _T_67 = _T_65 != 32'h0;
+  assign _T_68 = _T_65[31];
+  assign _T_71 = _T_68 == 1'h0;
+  assign _T_72 = regs_io_op_op1 < regs_io_op_op2;
+  assign _T_73 = regs_io_op_op1 >= regs_io_op_op2;
+  assign _T_74 = 3'h7 == decoder_io_ctrl_funct3;
+  assign _T_75 = _T_74 ? _T_73 : 1'h0;
+  assign _T_76 = 3'h6 == decoder_io_ctrl_funct3;
+  assign _T_77 = _T_76 ? _T_72 : _T_75;
+  assign _T_78 = 3'h5 == decoder_io_ctrl_funct3;
+  assign _T_79 = _T_78 ? _T_71 : _T_77;
+  assign _T_80 = 3'h4 == decoder_io_ctrl_funct3;
+  assign _T_81 = _T_80 ? _T_68 : _T_79;
+  assign _T_82 = 3'h1 == decoder_io_ctrl_funct3;
+  assign _T_83 = _T_82 ? _T_67 : _T_81;
+  assign _T_84 = 3'h0 == decoder_io_ctrl_funct3;
+  assign _T_85 = _T_84 ? _T_66 : _T_83;
+  assign _T_87 = _T_62 == 1'h0;
+  assign _GEN_1 = _T_87 ? 1'h0 : _T_85;
+  assign _T_88 = 2'h0 == fwdUnit_io_fwd_rs1;
+  assign _T_89 = _T_88 ? ID_EX_io_out_op_op1 : 32'h0;
+  assign _T_90 = 2'h1 == fwdUnit_io_fwd_rs1;
+  assign _T_91 = _T_90 ? regs_io_res : _T_89;
+  assign _T_92 = 2'h2 == fwdUnit_io_fwd_rs1;
+  assign _T_93 = _T_92 ? EX_MEM_io_out_op_op1 : _T_91;
+  assign _T_94 = 2'h0 == fwdUnit_io_fwd_rs2;
+  assign _T_95 = _T_94 ? ID_EX_io_out_op_op2 : 32'h0;
+  assign _T_96 = 2'h1 == fwdUnit_io_fwd_rs2;
+  assign _T_97 = _T_96 ? regs_io_res : _T_95;
+  assign _T_98 = 2'h2 == fwdUnit_io_fwd_rs2;
+  assign op2 = _T_98 ? EX_MEM_io_out_op_op1 : _T_97;
+  assign _T_99 = ID_EX_io_out_EX_alu_sel ? ID_EX_io_out_imm : op2;
+  assign _T_100 = uart_io_tx_req ? 1'h0 : ID_EX_io_out_MEM_write;
+  assign _T_101 = uart_io_tx_req ? 1'h0 : ID_EX_io_out_MEM_read;
+  assign _T_103 = uart_io_tx_req ? 3'h0 : ID_EX_io_out_MEM_func;
+  assign _T_104 = uart_io_tx_req ? 1'h0 : ID_EX_io_out_WB_reg_w;
+  assign _T_105 = uart_io_tx_req ? 1'h0 : ID_EX_io_out_WB_rd_mem;
+  assign _T_106 = MEM_WB_io_out_WB_rd_mem ? MEM_WB_io_out_mem_res : MEM_WB_io_out_alu_res;
+  assign _T_108 = dataMem_io_rx_out != 8'h0;
+  assign _GEN_2 = _T_108 ? dataMem_io_rx_out : rx_out;
 `ifdef RANDOMIZE
   integer initvar;
   initial begin
@@ -4911,9 +6083,18 @@ module CPU(
       #0.002 begin end
     `endif
   `ifdef RANDOMIZE_REG_INIT
-  _GEN_3 = {1{$random}};
-  _GEN_2 = _GEN_3[7:0];
+  _GEN_0 = {1{$random}};
+  rx_out = _GEN_0[7:0];
   `endif
   end
 `endif
+  always @(posedge clock) begin
+    if (reset) begin
+      rx_out <= 8'h0;
+    end else begin
+      if (_T_108) begin
+        rx_out <= dataMem_io_rx_out;
+      end
+    end
+  end
 endmodule

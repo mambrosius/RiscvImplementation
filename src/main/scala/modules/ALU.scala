@@ -15,35 +15,24 @@ import utils.Collection._
 class ALU extends Module {
 
     val io = IO(new Bundle {
-        val opcode = Input(UInt(OPCODE_W))
-        val alu_op = new ALU_OP
-        val op     = new OP   
-        val res    = Output(UInt(WORD_W))
+        val op       = new OP 
+        val alu_ctrl = new ALU_CTRL
+        val res      = Output(UInt(WORD_W))
     })
 
-    val op1   = io.op.op1
-    val op2   = io.op.op2
-    val shamt = op2(4, 0) 
-    
-    io.res := MuxLookup(io.opcode, ZERO, Array(
-
-        R -> MuxLookup(io.alu_op.func, ZERO, Array(
-            ADD     -> Mux(io.alu_op.alt, op1 - op2, op1 + op2), 
-            SLL     -> (op1 << shamt),
-            //SLT   -> ZERO,
-            SLTU    -> (op1 < op2),
-            XOR     -> (op1 ^ op2),
-            SRL     -> Mux(io.alu_op.alt, ZERO, op1 >> shamt),
-            OR      -> (op1 | op2))),
-        I -> MuxLookup(io.alu_op.func, ZERO, Array(
-            ADD     -> (op1 + op2), 
-            SLL     -> (op1 << shamt),
-            //SLT   -> ZERO,
-            SLTU    -> (op1 < op2),
-            XOR     -> (op1 ^ op2),
-            SRL     -> Mux(io.alu_op.alt, ZERO, op1 >> shamt),
-            OR      -> (op1 | op2))),
-        L -> (op1 + op2), 
-        S -> (op1 + op2)      
-    )) 
+    val op1     = io.op.op1
+    val op2     = io.op.op2
+    val shamt   = op2(4, 0) 
+    val compare = op1 - op2
+        
+    io.res := Mux(io.alu_ctrl.flush, ZERO, MuxLookup(io.alu_ctrl.func, op1 + op2, Array(
+        ADD     -> Mux(io.alu_ctrl.alt, op1 - op2, op1 + op2),  // ADD / ADDI / SUB
+        SLL     -> (op1 << shamt),                              // SLL / SLLI
+        SLT     -> compare(31),                                 // SLT / SLTI
+        SLTU    -> (op1 < op2),                                 // SLTU / SLTIU
+        XOR     -> (op1 ^ op2),                                 // XOR / XORI
+        SRL     -> (op1 >> shamt),                              // SRL & I / (SRA & I)
+        OR      -> (op1 | op2),                                 // OR / ORI
+        AND     -> (op1 & op2)                                  // AND / ANDI
+    )))
 }

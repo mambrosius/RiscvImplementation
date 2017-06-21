@@ -26,9 +26,6 @@ class UART extends Module {
         val out    = Output(UInt(BYTE_W))
         val txd    = Output(Bool())
         val tx_req = Output(Bool())
-
-        // test -----------------------------
-        val reg  = Output(UInt(BYTE_W))
     })
 
     val rx  = Module(new Rx)
@@ -36,8 +33,6 @@ class UART extends Module {
     val reg = RegInit(UInt(BYTE_W), ZERO)
     
     rx.io.rxd := io.rxd
-
-    io.reg := reg
     tx.io.enq.valid := reg =/= ZERO
 
     when (reg === ZERO) {
@@ -154,20 +149,3 @@ class Rx extends Module {
         io.deq.bits  := ZERO
     }
 }
-
-/*
-class BufferedRx extends Module {
-    val io = IO(new Bundle {
-        val rxd = Input(Bool())
-        val deq = Decoupled(UInt(BYTE_W))
-        val cnt = Output(UInt(6.W))
-    })
-    
-    val queue = Module(new Queue(UInt(BYTE_W), 16)) // move entries (16) to Constant.scala
-    val rx    = Module(new Rx)
-
-    queue.io.enq <> rx.io.deq
-    io.deq       <> queue.io.deq
-    io.rxd       <> rx.io.rxd
-    io.cnt       <> queue.io.count
-}*/

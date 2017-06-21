@@ -18,22 +18,26 @@ class CPU extends Module {
 
         val rxd     = Input(Bool())
         val txd     = Output(Bool())
+        val branch  = Output(Bool())
         val rx_out  = Output(UInt(BYTE_W))
         val rx_cnt  = Output(UInt(BYTE_W))
-        val rx_in   = Input(UInt(BYTE_W))
         
         // test signals -----------------------
-        
         /*
-        val imm     = Output(UInt(WORD_W))
         val pc      = Output(UInt(WORD_W))
+        
+        val branch_t = Output(UInt(WORD_W))
+        val rx_in   = Input(UInt(BYTE_W))
+
+        val fwd1    = Output(UInt(2.W))
+        val fwd2    = Output(UInt(2.W))
+              
         val op1     = Output(UInt(WORD_W))
         val op2     = Output(UInt(WORD_W))
-
-        val branch   = Output(Bool())
-        val branch_t = Output(UInt(WORD_W))
-        val func     = Output(UInt(BYTE_W))
-  
+        val imm     = Output(UInt(WORD_W))
+        val func    = Output(UInt(BYTE_W))
+        val res     = Output(UInt(WORD_W))
+        
         val inst    = Output(UInt(WORD_W))
         val reg     = Output(UInt(BYTE_W))
         val data    = Output(UInt(BYTE_W))
@@ -112,14 +116,11 @@ class CPU extends Module {
     
     // IF -------------------------------------------------------------------------------------
     
-    counter.io.jump         := control.io.jump
     counter.io.stall        := hazardUnit.io.stall || io.branch
-    counter.io.branch       := io.branch || dataMem.io.tx =/= ZERO
+    counter.io.src_sel      := control.io.jump || io.branch || dataMem.io.tx =/= ZERO
+    counter.io.pc_src       := Mux(dataMem.io.tx =/= ZERO, 
+        EX_MEM.io.out.pc_next, ID_EX.io.out.pc_next + (decoder.io.imm << 1))
     
-    counter.io.branch_t     := Mux(dataMem.io.tx =/= ZERO, EX_MEM.io.out.pc_next, IF_ID.io.out.pc_next + (decoder.io.imm << 1))
-    io.branch_t             := counter.io.branch_t   
-
-    counter.io.jump_t       := EX_MEM.io.out.pc_next + decoder.io.imm
     instMem.io.pc           := counter.io.pc
 
     IF_ID.io.stall          := hazardUnit.io.stall 
@@ -151,10 +152,12 @@ class CPU extends Module {
     when (decoder.io.ctrl.opcode === B) {    
         val compare = regs.io.op.op1 - regs.io.op.op2
         io.branch := MuxLookup(decoder.io.ctrl.funct3, FALSE, Array(
-            BEQ -> (compare === ZERO),
-            BNE -> (compare =/= ZERO), 
-            BLT -> (compare(31)), 
-            BGE -> (!compare(31))        
+            BEQ  -> (compare === ZERO),
+            BNE  -> (compare =/= ZERO), 
+            BLT  -> (compare(31)), 
+            BGE  -> (!compare(31)),
+            BLTU -> (regs.io.op.op1 < regs.io.op.op2),
+            BGEU -> (regs.io.op.op1 >= regs.io.op.op2)       
         ))
     } .otherwise {
         io.branch := FALSE
@@ -168,8 +171,7 @@ class CPU extends Module {
     fwdUnit.io.reg_w_mem    := EX_MEM.io.out.WB.reg_w 
     fwdUnit.io.reg_w_wb     := MEM_WB.io.out.WB.reg_w
 
-    alu.io.opcode           := ID_EX.io.out.EX.opcode
-    alu.io.alu_op           := ID_EX.io.out.EX.alu_op
+    alu.io.alu_ctrl         := ID_EX.io.out.EX.alu_ctrl
     
     alu.io.op.op1 := MuxLookup(fwdUnit.io.fwd_rs1, ZERO, Array(
         FWD_EX  -> EX_MEM.io.out.op.op1, 
@@ -213,24 +215,28 @@ class CPU extends Module {
     // UART -----------------------------------------------------------------------------------
 
     uart.io.rxd   := io.rxd
-    dataMem.io.rx := io.rx_in  // uart.io.out
+    dataMem.io.rx := uart.io.out 
     uart.io.in    := dataMem.io.tx
     io.txd        := uart.io.txd
 
     io.rx_cnt     := dataMem.io.rx_cnt
 
     // test signals ---------------------------------------------------------------------------
-    
-    /*
-    
-    io.pc     := counter.io.pc  
 
-    io.op1    := regs.io.op.op1
-    io.op2    := regs.io.op.op2 
+    val rx_out = RegInit(UInt(BYTE_W), ZERO)
+    when (dataMem.io.rx_out =/= ZERO) { rx_out := dataMem.io.rx_out }
+    io.rx_out := rx_out
+
+    /*
+    io.fwd1     := fwdUnit.io.fwd_rs1
+    io.fwd2     := fwdUnit.io.fwd_rs2
+
+    io.op1    := alu.io.op.op1
+    io.op2    := alu.io.op.op2 
     io.imm    := decoder.io.imm
     io.func   := decoder.io.ctrl.funct3
+    io.res    := alu.io.res
     
-    io.rx_out := dataMem.io.rx_out
     io.branch := Mux(uart.io.tx_req, FALSE, ID_EX.io.out.MEM.branch)
     io.zero   := alu.io.zero
 
@@ -260,8 +266,7 @@ class CPU extends Module {
     io.w_data   := op2
 
     io.stall    := hazardUnit.io.stall
-    */
-    /*
+    
     io.pc       := counter.io.pc
     
     io.pc_next  := counter.io.pc_next

@@ -74,9 +74,9 @@ circuit CPU :
     infer mport _T_108 = rom[UInt<5>("h01f")], clock
     _T_108 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_112 = rom[UInt<6>("h020")], clock
-    _T_112 <= UInt<8>("h0c0") @[Program.scala 35:57]
+    _T_112 <= UInt<8>("h020") @[Program.scala 35:57]
     infer mport _T_115 = rom[UInt<6>("h021")], clock
-    _T_115 <= UInt<8>("h01") @[Program.scala 36:57]
+    _T_115 <= UInt<8>("h02") @[Program.scala 36:57]
     infer mport _T_118 = rom[UInt<6>("h022")], clock
     _T_118 <= UInt<8>("h00") @[Program.scala 37:57]
     infer mport _T_121 = rom[UInt<6>("h023")], clock
@@ -146,7 +146,7 @@ circuit CPU :
     infer mport _T_225 = rom[UInt<7>("h043")], clock
     _T_225 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_229 = rom[UInt<7>("h044")], clock
-    _T_229 <= UInt<8>("h09c") @[Program.scala 35:57]
+    _T_229 <= UInt<8>("h0d4") @[Program.scala 35:57]
     infer mport _T_232 = rom[UInt<7>("h045")], clock
     _T_232 <= UInt<8>("h00") @[Program.scala 36:57]
     infer mport _T_235 = rom[UInt<7>("h046")], clock
@@ -154,7 +154,7 @@ circuit CPU :
     infer mport _T_238 = rom[UInt<7>("h047")], clock
     _T_238 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_242 = rom[UInt<7>("h048")], clock
-    _T_242 <= UInt<8>("h09c") @[Program.scala 35:57]
+    _T_242 <= UInt<8>("h0d4") @[Program.scala 35:57]
     infer mport _T_245 = rom[UInt<7>("h049")], clock
     _T_245 <= UInt<8>("h00") @[Program.scala 36:57]
     infer mport _T_248 = rom[UInt<7>("h04a")], clock
@@ -180,43 +180,43 @@ circuit CPU :
     infer mport _T_281 = rom[UInt<7>("h054")], clock
     _T_281 <= UInt<8>("h013") @[Program.scala 35:57]
     infer mport _T_284 = rom[UInt<7>("h055")], clock
-    _T_284 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_284 <= UInt<8>("h04") @[Program.scala 36:57]
     infer mport _T_287 = rom[UInt<7>("h056")], clock
-    _T_287 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_287 <= UInt<8>("h0d0") @[Program.scala 37:57]
     infer mport _T_290 = rom[UInt<7>("h057")], clock
     _T_290 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_294 = rom[UInt<7>("h058")], clock
-    _T_294 <= UInt<8>("h013") @[Program.scala 35:57]
+    _T_294 <= UInt<8>("h093") @[Program.scala 35:57]
     infer mport _T_297 = rom[UInt<7>("h059")], clock
     _T_297 <= UInt<8>("h04") @[Program.scala 36:57]
     infer mport _T_300 = rom[UInt<7>("h05a")], clock
-    _T_300 <= UInt<8>("h0d0") @[Program.scala 37:57]
+    _T_300 <= UInt<8>("h0f0") @[Program.scala 37:57]
     infer mport _T_303 = rom[UInt<7>("h05b")], clock
-    _T_303 <= UInt<8>("h00") @[Program.scala 38:57]
+    _T_303 <= UInt<8>("h01e") @[Program.scala 38:57]
     infer mport _T_307 = rom[UInt<7>("h05c")], clock
-    _T_307 <= UInt<8>("h093") @[Program.scala 35:57]
+    _T_307 <= UInt<8>("h013") @[Program.scala 35:57]
     infer mport _T_310 = rom[UInt<7>("h05d")], clock
-    _T_310 <= UInt<8>("h04") @[Program.scala 36:57]
+    _T_310 <= UInt<8>("h09") @[Program.scala 36:57]
     infer mport _T_313 = rom[UInt<7>("h05e")], clock
     _T_313 <= UInt<8>("h0f0") @[Program.scala 37:57]
     infer mport _T_316 = rom[UInt<7>("h05f")], clock
-    _T_316 <= UInt<8>("h01e") @[Program.scala 38:57]
+    _T_316 <= UInt<8>("h01f") @[Program.scala 38:57]
     infer mport _T_320 = rom[UInt<7>("h060")], clock
-    _T_320 <= UInt<8>("h013") @[Program.scala 35:57]
+    _T_320 <= UInt<8>("h093") @[Program.scala 35:57]
     infer mport _T_323 = rom[UInt<7>("h061")], clock
     _T_323 <= UInt<8>("h09") @[Program.scala 36:57]
     infer mport _T_326 = rom[UInt<7>("h062")], clock
-    _T_326 <= UInt<8>("h0f0") @[Program.scala 37:57]
+    _T_326 <= UInt<8>("h00") @[Program.scala 37:57]
     infer mport _T_329 = rom[UInt<7>("h063")], clock
-    _T_329 <= UInt<8>("h01f") @[Program.scala 38:57]
+    _T_329 <= UInt<8>("h020") @[Program.scala 38:57]
     infer mport _T_333 = rom[UInt<7>("h064")], clock
-    _T_333 <= UInt<8>("h093") @[Program.scala 35:57]
+    _T_333 <= UInt<8>("h023") @[Program.scala 35:57]
     infer mport _T_336 = rom[UInt<7>("h065")], clock
-    _T_336 <= UInt<8>("h09") @[Program.scala 36:57]
+    _T_336 <= UInt<8>("h00") @[Program.scala 36:57]
     infer mport _T_339 = rom[UInt<7>("h066")], clock
-    _T_339 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_339 <= UInt<8>("h09") @[Program.scala 37:57]
     infer mport _T_342 = rom[UInt<7>("h067")], clock
-    _T_342 <= UInt<8>("h020") @[Program.scala 38:57]
+    _T_342 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_346 = rom[UInt<7>("h068")], clock
     _T_346 <= UInt<8>("h083") @[Program.scala 35:57]
     infer mport _T_349 = rom[UInt<7>("h069")], clock
@@ -226,25 +226,25 @@ circuit CPU :
     infer mport _T_355 = rom[UInt<7>("h06b")], clock
     _T_355 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_359 = rom[UInt<7>("h06c")], clock
-    _T_359 <= UInt<8>("h03") @[Program.scala 35:57]
+    _T_359 <= UInt<8>("h0b3") @[Program.scala 35:57]
     infer mport _T_362 = rom[UInt<7>("h06d")], clock
-    _T_362 <= UInt<8>("h083") @[Program.scala 36:57]
+    _T_362 <= UInt<8>("h082") @[Program.scala 36:57]
     infer mport _T_365 = rom[UInt<7>("h06e")], clock
-    _T_365 <= UInt<8>("h04") @[Program.scala 37:57]
+    _T_365 <= UInt<8>("h092") @[Program.scala 37:57]
     infer mport _T_368 = rom[UInt<7>("h06f")], clock
     _T_368 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_372 = rom[UInt<7>("h070")], clock
-    _T_372 <= UInt<8>("h013") @[Program.scala 35:57]
+    _T_372 <= UInt<8>("h03") @[Program.scala 35:57]
     infer mport _T_375 = rom[UInt<7>("h071")], clock
-    _T_375 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_375 <= UInt<8>("h083") @[Program.scala 36:57]
     infer mport _T_378 = rom[UInt<7>("h072")], clock
-    _T_378 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_378 <= UInt<8>("h02") @[Program.scala 37:57]
     infer mport _T_381 = rom[UInt<7>("h073")], clock
     _T_381 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_385 = rom[UInt<7>("h074")], clock
     _T_385 <= UInt<8>("h063") @[Program.scala 35:57]
     infer mport _T_388 = rom[UInt<7>("h075")], clock
-    _T_388 <= UInt<8>("h08") @[Program.scala 36:57]
+    _T_388 <= UInt<8>("h06") @[Program.scala 36:57]
     infer mport _T_391 = rom[UInt<7>("h076")], clock
     _T_391 <= UInt<8>("h083") @[Program.scala 37:57]
     infer mport _T_394 = rom[UInt<7>("h077")], clock
@@ -262,33 +262,33 @@ circuit CPU :
     infer mport _T_414 = rom[UInt<7>("h07d")], clock
     _T_414 <= UInt<8>("h0f0") @[Program.scala 36:57]
     infer mport _T_417 = rom[UInt<7>("h07e")], clock
-    _T_417 <= UInt<8>("h09f") @[Program.scala 37:57]
+    _T_417 <= UInt<8>("h0df") @[Program.scala 37:57]
     infer mport _T_420 = rom[UInt<7>("h07f")], clock
-    _T_420 <= UInt<8>("h0fd") @[Program.scala 38:57]
+    _T_420 <= UInt<8>("h0fe") @[Program.scala 38:57]
     infer mport _T_424 = rom[UInt<8>("h080")], clock
-    _T_424 <= UInt<8>("h013") @[Program.scala 35:57]
+    _T_424 <= UInt<8>("h093") @[Program.scala 35:57]
     infer mport _T_427 = rom[UInt<8>("h081")], clock
-    _T_427 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_427 <= UInt<8>("h02") @[Program.scala 36:57]
     infer mport _T_430 = rom[UInt<8>("h082")], clock
-    _T_430 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_430 <= UInt<8>("h0a0") @[Program.scala 37:57]
     infer mport _T_433 = rom[UInt<8>("h083")], clock
     _T_433 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_437 = rom[UInt<8>("h084")], clock
-    _T_437 <= UInt<8>("h013") @[Program.scala 35:57]
+    _T_437 <= UInt<8>("h023") @[Program.scala 35:57]
     infer mport _T_440 = rom[UInt<8>("h085")], clock
-    _T_440 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_440 <= UInt<8>("h080") @[Program.scala 36:57]
     infer mport _T_443 = rom[UInt<8>("h086")], clock
-    _T_443 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_443 <= UInt<8>("h059") @[Program.scala 37:57]
     infer mport _T_446 = rom[UInt<8>("h087")], clock
     _T_446 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_450 = rom[UInt<8>("h088")], clock
     _T_450 <= UInt<8>("h093") @[Program.scala 35:57]
     infer mport _T_453 = rom[UInt<8>("h089")], clock
-    _T_453 <= UInt<8>("h082") @[Program.scala 36:57]
+    _T_453 <= UInt<8>("h02") @[Program.scala 36:57]
     infer mport _T_456 = rom[UInt<8>("h08a")], clock
-    _T_456 <= UInt<8>("h02") @[Program.scala 37:57]
+    _T_456 <= UInt<8>("h0d0") @[Program.scala 37:57]
     infer mport _T_459 = rom[UInt<8>("h08b")], clock
-    _T_459 <= UInt<8>("h03") @[Program.scala 38:57]
+    _T_459 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_463 = rom[UInt<8>("h08c")], clock
     _T_463 <= UInt<8>("h023") @[Program.scala 35:57]
     infer mport _T_466 = rom[UInt<8>("h08d")], clock
@@ -298,63 +298,63 @@ circuit CPU :
     infer mport _T_472 = rom[UInt<8>("h08f")], clock
     _T_472 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_476 = rom[UInt<8>("h090")], clock
-    _T_476 <= UInt<8>("h013") @[Program.scala 35:57]
+    _T_476 <= UInt<8>("h083") @[Program.scala 35:57]
     infer mport _T_479 = rom[UInt<8>("h091")], clock
-    _T_479 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_479 <= UInt<8>("h02") @[Program.scala 36:57]
     infer mport _T_482 = rom[UInt<8>("h092")], clock
-    _T_482 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_482 <= UInt<8>("h09") @[Program.scala 37:57]
     infer mport _T_485 = rom[UInt<8>("h093")], clock
     _T_485 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_489 = rom[UInt<8>("h094")], clock
-    _T_489 <= UInt<8>("h013") @[Program.scala 35:57]
+    _T_489 <= UInt<8>("h033") @[Program.scala 35:57]
     infer mport _T_492 = rom[UInt<8>("h095")], clock
-    _T_492 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_492 <= UInt<8>("h083") @[Program.scala 36:57]
     infer mport _T_495 = rom[UInt<8>("h096")], clock
-    _T_495 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_495 <= UInt<8>("h092") @[Program.scala 37:57]
     infer mport _T_498 = rom[UInt<8>("h097")], clock
     _T_498 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_502 = rom[UInt<8>("h098")], clock
-    _T_502 <= UInt<8>("h06f") @[Program.scala 35:57]
+    _T_502 <= UInt<8>("h03") @[Program.scala 35:57]
     infer mport _T_505 = rom[UInt<8>("h099")], clock
-    _T_505 <= UInt<8>("h0f0") @[Program.scala 36:57]
+    _T_505 <= UInt<8>("h03") @[Program.scala 36:57]
     infer mport _T_508 = rom[UInt<8>("h09a")], clock
-    _T_508 <= UInt<8>("h0df") @[Program.scala 37:57]
+    _T_508 <= UInt<8>("h03") @[Program.scala 37:57]
     infer mport _T_511 = rom[UInt<8>("h09b")], clock
-    _T_511 <= UInt<8>("h0fb") @[Program.scala 38:57]
+    _T_511 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_515 = rom[UInt<8>("h09c")], clock
-    _T_515 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_515 <= UInt<8>("h023") @[Program.scala 35:57]
     infer mport _T_518 = rom[UInt<8>("h09d")], clock
-    _T_518 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_518 <= UInt<8>("h080") @[Program.scala 36:57]
     infer mport _T_521 = rom[UInt<8>("h09e")], clock
-    _T_521 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_521 <= UInt<8>("h069") @[Program.scala 37:57]
     infer mport _T_524 = rom[UInt<8>("h09f")], clock
     _T_524 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_528 = rom[UInt<8>("h0a0")], clock
-    _T_528 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_528 <= UInt<8>("h013") @[Program.scala 35:57]
     infer mport _T_531 = rom[UInt<8>("h0a1")], clock
-    _T_531 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_531 <= UInt<8>("h03") @[Program.scala 36:57]
     infer mport _T_534 = rom[UInt<8>("h0a2")], clock
-    _T_534 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_534 <= UInt<8>("h010") @[Program.scala 37:57]
     infer mport _T_537 = rom[UInt<8>("h0a3")], clock
     _T_537 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_541 = rom[UInt<8>("h0a4")], clock
-    _T_541 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_541 <= UInt<8>("h0b3") @[Program.scala 35:57]
     infer mport _T_544 = rom[UInt<8>("h0a5")], clock
-    _T_544 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_544 <= UInt<8>("h083") @[Program.scala 36:57]
     infer mport _T_547 = rom[UInt<8>("h0a6")], clock
-    _T_547 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_547 <= UInt<8>("h062") @[Program.scala 37:57]
     infer mport _T_550 = rom[UInt<8>("h0a7")], clock
-    _T_550 <= UInt<8>("h00") @[Program.scala 38:57]
+    _T_550 <= UInt<8>("h040") @[Program.scala 38:57]
     infer mport _T_554 = rom[UInt<8>("h0a8")], clock
-    _T_554 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_554 <= UInt<8>("h023") @[Program.scala 35:57]
     infer mport _T_557 = rom[UInt<8>("h0a9")], clock
     _T_557 <= UInt<8>("h00") @[Program.scala 36:57]
     infer mport _T_560 = rom[UInt<8>("h0aa")], clock
-    _T_560 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_560 <= UInt<8>("h079") @[Program.scala 37:57]
     infer mport _T_563 = rom[UInt<8>("h0ab")], clock
     _T_563 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_567 = rom[UInt<8>("h0ac")], clock
-    _T_567 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_567 <= UInt<8>("h013") @[Program.scala 35:57]
     infer mport _T_570 = rom[UInt<8>("h0ad")], clock
     _T_570 <= UInt<8>("h00") @[Program.scala 36:57]
     infer mport _T_573 = rom[UInt<8>("h0ae")], clock
@@ -362,7 +362,7 @@ circuit CPU :
     infer mport _T_576 = rom[UInt<8>("h0af")], clock
     _T_576 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_580 = rom[UInt<8>("h0b0")], clock
-    _T_580 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_580 <= UInt<8>("h013") @[Program.scala 35:57]
     infer mport _T_583 = rom[UInt<8>("h0b1")], clock
     _T_583 <= UInt<8>("h00") @[Program.scala 36:57]
     infer mport _T_586 = rom[UInt<8>("h0b2")], clock
@@ -370,15 +370,15 @@ circuit CPU :
     infer mport _T_589 = rom[UInt<8>("h0b3")], clock
     _T_589 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_593 = rom[UInt<8>("h0b4")], clock
-    _T_593 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_593 <= UInt<8>("h0e3") @[Program.scala 35:57]
     infer mport _T_596 = rom[UInt<8>("h0b5")], clock
-    _T_596 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_596 <= UInt<8>("h0de") @[Program.scala 36:57]
     infer mport _T_599 = rom[UInt<8>("h0b6")], clock
-    _T_599 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_599 <= UInt<8>("h063") @[Program.scala 37:57]
     infer mport _T_602 = rom[UInt<8>("h0b7")], clock
-    _T_602 <= UInt<8>("h00") @[Program.scala 38:57]
+    _T_602 <= UInt<8>("h0fc") @[Program.scala 38:57]
     infer mport _T_606 = rom[UInt<8>("h0b8")], clock
-    _T_606 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_606 <= UInt<8>("h013") @[Program.scala 35:57]
     infer mport _T_609 = rom[UInt<8>("h0b9")], clock
     _T_609 <= UInt<8>("h00") @[Program.scala 36:57]
     infer mport _T_612 = rom[UInt<8>("h0ba")], clock
@@ -386,39 +386,39 @@ circuit CPU :
     infer mport _T_615 = rom[UInt<8>("h0bb")], clock
     _T_615 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_619 = rom[UInt<8>("h0bc")], clock
-    _T_619 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_619 <= UInt<8>("h093") @[Program.scala 35:57]
     infer mport _T_622 = rom[UInt<8>("h0bd")], clock
-    _T_622 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_622 <= UInt<8>("h02") @[Program.scala 36:57]
     infer mport _T_625 = rom[UInt<8>("h0be")], clock
-    _T_625 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_625 <= UInt<8>("h0a0") @[Program.scala 37:57]
     infer mport _T_628 = rom[UInt<8>("h0bf")], clock
     _T_628 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_632 = rom[UInt<8>("h0c0")], clock
-    _T_632 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_632 <= UInt<8>("h023") @[Program.scala 35:57]
     infer mport _T_635 = rom[UInt<8>("h0c1")], clock
-    _T_635 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_635 <= UInt<8>("h080") @[Program.scala 36:57]
     infer mport _T_638 = rom[UInt<8>("h0c2")], clock
-    _T_638 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_638 <= UInt<8>("h059") @[Program.scala 37:57]
     infer mport _T_641 = rom[UInt<8>("h0c3")], clock
     _T_641 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_645 = rom[UInt<8>("h0c4")], clock
-    _T_645 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_645 <= UInt<8>("h093") @[Program.scala 35:57]
     infer mport _T_648 = rom[UInt<8>("h0c5")], clock
-    _T_648 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_648 <= UInt<8>("h02") @[Program.scala 36:57]
     infer mport _T_651 = rom[UInt<8>("h0c6")], clock
-    _T_651 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_651 <= UInt<8>("h0d0") @[Program.scala 37:57]
     infer mport _T_654 = rom[UInt<8>("h0c7")], clock
     _T_654 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_658 = rom[UInt<8>("h0c8")], clock
-    _T_658 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_658 <= UInt<8>("h023") @[Program.scala 35:57]
     infer mport _T_661 = rom[UInt<8>("h0c9")], clock
-    _T_661 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_661 <= UInt<8>("h080") @[Program.scala 36:57]
     infer mport _T_664 = rom[UInt<8>("h0ca")], clock
-    _T_664 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_664 <= UInt<8>("h059") @[Program.scala 37:57]
     infer mport _T_667 = rom[UInt<8>("h0cb")], clock
     _T_667 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_671 = rom[UInt<8>("h0cc")], clock
-    _T_671 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_671 <= UInt<8>("h013") @[Program.scala 35:57]
     infer mport _T_674 = rom[UInt<8>("h0cd")], clock
     _T_674 <= UInt<8>("h00") @[Program.scala 36:57]
     infer mport _T_677 = rom[UInt<8>("h0ce")], clock
@@ -426,13 +426,13 @@ circuit CPU :
     infer mport _T_680 = rom[UInt<8>("h0cf")], clock
     _T_680 <= UInt<8>("h00") @[Program.scala 38:57]
     infer mport _T_684 = rom[UInt<8>("h0d0")], clock
-    _T_684 <= UInt<8>("h00") @[Program.scala 35:57]
+    _T_684 <= UInt<8>("h06f") @[Program.scala 35:57]
     infer mport _T_687 = rom[UInt<8>("h0d1")], clock
-    _T_687 <= UInt<8>("h00") @[Program.scala 36:57]
+    _T_687 <= UInt<8>("h0f0") @[Program.scala 36:57]
     infer mport _T_690 = rom[UInt<8>("h0d2")], clock
-    _T_690 <= UInt<8>("h00") @[Program.scala 37:57]
+    _T_690 <= UInt<8>("h09f") @[Program.scala 37:57]
     infer mport _T_693 = rom[UInt<8>("h0d3")], clock
-    _T_693 <= UInt<8>("h00") @[Program.scala 38:57]
+    _T_693 <= UInt<8>("h0f9") @[Program.scala 38:57]
     infer mport _T_697 = rom[UInt<8>("h0d4")], clock
     _T_697 <= UInt<8>("h00") @[Program.scala 35:57]
     infer mport _T_700 = rom[UInt<8>("h0d5")], clock
@@ -543,20 +543,19 @@ circuit CPU :
   module ProgramCounter : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {flip jump : UInt<1>, flip stall : UInt<1>, flip branch : UInt<1>, flip jump_t : UInt<32>, flip branch_t : UInt<32>, pc_next : UInt<32>, pc : UInt<32>}
+    output io : {flip src_sel : UInt<1>, flip stall : UInt<1>, flip pc_src : UInt<32>, pc_next : UInt<32>, pc : UInt<32>}
     
     clock is invalid
     reset is invalid
     io is invalid
-    reg pc_reg : UInt<32>, clock with : (reset => (reset, UInt<7>("h050"))) @[ProgramCounter.scala 26:30]
-    node pc_src = mux(io.branch, io.branch_t, io.pc_next) @[ProgramCounter.scala 27:30]
-    node _T_11 = add(pc_reg, UInt<3>("h04")) @[ProgramCounter.scala 29:57]
-    node _T_12 = tail(_T_11, 1) @[ProgramCounter.scala 29:57]
-    node _T_13 = mux(io.stall, pc_reg, _T_12) @[ProgramCounter.scala 29:31]
-    io.pc_next <= _T_13 @[ProgramCounter.scala 29:25]
-    node _T_14 = mux(io.jump, io.jump_t, pc_src) @[ProgramCounter.scala 30:31]
-    pc_reg <= _T_14 @[ProgramCounter.scala 30:25]
-    io.pc <= pc_reg @[ProgramCounter.scala 34:25]
+    reg pc_reg : UInt<32>, clock with : (reset => (reset, UInt<7>("h050"))) @[ProgramCounter.scala 23:30]
+    node _T_9 = add(pc_reg, UInt<3>("h04")) @[ProgramCounter.scala 25:57]
+    node _T_10 = tail(_T_9, 1) @[ProgramCounter.scala 25:57]
+    node _T_11 = mux(io.stall, pc_reg, _T_10) @[ProgramCounter.scala 25:31]
+    io.pc_next <= _T_11 @[ProgramCounter.scala 25:25]
+    node _T_12 = mux(io.src_sel, io.pc_src, io.pc_next) @[ProgramCounter.scala 26:31]
+    pc_reg <= _T_12 @[ProgramCounter.scala 26:25]
+    io.pc <= pc_reg @[ProgramCounter.scala 27:25]
     
   module Decoder : 
     input clock : Clock
@@ -644,62 +643,55 @@ circuit CPU :
       skip @[Conditional.scala 29:59]
     node _T_67 = eq(UInt<7>("h06f"), io.ctrl.opcode) @[Conditional.scala 29:28]
     when _T_67 : @[Conditional.scala 29:59]
-      node _T_68 = bits(sign, 10, 0) @[Decoder.scala 52:43]
+      node _T_68 = bits(sign, 11, 0) @[Decoder.scala 52:43]
       node _T_69 = bits(io.inst, 31, 31) @[Decoder.scala 52:58]
       node _T_70 = bits(io.inst, 19, 12) @[Decoder.scala 52:71]
       node _T_71 = bits(io.inst, 20, 20) @[Decoder.scala 52:87]
       node _T_72 = bits(io.inst, 30, 21) @[Decoder.scala 52:100]
-      node _T_74 = cat(_T_71, _T_72) @[Cat.scala 30:58]
-      node _T_75 = cat(_T_74, UInt<1>("h00")) @[Cat.scala 30:58]
-      node _T_76 = cat(_T_68, _T_69) @[Cat.scala 30:58]
-      node _T_77 = cat(_T_76, _T_70) @[Cat.scala 30:58]
-      node _T_78 = cat(_T_77, _T_75) @[Cat.scala 30:58]
-      io.imm <= _T_78 @[Decoder.scala 52:32]
+      node _T_73 = cat(_T_71, _T_72) @[Cat.scala 30:58]
+      node _T_74 = cat(_T_68, _T_69) @[Cat.scala 30:58]
+      node _T_75 = cat(_T_74, _T_70) @[Cat.scala 30:58]
+      node _T_76 = cat(_T_75, _T_73) @[Cat.scala 30:58]
+      io.imm <= _T_76 @[Decoder.scala 52:32]
       skip @[Conditional.scala 29:59]
     
   module Control : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {ctrl : {flip opcode : UInt<7>, flip funct3 : UInt<3>, flip funct7 : UInt<7>}, flip stall : UInt<1>, flip WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, flip MEM : {flip branch : UInt<1>, flip write : UInt<1>, flip read : UInt<1>, flip func : UInt<3>}, flip EX : {flip opcode : UInt<7>, flip alu_sel : UInt<1>, alu_op : {flip func : UInt<3>, flip alt : UInt<1>}}, jump : UInt<1>}
+    output io : {ctrl : {flip opcode : UInt<7>, flip funct3 : UInt<3>, flip funct7 : UInt<7>}, flip flush : UInt<1>, flip WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, flip MEM : {flip func : UInt<3>, flip write : UInt<1>, flip read : UInt<1>}, flip EX : {flip alu_sel : UInt<1>, alu_ctrl : {flip func : UInt<3>, flip alt : UInt<1>, flip flush : UInt<1>}}, jump : UInt<1>}
     
     clock is invalid
     reset is invalid
     io is invalid
-    node _T_30 = eq(io.ctrl.opcode, UInt<7>("h06f")) @[Control.scala 25:79]
-    node _T_31 = mux(io.stall, UInt<1>("h00"), _T_30) @[Control.scala 25:47]
-    io.jump <= _T_31 @[Control.scala 25:41]
-    node _T_32 = neq(io.ctrl.opcode, UInt<6>("h033")) @[Control.scala 27:71]
-    node _T_33 = neq(io.ctrl.opcode, UInt<7>("h063")) @[Control.scala 27:95]
-    node _T_34 = and(_T_32, _T_33) @[Control.scala 27:77]
-    node _T_35 = mux(io.stall, UInt<1>("h00"), _T_34) @[Control.scala 27:39]
-    io.EX.alu_sel <= _T_35 @[Control.scala 27:33]
-    node _T_36 = bits(io.ctrl.funct7, 5, 5) @[Control.scala 28:70]
-    node _T_37 = mux(io.stall, UInt<1>("h00"), _T_36) @[Control.scala 28:39]
-    io.EX.alu_op.alt <= _T_37 @[Control.scala 28:33]
-    node _T_38 = mux(io.stall, UInt<1>("h00"), io.ctrl.funct3) @[Control.scala 29:39]
-    io.EX.alu_op.func <= _T_38 @[Control.scala 29:33]
-    node _T_39 = mux(io.stall, UInt<1>("h00"), io.ctrl.opcode) @[Control.scala 30:39]
-    io.EX.opcode <= _T_39 @[Control.scala 30:33]
-    node _T_40 = mux(io.stall, UInt<1>("h00"), io.ctrl.funct3) @[Control.scala 32:39]
-    io.MEM.func <= _T_40 @[Control.scala 32:33]
-    node _T_41 = eq(io.ctrl.opcode, UInt<2>("h03")) @[Control.scala 33:71]
-    node _T_42 = mux(io.stall, UInt<1>("h00"), _T_41) @[Control.scala 33:39]
-    io.MEM.read <= _T_42 @[Control.scala 33:33]
-    node _T_43 = eq(io.ctrl.opcode, UInt<6>("h023")) @[Control.scala 34:71]
-    node _T_44 = mux(io.stall, UInt<1>("h00"), _T_43) @[Control.scala 34:39]
-    io.MEM.write <= _T_44 @[Control.scala 34:33]
-    node _T_45 = eq(io.ctrl.opcode, UInt<7>("h063")) @[Control.scala 35:71]
-    node _T_46 = mux(io.stall, UInt<1>("h00"), _T_45) @[Control.scala 35:39]
-    io.MEM.branch <= _T_46 @[Control.scala 35:33]
-    node _T_47 = mux(io.stall, UInt<1>("h00"), io.MEM.read) @[Control.scala 38:39]
-    io.WB.rd_mem <= _T_47 @[Control.scala 38:33]
-    node _T_48 = eq(io.ctrl.opcode, UInt<6>("h033")) @[Control.scala 39:71]
-    node _T_49 = eq(io.ctrl.opcode, UInt<5>("h013")) @[Control.scala 40:75]
-    node _T_50 = or(_T_48, _T_49) @[Control.scala 39:77]
-    node _T_51 = eq(io.ctrl.opcode, UInt<2>("h03")) @[Control.scala 40:99]
-    node _T_52 = or(_T_50, _T_51) @[Control.scala 40:81]
-    node _T_53 = mux(io.stall, UInt<1>("h00"), _T_52) @[Control.scala 39:39]
-    io.WB.reg_w <= _T_53 @[Control.scala 39:33]
+    node _T_28 = eq(io.ctrl.opcode, UInt<7>("h06f")) @[Control.scala 25:80]
+    node _T_29 = mux(io.flush, UInt<1>("h00"), _T_28) @[Control.scala 25:48]
+    io.jump <= _T_29 @[Control.scala 25:42]
+    node _T_30 = neq(io.ctrl.opcode, UInt<6>("h033")) @[Control.scala 27:72]
+    node _T_31 = mux(io.flush, UInt<1>("h00"), _T_30) @[Control.scala 27:40]
+    io.EX.alu_sel <= _T_31 @[Control.scala 27:34]
+    node _T_32 = bits(io.ctrl.funct7, 5, 5) @[Control.scala 28:67]
+    node _T_33 = mux(io.flush, UInt<1>("h00"), _T_32) @[Control.scala 28:36]
+    io.EX.alu_ctrl.alt <= _T_33 @[Control.scala 28:30]
+    node _T_34 = mux(io.flush, UInt<1>("h00"), io.ctrl.funct3) @[Control.scala 29:36]
+    io.EX.alu_ctrl.func <= _T_34 @[Control.scala 29:30]
+    io.EX.alu_ctrl.flush <= io.flush @[Control.scala 30:30]
+    node _T_35 = mux(io.flush, UInt<1>("h00"), io.ctrl.funct3) @[Control.scala 32:40]
+    io.MEM.func <= _T_35 @[Control.scala 32:34]
+    node _T_36 = eq(io.ctrl.opcode, UInt<2>("h03")) @[Control.scala 33:72]
+    node _T_37 = mux(io.flush, UInt<1>("h00"), _T_36) @[Control.scala 33:40]
+    io.MEM.read <= _T_37 @[Control.scala 33:34]
+    node _T_38 = eq(io.ctrl.opcode, UInt<6>("h023")) @[Control.scala 34:72]
+    node _T_39 = mux(io.flush, UInt<1>("h00"), _T_38) @[Control.scala 34:40]
+    io.MEM.write <= _T_39 @[Control.scala 34:34]
+    node _T_40 = mux(io.flush, UInt<1>("h00"), io.MEM.read) @[Control.scala 36:40]
+    io.WB.rd_mem <= _T_40 @[Control.scala 36:34]
+    node _T_41 = eq(io.ctrl.opcode, UInt<6>("h033")) @[Control.scala 37:72]
+    node _T_42 = eq(io.ctrl.opcode, UInt<5>("h013")) @[Control.scala 38:80]
+    node _T_43 = or(_T_41, _T_42) @[Control.scala 37:78]
+    node _T_44 = eq(io.ctrl.opcode, UInt<2>("h03")) @[Control.scala 38:104]
+    node _T_45 = or(_T_43, _T_44) @[Control.scala 38:86]
+    node _T_46 = mux(io.flush, UInt<1>("h00"), _T_45) @[Control.scala 37:40]
+    io.WB.reg_w <= _T_46 @[Control.scala 37:34]
     
   module Registers : 
     input clock : Clock
@@ -709,222 +701,250 @@ circuit CPU :
     clock is invalid
     reset is invalid
     io is invalid
-    cmem x : UInt<32>[32] @[Registers.scala 24:16]
-    infer mport _T_15 = x[UInt<1>("h00")], clock
-    _T_15 <= UInt<1>("h00") @[Registers.scala 27:12]
-    when io.reg_w : @[Registers.scala 28:21]
-      infer mport _T_16 = x[io.rd], clock
-      _T_16 <= io.res @[Registers.scala 28:32]
-      skip @[Registers.scala 28:21]
-    node _T_17 = neq(io.res, UInt<1>("h00")) @[Registers.scala 30:39]
-    node _T_18 = and(io.reg_w, _T_17) @[Registers.scala 30:28]
-    node _T_19 = eq(io.rd, io.rs.rs1) @[Registers.scala 30:59]
-    node fwd_rs1 = and(_T_18, _T_19) @[Registers.scala 30:49]
-    node _T_20 = neq(io.res, UInt<1>("h00")) @[Registers.scala 31:39]
-    node _T_21 = and(io.reg_w, _T_20) @[Registers.scala 31:28]
-    node _T_22 = eq(io.rd, io.rs.rs2) @[Registers.scala 31:59]
-    node fwd_rs2 = and(_T_21, _T_22) @[Registers.scala 31:49]
-    infer mport _T_23 = x[io.rs.rs1], clock
-    node _T_24 = mux(fwd_rs1, io.res, _T_23) @[Registers.scala 33:21]
-    io.op.op1 <= _T_24 @[Registers.scala 33:15]
-    infer mport _T_25 = x[io.rs.rs2], clock
-    node _T_26 = mux(fwd_rs2, io.res, _T_25) @[Registers.scala 34:21]
-    io.op.op2 <= _T_26 @[Registers.scala 34:15]
+    wire _T_46 : UInt<32>[32] @[Registers.scala 24:24]
+    _T_46 is invalid @[Registers.scala 24:24]
+    _T_46[0] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[1] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[2] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[3] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[4] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[5] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[6] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[7] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[8] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[9] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[10] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[11] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[12] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[13] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[14] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[15] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[16] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[17] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[18] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[19] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[20] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[21] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[22] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[23] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[24] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[25] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[26] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[27] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[28] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[29] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[30] <= UInt<32>("h00") @[Registers.scala 24:24]
+    _T_46[31] <= UInt<32>("h00") @[Registers.scala 24:24]
+    reg x : UInt<32>[32], clock with : (reset => (reset, _T_46)) @[Registers.scala 24:20]
+    node _T_249 = neq(io.res, UInt<1>("h00")) @[Registers.scala 26:39]
+    node _T_250 = and(io.reg_w, _T_249) @[Registers.scala 26:28]
+    node _T_251 = eq(io.rd, io.rs.rs1) @[Registers.scala 26:59]
+    node fwd_rs1 = and(_T_250, _T_251) @[Registers.scala 26:49]
+    node _T_252 = neq(io.res, UInt<1>("h00")) @[Registers.scala 27:39]
+    node _T_253 = and(io.reg_w, _T_252) @[Registers.scala 27:28]
+    node _T_254 = eq(io.rd, io.rs.rs2) @[Registers.scala 27:59]
+    node fwd_rs2 = and(_T_253, _T_254) @[Registers.scala 27:49]
+    x[UInt<1>("h00")] <= UInt<1>("h00") @[Registers.scala 29:13]
+    node _T_261 = mux(fwd_rs1, io.res, x[io.rs.rs1]) @[Registers.scala 31:21]
+    io.op.op1 <= _T_261 @[Registers.scala 31:15]
+    node _T_265 = mux(fwd_rs2, io.res, x[io.rs.rs2]) @[Registers.scala 32:21]
+    io.op.op2 <= _T_265 @[Registers.scala 32:15]
+    when io.reg_w : @[Registers.scala 34:21]
+      x[io.rd] <= io.res @[Registers.scala 34:32]
+      skip @[Registers.scala 34:21]
     
   module ALU : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {flip opcode : UInt<7>, alu_op : {flip func : UInt<3>, flip alt : UInt<1>}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, zero : UInt<1>, res : UInt<32>}
+    output io : {op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, alu_ctrl : {flip func : UInt<3>, flip alt : UInt<1>, flip flush : UInt<1>}, res : UInt<32>}
     
     clock is invalid
     reset is invalid
     io is invalid
-    node shamt = bits(io.op.op2, 4, 0) @[ALU.scala 28:20]
-    node _T_9 = sub(io.op.op1, io.op.op2) @[ALU.scala 33:47]
-    node _T_10 = asUInt(_T_9) @[ALU.scala 33:47]
-    node _T_11 = tail(_T_10, 1) @[ALU.scala 33:47]
-    node _T_12 = add(io.op.op1, io.op.op2) @[ALU.scala 33:58]
-    node _T_13 = tail(_T_12, 1) @[ALU.scala 33:58]
-    node _T_14 = mux(io.alu_op.alt, _T_11, _T_13) @[ALU.scala 33:27]
-    node _T_15 = dshl(io.op.op1, shamt) @[ALU.scala 34:29]
-    node _T_16 = lt(io.op.op1, io.op.op2) @[ALU.scala 36:29]
-    node _T_17 = xor(io.op.op1, io.op.op2) @[ALU.scala 37:29]
-    node _T_18 = dshr(io.op.op1, shamt) @[ALU.scala 38:53]
-    node _T_19 = mux(io.alu_op.alt, UInt<1>("h00"), _T_18) @[ALU.scala 38:27]
-    node _T_20 = or(io.op.op1, io.op.op2) @[ALU.scala 39:29]
-    node _T_21 = eq(UInt<3>("h06"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_22 = mux(_T_21, _T_20, UInt<1>("h00")) @[Mux.scala 46:16]
-    node _T_23 = eq(UInt<3>("h05"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_24 = mux(_T_23, _T_19, _T_22) @[Mux.scala 46:16]
-    node _T_25 = eq(UInt<3>("h04"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_26 = mux(_T_25, _T_17, _T_24) @[Mux.scala 46:16]
-    node _T_27 = eq(UInt<2>("h03"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_28 = mux(_T_27, _T_16, _T_26) @[Mux.scala 46:16]
-    node _T_29 = eq(UInt<1>("h01"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_30 = mux(_T_29, _T_15, _T_28) @[Mux.scala 46:16]
-    node _T_31 = eq(UInt<1>("h00"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_32 = mux(_T_31, _T_14, _T_30) @[Mux.scala 46:16]
-    node _T_33 = add(io.op.op1, io.op.op2) @[ALU.scala 41:29]
-    node _T_34 = tail(_T_33, 1) @[ALU.scala 41:29]
-    node _T_35 = dshl(io.op.op1, shamt) @[ALU.scala 42:29]
-    node _T_36 = lt(io.op.op1, io.op.op2) @[ALU.scala 44:29]
-    node _T_37 = xor(io.op.op1, io.op.op2) @[ALU.scala 45:29]
-    node _T_38 = dshr(io.op.op1, shamt) @[ALU.scala 46:53]
-    node _T_39 = mux(io.alu_op.alt, UInt<1>("h00"), _T_38) @[ALU.scala 46:27]
-    node _T_40 = or(io.op.op1, io.op.op2) @[ALU.scala 47:29]
-    node _T_41 = eq(UInt<3>("h06"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_42 = mux(_T_41, _T_40, UInt<1>("h00")) @[Mux.scala 46:16]
-    node _T_43 = eq(UInt<3>("h05"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_44 = mux(_T_43, _T_39, _T_42) @[Mux.scala 46:16]
-    node _T_45 = eq(UInt<3>("h04"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_46 = mux(_T_45, _T_37, _T_44) @[Mux.scala 46:16]
-    node _T_47 = eq(UInt<2>("h03"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_48 = mux(_T_47, _T_36, _T_46) @[Mux.scala 46:16]
-    node _T_49 = eq(UInt<1>("h01"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_50 = mux(_T_49, _T_35, _T_48) @[Mux.scala 46:16]
-    node _T_51 = eq(UInt<1>("h00"), io.alu_op.func) @[Mux.scala 46:19]
-    node _T_52 = mux(_T_51, _T_34, _T_50) @[Mux.scala 46:16]
-    node _T_53 = add(io.op.op1, io.op.op2) @[ALU.scala 48:19]
-    node _T_54 = tail(_T_53, 1) @[ALU.scala 48:19]
-    node _T_55 = add(io.op.op1, io.op.op2) @[ALU.scala 49:19]
-    node _T_56 = tail(_T_55, 1) @[ALU.scala 49:19]
-    node _T_57 = sub(io.op.op1, io.op.op2) @[ALU.scala 50:19]
-    node _T_58 = asUInt(_T_57) @[ALU.scala 50:19]
-    node _T_59 = tail(_T_58, 1) @[ALU.scala 50:19]
-    node _T_60 = eq(UInt<7>("h063"), io.opcode) @[Mux.scala 46:19]
-    node _T_61 = mux(_T_60, _T_59, UInt<1>("h00")) @[Mux.scala 46:16]
-    node _T_62 = eq(UInt<6>("h023"), io.opcode) @[Mux.scala 46:19]
-    node _T_63 = mux(_T_62, _T_56, _T_61) @[Mux.scala 46:16]
-    node _T_64 = eq(UInt<2>("h03"), io.opcode) @[Mux.scala 46:19]
-    node _T_65 = mux(_T_64, _T_54, _T_63) @[Mux.scala 46:16]
-    node _T_66 = eq(UInt<5>("h013"), io.opcode) @[Mux.scala 46:19]
-    node _T_67 = mux(_T_66, _T_52, _T_65) @[Mux.scala 46:16]
-    node _T_68 = eq(UInt<6>("h033"), io.opcode) @[Mux.scala 46:19]
-    node _T_69 = mux(_T_68, _T_32, _T_67) @[Mux.scala 46:16]
-    io.res <= _T_69 @[ALU.scala 30:12]
-    node _T_70 = eq(io.res, UInt<1>("h00")) @[ALU.scala 62:23]
-    io.zero <= _T_70 @[ALU.scala 62:13]
+    node shamt = bits(io.op.op2, 4, 0) @[ALU.scala 25:22]
+    node _T_8 = sub(io.op.op1, io.op.op2) @[ALU.scala 26:23]
+    node _T_9 = asUInt(_T_8) @[ALU.scala 26:23]
+    node compare = tail(_T_9, 1) @[ALU.scala 26:23]
+    node _T_10 = add(io.op.op1, io.op.op2) @[ALU.scala 28:76]
+    node _T_11 = tail(_T_10, 1) @[ALU.scala 28:76]
+    node _T_12 = sub(io.op.op1, io.op.op2) @[ALU.scala 29:45]
+    node _T_13 = asUInt(_T_12) @[ALU.scala 29:45]
+    node _T_14 = tail(_T_13, 1) @[ALU.scala 29:45]
+    node _T_15 = add(io.op.op1, io.op.op2) @[ALU.scala 29:56]
+    node _T_16 = tail(_T_15, 1) @[ALU.scala 29:56]
+    node _T_17 = mux(io.alu_ctrl.alt, _T_14, _T_16) @[ALU.scala 29:23]
+    node _T_18 = dshl(io.op.op1, shamt) @[ALU.scala 30:25]
+    node _T_19 = bits(compare, 31, 31) @[ALU.scala 31:27]
+    node _T_20 = lt(io.op.op1, io.op.op2) @[ALU.scala 32:25]
+    node _T_21 = xor(io.op.op1, io.op.op2) @[ALU.scala 33:25]
+    node _T_22 = dshr(io.op.op1, shamt) @[ALU.scala 34:25]
+    node _T_23 = or(io.op.op1, io.op.op2) @[ALU.scala 35:25]
+    node _T_24 = and(io.op.op1, io.op.op2) @[ALU.scala 36:25]
+    node _T_25 = eq(UInt<3>("h07"), io.alu_ctrl.func) @[Mux.scala 46:19]
+    node _T_26 = mux(_T_25, _T_24, _T_11) @[Mux.scala 46:16]
+    node _T_27 = eq(UInt<3>("h06"), io.alu_ctrl.func) @[Mux.scala 46:19]
+    node _T_28 = mux(_T_27, _T_23, _T_26) @[Mux.scala 46:16]
+    node _T_29 = eq(UInt<3>("h05"), io.alu_ctrl.func) @[Mux.scala 46:19]
+    node _T_30 = mux(_T_29, _T_22, _T_28) @[Mux.scala 46:16]
+    node _T_31 = eq(UInt<3>("h04"), io.alu_ctrl.func) @[Mux.scala 46:19]
+    node _T_32 = mux(_T_31, _T_21, _T_30) @[Mux.scala 46:16]
+    node _T_33 = eq(UInt<2>("h03"), io.alu_ctrl.func) @[Mux.scala 46:19]
+    node _T_34 = mux(_T_33, _T_20, _T_32) @[Mux.scala 46:16]
+    node _T_35 = eq(UInt<2>("h02"), io.alu_ctrl.func) @[Mux.scala 46:19]
+    node _T_36 = mux(_T_35, _T_19, _T_34) @[Mux.scala 46:16]
+    node _T_37 = eq(UInt<1>("h01"), io.alu_ctrl.func) @[Mux.scala 46:19]
+    node _T_38 = mux(_T_37, _T_18, _T_36) @[Mux.scala 46:16]
+    node _T_39 = eq(UInt<1>("h00"), io.alu_ctrl.func) @[Mux.scala 46:19]
+    node _T_40 = mux(_T_39, _T_17, _T_38) @[Mux.scala 46:16]
+    node _T_41 = mux(io.alu_ctrl.flush, UInt<1>("h00"), _T_40) @[ALU.scala 28:18]
+    io.res <= _T_41 @[ALU.scala 28:12]
     
   module DataMemory : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {mem : {flip branch : UInt<1>, flip write : UInt<1>, flip read : UInt<1>, flip func : UInt<3>}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, flip tx_req : UInt<1>, flip rx : UInt<8>, res : UInt<32>, tx : UInt<8>, rx_out : UInt<8>, rx_cnt : UInt<8>}
+    output io : {mem : {flip func : UInt<3>, flip write : UInt<1>, flip read : UInt<1>}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, flip tx_req : UInt<1>, flip rx : UInt<8>, res : UInt<32>, tx : UInt<8>, rx_out : UInt<8>, rx_cnt : UInt<8>}
     
     clock is invalid
     reset is invalid
     io is invalid
     cmem data_mem : UInt<8>[512] @[DataMemory.scala 29:27]
     reg rx_cnt : UInt<4>, clock with : (reset => (reset, UInt<1>("h00"))) @[DataMemory.scala 30:31]
-    when io.mem.write : @[DataMemory.scala 32:29]
+    reg rx_out : UInt<8>, clock with : (reset => (reset, UInt<1>("h00"))) @[DataMemory.scala 31:31]
+    when io.mem.write : @[DataMemory.scala 33:29]
       node _T_17 = eq(UInt<1>("h00"), io.mem.func) @[Conditional.scala 29:28]
       when _T_17 : @[Conditional.scala 29:59]
         node _T_18 = bits(io.op.op1, 8, 0)
         infer mport _T_19 = data_mem[_T_18], clock
-        node _T_20 = bits(io.op.op2, 7, 0) @[DataMemory.scala 35:65]
-        _T_19 <= _T_20 @[DataMemory.scala 35:53]
+        node _T_20 = bits(io.op.op2, 7, 0) @[DataMemory.scala 36:65]
+        _T_19 <= _T_20 @[DataMemory.scala 36:53]
         skip @[Conditional.scala 29:59]
-      node _T_21 = eq(UInt<1>("h01"), io.mem.func) @[Conditional.scala 29:28]
+      node _T_21 = eq(UInt<3>("h04"), io.mem.func) @[Conditional.scala 29:28]
       when _T_21 : @[Conditional.scala 29:59]
         node _T_22 = bits(io.op.op1, 8, 0)
         infer mport _T_23 = data_mem[_T_22], clock
-        node _T_24 = bits(io.op.op2, 7, 0) @[DataMemory.scala 37:71]
-        _T_23 <= _T_24 @[DataMemory.scala 37:59]
-        node _T_26 = add(io.op.op1, UInt<1>("h01")) @[DataMemory.scala 38:52]
-        node _T_27 = tail(_T_26, 1) @[DataMemory.scala 38:52]
-        node _T_28 = bits(_T_27, 8, 0)
-        infer mport _T_29 = data_mem[_T_28], clock
-        node _T_30 = bits(io.op.op2, 15, 8) @[DataMemory.scala 38:71]
-        _T_29 <= _T_30 @[DataMemory.scala 38:59]
+        node _T_24 = bits(io.op.op2, 7, 0) @[DataMemory.scala 38:65]
+        _T_23 <= _T_24 @[DataMemory.scala 38:53]
         skip @[Conditional.scala 29:59]
-      node _T_31 = eq(UInt<2>("h02"), io.mem.func) @[Conditional.scala 29:28]
-      when _T_31 : @[Conditional.scala 29:59]
-        node _T_32 = bits(io.op.op1, 8, 0)
+      node _T_25 = eq(UInt<1>("h01"), io.mem.func) @[Conditional.scala 29:28]
+      when _T_25 : @[Conditional.scala 29:59]
+        node _T_26 = bits(io.op.op1, 8, 0)
+        infer mport _T_27 = data_mem[_T_26], clock
+        node _T_28 = bits(io.op.op2, 7, 0) @[DataMemory.scala 40:71]
+        _T_27 <= _T_28 @[DataMemory.scala 40:59]
+        node _T_30 = add(io.op.op1, UInt<1>("h01")) @[DataMemory.scala 41:52]
+        node _T_31 = tail(_T_30, 1) @[DataMemory.scala 41:52]
+        node _T_32 = bits(_T_31, 8, 0)
         infer mport _T_33 = data_mem[_T_32], clock
-        node _T_34 = bits(io.op.op2, 7, 0) @[DataMemory.scala 40:71]
-        _T_33 <= _T_34 @[DataMemory.scala 40:59]
-        node _T_36 = add(io.op.op1, UInt<1>("h01")) @[DataMemory.scala 41:52]
-        node _T_37 = tail(_T_36, 1) @[DataMemory.scala 41:52]
-        node _T_38 = bits(_T_37, 8, 0)
-        infer mport _T_39 = data_mem[_T_38], clock
-        node _T_40 = bits(io.op.op2, 15, 8) @[DataMemory.scala 41:71]
-        _T_39 <= _T_40 @[DataMemory.scala 41:59]
-        node _T_42 = add(io.op.op1, UInt<2>("h02")) @[DataMemory.scala 42:52]
-        node _T_43 = tail(_T_42, 1) @[DataMemory.scala 42:52]
-        node _T_44 = bits(_T_43, 8, 0)
-        infer mport _T_45 = data_mem[_T_44], clock
-        node _T_46 = bits(io.op.op2, 23, 16) @[DataMemory.scala 42:71]
-        _T_45 <= _T_46 @[DataMemory.scala 42:59]
-        node _T_48 = add(io.op.op1, UInt<2>("h03")) @[DataMemory.scala 43:52]
-        node _T_49 = tail(_T_48, 1) @[DataMemory.scala 43:52]
-        node _T_50 = bits(_T_49, 8, 0)
-        infer mport _T_51 = data_mem[_T_50], clock
-        node _T_52 = bits(io.op.op2, 31, 24) @[DataMemory.scala 43:71]
-        _T_51 <= _T_52 @[DataMemory.scala 43:59]
+        node _T_34 = bits(io.op.op2, 15, 8) @[DataMemory.scala 41:71]
+        _T_33 <= _T_34 @[DataMemory.scala 41:59]
         skip @[Conditional.scala 29:59]
-      skip @[DataMemory.scala 32:29]
-    when io.mem.read : @[DataMemory.scala 47:28]
-      node _T_53 = eq(UInt<1>("h00"), io.mem.func) @[Conditional.scala 29:28]
-      when _T_53 : @[Conditional.scala 29:59]
-        node _T_54 = bits(io.op.op1, 8, 0)
-        infer mport _T_55 = data_mem[_T_54], clock
-        io.res <= _T_55 @[DataMemory.scala 50:40]
+      node _T_35 = eq(UInt<3>("h05"), io.mem.func) @[Conditional.scala 29:28]
+      when _T_35 : @[Conditional.scala 29:59]
+        node _T_36 = bits(io.op.op1, 8, 0)
+        infer mport _T_37 = data_mem[_T_36], clock
+        node _T_38 = bits(io.op.op2, 7, 0) @[DataMemory.scala 43:71]
+        _T_37 <= _T_38 @[DataMemory.scala 43:59]
+        node _T_40 = add(io.op.op1, UInt<1>("h01")) @[DataMemory.scala 44:52]
+        node _T_41 = tail(_T_40, 1) @[DataMemory.scala 44:52]
+        node _T_42 = bits(_T_41, 8, 0)
+        infer mport _T_43 = data_mem[_T_42], clock
+        node _T_44 = bits(io.op.op2, 15, 8) @[DataMemory.scala 44:71]
+        _T_43 <= _T_44 @[DataMemory.scala 44:59]
         skip @[Conditional.scala 29:59]
-      node _T_56 = eq(UInt<1>("h01"), io.mem.func) @[Conditional.scala 29:28]
-      when _T_56 : @[Conditional.scala 29:59]
-        node _T_58 = add(io.op.op1, UInt<1>("h01")) @[DataMemory.scala 52:66]
-        node _T_59 = tail(_T_58, 1) @[DataMemory.scala 52:66]
-        node _T_60 = bits(_T_59, 8, 0)
-        infer mport _T_61 = data_mem[_T_60], clock
-        node _T_62 = bits(io.op.op1, 8, 0)
-        infer mport _T_63 = data_mem[_T_62], clock
-        node _T_64 = cat(_T_61, _T_63) @[Cat.scala 30:58]
-        io.res <= _T_64 @[DataMemory.scala 52:40]
+      node _T_45 = eq(UInt<2>("h02"), io.mem.func) @[Conditional.scala 29:28]
+      when _T_45 : @[Conditional.scala 29:59]
+        node _T_46 = bits(io.op.op1, 8, 0)
+        infer mport _T_47 = data_mem[_T_46], clock
+        node _T_48 = bits(io.op.op2, 7, 0) @[DataMemory.scala 46:71]
+        _T_47 <= _T_48 @[DataMemory.scala 46:59]
+        node _T_50 = add(io.op.op1, UInt<1>("h01")) @[DataMemory.scala 47:52]
+        node _T_51 = tail(_T_50, 1) @[DataMemory.scala 47:52]
+        node _T_52 = bits(_T_51, 8, 0)
+        infer mport _T_53 = data_mem[_T_52], clock
+        node _T_54 = bits(io.op.op2, 15, 8) @[DataMemory.scala 47:71]
+        _T_53 <= _T_54 @[DataMemory.scala 47:59]
+        node _T_56 = add(io.op.op1, UInt<2>("h02")) @[DataMemory.scala 48:52]
+        node _T_57 = tail(_T_56, 1) @[DataMemory.scala 48:52]
+        node _T_58 = bits(_T_57, 8, 0)
+        infer mport _T_59 = data_mem[_T_58], clock
+        node _T_60 = bits(io.op.op2, 23, 16) @[DataMemory.scala 48:71]
+        _T_59 <= _T_60 @[DataMemory.scala 48:59]
+        node _T_62 = add(io.op.op1, UInt<2>("h03")) @[DataMemory.scala 49:52]
+        node _T_63 = tail(_T_62, 1) @[DataMemory.scala 49:52]
+        node _T_64 = bits(_T_63, 8, 0)
+        infer mport _T_65 = data_mem[_T_64], clock
+        node _T_66 = bits(io.op.op2, 31, 24) @[DataMemory.scala 49:71]
+        _T_65 <= _T_66 @[DataMemory.scala 49:59]
         skip @[Conditional.scala 29:59]
-      node _T_65 = eq(UInt<2>("h02"), io.mem.func) @[Conditional.scala 29:28]
-      when _T_65 : @[Conditional.scala 29:59]
-        node _T_67 = add(io.op.op1, UInt<2>("h03")) @[DataMemory.scala 55:66]
-        node _T_68 = tail(_T_67, 1) @[DataMemory.scala 55:66]
-        node _T_69 = bits(_T_68, 8, 0)
-        infer mport _T_70 = data_mem[_T_69], clock
-        node _T_72 = add(io.op.op1, UInt<2>("h02")) @[DataMemory.scala 56:74]
-        node _T_73 = tail(_T_72, 1) @[DataMemory.scala 56:74]
+      skip @[DataMemory.scala 33:29]
+    when io.mem.read : @[DataMemory.scala 53:28]
+      node _T_67 = eq(UInt<1>("h00"), io.mem.func) @[Conditional.scala 29:28]
+      when _T_67 : @[Conditional.scala 29:59]
+        node _T_68 = bits(io.op.op1, 8, 0)
+        infer mport _T_69 = data_mem[_T_68], clock
+        io.res <= _T_69 @[DataMemory.scala 56:40]
+        skip @[Conditional.scala 29:59]
+      node _T_70 = eq(UInt<1>("h01"), io.mem.func) @[Conditional.scala 29:28]
+      when _T_70 : @[Conditional.scala 29:59]
+        node _T_72 = add(io.op.op1, UInt<1>("h01")) @[DataMemory.scala 58:66]
+        node _T_73 = tail(_T_72, 1) @[DataMemory.scala 58:66]
         node _T_74 = bits(_T_73, 8, 0)
         infer mport _T_75 = data_mem[_T_74], clock
-        node _T_77 = add(io.op.op1, UInt<1>("h01")) @[DataMemory.scala 57:78]
-        node _T_78 = tail(_T_77, 1) @[DataMemory.scala 57:78]
-        node _T_79 = bits(_T_78, 8, 0)
-        infer mport _T_80 = data_mem[_T_79], clock
-        node _T_81 = bits(io.op.op1, 8, 0)
-        infer mport _T_82 = data_mem[_T_81], clock
-        node _T_83 = cat(_T_80, _T_82) @[Cat.scala 30:58]
-        node _T_84 = cat(_T_70, _T_75) @[Cat.scala 30:58]
-        node _T_85 = cat(_T_84, _T_83) @[Cat.scala 30:58]
-        io.res <= _T_85 @[DataMemory.scala 55:40]
+        node _T_76 = bits(io.op.op1, 8, 0)
+        infer mport _T_77 = data_mem[_T_76], clock
+        node _T_78 = cat(_T_75, _T_77) @[Cat.scala 30:58]
+        io.res <= _T_78 @[DataMemory.scala 58:40]
         skip @[Conditional.scala 29:59]
-      skip @[DataMemory.scala 47:28]
-    node _T_87 = eq(io.mem.read, UInt<1>("h00")) @[DataMemory.scala 47:28]
-    when _T_87 : @[DataMemory.scala 61:22]
-      io.res <= UInt<1>("h00") @[DataMemory.scala 61:31]
-      skip @[DataMemory.scala 61:22]
-    node _T_88 = eq(io.op.op1, UInt<10>("h0200")) @[DataMemory.scala 63:33]
-    node _T_90 = eq(io.tx_req, UInt<1>("h00")) @[DataMemory.scala 63:49]
-    node _T_91 = and(_T_88, _T_90) @[DataMemory.scala 63:46]
-    node _T_92 = mux(_T_91, io.op.op2, UInt<1>("h00")) @[DataMemory.scala 63:21]
-    io.tx <= _T_92 @[DataMemory.scala 63:15]
-    node _T_93 = neq(io.rx, UInt<1>("h00")) @[DataMemory.scala 65:21]
-    when _T_93 : @[DataMemory.scala 65:31]
-      node _T_95 = add(rx_cnt, UInt<1>("h01")) @[DataMemory.scala 66:34]
-      node _T_96 = tail(_T_95, 1) @[DataMemory.scala 66:34]
-      rx_cnt <= _T_96 @[DataMemory.scala 66:24]
-      infer mport _T_97 = data_mem[UInt<9>("h01ff")], clock
-      _T_97 <= rx_cnt @[DataMemory.scala 67:35]
-      infer mport _T_98 = data_mem[UInt<9>("h01ef")], clock
-      _T_98 <= io.rx @[DataMemory.scala 68:35]
-      skip @[DataMemory.scala 65:31]
-    infer mport _T_99 = data_mem[UInt<9>("h01ff")], clock
-    io.rx_cnt <= _T_99 @[DataMemory.scala 71:19]
-    infer mport _T_100 = data_mem[UInt<9>("h01ef")], clock
-    io.rx_out <= _T_100 @[DataMemory.scala 72:19]
+      node _T_79 = eq(UInt<2>("h02"), io.mem.func) @[Conditional.scala 29:28]
+      when _T_79 : @[Conditional.scala 29:59]
+        node _T_81 = add(io.op.op1, UInt<2>("h03")) @[DataMemory.scala 61:66]
+        node _T_82 = tail(_T_81, 1) @[DataMemory.scala 61:66]
+        node _T_83 = bits(_T_82, 8, 0)
+        infer mport _T_84 = data_mem[_T_83], clock
+        node _T_86 = add(io.op.op1, UInt<2>("h02")) @[DataMemory.scala 62:74]
+        node _T_87 = tail(_T_86, 1) @[DataMemory.scala 62:74]
+        node _T_88 = bits(_T_87, 8, 0)
+        infer mport _T_89 = data_mem[_T_88], clock
+        node _T_91 = add(io.op.op1, UInt<1>("h01")) @[DataMemory.scala 63:78]
+        node _T_92 = tail(_T_91, 1) @[DataMemory.scala 63:78]
+        node _T_93 = bits(_T_92, 8, 0)
+        infer mport _T_94 = data_mem[_T_93], clock
+        node _T_95 = bits(io.op.op1, 8, 0)
+        infer mport _T_96 = data_mem[_T_95], clock
+        node _T_97 = cat(_T_94, _T_96) @[Cat.scala 30:58]
+        node _T_98 = cat(_T_84, _T_89) @[Cat.scala 30:58]
+        node _T_99 = cat(_T_98, _T_97) @[Cat.scala 30:58]
+        io.res <= _T_99 @[DataMemory.scala 61:40]
+        skip @[Conditional.scala 29:59]
+      skip @[DataMemory.scala 53:28]
+    node _T_101 = eq(io.mem.read, UInt<1>("h00")) @[DataMemory.scala 53:28]
+    when _T_101 : @[DataMemory.scala 67:22]
+      io.res <= UInt<1>("h00") @[DataMemory.scala 67:31]
+      skip @[DataMemory.scala 67:22]
+    node _T_102 = eq(io.op.op1, UInt<10>("h0200")) @[DataMemory.scala 69:33]
+    node _T_104 = eq(io.tx_req, UInt<1>("h00")) @[DataMemory.scala 69:49]
+    node _T_105 = and(_T_102, _T_104) @[DataMemory.scala 69:46]
+    node _T_106 = mux(_T_105, io.op.op2, UInt<1>("h00")) @[DataMemory.scala 69:21]
+    io.tx <= _T_106 @[DataMemory.scala 69:15]
+    node _T_107 = neq(io.rx, UInt<1>("h00")) @[DataMemory.scala 71:21]
+    when _T_107 : @[DataMemory.scala 71:31]
+      infer mport _T_108 = data_mem[UInt<9>("h01ff")], clock
+      infer mport _T_109 = data_mem[UInt<9>("h01ff")], clock
+      node _T_111 = add(_T_109, UInt<1>("h01")) @[DataMemory.scala 72:54]
+      node _T_112 = tail(_T_111, 1) @[DataMemory.scala 72:54]
+      _T_108 <= _T_112 @[DataMemory.scala 72:34]
+      infer mport _T_113 = data_mem[UInt<9>("h01ff")], clock
+      node _T_114 = add(UInt<9>("h01ef"), _T_113) @[DataMemory.scala 73:34]
+      node _T_115 = tail(_T_114, 1) @[DataMemory.scala 73:34]
+      node _T_117 = add(_T_115, UInt<1>("h01")) @[DataMemory.scala 73:54]
+      node _T_118 = tail(_T_117, 1) @[DataMemory.scala 73:54]
+      infer mport _T_119 = data_mem[_T_118], clock
+      _T_119 <= io.rx @[DataMemory.scala 73:61]
+      rx_out <= io.rx @[DataMemory.scala 74:24]
+      skip @[DataMemory.scala 71:31]
+    infer mport _T_120 = data_mem[UInt<9>("h01ff")], clock
+    io.rx_cnt <= _T_120 @[DataMemory.scala 77:19]
+    io.rx_out <= rx_out @[DataMemory.scala 78:19]
     
   module ForwardingUnit : 
     input clock : Clock
@@ -982,18 +1002,17 @@ circuit CPU :
   module DetectHazardUnit : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {rs_id : {flip rs1 : UInt<5>, flip rs2 : UInt<5>}, flip rd_ex : UInt<5>, flip mem_r : UInt<1>, flip tx_req : UInt<1>, stall : UInt<1>, flip branch : UInt<1>}
+    output io : {rs_id : {flip rs1 : UInt<5>, flip rs2 : UInt<5>}, flip rd_ex : UInt<5>, flip mem_r : UInt<1>, flip tx_req : UInt<1>, stall : UInt<1>}
     
     clock is invalid
     reset is invalid
     io is invalid
-    node _T_9 = eq(io.rd_ex, io.rs_id.rs1) @[DetectHazardUnit.scala 26:45]
-    node _T_10 = eq(io.rd_ex, io.rs_id.rs2) @[DetectHazardUnit.scala 26:76]
-    node _T_11 = or(_T_9, _T_10) @[DetectHazardUnit.scala 26:63]
-    node _T_12 = and(io.mem_r, _T_11) @[DetectHazardUnit.scala 26:31]
-    node _T_13 = or(_T_12, io.tx_req) @[DetectHazardUnit.scala 26:96]
-    node _T_14 = or(_T_13, io.branch) @[DetectHazardUnit.scala 26:109]
-    io.stall <= _T_14 @[DetectHazardUnit.scala 26:18]
+    node _T_8 = eq(io.rd_ex, io.rs_id.rs1) @[DetectHazardUnit.scala 24:45]
+    node _T_9 = eq(io.rd_ex, io.rs_id.rs2) @[DetectHazardUnit.scala 24:76]
+    node _T_10 = or(_T_8, _T_9) @[DetectHazardUnit.scala 24:63]
+    node _T_11 = and(io.mem_r, _T_10) @[DetectHazardUnit.scala 24:31]
+    node _T_12 = or(_T_11, io.tx_req) @[DetectHazardUnit.scala 24:96]
+    io.stall <= _T_12 @[DetectHazardUnit.scala 24:18]
     
   module Rx : 
     input clock : Clock
@@ -1003,33 +1022,33 @@ circuit CPU :
     clock is invalid
     reset is invalid
     io is invalid
-    node TICK_HALF = div(UInt<9>("h01b2"), UInt<2>("h02")) @[UART.scala 101:29]
-    reg data : UInt<9>, clock with : (reset => (reset, UInt<9>("h01ff"))) @[UART.scala 105:28]
-    reg ticks : UInt<32>, clock with : (reset => (reset, TICK_HALF)) @[UART.scala 106:28]
-    reg state : UInt<4>, clock with : (reset => (reset, UInt<4>("h00"))) @[UART.scala 107:28]
-    reg valid : UInt<1>, clock with : (reset => (reset, UInt<1>("h01"))) @[UART.scala 108:28]
-    node _T_13 = and(valid, io.deq.ready) @[UART.scala 110:17]
-    when _T_13 : @[UART.scala 110:34]
-      valid <= UInt<1>("h00") @[UART.scala 111:15]
-      skip @[UART.scala 110:34]
+    node TICK_HALF = div(UInt<9>("h01b2"), UInt<2>("h02")) @[UART.scala 96:29]
+    reg data : UInt<9>, clock with : (reset => (reset, UInt<9>("h01ff"))) @[UART.scala 100:28]
+    reg ticks : UInt<32>, clock with : (reset => (reset, TICK_HALF)) @[UART.scala 101:28]
+    reg state : UInt<4>, clock with : (reset => (reset, UInt<4>("h00"))) @[UART.scala 102:28]
+    reg valid : UInt<1>, clock with : (reset => (reset, UInt<1>("h01"))) @[UART.scala 103:28]
+    node _T_13 = and(valid, io.deq.ready) @[UART.scala 105:17]
+    when _T_13 : @[UART.scala 105:34]
+      valid <= UInt<1>("h00") @[UART.scala 106:15]
+      skip @[UART.scala 105:34]
     node _T_14 = eq(UInt<4>("h00"), state) @[Conditional.scala 29:28]
     when _T_14 : @[Conditional.scala 29:59]
-      node _T_15 = eq(io.rxd, UInt<1>("h00")) @[UART.scala 116:26]
-      when _T_15 : @[UART.scala 116:36]
-        node _T_16 = neq(ticks, UInt<1>("h00")) @[UART.scala 117:29]
-        when _T_16 : @[UART.scala 117:38]
-          node _T_18 = sub(ticks, UInt<1>("h01")) @[UART.scala 118:36]
-          node _T_19 = asUInt(_T_18) @[UART.scala 118:36]
-          node _T_20 = tail(_T_19, 1) @[UART.scala 118:36]
-          ticks <= _T_20 @[UART.scala 118:27]
-          skip @[UART.scala 117:38]
-        node _T_22 = eq(_T_16, UInt<1>("h00")) @[UART.scala 117:38]
-        when _T_22 : @[UART.scala 119:30]
-          ticks <= UInt<9>("h01b2") @[UART.scala 120:27]
-          state <= UInt<4>("h0a") @[UART.scala 121:27]
-          valid <= UInt<1>("h00") @[UART.scala 122:27]
-          skip @[UART.scala 119:30]
-        skip @[UART.scala 116:36]
+      node _T_15 = eq(io.rxd, UInt<1>("h00")) @[UART.scala 111:26]
+      when _T_15 : @[UART.scala 111:36]
+        node _T_16 = neq(ticks, UInt<1>("h00")) @[UART.scala 112:29]
+        when _T_16 : @[UART.scala 112:38]
+          node _T_18 = sub(ticks, UInt<1>("h01")) @[UART.scala 113:36]
+          node _T_19 = asUInt(_T_18) @[UART.scala 113:36]
+          node _T_20 = tail(_T_19, 1) @[UART.scala 113:36]
+          ticks <= _T_20 @[UART.scala 113:27]
+          skip @[UART.scala 112:38]
+        node _T_22 = eq(_T_16, UInt<1>("h00")) @[UART.scala 112:38]
+        when _T_22 : @[UART.scala 114:30]
+          ticks <= UInt<9>("h01b2") @[UART.scala 115:27]
+          state <= UInt<4>("h0a") @[UART.scala 116:27]
+          valid <= UInt<1>("h00") @[UART.scala 117:27]
+          skip @[UART.scala 114:30]
+        skip @[UART.scala 111:36]
       skip @[Conditional.scala 29:59]
     node _T_23 = eq(UInt<4>("h02"), state) @[Conditional.scala 29:28]
     node _T_24 = eq(UInt<4>("h03"), state) @[Conditional.scala 29:28]
@@ -1049,57 +1068,57 @@ circuit CPU :
     node _T_38 = or(_T_37, _T_30) @[Conditional.scala 29:53]
     node _T_39 = or(_T_38, _T_31) @[Conditional.scala 29:53]
     when _T_39 : @[Conditional.scala 29:59]
-      node _T_40 = eq(ticks, UInt<1>("h00")) @[UART.scala 128:25]
-      when _T_40 : @[UART.scala 128:35]
-        node _T_41 = shr(data, 1) @[UART.scala 129:43]
+      node _T_40 = eq(ticks, UInt<1>("h00")) @[UART.scala 123:25]
+      when _T_40 : @[UART.scala 123:35]
+        node _T_41 = shr(data, 1) @[UART.scala 124:43]
         node _T_42 = cat(io.rxd, _T_41) @[Cat.scala 30:58]
-        data <= _T_42 @[UART.scala 129:23]
-        ticks <= UInt<9>("h01b2") @[UART.scala 130:23]
-        node _T_44 = sub(state, UInt<1>("h01")) @[UART.scala 131:32]
-        node _T_45 = asUInt(_T_44) @[UART.scala 131:32]
-        node _T_46 = tail(_T_45, 1) @[UART.scala 131:32]
-        state <= _T_46 @[UART.scala 131:23]
-        skip @[UART.scala 128:35]
-      node _T_48 = eq(_T_40, UInt<1>("h00")) @[UART.scala 128:35]
-      when _T_48 : @[UART.scala 132:26]
-        node _T_50 = sub(ticks, UInt<1>("h01")) @[UART.scala 133:32]
-        node _T_51 = asUInt(_T_50) @[UART.scala 133:32]
-        node _T_52 = tail(_T_51, 1) @[UART.scala 133:32]
-        ticks <= _T_52 @[UART.scala 133:23]
-        skip @[UART.scala 132:26]
+        data <= _T_42 @[UART.scala 124:23]
+        ticks <= UInt<9>("h01b2") @[UART.scala 125:23]
+        node _T_44 = sub(state, UInt<1>("h01")) @[UART.scala 126:32]
+        node _T_45 = asUInt(_T_44) @[UART.scala 126:32]
+        node _T_46 = tail(_T_45, 1) @[UART.scala 126:32]
+        state <= _T_46 @[UART.scala 126:23]
+        skip @[UART.scala 123:35]
+      node _T_48 = eq(_T_40, UInt<1>("h00")) @[UART.scala 123:35]
+      when _T_48 : @[UART.scala 127:26]
+        node _T_50 = sub(ticks, UInt<1>("h01")) @[UART.scala 128:32]
+        node _T_51 = asUInt(_T_50) @[UART.scala 128:32]
+        node _T_52 = tail(_T_51, 1) @[UART.scala 128:32]
+        ticks <= _T_52 @[UART.scala 128:23]
+        skip @[UART.scala 127:26]
       skip @[Conditional.scala 29:59]
     node _T_53 = eq(UInt<4>("h01"), state) @[Conditional.scala 29:28]
     when _T_53 : @[Conditional.scala 29:59]
-      node _T_54 = eq(ticks, TICK_HALF) @[UART.scala 138:25]
-      when _T_54 : @[UART.scala 138:40]
-        node _T_56 = sub(ticks, UInt<1>("h01")) @[UART.scala 139:32]
-        node _T_57 = asUInt(_T_56) @[UART.scala 139:32]
-        node _T_58 = tail(_T_57, 1) @[UART.scala 139:32]
-        ticks <= _T_58 @[UART.scala 139:23]
-        state <= UInt<4>("h00") @[UART.scala 140:23]
-        valid <= UInt<1>("h01") @[UART.scala 141:23]
-        skip @[UART.scala 138:40]
-      node _T_60 = eq(_T_54, UInt<1>("h00")) @[UART.scala 138:40]
-      when _T_60 : @[UART.scala 142:26]
-        node _T_62 = sub(ticks, UInt<1>("h01")) @[UART.scala 143:32]
-        node _T_63 = asUInt(_T_62) @[UART.scala 143:32]
-        node _T_64 = tail(_T_63, 1) @[UART.scala 143:32]
-        ticks <= _T_64 @[UART.scala 143:23]
-        skip @[UART.scala 142:26]
+      node _T_54 = eq(ticks, TICK_HALF) @[UART.scala 133:25]
+      when _T_54 : @[UART.scala 133:40]
+        node _T_56 = sub(ticks, UInt<1>("h01")) @[UART.scala 134:32]
+        node _T_57 = asUInt(_T_56) @[UART.scala 134:32]
+        node _T_58 = tail(_T_57, 1) @[UART.scala 134:32]
+        ticks <= _T_58 @[UART.scala 134:23]
+        state <= UInt<4>("h00") @[UART.scala 135:23]
+        valid <= UInt<1>("h01") @[UART.scala 136:23]
+        skip @[UART.scala 133:40]
+      node _T_60 = eq(_T_54, UInt<1>("h00")) @[UART.scala 133:40]
+      when _T_60 : @[UART.scala 137:26]
+        node _T_62 = sub(ticks, UInt<1>("h01")) @[UART.scala 138:32]
+        node _T_63 = asUInt(_T_62) @[UART.scala 138:32]
+        node _T_64 = tail(_T_63, 1) @[UART.scala 138:32]
+        ticks <= _T_64 @[UART.scala 138:23]
+        skip @[UART.scala 137:26]
       skip @[Conditional.scala 29:59]
-    io.deq.valid <= valid @[UART.scala 148:18]
-    node _T_65 = bits(data, 7, 0) @[UART.scala 150:25]
-    node _T_66 = neq(_T_65, UInt<1>("h00")) @[UART.scala 150:32]
-    node _T_67 = and(valid, _T_66) @[UART.scala 150:17]
-    when _T_67 : @[UART.scala 150:43]
-      node _T_68 = bits(data, 7, 0) @[UART.scala 151:29]
-      io.deq.bits <= _T_68 @[UART.scala 151:22]
-      data <= UInt<1>("h00") @[UART.scala 152:14]
-      skip @[UART.scala 150:43]
-    node _T_70 = eq(_T_67, UInt<1>("h00")) @[UART.scala 150:43]
-    when _T_70 : @[UART.scala 153:18]
-      io.deq.bits <= UInt<1>("h00") @[UART.scala 154:22]
-      skip @[UART.scala 153:18]
+    io.deq.valid <= valid @[UART.scala 143:18]
+    node _T_65 = bits(data, 7, 0) @[UART.scala 145:25]
+    node _T_66 = neq(_T_65, UInt<1>("h00")) @[UART.scala 145:32]
+    node _T_67 = and(valid, _T_66) @[UART.scala 145:17]
+    when _T_67 : @[UART.scala 145:43]
+      node _T_68 = bits(data, 7, 0) @[UART.scala 146:29]
+      io.deq.bits <= _T_68 @[UART.scala 146:22]
+      data <= UInt<1>("h00") @[UART.scala 147:14]
+      skip @[UART.scala 145:43]
+    node _T_70 = eq(_T_67, UInt<1>("h00")) @[UART.scala 145:43]
+    when _T_70 : @[UART.scala 148:18]
+      io.deq.bits <= UInt<1>("h00") @[UART.scala 149:22]
+      skip @[UART.scala 148:18]
     
   module Tx : 
     input clock : Clock
@@ -1109,19 +1128,19 @@ circuit CPU :
     clock is invalid
     reset is invalid
     io is invalid
-    reg data : UInt<9>, clock with : (reset => (reset, UInt<9>("h01ff"))) @[UART.scala 66:28]
-    reg ticks : UInt<32>, clock with : (reset => (reset, UInt<1>("h00"))) @[UART.scala 67:28]
-    reg state : UInt<4>, clock with : (reset => (reset, UInt<4>("h00"))) @[UART.scala 68:28]
-    node _T_15 = eq(state, UInt<4>("h00")) @[UART.scala 70:27]
-    io.enq.ready <= _T_15 @[UART.scala 70:18]
+    reg data : UInt<9>, clock with : (reset => (reset, UInt<9>("h01ff"))) @[UART.scala 61:28]
+    reg ticks : UInt<32>, clock with : (reset => (reset, UInt<1>("h00"))) @[UART.scala 62:28]
+    reg state : UInt<4>, clock with : (reset => (reset, UInt<4>("h00"))) @[UART.scala 63:28]
+    node _T_15 = eq(state, UInt<4>("h00")) @[UART.scala 65:27]
+    io.enq.ready <= _T_15 @[UART.scala 65:18]
     node _T_16 = eq(UInt<4>("h00"), state) @[Conditional.scala 29:28]
     when _T_16 : @[Conditional.scala 29:59]
-      when io.enq.valid : @[UART.scala 74:33]
+      when io.enq.valid : @[UART.scala 69:33]
         node _T_18 = cat(io.enq.bits, UInt<1>("h00")) @[Cat.scala 30:58]
-        data <= _T_18 @[UART.scala 75:23]
-        ticks <= UInt<1>("h00") @[UART.scala 76:23]
-        state <= UInt<4>("h0b") @[UART.scala 77:23]
-        skip @[UART.scala 74:33]
+        data <= _T_18 @[UART.scala 70:23]
+        ticks <= UInt<1>("h00") @[UART.scala 71:23]
+        state <= UInt<4>("h0b") @[UART.scala 72:23]
+        skip @[UART.scala 69:33]
       skip @[Conditional.scala 29:59]
     node _T_19 = eq(UInt<4>("h01"), state) @[Conditional.scala 29:28]
     node _T_20 = eq(UInt<4>("h02"), state) @[Conditional.scala 29:28]
@@ -1145,73 +1164,72 @@ circuit CPU :
     node _T_38 = or(_T_37, _T_28) @[Conditional.scala 29:53]
     node _T_39 = or(_T_38, _T_29) @[Conditional.scala 29:53]
     when _T_39 : @[Conditional.scala 29:59]
-      node _T_40 = eq(ticks, UInt<9>("h01b2")) @[UART.scala 82:25]
-      when _T_40 : @[UART.scala 82:39]
-        node _T_42 = shr(data, 1) @[UART.scala 83:43]
+      node _T_40 = eq(ticks, UInt<9>("h01b2")) @[UART.scala 77:25]
+      when _T_40 : @[UART.scala 77:39]
+        node _T_42 = shr(data, 1) @[UART.scala 78:43]
         node _T_43 = cat(UInt<1>("h01"), _T_42) @[Cat.scala 30:58]
-        data <= _T_43 @[UART.scala 83:23]
-        ticks <= UInt<1>("h00") @[UART.scala 84:23]
-        node _T_45 = sub(state, UInt<1>("h01")) @[UART.scala 85:32]
-        node _T_46 = asUInt(_T_45) @[UART.scala 85:32]
-        node _T_47 = tail(_T_46, 1) @[UART.scala 85:32]
-        state <= _T_47 @[UART.scala 85:23]
-        skip @[UART.scala 82:39]
-      node _T_49 = eq(_T_40, UInt<1>("h00")) @[UART.scala 82:39]
-      when _T_49 : @[UART.scala 86:26]
-        node _T_51 = add(ticks, UInt<1>("h01")) @[UART.scala 87:32]
-        node _T_52 = tail(_T_51, 1) @[UART.scala 87:32]
-        ticks <= _T_52 @[UART.scala 87:23]
-        skip @[UART.scala 86:26]
+        data <= _T_43 @[UART.scala 78:23]
+        ticks <= UInt<1>("h00") @[UART.scala 79:23]
+        node _T_45 = sub(state, UInt<1>("h01")) @[UART.scala 80:32]
+        node _T_46 = asUInt(_T_45) @[UART.scala 80:32]
+        node _T_47 = tail(_T_46, 1) @[UART.scala 80:32]
+        state <= _T_47 @[UART.scala 80:23]
+        skip @[UART.scala 77:39]
+      node _T_49 = eq(_T_40, UInt<1>("h00")) @[UART.scala 77:39]
+      when _T_49 : @[UART.scala 81:26]
+        node _T_51 = add(ticks, UInt<1>("h01")) @[UART.scala 82:32]
+        node _T_52 = tail(_T_51, 1) @[UART.scala 82:32]
+        ticks <= _T_52 @[UART.scala 82:23]
+        skip @[UART.scala 81:26]
       skip @[Conditional.scala 29:59]
-    node _T_53 = bits(data, 0, 0) @[UART.scala 91:19]
-    io.txd <= _T_53 @[UART.scala 91:12]
+    node _T_53 = bits(data, 0, 0) @[UART.scala 86:19]
+    io.txd <= _T_53 @[UART.scala 86:12]
     
   module UART : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {flip rxd : UInt<1>, flip in : UInt<8>, out : UInt<8>, txd : UInt<1>, tx_req : UInt<1>, reg : UInt<8>}
+    output io : {flip rxd : UInt<1>, flip in : UInt<8>, out : UInt<8>, txd : UInt<1>, tx_req : UInt<1>}
     
     clock is invalid
     reset is invalid
     io is invalid
-    inst rx of Rx @[UART.scala 34:21]
+    inst rx of Rx @[UART.scala 31:21]
     rx.io is invalid
     rx.clock <= clock
     rx.reset <= reset
-    inst tx of Tx @[UART.scala 35:21]
+    inst tx of Tx @[UART.scala 32:21]
     tx.io is invalid
     tx.clock <= clock
     tx.reset <= reset
-    reg reg : UInt<8>, clock with : (reset => (reset, UInt<1>("h00"))) @[UART.scala 36:22]
-    rx.io.rxd <= io.rxd @[UART.scala 38:15]
-    io.reg <= reg @[UART.scala 40:12]
-    node _T_9 = neq(reg, UInt<1>("h00")) @[UART.scala 41:28]
-    tx.io.enq.valid <= _T_9 @[UART.scala 41:21]
-    node _T_10 = eq(reg, UInt<1>("h00")) @[UART.scala 43:15]
-    when _T_10 : @[UART.scala 43:25]
-      node _T_11 = neq(io.in, UInt<1>("h00")) @[UART.scala 44:21]
-      when _T_11 : @[UART.scala 44:31]
-        reg <= io.in @[UART.scala 44:37]
-        skip @[UART.scala 44:31]
-      skip @[UART.scala 43:25]
-    node _T_13 = eq(_T_10, UInt<1>("h00")) @[UART.scala 43:25]
-    node _T_14 = and(_T_13, tx.io.enq.ready) @[UART.scala 45:35]
-    when _T_14 : @[UART.scala 45:35]
-      tx.io.enq.bits <= reg @[UART.scala 46:24]
-      skip @[UART.scala 45:35]
-    node _T_16 = eq(_T_10, UInt<1>("h00")) @[UART.scala 43:25]
-    node _T_18 = eq(tx.io.enq.ready, UInt<1>("h00")) @[UART.scala 45:35]
-    node _T_19 = and(_T_16, _T_18) @[UART.scala 45:35]
-    when _T_19 : @[UART.scala 47:18]
-      reg <= UInt<1>("h00") @[UART.scala 48:13]
-      skip @[UART.scala 47:18]
-    node _T_21 = eq(tx.io.enq.ready, UInt<1>("h00")) @[UART.scala 51:18]
-    node _T_22 = neq(reg, UInt<1>("h00")) @[UART.scala 51:44]
-    node _T_23 = and(_T_22, tx.io.enq.ready) @[UART.scala 51:53]
-    node _T_24 = or(_T_21, _T_23) @[UART.scala 51:35]
-    io.tx_req <= _T_24 @[UART.scala 51:15]
-    io.txd <= tx.io.txd @[UART.scala 52:15]
-    io.out <= rx.io.deq.bits @[UART.scala 53:15]
+    reg reg : UInt<8>, clock with : (reset => (reset, UInt<1>("h00"))) @[UART.scala 33:22]
+    rx.io.rxd <= io.rxd @[UART.scala 35:15]
+    node _T_8 = neq(reg, UInt<1>("h00")) @[UART.scala 36:28]
+    tx.io.enq.valid <= _T_8 @[UART.scala 36:21]
+    node _T_9 = eq(reg, UInt<1>("h00")) @[UART.scala 38:15]
+    when _T_9 : @[UART.scala 38:25]
+      node _T_10 = neq(io.in, UInt<1>("h00")) @[UART.scala 39:21]
+      when _T_10 : @[UART.scala 39:31]
+        reg <= io.in @[UART.scala 39:37]
+        skip @[UART.scala 39:31]
+      skip @[UART.scala 38:25]
+    node _T_12 = eq(_T_9, UInt<1>("h00")) @[UART.scala 38:25]
+    node _T_13 = and(_T_12, tx.io.enq.ready) @[UART.scala 40:35]
+    when _T_13 : @[UART.scala 40:35]
+      tx.io.enq.bits <= reg @[UART.scala 41:24]
+      skip @[UART.scala 40:35]
+    node _T_15 = eq(_T_9, UInt<1>("h00")) @[UART.scala 38:25]
+    node _T_17 = eq(tx.io.enq.ready, UInt<1>("h00")) @[UART.scala 40:35]
+    node _T_18 = and(_T_15, _T_17) @[UART.scala 40:35]
+    when _T_18 : @[UART.scala 42:18]
+      reg <= UInt<1>("h00") @[UART.scala 43:13]
+      skip @[UART.scala 42:18]
+    node _T_20 = eq(tx.io.enq.ready, UInt<1>("h00")) @[UART.scala 46:18]
+    node _T_21 = neq(reg, UInt<1>("h00")) @[UART.scala 46:44]
+    node _T_22 = and(_T_21, tx.io.enq.ready) @[UART.scala 46:53]
+    node _T_23 = or(_T_20, _T_22) @[UART.scala 46:35]
+    io.tx_req <= _T_23 @[UART.scala 46:15]
+    io.txd <= tx.io.txd @[UART.scala 47:15]
+    io.out <= rx.io.deq.bits @[UART.scala 48:15]
     
   module PipelineIF_ID : 
     input clock : Clock
@@ -1234,80 +1252,72 @@ circuit CPU :
   module PipelineID_EX : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {in : {WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip branch : UInt<1>, flip write : UInt<1>, flip read : UInt<1>, flip func : UInt<3>}, EX : {flip opcode : UInt<7>, flip alu_sel : UInt<1>, alu_op : {flip func : UInt<3>, flip alt : UInt<1>}}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, rs : {flip rs1 : UInt<5>, flip rs2 : UInt<5>}, flip rd : UInt<5>, flip imm : UInt<32>, flip pc_next : UInt<32>}, flip out : {WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip branch : UInt<1>, flip write : UInt<1>, flip read : UInt<1>, flip func : UInt<3>}, EX : {flip opcode : UInt<7>, flip alu_sel : UInt<1>, alu_op : {flip func : UInt<3>, flip alt : UInt<1>}}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, rs : {flip rs1 : UInt<5>, flip rs2 : UInt<5>}, flip rd : UInt<5>, flip imm : UInt<32>, flip pc_next : UInt<32>}}
+    output io : {in : {WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip func : UInt<3>, flip write : UInt<1>, flip read : UInt<1>}, EX : {flip alu_sel : UInt<1>, alu_ctrl : {flip func : UInt<3>, flip alt : UInt<1>, flip flush : UInt<1>}}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, rs : {flip rs1 : UInt<5>, flip rs2 : UInt<5>}, flip rd : UInt<5>, flip imm : UInt<32>, flip pc_next : UInt<32>}, flip out : {WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip func : UInt<3>, flip write : UInt<1>, flip read : UInt<1>}, EX : {flip alu_sel : UInt<1>, alu_ctrl : {flip func : UInt<3>, flip alt : UInt<1>, flip flush : UInt<1>}}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, rs : {flip rs1 : UInt<5>, flip rs2 : UInt<5>}, flip rd : UInt<5>, flip imm : UInt<32>, flip pc_next : UInt<32>}}
     
     clock is invalid
     reset is invalid
     io is invalid
-    reg _T_72 : {WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip branch : UInt<1>, flip write : UInt<1>, flip read : UInt<1>, flip func : UInt<3>}, EX : {flip opcode : UInt<7>, flip alu_sel : UInt<1>, alu_op : {flip func : UInt<3>, flip alt : UInt<1>}}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, rs : {flip rs1 : UInt<5>, flip rs2 : UInt<5>}, flip rd : UInt<5>, flip imm : UInt<32>, flip pc_next : UInt<32>}, clock @[Pipeline.scala 34:34]
-    _T_72.pc_next <= io.in.pc_next @[Pipeline.scala 34:34]
-    _T_72.imm <= io.in.imm @[Pipeline.scala 34:34]
-    _T_72.rd <= io.in.rd @[Pipeline.scala 34:34]
-    _T_72.rs.rs2 <= io.in.rs.rs2 @[Pipeline.scala 34:34]
-    _T_72.rs.rs1 <= io.in.rs.rs1 @[Pipeline.scala 34:34]
-    _T_72.op.op2 <= io.in.op.op2 @[Pipeline.scala 34:34]
-    _T_72.op.op1 <= io.in.op.op1 @[Pipeline.scala 34:34]
-    _T_72.EX.alu_op.alt <= io.in.EX.alu_op.alt @[Pipeline.scala 34:34]
-    _T_72.EX.alu_op.func <= io.in.EX.alu_op.func @[Pipeline.scala 34:34]
-    _T_72.EX.alu_sel <= io.in.EX.alu_sel @[Pipeline.scala 34:34]
-    _T_72.EX.opcode <= io.in.EX.opcode @[Pipeline.scala 34:34]
-    _T_72.MEM.func <= io.in.MEM.func @[Pipeline.scala 34:34]
-    _T_72.MEM.read <= io.in.MEM.read @[Pipeline.scala 34:34]
-    _T_72.MEM.write <= io.in.MEM.write @[Pipeline.scala 34:34]
-    _T_72.MEM.branch <= io.in.MEM.branch @[Pipeline.scala 34:34]
-    _T_72.WB.rd_mem <= io.in.WB.rd_mem @[Pipeline.scala 34:34]
-    _T_72.WB.reg_w <= io.in.WB.reg_w @[Pipeline.scala 34:34]
-    io.out.pc_next <= _T_72.pc_next @[Pipeline.scala 34:24]
-    io.out.imm <= _T_72.imm @[Pipeline.scala 34:24]
-    io.out.rd <= _T_72.rd @[Pipeline.scala 34:24]
-    io.out.rs.rs2 <= _T_72.rs.rs2 @[Pipeline.scala 34:24]
-    io.out.rs.rs1 <= _T_72.rs.rs1 @[Pipeline.scala 34:24]
-    io.out.op.op2 <= _T_72.op.op2 @[Pipeline.scala 34:24]
-    io.out.op.op1 <= _T_72.op.op1 @[Pipeline.scala 34:24]
-    io.out.EX.alu_op.alt <= _T_72.EX.alu_op.alt @[Pipeline.scala 34:24]
-    io.out.EX.alu_op.func <= _T_72.EX.alu_op.func @[Pipeline.scala 34:24]
-    io.out.EX.alu_sel <= _T_72.EX.alu_sel @[Pipeline.scala 34:24]
-    io.out.EX.opcode <= _T_72.EX.opcode @[Pipeline.scala 34:24]
-    io.out.MEM.func <= _T_72.MEM.func @[Pipeline.scala 34:24]
-    io.out.MEM.read <= _T_72.MEM.read @[Pipeline.scala 34:24]
-    io.out.MEM.write <= _T_72.MEM.write @[Pipeline.scala 34:24]
-    io.out.MEM.branch <= _T_72.MEM.branch @[Pipeline.scala 34:24]
-    io.out.WB.rd_mem <= _T_72.WB.rd_mem @[Pipeline.scala 34:24]
-    io.out.WB.reg_w <= _T_72.WB.reg_w @[Pipeline.scala 34:24]
+    reg _T_68 : {WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip func : UInt<3>, flip write : UInt<1>, flip read : UInt<1>}, EX : {flip alu_sel : UInt<1>, alu_ctrl : {flip func : UInt<3>, flip alt : UInt<1>, flip flush : UInt<1>}}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, rs : {flip rs1 : UInt<5>, flip rs2 : UInt<5>}, flip rd : UInt<5>, flip imm : UInt<32>, flip pc_next : UInt<32>}, clock @[Pipeline.scala 34:34]
+    _T_68.pc_next <= io.in.pc_next @[Pipeline.scala 34:34]
+    _T_68.imm <= io.in.imm @[Pipeline.scala 34:34]
+    _T_68.rd <= io.in.rd @[Pipeline.scala 34:34]
+    _T_68.rs.rs2 <= io.in.rs.rs2 @[Pipeline.scala 34:34]
+    _T_68.rs.rs1 <= io.in.rs.rs1 @[Pipeline.scala 34:34]
+    _T_68.op.op2 <= io.in.op.op2 @[Pipeline.scala 34:34]
+    _T_68.op.op1 <= io.in.op.op1 @[Pipeline.scala 34:34]
+    _T_68.EX.alu_ctrl.flush <= io.in.EX.alu_ctrl.flush @[Pipeline.scala 34:34]
+    _T_68.EX.alu_ctrl.alt <= io.in.EX.alu_ctrl.alt @[Pipeline.scala 34:34]
+    _T_68.EX.alu_ctrl.func <= io.in.EX.alu_ctrl.func @[Pipeline.scala 34:34]
+    _T_68.EX.alu_sel <= io.in.EX.alu_sel @[Pipeline.scala 34:34]
+    _T_68.MEM.read <= io.in.MEM.read @[Pipeline.scala 34:34]
+    _T_68.MEM.write <= io.in.MEM.write @[Pipeline.scala 34:34]
+    _T_68.MEM.func <= io.in.MEM.func @[Pipeline.scala 34:34]
+    _T_68.WB.rd_mem <= io.in.WB.rd_mem @[Pipeline.scala 34:34]
+    _T_68.WB.reg_w <= io.in.WB.reg_w @[Pipeline.scala 34:34]
+    io.out.pc_next <= _T_68.pc_next @[Pipeline.scala 34:24]
+    io.out.imm <= _T_68.imm @[Pipeline.scala 34:24]
+    io.out.rd <= _T_68.rd @[Pipeline.scala 34:24]
+    io.out.rs.rs2 <= _T_68.rs.rs2 @[Pipeline.scala 34:24]
+    io.out.rs.rs1 <= _T_68.rs.rs1 @[Pipeline.scala 34:24]
+    io.out.op.op2 <= _T_68.op.op2 @[Pipeline.scala 34:24]
+    io.out.op.op1 <= _T_68.op.op1 @[Pipeline.scala 34:24]
+    io.out.EX.alu_ctrl.flush <= _T_68.EX.alu_ctrl.flush @[Pipeline.scala 34:24]
+    io.out.EX.alu_ctrl.alt <= _T_68.EX.alu_ctrl.alt @[Pipeline.scala 34:24]
+    io.out.EX.alu_ctrl.func <= _T_68.EX.alu_ctrl.func @[Pipeline.scala 34:24]
+    io.out.EX.alu_sel <= _T_68.EX.alu_sel @[Pipeline.scala 34:24]
+    io.out.MEM.read <= _T_68.MEM.read @[Pipeline.scala 34:24]
+    io.out.MEM.write <= _T_68.MEM.write @[Pipeline.scala 34:24]
+    io.out.MEM.func <= _T_68.MEM.func @[Pipeline.scala 34:24]
+    io.out.WB.rd_mem <= _T_68.WB.rd_mem @[Pipeline.scala 34:24]
+    io.out.WB.reg_w <= _T_68.WB.reg_w @[Pipeline.scala 34:24]
     
   module PipelineEX_MEM : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {in : {flip zero : UInt<1>, WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip branch : UInt<1>, flip write : UInt<1>, flip read : UInt<1>, flip func : UInt<3>}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, flip rd : UInt<5>, flip pc_next : UInt<32>, flip branch_t : UInt<32>}, flip out : {flip zero : UInt<1>, WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip branch : UInt<1>, flip write : UInt<1>, flip read : UInt<1>, flip func : UInt<3>}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, flip rd : UInt<5>, flip pc_next : UInt<32>, flip branch_t : UInt<32>}}
+    output io : {in : {WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip func : UInt<3>, flip write : UInt<1>, flip read : UInt<1>}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, flip rd : UInt<5>, flip pc_next : UInt<32>}, flip out : {WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip func : UInt<3>, flip write : UInt<1>, flip read : UInt<1>}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, flip rd : UInt<5>, flip pc_next : UInt<32>}}
     
     clock is invalid
     reset is invalid
     io is invalid
-    reg _T_52 : {flip zero : UInt<1>, WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip branch : UInt<1>, flip write : UInt<1>, flip read : UInt<1>, flip func : UInt<3>}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, flip rd : UInt<5>, flip pc_next : UInt<32>, flip branch_t : UInt<32>}, clock @[Pipeline.scala 43:34]
-    _T_52.branch_t <= io.in.branch_t @[Pipeline.scala 43:34]
-    _T_52.pc_next <= io.in.pc_next @[Pipeline.scala 43:34]
-    _T_52.rd <= io.in.rd @[Pipeline.scala 43:34]
-    _T_52.op.op2 <= io.in.op.op2 @[Pipeline.scala 43:34]
-    _T_52.op.op1 <= io.in.op.op1 @[Pipeline.scala 43:34]
-    _T_52.MEM.func <= io.in.MEM.func @[Pipeline.scala 43:34]
-    _T_52.MEM.read <= io.in.MEM.read @[Pipeline.scala 43:34]
-    _T_52.MEM.write <= io.in.MEM.write @[Pipeline.scala 43:34]
-    _T_52.MEM.branch <= io.in.MEM.branch @[Pipeline.scala 43:34]
-    _T_52.WB.rd_mem <= io.in.WB.rd_mem @[Pipeline.scala 43:34]
-    _T_52.WB.reg_w <= io.in.WB.reg_w @[Pipeline.scala 43:34]
-    _T_52.zero <= io.in.zero @[Pipeline.scala 43:34]
-    io.out.branch_t <= _T_52.branch_t @[Pipeline.scala 43:24]
-    io.out.pc_next <= _T_52.pc_next @[Pipeline.scala 43:24]
-    io.out.rd <= _T_52.rd @[Pipeline.scala 43:24]
-    io.out.op.op2 <= _T_52.op.op2 @[Pipeline.scala 43:24]
-    io.out.op.op1 <= _T_52.op.op1 @[Pipeline.scala 43:24]
-    io.out.MEM.func <= _T_52.MEM.func @[Pipeline.scala 43:24]
-    io.out.MEM.read <= _T_52.MEM.read @[Pipeline.scala 43:24]
-    io.out.MEM.write <= _T_52.MEM.write @[Pipeline.scala 43:24]
-    io.out.MEM.branch <= _T_52.MEM.branch @[Pipeline.scala 43:24]
-    io.out.WB.rd_mem <= _T_52.WB.rd_mem @[Pipeline.scala 43:24]
-    io.out.WB.reg_w <= _T_52.WB.reg_w @[Pipeline.scala 43:24]
-    io.out.zero <= _T_52.zero @[Pipeline.scala 43:24]
+    reg _T_40 : {WB : {flip reg_w : UInt<1>, flip rd_mem : UInt<1>}, MEM : {flip func : UInt<3>, flip write : UInt<1>, flip read : UInt<1>}, op : {flip op1 : UInt<32>, flip op2 : UInt<32>}, flip rd : UInt<5>, flip pc_next : UInt<32>}, clock @[Pipeline.scala 43:34]
+    _T_40.pc_next <= io.in.pc_next @[Pipeline.scala 43:34]
+    _T_40.rd <= io.in.rd @[Pipeline.scala 43:34]
+    _T_40.op.op2 <= io.in.op.op2 @[Pipeline.scala 43:34]
+    _T_40.op.op1 <= io.in.op.op1 @[Pipeline.scala 43:34]
+    _T_40.MEM.read <= io.in.MEM.read @[Pipeline.scala 43:34]
+    _T_40.MEM.write <= io.in.MEM.write @[Pipeline.scala 43:34]
+    _T_40.MEM.func <= io.in.MEM.func @[Pipeline.scala 43:34]
+    _T_40.WB.rd_mem <= io.in.WB.rd_mem @[Pipeline.scala 43:34]
+    _T_40.WB.reg_w <= io.in.WB.reg_w @[Pipeline.scala 43:34]
+    io.out.pc_next <= _T_40.pc_next @[Pipeline.scala 43:24]
+    io.out.rd <= _T_40.rd @[Pipeline.scala 43:24]
+    io.out.op.op2 <= _T_40.op.op2 @[Pipeline.scala 43:24]
+    io.out.op.op1 <= _T_40.op.op1 @[Pipeline.scala 43:24]
+    io.out.MEM.read <= _T_40.MEM.read @[Pipeline.scala 43:24]
+    io.out.MEM.write <= _T_40.MEM.write @[Pipeline.scala 43:24]
+    io.out.MEM.func <= _T_40.MEM.func @[Pipeline.scala 43:24]
+    io.out.WB.rd_mem <= _T_40.WB.rd_mem @[Pipeline.scala 43:24]
+    io.out.WB.reg_w <= _T_40.WB.reg_w @[Pipeline.scala 43:24]
     
   module PipelineMEM_WB : 
     input clock : Clock
@@ -1332,177 +1342,204 @@ circuit CPU :
   module CPU : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {flip rxd : UInt<1>, txd : UInt<1>, rx_out : UInt<8>, rx_cnt : UInt<8>, flip rx_in : UInt<8>, pc : UInt<32>}
+    output io : {flip rxd : UInt<1>, txd : UInt<1>, branch : UInt<1>, rx_out : UInt<8>, rx_cnt : UInt<8>}
     
     clock is invalid
     reset is invalid
     io is invalid
-    inst instMem of InstructionMemory @[CPU.scala 92:29]
+    inst instMem of InstructionMemory @[CPU.scala 99:29]
     instMem.io is invalid
     instMem.clock <= clock
     instMem.reset <= reset
-    inst counter of ProgramCounter @[CPU.scala 93:29]
+    inst counter of ProgramCounter @[CPU.scala 100:29]
     counter.io is invalid
     counter.clock <= clock
     counter.reset <= reset
-    inst decoder of Decoder @[CPU.scala 94:29]
+    inst decoder of Decoder @[CPU.scala 101:29]
     decoder.io is invalid
     decoder.clock <= clock
     decoder.reset <= reset
-    inst control of Control @[CPU.scala 95:29]
+    inst control of Control @[CPU.scala 102:29]
     control.io is invalid
     control.clock <= clock
     control.reset <= reset
-    inst regs of Registers @[CPU.scala 96:29]
+    inst regs of Registers @[CPU.scala 103:29]
     regs.io is invalid
     regs.clock <= clock
     regs.reset <= reset
-    inst alu of ALU @[CPU.scala 97:29]
+    inst alu of ALU @[CPU.scala 104:29]
     alu.io is invalid
     alu.clock <= clock
     alu.reset <= reset
-    inst dataMem of DataMemory @[CPU.scala 98:29]
+    inst dataMem of DataMemory @[CPU.scala 105:29]
     dataMem.io is invalid
     dataMem.clock <= clock
     dataMem.reset <= reset
-    inst fwdUnit of ForwardingUnit @[CPU.scala 99:29]
+    inst fwdUnit of ForwardingUnit @[CPU.scala 106:29]
     fwdUnit.io is invalid
     fwdUnit.clock <= clock
     fwdUnit.reset <= reset
-    inst hazardUnit of DetectHazardUnit @[CPU.scala 100:29]
+    inst hazardUnit of DetectHazardUnit @[CPU.scala 107:29]
     hazardUnit.io is invalid
     hazardUnit.clock <= clock
     hazardUnit.reset <= reset
-    inst uart of UART @[CPU.scala 101:29]
+    inst uart of UART @[CPU.scala 108:29]
     uart.io is invalid
     uart.clock <= clock
     uart.reset <= reset
-    inst IF_ID of PipelineIF_ID @[CPU.scala 105:29]
+    inst IF_ID of PipelineIF_ID @[CPU.scala 112:29]
     IF_ID.io is invalid
     IF_ID.clock <= clock
     IF_ID.reset <= reset
-    inst ID_EX of PipelineID_EX @[CPU.scala 106:29]
+    inst ID_EX of PipelineID_EX @[CPU.scala 113:29]
     ID_EX.io is invalid
     ID_EX.clock <= clock
     ID_EX.reset <= reset
-    inst EX_MEM of PipelineEX_MEM @[CPU.scala 107:29]
+    inst EX_MEM of PipelineEX_MEM @[CPU.scala 114:29]
     EX_MEM.io is invalid
     EX_MEM.clock <= clock
     EX_MEM.reset <= reset
-    inst MEM_WB of PipelineMEM_WB @[CPU.scala 108:29]
+    inst MEM_WB of PipelineMEM_WB @[CPU.scala 115:29]
     MEM_WB.io is invalid
     MEM_WB.clock <= clock
     MEM_WB.reset <= reset
-    counter.io.jump <= control.io.jump @[CPU.scala 112:29]
-    counter.io.stall <= hazardUnit.io.stall @[CPU.scala 113:29]
-    node _T_54 = and(EX_MEM.io.out.zero, EX_MEM.io.out.MEM.branch) @[CPU.scala 114:52]
-    node _T_55 = neq(dataMem.io.tx, UInt<1>("h00")) @[CPU.scala 114:98]
-    node _T_56 = or(_T_54, _T_55) @[CPU.scala 114:81]
-    counter.io.branch <= _T_56 @[CPU.scala 114:29]
-    counter.io.branch_t <= EX_MEM.io.out.branch_t @[CPU.scala 115:29]
-    node _T_57 = add(EX_MEM.io.out.pc_next, decoder.io.imm) @[CPU.scala 116:54]
-    node _T_58 = tail(_T_57, 1) @[CPU.scala 116:54]
-    counter.io.jump_t <= _T_58 @[CPU.scala 116:29]
-    instMem.io.pc <= counter.io.pc @[CPU.scala 117:29]
-    IF_ID.io.stall <= hazardUnit.io.stall @[CPU.scala 119:29]
-    IF_ID.io.in.pc_next <= counter.io.pc_next @[CPU.scala 120:29]
-    IF_ID.io.in.inst <= instMem.io.inst @[CPU.scala 121:29]
-    decoder.io.inst <= IF_ID.io.out.inst @[CPU.scala 125:29]
-    regs.io.rs.rs2 <= decoder.io.rs.rs2 @[CPU.scala 126:29]
-    regs.io.rs.rs1 <= decoder.io.rs.rs1 @[CPU.scala 126:29]
-    hazardUnit.io.rs_id.rs2 <= decoder.io.rs.rs2 @[CPU.scala 128:29]
-    hazardUnit.io.rs_id.rs1 <= decoder.io.rs.rs1 @[CPU.scala 128:29]
-    hazardUnit.io.rd_ex <= ID_EX.io.out.rd @[CPU.scala 129:29]
-    hazardUnit.io.mem_r <= ID_EX.io.out.MEM.read @[CPU.scala 130:29]
-    hazardUnit.io.tx_req <= uart.io.tx_req @[CPU.scala 131:29]
-    node _T_59 = and(EX_MEM.io.out.zero, EX_MEM.io.out.MEM.branch) @[CPU.scala 132:51]
-    hazardUnit.io.branch <= _T_59 @[CPU.scala 132:29]
-    control.io.stall <= hazardUnit.io.stall @[CPU.scala 134:29]
-    control.io.ctrl.funct7 <= decoder.io.ctrl.funct7 @[CPU.scala 135:29]
-    control.io.ctrl.funct3 <= decoder.io.ctrl.funct3 @[CPU.scala 135:29]
-    control.io.ctrl.opcode <= decoder.io.ctrl.opcode @[CPU.scala 135:29]
-    ID_EX.io.in.WB.rd_mem <= control.io.WB.rd_mem @[CPU.scala 137:29]
-    ID_EX.io.in.WB.reg_w <= control.io.WB.reg_w @[CPU.scala 137:29]
-    ID_EX.io.in.MEM.func <= control.io.MEM.func @[CPU.scala 138:29]
-    ID_EX.io.in.MEM.read <= control.io.MEM.read @[CPU.scala 138:29]
-    ID_EX.io.in.MEM.write <= control.io.MEM.write @[CPU.scala 138:29]
-    ID_EX.io.in.MEM.branch <= control.io.MEM.branch @[CPU.scala 138:29]
-    ID_EX.io.in.EX.alu_op.alt <= control.io.EX.alu_op.alt @[CPU.scala 139:29]
-    ID_EX.io.in.EX.alu_op.func <= control.io.EX.alu_op.func @[CPU.scala 139:29]
-    ID_EX.io.in.EX.alu_sel <= control.io.EX.alu_sel @[CPU.scala 139:29]
-    ID_EX.io.in.EX.opcode <= control.io.EX.opcode @[CPU.scala 139:29]
-    ID_EX.io.in.pc_next <= IF_ID.io.out.pc_next @[CPU.scala 140:29]
-    ID_EX.io.in.op.op2 <= regs.io.op.op2 @[CPU.scala 141:29]
-    ID_EX.io.in.op.op1 <= regs.io.op.op1 @[CPU.scala 141:29]
-    ID_EX.io.in.imm <= decoder.io.imm @[CPU.scala 142:29]
-    ID_EX.io.in.rs.rs2 <= decoder.io.rs.rs2 @[CPU.scala 143:29]
-    ID_EX.io.in.rs.rs1 <= decoder.io.rs.rs1 @[CPU.scala 143:29]
-    ID_EX.io.in.rd <= decoder.io.rd @[CPU.scala 144:29]
-    fwdUnit.io.rs.rs2 <= ID_EX.io.out.rs.rs2 @[CPU.scala 148:29]
-    fwdUnit.io.rs.rs1 <= ID_EX.io.out.rs.rs1 @[CPU.scala 148:29]
-    fwdUnit.io.rd_mem <= EX_MEM.io.out.rd @[CPU.scala 149:29]
-    fwdUnit.io.rd_wb <= MEM_WB.io.out.rd @[CPU.scala 150:29]
-    fwdUnit.io.reg_w_mem <= EX_MEM.io.out.WB.reg_w @[CPU.scala 151:29]
-    fwdUnit.io.reg_w_wb <= MEM_WB.io.out.WB.reg_w @[CPU.scala 152:29]
-    alu.io.opcode <= ID_EX.io.out.EX.opcode @[CPU.scala 154:29]
-    alu.io.alu_op.alt <= ID_EX.io.out.EX.alu_op.alt @[CPU.scala 155:29]
-    alu.io.alu_op.func <= ID_EX.io.out.EX.alu_op.func @[CPU.scala 155:29]
-    node _T_60 = eq(UInt<1>("h00"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
-    node _T_61 = mux(_T_60, ID_EX.io.out.op.op1, UInt<1>("h00")) @[Mux.scala 46:16]
-    node _T_62 = eq(UInt<1>("h01"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
-    node _T_63 = mux(_T_62, regs.io.res, _T_61) @[Mux.scala 46:16]
-    node _T_64 = eq(UInt<2>("h02"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
-    node _T_65 = mux(_T_64, EX_MEM.io.out.op.op1, _T_63) @[Mux.scala 46:16]
-    alu.io.op.op1 <= _T_65 @[CPU.scala 157:19]
-    node _T_66 = eq(UInt<1>("h00"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
-    node _T_67 = mux(_T_66, ID_EX.io.out.op.op2, UInt<1>("h00")) @[Mux.scala 46:16]
-    node _T_68 = eq(UInt<1>("h01"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
-    node _T_69 = mux(_T_68, regs.io.res, _T_67) @[Mux.scala 46:16]
-    node _T_70 = eq(UInt<2>("h02"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
-    node op2 = mux(_T_70, EX_MEM.io.out.op.op1, _T_69) @[Mux.scala 46:16]
-    node _T_71 = mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, op2) @[CPU.scala 166:25]
-    alu.io.op.op2 <= _T_71 @[CPU.scala 166:19]
-    node _T_72 = mux(uart.io.tx_req, UInt<1>("h00"), ID_EX.io.out.MEM.branch) @[CPU.scala 168:35]
-    EX_MEM.io.in.MEM.branch <= _T_72 @[CPU.scala 168:29]
-    node _T_73 = mux(uart.io.tx_req, UInt<1>("h00"), ID_EX.io.out.MEM.write) @[CPU.scala 169:35]
-    EX_MEM.io.in.MEM.write <= _T_73 @[CPU.scala 169:29]
-    node _T_74 = mux(uart.io.tx_req, UInt<1>("h00"), ID_EX.io.out.MEM.read) @[CPU.scala 170:35]
-    EX_MEM.io.in.MEM.read <= _T_74 @[CPU.scala 170:29]
-    node _T_76 = mux(uart.io.tx_req, UInt<3>("h00"), ID_EX.io.out.MEM.func) @[CPU.scala 171:35]
-    EX_MEM.io.in.MEM.func <= _T_76 @[CPU.scala 171:29]
-    node _T_77 = mux(uart.io.tx_req, UInt<1>("h00"), ID_EX.io.out.WB.reg_w) @[CPU.scala 172:35]
-    EX_MEM.io.in.WB.reg_w <= _T_77 @[CPU.scala 172:29]
-    node _T_78 = mux(uart.io.tx_req, UInt<1>("h00"), ID_EX.io.out.WB.rd_mem) @[CPU.scala 173:35]
-    EX_MEM.io.in.WB.rd_mem <= _T_78 @[CPU.scala 173:29]
-    EX_MEM.io.in.pc_next <= ID_EX.io.out.pc_next @[CPU.scala 175:29]
-    node _T_79 = shl(ID_EX.io.out.imm, 1) @[CPU.scala 176:73]
-    node _T_80 = add(ID_EX.io.out.pc_next, _T_79) @[CPU.scala 176:53]
-    node _T_81 = tail(_T_80, 1) @[CPU.scala 176:53]
-    EX_MEM.io.in.branch_t <= _T_81 @[CPU.scala 176:29]
-    EX_MEM.io.in.op.op2 <= op2 @[CPU.scala 177:29]
-    EX_MEM.io.in.zero <= alu.io.zero @[CPU.scala 178:29]
-    EX_MEM.io.in.op.op1 <= alu.io.res @[CPU.scala 179:29]
-    EX_MEM.io.in.rd <= ID_EX.io.out.rd @[CPU.scala 180:29]
-    dataMem.io.mem.func <= EX_MEM.io.out.MEM.func @[CPU.scala 184:29]
-    dataMem.io.mem.read <= EX_MEM.io.out.MEM.read @[CPU.scala 184:29]
-    dataMem.io.mem.write <= EX_MEM.io.out.MEM.write @[CPU.scala 184:29]
-    dataMem.io.mem.branch <= EX_MEM.io.out.MEM.branch @[CPU.scala 184:29]
-    dataMem.io.op.op2 <= EX_MEM.io.out.op.op2 @[CPU.scala 185:29]
-    dataMem.io.op.op1 <= EX_MEM.io.out.op.op1 @[CPU.scala 185:29]
-    dataMem.io.tx_req <= uart.io.tx_req @[CPU.scala 186:29]
-    MEM_WB.io.in.WB.rd_mem <= EX_MEM.io.out.WB.rd_mem @[CPU.scala 188:29]
-    MEM_WB.io.in.WB.reg_w <= EX_MEM.io.out.WB.reg_w @[CPU.scala 188:29]
-    MEM_WB.io.in.rd <= EX_MEM.io.out.rd @[CPU.scala 189:29]
-    MEM_WB.io.in.mem_res <= dataMem.io.res @[CPU.scala 190:29]
-    MEM_WB.io.in.alu_res <= EX_MEM.io.out.op.op1 @[CPU.scala 191:29]
-    regs.io.rd <= MEM_WB.io.out.rd @[CPU.scala 195:29]
-    regs.io.reg_w <= MEM_WB.io.out.WB.reg_w @[CPU.scala 196:29]
-    node _T_82 = mux(MEM_WB.io.out.WB.rd_mem, MEM_WB.io.out.mem_res, MEM_WB.io.out.alu_res) @[CPU.scala 197:35]
-    regs.io.res <= _T_82 @[CPU.scala 197:29]
-    uart.io.rxd <= io.rxd @[CPU.scala 201:29]
-    dataMem.io.rx <= io.rx_in @[CPU.scala 202:29]
-    uart.io.in <= dataMem.io.tx @[CPU.scala 203:29]
-    io.txd <= uart.io.txd @[CPU.scala 204:29]
-    io.rx_cnt <= dataMem.io.rx_cnt @[CPU.scala 206:29]
-    io.pc <= counter.io.pc @[CPU.scala 210:15]
+    node _T_52 = or(hazardUnit.io.stall, io.branch) @[CPU.scala 119:52]
+    counter.io.stall <= _T_52 @[CPU.scala 119:29]
+    node _T_53 = or(control.io.jump, io.branch) @[CPU.scala 120:48]
+    node _T_54 = neq(dataMem.io.tx, UInt<1>("h00")) @[CPU.scala 120:78]
+    node _T_55 = or(_T_53, _T_54) @[CPU.scala 120:61]
+    counter.io.src_sel <= _T_55 @[CPU.scala 120:29]
+    node _T_56 = neq(dataMem.io.tx, UInt<1>("h00")) @[CPU.scala 121:50]
+    node _T_57 = shl(decoder.io.imm, 1) @[CPU.scala 122:71]
+    node _T_58 = add(ID_EX.io.out.pc_next, _T_57) @[CPU.scala 122:53]
+    node _T_59 = tail(_T_58, 1) @[CPU.scala 122:53]
+    node _T_60 = mux(_T_56, EX_MEM.io.out.pc_next, _T_59) @[CPU.scala 121:35]
+    counter.io.pc_src <= _T_60 @[CPU.scala 121:29]
+    instMem.io.pc <= counter.io.pc @[CPU.scala 124:29]
+    IF_ID.io.stall <= hazardUnit.io.stall @[CPU.scala 126:29]
+    IF_ID.io.in.pc_next <= counter.io.pc_next @[CPU.scala 127:29]
+    IF_ID.io.in.inst <= instMem.io.inst @[CPU.scala 128:29]
+    decoder.io.inst <= IF_ID.io.out.inst @[CPU.scala 132:29]
+    regs.io.rs.rs2 <= decoder.io.rs.rs2 @[CPU.scala 133:29]
+    regs.io.rs.rs1 <= decoder.io.rs.rs1 @[CPU.scala 133:29]
+    hazardUnit.io.rs_id.rs2 <= decoder.io.rs.rs2 @[CPU.scala 135:29]
+    hazardUnit.io.rs_id.rs1 <= decoder.io.rs.rs1 @[CPU.scala 135:29]
+    hazardUnit.io.rd_ex <= ID_EX.io.out.rd @[CPU.scala 136:29]
+    hazardUnit.io.mem_r <= ID_EX.io.out.MEM.read @[CPU.scala 137:29]
+    hazardUnit.io.tx_req <= uart.io.tx_req @[CPU.scala 138:29]
+    node _T_61 = or(hazardUnit.io.stall, io.branch) @[CPU.scala 140:52]
+    control.io.flush <= _T_61 @[CPU.scala 140:29]
+    control.io.ctrl.funct7 <= decoder.io.ctrl.funct7 @[CPU.scala 141:29]
+    control.io.ctrl.funct3 <= decoder.io.ctrl.funct3 @[CPU.scala 141:29]
+    control.io.ctrl.opcode <= decoder.io.ctrl.opcode @[CPU.scala 141:29]
+    ID_EX.io.in.WB.rd_mem <= control.io.WB.rd_mem @[CPU.scala 143:29]
+    ID_EX.io.in.WB.reg_w <= control.io.WB.reg_w @[CPU.scala 143:29]
+    ID_EX.io.in.MEM.read <= control.io.MEM.read @[CPU.scala 144:29]
+    ID_EX.io.in.MEM.write <= control.io.MEM.write @[CPU.scala 144:29]
+    ID_EX.io.in.MEM.func <= control.io.MEM.func @[CPU.scala 144:29]
+    ID_EX.io.in.EX.alu_ctrl.flush <= control.io.EX.alu_ctrl.flush @[CPU.scala 145:29]
+    ID_EX.io.in.EX.alu_ctrl.alt <= control.io.EX.alu_ctrl.alt @[CPU.scala 145:29]
+    ID_EX.io.in.EX.alu_ctrl.func <= control.io.EX.alu_ctrl.func @[CPU.scala 145:29]
+    ID_EX.io.in.EX.alu_sel <= control.io.EX.alu_sel @[CPU.scala 145:29]
+    ID_EX.io.in.pc_next <= IF_ID.io.out.pc_next @[CPU.scala 146:29]
+    ID_EX.io.in.op.op2 <= regs.io.op.op2 @[CPU.scala 147:29]
+    ID_EX.io.in.op.op1 <= regs.io.op.op1 @[CPU.scala 147:29]
+    ID_EX.io.in.imm <= decoder.io.imm @[CPU.scala 148:29]
+    ID_EX.io.in.rs.rs2 <= decoder.io.rs.rs2 @[CPU.scala 149:29]
+    ID_EX.io.in.rs.rs1 <= decoder.io.rs.rs1 @[CPU.scala 149:29]
+    ID_EX.io.in.rd <= decoder.io.rd @[CPU.scala 150:29]
+    node _T_62 = eq(decoder.io.ctrl.opcode, UInt<7>("h063")) @[CPU.scala 152:34]
+    when _T_62 : @[CPU.scala 152:41]
+      node _T_63 = sub(regs.io.op.op1, regs.io.op.op2) @[CPU.scala 153:38]
+      node _T_64 = asUInt(_T_63) @[CPU.scala 153:38]
+      node _T_65 = tail(_T_64, 1) @[CPU.scala 153:38]
+      node _T_66 = eq(_T_65, UInt<1>("h00")) @[CPU.scala 155:30]
+      node _T_67 = neq(_T_65, UInt<1>("h00")) @[CPU.scala 156:30]
+      node _T_68 = bits(_T_65, 31, 31) @[CPU.scala 157:29]
+      node _T_69 = bits(_T_65, 31, 31) @[CPU.scala 158:30]
+      node _T_71 = eq(_T_69, UInt<1>("h00")) @[CPU.scala 158:22]
+      node _T_72 = lt(regs.io.op.op1, regs.io.op.op2) @[CPU.scala 159:37]
+      node _T_73 = geq(regs.io.op.op1, regs.io.op.op2) @[CPU.scala 160:37]
+      node _T_74 = eq(UInt<3>("h07"), decoder.io.ctrl.funct3) @[Mux.scala 46:19]
+      node _T_75 = mux(_T_74, _T_73, UInt<1>("h00")) @[Mux.scala 46:16]
+      node _T_76 = eq(UInt<3>("h06"), decoder.io.ctrl.funct3) @[Mux.scala 46:19]
+      node _T_77 = mux(_T_76, _T_72, _T_75) @[Mux.scala 46:16]
+      node _T_78 = eq(UInt<3>("h05"), decoder.io.ctrl.funct3) @[Mux.scala 46:19]
+      node _T_79 = mux(_T_78, _T_71, _T_77) @[Mux.scala 46:16]
+      node _T_80 = eq(UInt<3>("h04"), decoder.io.ctrl.funct3) @[Mux.scala 46:19]
+      node _T_81 = mux(_T_80, _T_68, _T_79) @[Mux.scala 46:16]
+      node _T_82 = eq(UInt<1>("h01"), decoder.io.ctrl.funct3) @[Mux.scala 46:19]
+      node _T_83 = mux(_T_82, _T_67, _T_81) @[Mux.scala 46:16]
+      node _T_84 = eq(UInt<1>("h00"), decoder.io.ctrl.funct3) @[Mux.scala 46:19]
+      node _T_85 = mux(_T_84, _T_66, _T_83) @[Mux.scala 46:16]
+      io.branch <= _T_85 @[CPU.scala 154:19]
+      skip @[CPU.scala 152:41]
+    node _T_87 = eq(_T_62, UInt<1>("h00")) @[CPU.scala 152:41]
+    when _T_87 : @[CPU.scala 162:18]
+      io.branch <= UInt<1>("h00") @[CPU.scala 163:19]
+      skip @[CPU.scala 162:18]
+    fwdUnit.io.rs.rs2 <= ID_EX.io.out.rs.rs2 @[CPU.scala 168:29]
+    fwdUnit.io.rs.rs1 <= ID_EX.io.out.rs.rs1 @[CPU.scala 168:29]
+    fwdUnit.io.rd_mem <= EX_MEM.io.out.rd @[CPU.scala 169:29]
+    fwdUnit.io.rd_wb <= MEM_WB.io.out.rd @[CPU.scala 170:29]
+    fwdUnit.io.reg_w_mem <= EX_MEM.io.out.WB.reg_w @[CPU.scala 171:29]
+    fwdUnit.io.reg_w_wb <= MEM_WB.io.out.WB.reg_w @[CPU.scala 172:29]
+    alu.io.alu_ctrl.flush <= ID_EX.io.out.EX.alu_ctrl.flush @[CPU.scala 174:29]
+    alu.io.alu_ctrl.alt <= ID_EX.io.out.EX.alu_ctrl.alt @[CPU.scala 174:29]
+    alu.io.alu_ctrl.func <= ID_EX.io.out.EX.alu_ctrl.func @[CPU.scala 174:29]
+    node _T_88 = eq(UInt<1>("h00"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
+    node _T_89 = mux(_T_88, ID_EX.io.out.op.op1, UInt<1>("h00")) @[Mux.scala 46:16]
+    node _T_90 = eq(UInt<1>("h01"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
+    node _T_91 = mux(_T_90, regs.io.res, _T_89) @[Mux.scala 46:16]
+    node _T_92 = eq(UInt<2>("h02"), fwdUnit.io.fwd_rs1) @[Mux.scala 46:19]
+    node _T_93 = mux(_T_92, EX_MEM.io.out.op.op1, _T_91) @[Mux.scala 46:16]
+    alu.io.op.op1 <= _T_93 @[CPU.scala 176:19]
+    node _T_94 = eq(UInt<1>("h00"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
+    node _T_95 = mux(_T_94, ID_EX.io.out.op.op2, UInt<1>("h00")) @[Mux.scala 46:16]
+    node _T_96 = eq(UInt<1>("h01"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
+    node _T_97 = mux(_T_96, regs.io.res, _T_95) @[Mux.scala 46:16]
+    node _T_98 = eq(UInt<2>("h02"), fwdUnit.io.fwd_rs2) @[Mux.scala 46:19]
+    node op2 = mux(_T_98, EX_MEM.io.out.op.op1, _T_97) @[Mux.scala 46:16]
+    node _T_99 = mux(ID_EX.io.out.EX.alu_sel, ID_EX.io.out.imm, op2) @[CPU.scala 185:25]
+    alu.io.op.op2 <= _T_99 @[CPU.scala 185:19]
+    node _T_100 = mux(uart.io.tx_req, UInt<1>("h00"), ID_EX.io.out.MEM.write) @[CPU.scala 187:35]
+    EX_MEM.io.in.MEM.write <= _T_100 @[CPU.scala 187:29]
+    node _T_101 = mux(uart.io.tx_req, UInt<1>("h00"), ID_EX.io.out.MEM.read) @[CPU.scala 188:35]
+    EX_MEM.io.in.MEM.read <= _T_101 @[CPU.scala 188:29]
+    node _T_103 = mux(uart.io.tx_req, UInt<3>("h00"), ID_EX.io.out.MEM.func) @[CPU.scala 189:35]
+    EX_MEM.io.in.MEM.func <= _T_103 @[CPU.scala 189:29]
+    node _T_104 = mux(uart.io.tx_req, UInt<1>("h00"), ID_EX.io.out.WB.reg_w) @[CPU.scala 190:35]
+    EX_MEM.io.in.WB.reg_w <= _T_104 @[CPU.scala 190:29]
+    node _T_105 = mux(uart.io.tx_req, UInt<1>("h00"), ID_EX.io.out.WB.rd_mem) @[CPU.scala 191:35]
+    EX_MEM.io.in.WB.rd_mem <= _T_105 @[CPU.scala 191:29]
+    EX_MEM.io.in.op.op2 <= op2 @[CPU.scala 193:29]
+    EX_MEM.io.in.op.op1 <= alu.io.res @[CPU.scala 194:29]
+    EX_MEM.io.in.pc_next <= ID_EX.io.out.pc_next @[CPU.scala 195:29]
+    EX_MEM.io.in.rd <= ID_EX.io.out.rd @[CPU.scala 196:29]
+    dataMem.io.mem.read <= EX_MEM.io.out.MEM.read @[CPU.scala 200:29]
+    dataMem.io.mem.write <= EX_MEM.io.out.MEM.write @[CPU.scala 200:29]
+    dataMem.io.mem.func <= EX_MEM.io.out.MEM.func @[CPU.scala 200:29]
+    dataMem.io.op.op2 <= EX_MEM.io.out.op.op2 @[CPU.scala 201:29]
+    dataMem.io.op.op1 <= EX_MEM.io.out.op.op1 @[CPU.scala 201:29]
+    dataMem.io.tx_req <= uart.io.tx_req @[CPU.scala 202:29]
+    MEM_WB.io.in.WB.rd_mem <= EX_MEM.io.out.WB.rd_mem @[CPU.scala 204:29]
+    MEM_WB.io.in.WB.reg_w <= EX_MEM.io.out.WB.reg_w @[CPU.scala 204:29]
+    MEM_WB.io.in.rd <= EX_MEM.io.out.rd @[CPU.scala 205:29]
+    MEM_WB.io.in.mem_res <= dataMem.io.res @[CPU.scala 206:29]
+    MEM_WB.io.in.alu_res <= EX_MEM.io.out.op.op1 @[CPU.scala 207:29]
+    regs.io.rd <= MEM_WB.io.out.rd @[CPU.scala 211:19]
+    regs.io.reg_w <= MEM_WB.io.out.WB.reg_w @[CPU.scala 212:19]
+    node _T_106 = mux(MEM_WB.io.out.WB.rd_mem, MEM_WB.io.out.mem_res, MEM_WB.io.out.alu_res) @[CPU.scala 213:25]
+    regs.io.res <= _T_106 @[CPU.scala 213:19]
+    uart.io.rxd <= io.rxd @[CPU.scala 217:19]
+    dataMem.io.rx <= uart.io.out @[CPU.scala 218:19]
+    uart.io.in <= dataMem.io.tx @[CPU.scala 219:19]
+    io.txd <= uart.io.txd @[CPU.scala 220:19]
+    io.rx_cnt <= dataMem.io.rx_cnt @[CPU.scala 222:19]
+    reg rx_out : UInt<8>, clock with : (reset => (reset, UInt<1>("h00"))) @[CPU.scala 226:25]
+    node _T_108 = neq(dataMem.io.rx_out, UInt<1>("h00")) @[CPU.scala 227:29]
+    when _T_108 : @[CPU.scala 227:39]
+      rx_out <= dataMem.io.rx_out @[CPU.scala 227:48]
+      skip @[CPU.scala 227:39]
+    io.rx_out <= rx_out @[CPU.scala 228:15]
     

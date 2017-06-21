@@ -9,20 +9,22 @@ import chisel3._
 import chisel3.iotesters.PeekPokeTester
 import modules.ALU
 
-class TestALU(c: ALU) extends PeekPokeTester(c) {
-	/*
-	poke(c.io.aluOp.func, 99.U)
-	poke(c.io.aluOp.alt, false.B)
-	poke(c.io.reg.rs.rs1, 32.U)
-	poke(c.io.reg.rs.rs2, 2.U)
+class TestALU(dut: ALU) extends PeekPokeTester(dut) {
+	
+	poke(dut.io.alu_ctrl.func, "b101".U)
+	//poke(dut.io.alu_ctrl.mem, false.B)
+	poke(dut.io.alu_ctrl.alt, false.B)
+	poke(dut.io.alu_ctrl.flush, false.B)
 
-	expect(c.io.reg.rd, 33.U)
+	poke(dut.io.op.op1, 1073741824.U)
+	poke(dut.io.op.op2, 2.U)
 
-	*/
+	expect(dut.io.res, 34.U)
+
 }
 
 object TestALU extends App {
  	iotesters.Driver.execute(args, () => new ALU) {
-		c => new TestALU(c)
+		dut => new TestALU(dut)
 	}	
 }
