@@ -12,7 +12,7 @@ import utils._
 import utils.Constants._
 import utils.Collection._
 
-class CPU extends Module {
+class SiUZ extends Module {
     
     val io = IO(new Bundle {
 
@@ -287,6 +287,6 @@ class CPU extends Module {
     */
 }
 
-object CPU extends App { 
-    chisel3.Driver.execute(args, () => new CPU)
+object SiUZ extends App { 
+    chisel3.Driver.execute(args, () => new SiUZ)
 }

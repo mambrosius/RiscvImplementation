@@ -13,7 +13,7 @@ object Constants {
 
 	// program --------------------------------------------
 
-	val PROGRAM  = "bin/reverse.hex"
+	val PROGRAM  = "asm/reverse/reverse.hex"
 
 	// attributes -----------------------------------------
 

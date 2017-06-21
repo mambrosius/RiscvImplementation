@@ -13,12 +13,12 @@ import utils.Constants._
 class TestCPU(dut: CPU) extends PeekPokeTester(dut) {
 
 	//new ComTest(dut);
-	poke(dut.io.rx_in, 11.U)	
+	//poke(dut.io.rx_in, 11.U)	
 	
 	for (i <- 0 until 100) {
 		
 		//expect(dut.io.txd, 2.U)
-		expect(dut.io.pc, 0.U)
+		//expect(dut.io.pc, 0.U)
 		//expect(dut.io.branch, 2.U)
 		//expect(dut.io.branch_t, 3.U)
 
@@ -28,8 +28,8 @@ class TestCPU(dut: CPU) extends PeekPokeTester(dut) {
 		//expect(dut.io.func, 8.U)
 		//expect(dut.io.res, 8.U)
 
-		expect(dut.io.fwd1, 10.U)
-		expect(dut.io.fwd2, 10.U)
+		//expect(dut.io.fwd1, 10.U)
+		//expect(dut.io.fwd2, 10.U)
 
 		/*
 		expect(dut.io.op1, 0.U)
