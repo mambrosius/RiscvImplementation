@@ -3,7 +3,7 @@
 // Author:  Morten Ambrosius Andreasen (s141227@student.dtu.dk)
 //          Technical University of Denmark, DTU Compute
 //
-// Version: 0.1 (February 2017)
+// Version: 1.0 (February 2017)
 
 import chisel3._
 import chisel3.util._

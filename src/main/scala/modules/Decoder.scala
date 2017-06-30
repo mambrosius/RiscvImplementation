@@ -3,7 +3,7 @@
 // Author:  Morten Ambrosius Andreasen (s141227@student.dtu.dk)
 //          Technical University of Denmark, DTU Compute
 //
-// Version: 0.1 (February 2017)
+// Version: 1.0 (February 2017)
 
 package modules
 
@@ -33,7 +33,7 @@ class Decoder extends Module {
 
 	switch (io.ctrl.opcode) {
 		is (R) {
-			io.imm := 0.asUInt(32.W)}
+			io.imm := 0.asUInt(WORD_W)}
 		is (I) { 
 			io.imm := Cat(sign, io.inst(31, 20))}
 		is (L) { 

@@ -3,7 +3,7 @@
 // Author: 	Morten Ambrosius Andreasen (s141227@student.dtu.dk)
 //			Technical University of Denmark, DTU Compute
 //
-// Version:	0.1 (January 2017)
+// Version:	1.0 (January 2017)
 
 package modules
 

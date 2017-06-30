@@ -3,7 +3,7 @@
 // Author:  Morten Ambrosius Andreasen (s141227@student.dtu.dk)
 //          Technical University of Denmark, DTU Compute
 //
-// Version: 0.1 (February 2017)
+// Version: 1.0 (February 2017)
 
 package modules
 
@@ -26,7 +26,7 @@ class Registers extends Module {
     val fwd_rs1 = io.reg_w && (io.res =/= ZERO) && (io.rd === io.rs.rs1)
     val fwd_rs2 = io.reg_w && (io.res =/= ZERO) && (io.rd === io.rs.rs2)
     
-    x(ZERO) := ZERO
+    x(ZERO)   := ZERO
      
     io.op.op1 := Mux(fwd_rs1, io.res, x(io.rs.rs1))
     io.op.op2 := Mux(fwd_rs2, io.res, x(io.rs.rs2))

@@ -80,5 +80,6 @@ object Collection {
 		val func 	= Input(UInt(FUNCT3_W))
 		val alt  	= Input(Bool())
 		val flush 	= Input(Bool())
+		val mem  	= Input(Bool())
 	}
 }

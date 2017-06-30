@@ -36,9 +36,7 @@ object Program {
 			instructionMem(base + 1) 	:= instruction(15,8)
 			instructionMem(base + 2) 	:= instruction(23,16)
 			instructionMem(base + 3) 	:= instruction(31,24)
-
-    		//instructionMem(i) := {"h" + programLines(i)}.U (WORD_W)
-    	} 
+		} 
 
     	source.close
     	instructionMem 

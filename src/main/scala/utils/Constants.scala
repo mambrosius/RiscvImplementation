@@ -17,18 +17,19 @@ object Constants {
 
 	// attributes -----------------------------------------
 
-	val MEM_D 	 = 512
-	val BAUD 	 = 115200
-	val FREQ 	 = 50000000
+	val START 	 = 80.U
 	
+	val MEM_D 	 = 512
 	val RX_ADDR  = 495.U
 	val RX_CNT   = 511.U
 	val TX_ADDR  = 512.U
 
+	val BAUD 	 = 115200
+	val FREQ 	 = 50000000
+	
 	// constants ------------------------------------------
 
 	val ZERO	 = 0.U
-	val START 	 = 80.U
 	val TRUE	 = true.B
 	val FALSE 	 = false.B
 	

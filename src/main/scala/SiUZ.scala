@@ -3,7 +3,7 @@
 // Author:  Morten Ambrosius Andreasen (s141227@student.dtu.dk)
 //          Technical University of Denmark, DTU Compute
 //
-// Version: 0.1 (February 2017)
+// Version: 1.0 (February 2017)
 
 import chisel3._
 import chisel3.util._
@@ -140,15 +140,6 @@ class SiUZ extends Module {
     control.io.flush        := hazardUnit.io.stall || io.branch
     control.io.ctrl         := decoder.io.ctrl
 
-    ID_EX.io.in.WB          := control.io.WB
-    ID_EX.io.in.MEM         := control.io.MEM
-    ID_EX.io.in.EX          := control.io.EX
-    ID_EX.io.in.pc_next     := IF_ID.io.out.pc_next
-    ID_EX.io.in.op          := regs.io.op
-    ID_EX.io.in.imm         := decoder.io.imm
-    ID_EX.io.in.rs          := decoder.io.rs
-    ID_EX.io.in.rd          := decoder.io.rd
-    
     when (decoder.io.ctrl.opcode === B) {    
         val compare = regs.io.op.op1 - regs.io.op.op2
         io.branch := MuxLookup(decoder.io.ctrl.funct3, FALSE, Array(
@@ -162,6 +153,15 @@ class SiUZ extends Module {
     } .otherwise {
         io.branch := FALSE
     }
+
+    ID_EX.io.in.WB          := control.io.WB
+    ID_EX.io.in.MEM         := control.io.MEM
+    ID_EX.io.in.EX          := control.io.EX
+    ID_EX.io.in.pc_next     := IF_ID.io.out.pc_next
+    ID_EX.io.in.op          := regs.io.op
+    ID_EX.io.in.imm         := decoder.io.imm
+    ID_EX.io.in.rs          := decoder.io.rs
+    ID_EX.io.in.rd          := decoder.io.rd
 
     // EX -------------------------------------------------------------------------------------
 

@@ -3,7 +3,7 @@
 // Author:  Morten Ambrosius Andreasen (s141227@student.dtu.dk)
 //          Technical University of Denmark, DTU Compute
 //
-// Version: 0.1 (May 2017)
+// Version: 1.0 (May 2017)
 //
 // modified from: 
 //  https://github.com/nyuichi/chisel-uart/blob/master/src/main/scala/Uart.scala
@@ -118,7 +118,7 @@ class Rx extends Module {
                 }
             }
         }
-    
+     
         is (reading) {
             when (ticks === ZERO) {
                 data  := Cat(io.rxd, data >> 1)
